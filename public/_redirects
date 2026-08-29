@@ -1,11 +1,25 @@
-# Estructura anterior → estructura nueva. El equivalente en la SPA está en
+# Estructuras anteriores → estructura nueva. El equivalente en la SPA está en
 # LEGACY_REDIRECTS (src/routes.ts), para los hosts que no leen este archivo.
-/es/que-es              /es/sistema     301
-/en/what-it-is          /en/system      301
+
+# Servicios → Productos: los "cuatro tramos" eran uno de los cinco listados que
+# el catálogo consolidó.
+/es/servicios           /es/productos   301
+/en/services            /en/products    301
+/es/dispositivos        /es/productos   301
+/en/devices             /en/products    301
+
+# Sistema y Pensamiento se eliminaron: registro académico y de marca dentro de
+# un sitio comercial. El método vive ahora en el catálogo, en lenguaje de
+# cliente.
+/es/sistema             /es/productos   301
+/en/system              /en/products    301
+/es/que-es              /es/productos   301
+/en/what-it-is          /en/products    301
+/es/pensamiento         /es            301
+/en/thinking            /en            301
+
 /es/intervenciones      /es/casos       301
 /en/interventions       /en/cases       301
-/es/dispositivos        /es/servicios   301
-/en/devices             /en/services    301
 
 # SPA: cualquier otra ruta la resuelve el router.
 /*                      /index.html     200

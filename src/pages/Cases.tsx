@@ -4,9 +4,13 @@ import { SectionLabel } from '../components/SectionLabel'
 import { useSite } from '../site-context'
 
 /**
- * Reescritura de la antigua página Intervenciones en formato caso: contexto,
- * intervención, resultado. El tercer caso todavía no está reescrito con la
- * plantilla —lleva el texto que ya estaba publicado y su estado a la vista—.
+ * Los casos en la anatomía del case study: contexto, problema, intervención,
+ * resultado y prueba.
+ *
+ * `proof` es opcional a propósito. Un caso sin tercero que lo confirme se
+ * publica igual, pero con el campo ausente y su estado a la vista: rellenarlo
+ * con una frase de relleno sería convertir la prueba en claim, que es
+ * exactamente lo que esta página existe para evitar.
  */
 export function Cases() {
   const { t } = useSite()
@@ -58,21 +62,31 @@ export function Cases() {
               <div className="caso" key={caso.n}>
                 <div className="caso-meta">
                   <span className="op">{caso.n}</span>
-                  {caso.subtitle && <span className="dim">{caso.subtitle}</span>}
+                  <span className="dim">{caso.subtitle}</span>
                   {caso.status && <span className="estado">{caso.status}</span>}
                 </div>
                 <div className="caso-body">
                   <h3 className="ttl">{caso.title}</h3>
-                  <p className="desc">{caso.text}</p>
-                  {caso.proved && (
+                  <dl className="anat">
+                    <dt className="mono">{c.contextLabel}</dt>
+                    <dd>{caso.context}</dd>
+                    <dt className="mono">{c.problemLabel}</dt>
+                    <dd>{caso.problem}</dd>
+                    <dt className="mono">{c.workLabel}</dt>
+                    <dd>{caso.work}</dd>
+                    <dt className="mono">{c.resultLabel}</dt>
+                    <dd>{caso.result}</dd>
+                  </dl>
+                  {caso.proof && (
                     <p className="probado">
-                      <span className="pl mono">{c.provedLabel}</span> {caso.proved}
+                      <span className="pl mono">{c.proofLabel}</span> {caso.proof}
                     </p>
                   )}
                 </div>
               </div>
             ))}
           </div>
+          <p className="nota mono">{c.note}</p>
         </div>
       </section>
     </>

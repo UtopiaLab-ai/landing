@@ -7,9 +7,8 @@ import type { Locale } from './i18n'
 import { CONTENT, DEFAULT_LOCALE } from './i18n'
 import { Cases } from './pages/Cases'
 import { Home } from './pages/Home'
-import { Services } from './pages/Services'
-import { System } from './pages/System'
-import { Thinking } from './pages/Thinking'
+import { Products } from './pages/Products'
+import { Team } from './pages/Team'
 import type { PageKey } from './routes'
 import { ALL_ROUTES, LEGACY_REDIRECTS, pathFor } from './routes'
 import { SiteContext } from './site-context'
@@ -17,10 +16,9 @@ import { useDocumentMeta } from './useDocumentMeta'
 
 const PAGES: Record<PageKey, ComponentType> = {
   home: Home,
-  services: Services,
+  products: Products,
   cases: Cases,
-  system: System,
-  thinking: Thinking,
+  team: Team,
 }
 
 /** Idioma inicial para `/`: inglés si el navegador lo pide, español si no. */

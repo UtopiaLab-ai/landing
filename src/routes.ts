@@ -1,7 +1,7 @@
 import type { Locale } from './i18n'
 import { LOCALES } from './i18n'
 
-export const PAGE_KEYS = ['home', 'services', 'cases', 'system', 'thinking'] as const
+export const PAGE_KEYS = ['home', 'products', 'cases', 'team'] as const
 
 export type PageKey = (typeof PAGE_KEYS)[number]
 
@@ -12,17 +12,15 @@ export type PageKey = (typeof PAGE_KEYS)[number]
 export const SLUGS: Record<Locale, Record<PageKey, string>> = {
   es: {
     home: '',
-    services: 'servicios',
+    products: 'productos',
     cases: 'casos',
-    system: 'sistema',
-    thinking: 'pensamiento',
+    team: 'equipo',
   },
   en: {
     home: '',
-    services: 'services',
+    products: 'products',
     cases: 'cases',
-    system: 'system',
-    thinking: 'thinking',
+    team: 'team',
   },
 }
 
@@ -36,25 +34,29 @@ export const ALL_ROUTES = LOCALES.flatMap((locale) =>
   PAGE_KEYS.map((page) => ({ locale, page, path: pathFor(locale, page) })),
 )
 
-/** Ancla de la sección Equipo, que vive dentro de la home. */
-export const TEAM_ANCHOR: Record<Locale, string> = { es: 'equipo', en: 'team' }
-
-/** Ancla de la sección El piloto, que vive dentro de la home. */
-export const PILOT_ANCHOR: Record<Locale, string> = { es: 'piloto', en: 'pilot' }
-
-/** Ancla de la pregunta frecuente sobre el nombre, en /servicios. */
-export const NAME_ANCHOR = 'nombre'
+/** Ancla del catálogo dentro de la home, para el enlace del hero al bloque. */
+export const CATALOG_ANCHOR: Record<Locale, string> = { es: 'catalogo', en: 'catalog' }
 
 /**
- * Rutas de la estructura anterior que ya no existen. Se conservan como
+ * Rutas de estructuras anteriores que ya no existen. Se conservan como
  * redirecciones para no romper enlaces publicados; el equivalente en el
  * servidor está en `public/_redirects`.
+ *
+ * Sistema y Pensamiento se eliminaron: eran registro académico y de marca
+ * dentro de un sitio comercial. Sistema apunta al catálogo, que es donde el
+ * método se explica ahora en lenguaje de cliente; Pensamiento, a la home.
  */
 export const LEGACY_REDIRECTS: Record<string, string> = {
-  '/es/que-es': pathFor('es', 'system'),
-  '/en/what-it-is': pathFor('en', 'system'),
+  '/es/que-es': pathFor('es', 'products'),
+  '/en/what-it-is': pathFor('en', 'products'),
   '/es/intervenciones': pathFor('es', 'cases'),
   '/en/interventions': pathFor('en', 'cases'),
-  '/es/dispositivos': pathFor('es', 'services'),
-  '/en/devices': pathFor('en', 'services'),
+  '/es/dispositivos': pathFor('es', 'products'),
+  '/en/devices': pathFor('en', 'products'),
+  '/es/servicios': pathFor('es', 'products'),
+  '/en/services': pathFor('en', 'products'),
+  '/es/sistema': pathFor('es', 'products'),
+  '/en/system': pathFor('en', 'products'),
+  '/es/pensamiento': pathFor('es', 'home'),
+  '/en/thinking': pathFor('en', 'home'),
 }

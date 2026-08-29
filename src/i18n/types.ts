@@ -18,11 +18,9 @@ export type SectionLabel = readonly [left: string, right: string]
 export interface Common {
   langName: string
   nav: {
-    services: string
+    products: string
     cases: string
-    system: string
     team: string
-    thinking: string
   }
   home: string
   book: string
@@ -30,14 +28,14 @@ export interface Common {
   switchLang: string
   footer: {
     location: string
-    /** Enlace del pie a la pregunta frecuente sobre el nombre. */
-    nameLink: string
+    emailLabel: string
   }
 }
 
 /* --- Home ------------------------------------------------------------------
-   Ocho bloques, en el orden del documento de contenidos: hero, problema,
-   para quién, método, piloto, casos, equipo, cierre. */
+   Nueve bloques, en el orden del buyer journey del TCBF: hero (trigger),
+   prueba, situación reconocible, catálogo, para quién, casos, equipo,
+   objeciones y cierre. */
 
 export interface HomeContent {
   meta: Meta
@@ -46,57 +44,78 @@ export interface HomeContent {
     kicker: string
     titleLines: readonly string[]
     sub: string
-    /** Las dos líneas de posición heredadas del sitio anterior. */
-    positions: readonly RichText[]
     microcopy: string
-    /** Rótulo de cada cuadro de la secuencia: ruido → método → señal. */
+    /** Rótulo de cada cuadro de la secuencia; sigue la escalera de compromiso. */
     frames: readonly [string, string, string]
   }
 
-  problem: {
+  /** Franja de credenciales bajo el hero. E6 de la Evidence Stack del TCBF. */
+  proof: {
+    label: string
+    items: readonly { name: string; text: string }[]
+  }
+
+  /**
+   * Las cinco situaciones de la lámina A2 de la NMU: el cliente se reconoce en
+   * la primera columna. Reemplaza al bloque abstracto de síntomas.
+   */
+  situations: {
     h2: string
-    body: string
-    symptomsLabel: SectionLabel
-    symptoms: readonly { title: string; text: string }[]
+    sub: string
+    label: SectionLabel
+    heads: readonly [situation: string, doing: string, installed: string]
+    rows: readonly { situation: string; doing: string; installed: string }[]
     close: string
+  }
+
+  /**
+   * El catálogo en la home: los ocho productos agrupados por velocidad, con
+   * definición de una línea y duración. Las fichas completas van en /productos.
+   */
+  catalog: {
+    h2: string
+    sub: string
+    label: SectionLabel
+    speeds: readonly {
+      key: string
+      name: string
+      note: string
+      products: readonly { name: string; text: string; duration: string }[]
+    }[]
+    horizon: { tag: string; text: string }
+    cta: string
   }
 
   audience: {
     h2: string
-    label: SectionLabel
-    tracks: readonly {
-      n: string
-      title: string
-      text: string
-      referenceLabel: string
-      reference: string
-      cta: string
-    }[]
-  }
-
-  method: {
-    h2: string
     sub: string
     label: SectionLabel
-    steps: readonly { n: string; title: string; text: string }[]
-    bridge: { text: string; link: string }
-  }
-
-  pilot: {
-    h2: string
-    label: SectionLabel
-    isNot: { label: string; text: string }
-    is: { label: string; text: string }
-    deliverablesLabel: string
-    deliverables: readonly { title: string; text: string }[]
-    risk: { tag: string; text: string }
-    foot: { text: string; link: string }
+    /** Los dos verticales con demanda observada en el radar. */
+    strong: {
+      tag: string
+      tracks: readonly {
+        n: string
+        title: string
+        text: string
+        entryLabel: string
+        entry: string
+        anchorLabel: string
+        anchor: string
+      }[]
+    }
+    /** Los cuatro restantes: apuesta de posicionamiento, no demanda probada. */
+    others: {
+      tag: string
+      items: readonly { name: string; text: string }[]
+    }
+    /** Condición de activación del vertical político, no recomendación. */
+    neutrality: { tag: string; text: string }
   }
 
   cases: {
     h2: string
     sub: string
-    cards: readonly { n: string; title: string }[]
+    cards: readonly { n: string; title: string; proof: string }[]
     cta: string
   }
 
@@ -105,56 +124,81 @@ export interface HomeContent {
     sub: string
     label: SectionLabel
     members: readonly { name: string; role: string; text: string }[]
+    cta: string
+  }
+
+  /** Las tres preguntas de la lámina A4 de la NMU. */
+  objections: {
+    h2: string
+    label: SectionLabel
+    items: readonly { id: string; q: string; a: string }[]
   }
 
   closing: { h2: string; body: string; cta: string }
 }
 
-/* --- Servicios -------------------------------------------------------------
-   Los cuatro tramos, las reglas del tablero, cómo se organiza el Lab
-   (resumen de los antiguos Dispositivos) y las preguntas frecuentes. */
+/* --- Productos -------------------------------------------------------------
+   El catálogo cerrado: escalera de compromiso, ocho productos vendibles con
+   ficha completa, la Máquina como horizonte y cómo se contrata. */
 
-export interface ServicesContent {
+export interface ProductsContent {
   meta: Meta
   kicker: string
   titleLines: readonly string[]
   sub: string
   lead: RichText
 
-  tracksLabel: SectionLabel
+  ladderLabel: SectionLabel
+  ladderIntro: string
+  ladder: readonly { n: string; name: string; text: string }[]
+
+  productsLabel: SectionLabel
+  definitionLabel: string
+  triggerLabel: string
   deliverableLabel: string
   durationLabel: string
-  tracks: readonly {
-    n: string
+  stepLabel: string
+
+  /** Agrupados por velocidad: caja, capacidad e individual. */
+  speeds: readonly {
+    key: string
+    name: string
+    note: string
+    products: readonly {
+      n: string
+      name: string
+      def: string
+      text: string
+      trigger: string
+      deliverable: string
+      duration: string
+      step: string
+    }[]
+  }[]
+
+  /** No es producto: se nombra como horizonte del acuerdo. */
+  horizon: {
+    label: SectionLabel
+    tag: string
     name: string
     text: string
-    deliverable: string
-    duration: string
-  }[]
-  note: string
-
-  dashboard: {
-    label: SectionLabel
-    h2: string
-    rules: readonly { title: string; text: string }[]
-    clarification: string
+    stateLabel: string
+    state: string
   }
 
-  organization: {
+  contracting: {
     label: SectionLabel
     h2: string
     intro: string
-    three: readonly { name: string; verb: string; text: string }[]
-  }
-
-  faq: {
-    label: SectionLabel
-    /** `id` ancla la pregunta; la del nombre usa `NAME_ANCHOR`. */
-    items: readonly { id: string; q: string; a: string }[]
+    items: readonly { title: string; text: string }[]
+    priceNote: string
   }
 }
 
-/* --- Casos ---------------------------------------------------------------- */
+/* --- Casos -----------------------------------------------------------------
+   Anatomía del case study del TCBF §9, recortada a los cinco campos que se
+   pueden sostener con evidencia: contexto, problema, intervención, resultado
+   y prueba. Los campos opcionales faltan donde todavía no hay dato. */
 
 export interface CasesContent {
   meta: Meta
@@ -168,100 +212,58 @@ export interface CasesContent {
   templateSteps: readonly { n: string; title: string; text: string }[]
 
   casesLabel: SectionLabel
-  provedLabel: string
+  contextLabel: string
+  problemLabel: string
+  workLabel: string
+  resultLabel: string
+  proofLabel: string
+
   cases: readonly {
     n: string
     title: string
-    /** Descriptor corto del caso; se omite donde no hay uno acordado. */
-    subtitle?: string
-    text: string
-    /** La lección metodológica. Ausente en los casos aún sin documentar. */
-    proved?: string
-    /** Estado, para los casos que todavía no siguen la plantilla completa. */
+    subtitle: string
+    context: string
+    problem: string
+    work: string
+    result: string
+    /** Verificable por un tercero. Ausente donde no hay uno publicable. */
+    proof?: string
+    /** Estado, para los casos que aún no completan la plantilla. */
     status?: string
   }[]
+
+  note: string
 }
 
-/* --- Sistema ---------------------------------------------------------------
-   Conserva el Sistema Utopía y absorbe la antigua página «Qué es»: los cinco
-   principios, las cinco dimensiones y el lugar de enunciación. */
+/* --- Equipo ----------------------------------------------------------------
+   Resource quality del TCBF: quién sabe y quién ejecuta, con credenciales
+   verificables en vez de descripciones. */
 
-export interface Dimension {
-  n: string
-  name: string
-  claim: string
-  problems: readonly string[]
-  contributions: readonly { title: string; text: string }[]
-}
-
-export interface SystemContent {
+export interface TeamContent {
   meta: Meta
   kicker: string
   titleLines: readonly string[]
   sub: string
-  /** Encabezado nuevo: infraestructura como resultado, proyecto como vehículo. */
-  header: RichText
   lead: RichText
-  note: string
 
-  triadLabel: SectionLabel
-  triad: readonly { n: string; question: string; name: string; def: string }[]
-
-  methodLabel: SectionLabel
-  methodIntro: RichText
-  producesLabel: string
-  ops: readonly { n: string; name: string; def: string; produces: readonly string[] }[]
-
-  principlesLabel: SectionLabel
-  principles: readonly { n: string; title: string; text: string }[]
-
-  dimsLabel: SectionLabel
-  problemHead: string
-  contributionHead: string
-  dims: readonly Dimension[]
-
-  place: { tag: string; h2: string; p: string }
-
-  /** Puente al piloto, al final de la página. */
-  bridge: { text: string; link: string }
-}
-
-/* --- Pensamiento ---------------------------------------------------------- */
-
-export interface Reference {
-  author: string
-  work: string
-  /** `book` va en cursiva; `article` va entre comillas angulares. */
-  kind: 'book' | 'article'
-  year: string
-  note: string
-}
-
-export interface ThinkingContent {
-  meta: Meta
-  kicker: string
-  title: string
-  sub: string
-  lead: RichText
-  linesLabel: SectionLabel
-  lines: readonly { n: string; title: string; text: string }[]
-  libraryLabel: SectionLabel
-  libraryTitle: string
-  libraryIntro: string
-  axes: readonly {
+  membersLabel: SectionLabel
+  credentialsLabel: string
+  members: readonly {
     n: string
-    title: string
-    question: string
-    refs: readonly Reference[]
+    name: string
+    role: string
+    text: string
+    credentials: readonly string[]
   }[]
-  thesis: { tag: string; h2: string; p: string; cta: string }
+
+  /** Capacidad declarada: cuántos encargos sostiene el Lab a la vez. */
+  capacity: { tag: string; text: string }
 }
 
 export interface Content {
   common: Common
   home: HomeContent
-  services: ServicesContent
+  products: ProductsContent
   cases: CasesContent
-  system: SystemContent
-  thinking: ThinkingContent
+  team: TeamContent
 }

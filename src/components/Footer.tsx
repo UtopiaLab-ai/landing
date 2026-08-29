@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom'
-import { COPYRIGHT_YEAR, SITE_DOMAIN } from '../config'
-import { NAME_ANCHOR, pathFor } from '../routes'
+import { Wordmark } from '../brand/Wordmark'
+import { CONTACT_EMAIL, COPYRIGHT_YEAR, SITE_DOMAIN } from '../config'
+import { pathFor } from '../routes'
 import { useSite } from '../site-context'
 import { BookButton } from './BookButton'
-import { Mark } from './Rich'
 
 /**
- * Pensamiento vive aquí y no en la navegación principal: ante una fundación o
- * una universidad suma credibilidad, pero ante una empresa lee como proyecto
- * académico. En el pie sigue disponible sin condicionar la primera lectura.
+ * El pie repite las tres puertas y publica el correo.
+ *
+ * El correo no es redundante con la agenda: una municipalidad que prepara
+ * bases de licitación necesita un canal escrito, y no va a reservar una hora
+ * en un calendario para mandar una consulta administrativa.
  */
+const FOOT_PAGES = ['products', 'cases', 'team'] as const
+
 export function Footer() {
   const { locale, page, t } = useSite()
 
@@ -18,21 +22,19 @@ export function Footer() {
       <div className="wrap">
         <div className="foot-top">
           <div className="foot-mark">
-            <Mark />
+            <Wordmark size={72} />
           </div>
           <div className="foot-nav mono">
-            <Link to={pathFor(locale, 'system')} aria-current={page === 'system' ? 'page' : undefined}>
-              {t.common.nav.system}
-            </Link>
-            <Link
-              to={pathFor(locale, 'thinking')}
-              aria-current={page === 'thinking' ? 'page' : undefined}
-            >
-              {t.common.nav.thinking}
-            </Link>
-            <Link to={`${pathFor(locale, 'services')}#${NAME_ANCHOR}`}>
-              {t.common.footer.nameLink}
-            </Link>
+            {FOOT_PAGES.map((key) => (
+              <Link
+                key={key}
+                to={pathFor(locale, key)}
+                aria-current={page === key ? 'page' : undefined}
+              >
+                {t.common.nav[key]}
+              </Link>
+            ))}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{t.common.footer.emailLabel}</a>
           </div>
         </div>
 
@@ -42,10 +44,10 @@ export function Footer() {
         <div className="foot-rule" />
         <div className="foot-bot mono">
           <span>
-            <Mark /> © {COPYRIGHT_YEAR}
+            {SITE_DOMAIN} © {COPYRIGHT_YEAR}
           </span>
           <span>
-            {t.common.footer.location} · {SITE_DOMAIN}
+            {t.common.footer.location} · <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </span>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { Fragment } from 'react'
-import { BRAND } from '../config'
 import type { RichText } from '../i18n/types'
 
 /** Renderiza un RichText: strings planos y `{ b }` como <b>. */
@@ -15,9 +14,4 @@ export function Rich({ text }: { text: RichText }) {
       )}
     </>
   )
-}
-
-/** El logotipo. */
-export function Mark() {
-  return <>{BRAND}</>
 }

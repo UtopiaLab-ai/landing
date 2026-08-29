@@ -1,30 +1,42 @@
 /* ==========================================================================
-   Utopía Lab — hoja de estilos única.
+   utopialab.ai — hoja de estilos única.
 
-   La paleta sale de las ilustraciones de public/image (medida sobre los
-   archivos, no estimada). El papel es el blanco de utopialab-white.png, el
-   mismo fondo del video del hero: la página y la ilustración comparten hoja.
+   La paleta y la tipografía salen del manual de marca v1 (agosto 2026). Antes
+   se medían sobre las ilustraciones de public/image; ahora manda el manual y la
+   diferencia con las ilustraciones —un par de puntos en el naranja y el papel—
+   se resuelve cuando se rehagan, no acá.
+
    El sitio es una ventana de papel redondeada sobre fondo tinta; el hero
-   recorre el paisaje —ruido, método, señal— que es la tesis de la página.
+   recorre el paisaje mientras el rótulo avanza por la escalera de compromiso
+   —señal, decisión, capacidad—, que es lo que se vende.
+
+   El sistema de glifos vive en src/brand/, no en esta hoja: la geometría es
+   compartida con el kit de imprenta y no puede existir dos veces.
 
    Las reglas comunes viven arriba; las de cada página van aisladas bajo
-   `.page-<key>` porque varias clases (.cierre, .intro .lead, .op, .dim…)
+   `.page-<key>` porque varias clases (.cierre, .intro .lead, .tramo…)
    significan cosas distintas en cada una.
    ========================================================================== */
 
 /* --- Base ----------------------------------------------------------------- */
 
 :root {
-  /* Paleta extraída de las ilustraciones. El texto va SIEMPRE en --tinta:
-     el naranja sobre papel no pasa contraste y este sitio se mira al sol. */
-  --papel: #f9f7f5;
-  --arena: #efebe6;
-  --tinta: #181818;
-  --sol: #f0580c;
-  --arco: #00417f;
-  --agua: #78b0a8;
-  --ambar: #f8a800;
-  --rosa: #f090a0;
+  /* Paleta del manual de marca v1 (agosto 2026), hexes exactos. Antes salía
+     medida sobre las ilustraciones y quedaba a un par de puntos: ahora manda
+     el manual y las ilustraciones son las que están a un par de puntos.
+
+     El texto va SIEMPRE en --tinta: el naranja sobre papel no pasa contraste y
+     este sitio se mira al sol. El manual coincide —el naranja es acento y
+     punto de señal, nunca texto—. */
+  --papel: #f2f0ec;
+  --arena: #e6e2da;
+  --tinta: #0f0f0f;
+  --sol: #ef4a0f;
+  --arco: #0b57a4;
+  --agua: #4fc3c0;
+  --ambar: #fbbe0b;
+  --rosa: #f79ac0;
+  --bosque: #2e6b45;
 
   /* Roles. El resto de la hoja usa --bg y --ink, así que la inversión de una
      banda se resuelve cambiando solo estos dos. */
@@ -35,10 +47,16 @@
   --r-win: 28px;
   --r-pill: 999px;
 
-  /* Tipografía. Se mantiene la del sitio: Helvetica como stack de sistema
-     (licencia propietaria, no se puede servir como webfont) y JetBrains Mono
-     para rótulos, numeración y datos. */
+  /* Tipografía, según §05 del manual: Helvetica para el wordmark y los datos,
+     Bricolage para titulares, Fraunces itálica para las citas y JetBrains Mono
+     para etiquetas.
+
+     Helvetica es de licencia propietaria y no se puede servir como webfont:
+     va como stack de sistema y cae en Arial, que comparte métricas. Las otras
+     tres sí se descargan (ver index.html). */
   --font-sans: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
+  --font-display: 'Bricolage Grotesque', var(--font-sans);
+  --font-serif: Fraunces, Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -120,15 +138,58 @@ header > * {
 }
 
 .brand {
-  font-weight: 700;
-  font-size: 17px;
-  letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--tinta);
-  white-space: nowrap;
   background: var(--papel);
   border-radius: var(--r-pill);
-  padding: 10px 18px;
+  padding: 7px 20px 7px 10px;
+}
+
+/* --- Lockup ---------------------------------------------------------------
+   Glifo más nombre. El trazo del glifo lo calcula strokeFor() en JS, así que
+   acá solo se resuelve la alineación: el nombre se centra por altura de
+   mayúscula contra el centro del campo, no por caja tipográfica. */
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.wordmark-glyph {
+  flex: none;
+  /* El campo tiene 3,6 de aire propio dentro de su caja de 32; el resguardo
+     del manual (6,2) se completa con el gap y el padding de la píldora. */
+  display: block;
+}
+
+.wordmark-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.028em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+/* §08 del manual: el punto del dominio es el punto de la anomalía, y es el
+   único acento de color que entra al wordmark. Se dibuja, no se escribe: como
+   carácter heredaría el peso y el tamaño del nombre. */
+.wordmark-dot {
+  flex: none;
+  width: 0.2em;
+  height: 0.2em;
+  margin: 0 0.13em;
+  border-radius: 50%;
+  background: var(--sol);
+}
+
+/* El nombre manda, el dominio acompaña: mismo cuerpo, un peso menos y sin la
+   negrita del nombre. */
+.wordmark-tld {
+  font-weight: 400;
 }
 
 .nav {
@@ -158,12 +219,12 @@ header > * {
 
 .nav a:hover {
   opacity: 1;
-  background: rgba(24, 24, 24, 0.07);
+  background: rgba(15, 15, 15, 0.07);
 }
 
 .nav a[aria-current='page'] {
   opacity: 1;
-  background: rgba(24, 24, 24, 0.1);
+  background: rgba(15, 15, 15, 0.1);
 }
 
 .nav .nav-cta {
@@ -445,7 +506,7 @@ header > * {
 /* El titular ya no ocupa el ancho de la pantalla sino el de su columna, así
    que el tope baja: a 168px «From noise» se salía del texto. */
 .hero-left h1 {
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 0.86;
   font-size: clamp(46px, 6.6vw, 108px);
@@ -580,7 +641,7 @@ header > * {
 /* --- Las dos líneas de posición ------------------------------------------- */
 
 .posiciones {
-  border-bottom: 1px solid rgba(24, 24, 24, 0.18);
+  border-bottom: 1px solid rgba(15, 15, 15, 0.18);
   padding: clamp(30px, 4vh, 52px) 0 clamp(34px, 5vh, 64px);
 }
 
@@ -645,8 +706,21 @@ header > * {
   opacity: 0.9;
 }
 
+/* Titulares en Bricolage Grotesque, §05 del manual: es lo que diferencia al Lab
+   de cualquier consultora, que es exactamente el argumento del manual para
+   elegirla.
+
+   Van a 600 y no a 800 como antes: el 800 existía porque Helvetica solo trae
+   400 y 700 y era la manera de pedir negrita. Bricolage sí tiene la escala
+   completa, y a 800 su personalidad compite con el trazo capilar de los
+   glifos —el riesgo que el propio manual anota—. */
+h1,
+h2 {
+  font-family: var(--font-display);
+}
+
 h1 {
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 0.92;
   font-size: clamp(44px, 8vw, 104px);
@@ -662,13 +736,7 @@ h1 {
   opacity: 0.95;
 }
 
-.page-system .hero .sub {
-  max-width: 30ch;
-}
 
-.page-thinking .hero .sub {
-  opacity: 0.9;
-}
 
 /* --- Intro de páginas interiores ------------------------------------------ */
 
@@ -699,26 +767,20 @@ h1 {
   opacity: 0.9;
 }
 
-.page-system .intro .lead {
-  max-width: 22ch;
-}
 
-.page-system .intro .note,
-.page-cases .intro .note {
+.page-cases .intro .note,
+.page-products .intro .note {
   max-width: 68ch;
 }
 
-.page-cases .intro .lead {
+.page-cases .intro .lead,
+.page-products .intro .lead,
+.page-team .intro .lead {
   line-height: 1.2;
   font-size: clamp(20px, 2.4vw, 32px);
   max-width: 30ch;
 }
 
-.page-thinking .intro .lead {
-  line-height: 1.18;
-  font-size: clamp(20px, 2.5vw, 34px);
-  max-width: 30ch;
-}
 
 /* --- Footer de páginas interiores ----------------------------------------- */
 
@@ -736,8 +798,13 @@ footer {
   flex-wrap: wrap;
 }
 
-.foot-mark {
-  font-weight: 800;
+/* El pie firma con el toro grande: es la marca matriz y este es el cierre de
+   la página. La anomalía queda para pestaña, avatar y botones. */
+.foot-mark .wordmark {
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.foot-mark .wordmark-name {
   letter-spacing: -0.03em;
   font-size: clamp(34px, 5.2vw, 66px);
   line-height: 0.92;
@@ -798,7 +865,7 @@ footer {
 }
 
 .page-home .cierre h2 {
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1;
   font-size: clamp(30px, 4.8vw, 66px);
@@ -813,365 +880,6 @@ footer {
   max-width: 54ch;
   opacity: 0.88;
 }
-
-/* ==========================================================================
-   PRINCIPIOS Y DIMENSIONES (absorbidos en /sistema)
-   ========================================================================== */
-
-.principios {
-  padding: clamp(20px, 4vh, 44px) 0 clamp(30px, 5vh, 60px);
-  border-bottom: 2px solid var(--ink);
-}
-
-/* Compartido por los principios de "Qué es" y las líneas de "Pensamiento". */
-.linea {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(16px, 3vw, 44px);
-  align-items: baseline;
-  padding: clamp(30px, 4.4vh, 52px) 0;
-  border-bottom: 1px solid var(--ink);
-}
-
-.linea:last-child {
-  border-bottom: none;
-}
-
-.linea .num {
-  font-size: 13px;
-  opacity: 0.5;
-  min-width: 28px;
-}
-
-.linea .lbody {
-  min-width: 0;
-}
-
-.linea .ttl {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  font-size: clamp(22px, 2.8vw, 38px);
-  line-height: 1.02;
-  display: block;
-}
-
-.linea .pos {
-  margin-top: 14px;
-  font-size: clamp(16px, 1.8vw, 20px);
-  line-height: 1.46;
-  font-weight: 400;
-  opacity: 0.85;
-  max-width: 70ch;
-}
-
-.dims {
-  padding: clamp(20px, 4vh, 44px) 0 clamp(30px, 5vh, 60px);
-  border-bottom: 2px solid var(--ink);
-}
-
-.page-system .dim {
-  border-top: 1px solid var(--ink);
-  padding-top: clamp(30px, 4.4vh, 52px);
-  margin-top: clamp(30px, 4.4vh, 52px);
-}
-
-.page-system .dim:first-of-type {
-  margin-top: clamp(18px, 2.6vh, 30px);
-}
-
-.dim-head {
-  margin-bottom: clamp(24px, 3.4vh, 40px);
-}
-
-.dim-head .dnum {
-  font-size: 13px;
-  opacity: 0.5;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.dim-head .dname {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  font-size: clamp(28px, 4vw, 54px);
-  line-height: 0.98;
-  margin-bottom: 14px;
-}
-
-.dim-head .dclaim {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.24;
-  font-size: clamp(17px, 1.9vw, 23px);
-  max-width: 52ch;
-  opacity: 0.9;
-}
-
-.dim-cols {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 0;
-  border: 1px solid var(--ink);
-  border-radius: var(--r);
-}
-
-.dim-col {
-  padding: clamp(22px, 3vh, 32px) clamp(20px, 2.4vw, 34px);
-}
-
-.dim-col + .dim-col {
-  border-left: 1px solid var(--ink);
-}
-
-.dim-col .chead {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding-bottom: 16px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--ink);
-  opacity: 0.6;
-}
-
-.dim-col .prob {
-  font-weight: 400;
-  letter-spacing: -0.005em;
-  line-height: 1.5;
-  font-size: clamp(15px, 1.6vw, 18px);
-  max-width: 48ch;
-}
-
-.dim-col .prob + .prob {
-  margin-top: 14px;
-}
-
-.aporte + .aporte {
-  margin-top: 20px;
-}
-
-.aporte .an {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  font-size: clamp(16px, 1.7vw, 19px);
-  margin-bottom: 6px;
-}
-
-.aporte .ad {
-  font-weight: 400;
-  line-height: 1.46;
-  font-size: clamp(14px, 1.5vw, 16px);
-  opacity: 0.72;
-  max-width: 52ch;
-}
-
-@media (max-width: 860px) {
-  .dim-cols {
-    grid-template-columns: 1fr;
-  }
-  .dim-col + .dim-col {
-    border-left: none;
-    border-top: 1px solid var(--ink);
-  }
-}
-
-.direccion {
-  background: var(--ink);
-  color: var(--bg);
-  padding: clamp(48px, 8vh, 104px) 0;
-}
-
-.direccion .tag {
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: clamp(20px, 3vh, 32px);
-}
-
-.direccion h2 {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  font-size: clamp(28px, 4.4vw, 58px);
-  max-width: 22ch;
-}
-
-.direccion p {
-  margin-top: clamp(22px, 3vh, 34px);
-  font-weight: 400;
-  line-height: 1.4;
-  font-size: clamp(16px, 1.9vw, 22px);
-  max-width: 58ch;
-  opacity: 0.9;
-}
-
-/* ==========================================================================
-   SISTEMA UTOPÍA
-   ========================================================================== */
-
-.triada {
-  padding: clamp(20px, 4vh, 44px) 0 clamp(10px, 2vh, 20px);
-  border-bottom: 2px solid var(--ink);
-}
-
-.tri-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--ink);
-}
-
-.trow {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(16px, 3vw, 44px);
-  align-items: start;
-  padding: clamp(32px, 4.6vh, 56px) 0;
-  border-bottom: 1px solid var(--ink);
-}
-
-.trow:last-child {
-  border-bottom: none;
-}
-
-.trow .tn {
-  font-size: 13px;
-  opacity: 0.5;
-  min-width: 34px;
-  padding-top: 6px;
-}
-
-.trow .tb {
-  min-width: 0;
-}
-
-.trow .tq {
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  opacity: 0.55;
-  margin-bottom: 12px;
-}
-
-.trow .tname {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  font-size: clamp(28px, 4vw, 54px);
-  line-height: 0.98;
-  margin-bottom: 14px;
-}
-
-.trow .tdef {
-  font-weight: 400;
-  letter-spacing: -0.005em;
-  line-height: 1.44;
-  font-size: clamp(16px, 1.8vw, 21px);
-  max-width: 58ch;
-}
-
-@media (max-width: 720px) {
-  .trow {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
-
-.metodo {
-  padding: clamp(20px, 4vh, 44px) 0 clamp(30px, 5vh, 60px);
-  border-bottom: 2px solid var(--ink);
-}
-
-.metodo .mintro {
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-  font-size: clamp(18px, 2.2vw, 28px);
-  max-width: 44ch;
-  margin: clamp(28px, 4vh, 42px) 0 clamp(26px, 4vh, 40px);
-}
-
-.metodo .mintro b {
-  font-weight: 800;
-}
-
-.op-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--ink);
-}
-
-.page-system .op {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(16px, 3vw, 44px);
-  align-items: start;
-  padding: clamp(28px, 4vh, 48px) 0;
-  border-bottom: 1px solid var(--ink);
-}
-
-.page-system .op:last-child {
-  border-bottom: none;
-}
-
-.page-system .op .on {
-  font-size: 13px;
-  opacity: 0.5;
-  min-width: 34px;
-  padding-top: 6px;
-}
-
-.page-system .op .ob {
-  min-width: 0;
-}
-
-.page-system .op .oname {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  font-size: clamp(24px, 3.2vw, 44px);
-  line-height: 1;
-  margin-bottom: 12px;
-}
-
-.page-system .op .odef {
-  font-weight: 400;
-  letter-spacing: -0.005em;
-  line-height: 1.44;
-  font-size: clamp(16px, 1.8vw, 20px);
-  max-width: 58ch;
-  opacity: 0.9;
-}
-
-.page-system .op .prod {
-  margin-top: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-
-.page-system .op .prod .pl {
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.45;
-  margin-right: 4px;
-}
-
-.page-system .op .prod span.p {
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  border: 1px solid var(--ink);
-  padding: 5px 10px;
-  opacity: 0.75;
-  border-radius: var(--r);
-}
-
-@media (max-width: 720px) {
-  .page-system .op {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
-
 
 /* ==========================================================================
    CASOS
@@ -1251,188 +959,6 @@ footer {
 }
 
 /* ==========================================================================
-   PENSAMIENTO
-   ========================================================================== */
-
-.lineas {
-  padding: clamp(20px, 4vh, 44px) 0 clamp(30px, 5vh, 60px);
-  border-bottom: 2px solid var(--ink);
-}
-
-.biblio {
-  padding: clamp(44px, 7vh, 96px) 0;
-  border-bottom: 2px solid var(--ink);
-}
-
-.biblio h2 {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  font-size: clamp(26px, 3.6vw, 46px);
-  line-height: 0.98;
-  max-width: 22ch;
-  margin: clamp(28px, 4vh, 42px) 0 clamp(20px, 3vh, 30px);
-}
-
-.biblio .intro-b {
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.4;
-  font-size: clamp(16px, 1.8vw, 20px);
-  max-width: 60ch;
-  opacity: 0.85;
-  margin-bottom: clamp(30px, 5vh, 52px);
-}
-
-.beje-block {
-  border-top: 1px solid var(--ink);
-  padding: clamp(28px, 4vh, 46px) 0;
-}
-
-.beje-block:last-of-type {
-  border-bottom: 1px solid var(--ink);
-}
-
-.beje-head {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(14px, 3vw, 40px);
-  align-items: baseline;
-  margin-bottom: clamp(20px, 3vh, 30px);
-}
-
-.beje-head .bn {
-  font-size: 12px;
-  opacity: 0.5;
-  min-width: 26px;
-}
-
-.beje-head .bt {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  font-size: clamp(19px, 2.3vw, 30px);
-  line-height: 1.06;
-  margin-bottom: 10px;
-}
-
-.beje-head .bq {
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.02em;
-  opacity: 0.55;
-  max-width: 60ch;
-}
-
-.refs {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-left: 0;
-}
-
-.ref {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: clamp(14px, 3vw, 40px);
-  align-items: baseline;
-  padding: 13px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.ref .rc {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-  font-size: clamp(15px, 1.6vw, 17px);
-}
-
-.ref .rc em {
-  font-style: italic;
-  font-weight: 400;
-}
-
-.ref .rc .yr {
-  font-size: 12px;
-  opacity: 0.45;
-  font-weight: 400;
-}
-
-.ref .rn {
-  font-weight: 400;
-  line-height: 1.4;
-  font-size: clamp(13px, 1.4vw, 15px);
-  opacity: 0.6;
-  max-width: 48ch;
-}
-
-@media (max-width: 820px) {
-  .ref {
-    grid-template-columns: 1fr;
-    gap: 5px;
-  }
-  .beje-head {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
-
-.tesis-band {
-  background: var(--ink);
-  color: var(--bg);
-  padding: clamp(48px, 8vh, 104px) 0;
-}
-
-.tesis-band .tag {
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: clamp(20px, 3vh, 32px);
-}
-
-.tesis-band h2 {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  font-size: clamp(28px, 4.4vw, 58px);
-  max-width: 20ch;
-}
-
-.tesis-band p {
-  margin-top: clamp(20px, 3vh, 32px);
-  font-weight: 400;
-  line-height: 1.35;
-  font-size: clamp(16px, 1.9vw, 22px);
-  max-width: 52ch;
-  opacity: 0.9;
-}
-
-.tesis-band .cta {
-  border-radius: var(--r);
-  display: inline-block;
-  margin-top: clamp(28px, 4vh, 44px);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--bg);
-  border: 1px solid var(--bg);
-  padding: 15px 26px;
-  transition:
-    background 0.15s,
-    color 0.15s;
-}
-
-.tesis-band .cta:hover {
-  background: var(--bg);
-  color: var(--ink);
-}
-
-.tesis-band .cta.off {
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-/* ==========================================================================
    HOME · BLOQUES NUEVOS
    ========================================================================== */
 
@@ -1445,13 +971,14 @@ footer {
   border-bottom: 2px solid var(--ink);
 }
 
-.problema h2,
+.situaciones h2,
+.catalogo h2,
 .publicos h2,
-.metodo-home h2,
-.piloto h2,
 .casos-home h2,
-.equipo h2 {
-  font-weight: 800;
+.equipo h2,
+.objeciones h2,
+.contratacion h2 {
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1;
   font-size: clamp(30px, 4.8vw, 62px);
@@ -1777,6 +1304,9 @@ footer {
   border-bottom: 2px solid var(--ink);
 }
 
+.situaciones .ssub,
+.catalogo .csub,
+.publicos .asub,
 .casos-home .csub {
   margin-top: clamp(18px, 2.5vh, 28px);
   font-weight: 400;
@@ -2008,7 +1538,7 @@ footer {
 
 .tablero h2 {
   margin-top: clamp(30px, 4.5vh, 52px);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1;
   font-size: clamp(28px, 4.4vw, 56px);
@@ -2097,7 +1627,7 @@ footer {
 
 .organiza h2 {
   margin-top: clamp(30px, 4.5vh, 52px);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.06;
   font-size: clamp(22px, 3vw, 40px);
@@ -2207,37 +1737,523 @@ footer {
   margin-bottom: 6px;
 }
 
+
 /* ==========================================================================
-   SISTEMA · encabezado y puente
+   HOME · 02 · Franja de prueba
    ========================================================================== */
 
-.encabezado {
-  background: var(--ink);
-  color: var(--bg);
-  padding: clamp(40px, 7vh, 88px) 0;
+/* Va inmediatamente bajo el hero y antes de cualquier oferta: quien evalúa un
+   proveedor decide la credibilidad antes de leer lo que se le vende. Es una
+   lista y no una fila de logos porque lo que prueba no es la marca del tercero
+   sino la relación concreta, y esa hay que escribirla. */
+.prueba {
+  padding: clamp(30px, 5vh, 58px) 0;
+  border-bottom: 2px solid var(--ink);
+  background: var(--arena);
 }
 
-.encabezado .head-claim {
-  font-weight: 400;
+.prueba-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: clamp(20px, 3vh, 30px);
+}
+
+.prueba-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: clamp(18px, 2.6vw, 34px);
+}
+
+.pruebai {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-left: 14px;
+  border-left: 2px solid var(--ink);
+}
+
+.pruebai .pin {
+  font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.24;
-  font-size: clamp(20px, 2.6vw, 34px);
-  max-width: 30ch;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.1;
 }
 
-.encabezado .head-claim b {
-  font-weight: 800;
+.pruebai .pit {
+  font-size: 13px;
+  line-height: 1.45;
+  opacity: 0.75;
 }
 
-.puente-piloto {
-  padding: clamp(40px, 7vh, 88px) 0;
+/* ==========================================================================
+   HOME · 03 · Las cinco situaciones
+   ========================================================================== */
+
+.situaciones {
+  padding: clamp(56px, 10vh, 124px) 0 clamp(46px, 8vh, 96px);
+  border-bottom: 2px solid var(--ink);
+}
+
+.situaciones .ssub,
+.catalogo .csub,
+.publicos .asub {
+  margin-top: clamp(18px, 2.4vh, 26px);
+  margin-bottom: clamp(30px, 4.5vh, 52px);
+  font-weight: 400;
+  line-height: 1.45;
+  font-size: clamp(16px, 1.8vw, 21px);
+  max-width: 56ch;
+  opacity: 0.85;
+}
+
+/* Los rótulos de columna solo existen donde hay tres columnas: en móvil cada
+   fila se lee como un bloque y el rótulo estorbaría. */
+.sit-head {
+  display: none;
+  gap: clamp(18px, 3vw, 44px);
+  margin-top: clamp(24px, 3.4vh, 34px);
+  padding-bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.sitrow {
+  display: grid;
+  gap: clamp(10px, 1.6vw, 18px) clamp(18px, 3vw, 44px);
+  padding: clamp(22px, 3.2vh, 32px) 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.sitrow:first-child {
+  border-top: 1px solid var(--ink);
+}
+
+/* La frase del cliente es la que se lee primero y la que hay que reconocer:
+   va en el cuerpo mayor, y las otras dos columnas la acompañan.
+   
+   Fraunces itálica, el registro que el manual reserva para las citas: marca
+   sin decir que ahí habla el cliente y no el Lab. Es el único lugar del sitio
+   donde hay palabras ajenas entre comillas. */
+.sit-q {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.28;
+  font-size: clamp(19px, 2.2vw, 27px);
+}
+
+.sit-d,
+.sit-i {
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.sclose {
+  margin-top: clamp(30px, 4.5vh, 52px);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 66ch;
+  opacity: 0.8;
+}
+
+@media (min-width: 900px) {
+  .sit-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .sitrow {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+/* ==========================================================================
+   HOME · 04 · El catálogo
+   ========================================================================== */
+
+.catalogo {
+  padding: clamp(56px, 10vh, 124px) 0 clamp(46px, 8vh, 96px);
+}
+
+.velocidad {
+  margin-top: clamp(34px, 5vh, 60px);
+}
+
+.vel-head {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(14px, 2vw, 22px);
+  padding-bottom: clamp(16px, 2.2vh, 22px);
+  border-bottom: 2px solid var(--ink);
+}
+
+.vel-glyph {
+  flex: none;
+  margin-top: 2px;
+}
+
+.vel-name {
+  font-weight: 600;
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  font-size: clamp(20px, 2.4vw, 29px);
+}
+
+.vel-note {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 62ch;
+  opacity: 0.75;
+}
+
+.prod-list {
+  list-style: none;
+}
+
+.prod {
+  display: grid;
+  gap: 6px clamp(18px, 3vw, 40px);
+  padding: clamp(18px, 2.6vh, 26px) 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.prod-name {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  font-size: clamp(17px, 1.9vw, 22px);
+  text-decoration: none;
+}
+
+.prod-name:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.prod-text {
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.5;
+  opacity: 0.82;
+}
+
+.prod-dur {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+.catalogo .caja {
+  margin-top: clamp(36px, 5.5vh, 64px);
+}
+
+.catalogo > .wrap > .puente-link {
+  margin-top: clamp(30px, 4.5vh, 52px);
+}
+
+@media (min-width: 860px) {
+  .prod {
+    grid-template-columns: minmax(0, 250px) minmax(0, 1fr) auto;
+    align-items: baseline;
+  }
+}
+
+/* ==========================================================================
+   HOME · 05 · Para quién
+   ========================================================================== */
+
+/* El radar separa demanda observada de apuesta de posicionamiento. La
+   separación se mantiene a la vista: dar por vendido lo segundo es lo que
+   hace que se prospecte en el orden equivocado. */
+.aud-tag {
+  margin: clamp(26px, 4vh, 40px) 0 clamp(16px, 2.2vh, 22px);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.aud-tag-weak {
+  margin-top: clamp(40px, 6vh, 72px);
+  padding-top: clamp(24px, 3.4vh, 34px);
   border-top: 2px solid var(--ink);
 }
 
-.puente-piloto p {
+.publicos .caja {
+  margin-top: clamp(36px, 5.5vh, 64px);
+}
+
+/* ==========================================================================
+   HOME · 06 · Prueba en la tarjeta de caso
+   ========================================================================== */
+
+.tarjeta .tproof {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   HOME · 08 · Objeciones
+   ========================================================================== */
+
+.objeciones {
+  padding: clamp(56px, 10vh, 124px) 0 clamp(46px, 8vh, 96px);
+  border-top: 2px solid var(--ink);
+}
+
+.objeciones .faq {
+  margin-top: clamp(26px, 4vh, 40px);
+}
+
+/* ==========================================================================
+   PRODUCTOS
+   ========================================================================== */
+
+.escalera {
+  padding: clamp(44px, 7vh, 96px) 0;
+  border-bottom: 2px solid var(--ink);
+}
+
+.escalera .tintro {
+  margin: clamp(18px, 2.4vh, 26px) 0 clamp(28px, 4vh, 44px);
+  font-size: clamp(15px, 1.7vw, 19px);
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
+/* Las dos velocidades no se aplanan: el grupo lleva título propio porque la
+   promesa que le corresponde a cada uno es distinta. */
+.grupo-head {
+  margin: clamp(40px, 6vh, 78px) 0 clamp(8px, 1.4vh, 14px);
+  padding-bottom: clamp(14px, 2vh, 20px);
+  border-bottom: 2px solid var(--ink);
+}
+
+.grupo:first-child .grupo-head {
+  margin-top: clamp(24px, 3.4vh, 34px);
+}
+
+.gname {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  font-size: clamp(23px, 2.9vw, 38px);
+}
+
+.gnote {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 64ch;
+  opacity: 0.75;
+}
+
+/* La definición es la frase precisa del catálogo; la descripción, cómo lo vive
+   el cliente. Se distinguen por peso para que la ficha se pueda escanear sin
+   leerla entera. */
+.tramo-body .rdef {
   font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.4;
-  font-size: clamp(17px, 2vw, 24px);
+  letter-spacing: -0.02em;
+  line-height: 1.28;
+  font-size: clamp(17px, 2vw, 23px);
   max-width: 52ch;
+  margin-bottom: clamp(14px, 2vh, 20px);
+}
+
+.tramo-body .rdesc {
+  opacity: 0.85;
+}
+
+/* --- El horizonte: lo que existe pero todavía no se vende ----------------- */
+
+.horizonte {
+  padding: clamp(44px, 7vh, 96px) 0;
+  border-bottom: 2px solid var(--ink);
+}
+
+/* Punteado y no sólido: el borde dice, sin leerlo, que esto está del otro lado
+   de la línea de lo que se puede comprometer. */
+.hz {
+  margin-top: clamp(24px, 3.4vh, 34px);
+  padding: clamp(24px, 3.6vh, 38px);
+  border: 2px dashed var(--ink);
+  border-radius: var(--r);
+}
+
+.hz-tag {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sol);
+}
+
+.hz-name {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  font-size: clamp(24px, 3.2vw, 42px);
+}
+
+.hz-text {
+  margin-top: clamp(14px, 2vh, 20px);
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.hz-state {
+  margin-top: clamp(18px, 2.4vh, 26px);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+
+.hz-state .crl {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-right: 10px;
+}
+
+/* --- Cómo se contrata ----------------------------------------------------- */
+
+.contratacion {
+  padding: clamp(44px, 7vh, 96px) 0 clamp(56px, 9vh, 110px);
+}
+
+.contratacion h2 {
+  margin: clamp(20px, 2.8vh, 30px) 0 clamp(16px, 2.2vh, 22px);
+}
+
+.contratacion .tintro {
+  margin-bottom: clamp(28px, 4vh, 44px);
+  font-size: clamp(15px, 1.7vw, 19px);
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
+.contratacion .nota {
+  margin-top: clamp(30px, 4.5vh, 52px);
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 68ch;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   EQUIPO
+   ========================================================================== */
+
+.fichas-equipo {
+  padding: clamp(44px, 7vh, 96px) 0 clamp(56px, 9vh, 110px);
+}
+
+.fichas-equipo .tramo:first-of-type {
+  margin-top: clamp(24px, 3.4vh, 34px);
+  border-top: 1px solid var(--ink);
+}
+
+.tramo-meta .rrole {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.cred {
+  margin-top: clamp(22px, 3.2vh, 32px);
+  padding-top: clamp(18px, 2.6vh, 26px);
+  border-top: 1px solid var(--ink);
+}
+
+.cred-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+}
+
+/* Lista de hechos, no prosa: un comprador busca experiencia comparable a su
+   problema y necesita poder recorrerla con la vista. */
+.cred-list {
+  list-style: none;
+}
+
+.cred-list li {
+  position: relative;
+  padding: 7px 0 7px 20px;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.45;
+}
+
+.cred-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sol);
+}
+
+.fichas-equipo .caja {
+  margin-top: clamp(40px, 6vh, 72px);
+}
+
+/* ==========================================================================
+   CASOS · la anatomía
+   ========================================================================== */
+
+.anat {
+  margin-top: clamp(16px, 2.2vh, 22px);
+  display: grid;
+  gap: 6px clamp(14px, 2vw, 26px);
+}
+
+.anat dt {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  padding-top: 4px;
+}
+
+.anat dd {
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.5;
+  max-width: 62ch;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 720px) {
+  .anat {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+}
+
+.casos .nota {
+  margin-top: clamp(34px, 5vh, 60px);
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 68ch;
+  opacity: 0.75;
 }
