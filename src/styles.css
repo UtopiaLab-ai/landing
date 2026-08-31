@@ -473,8 +473,8 @@ header > * {
   align-items: start;
 }
 
-/* El video se muestra a su tamaño y nunca por encima: la fuente son 720×816 y
-   ampliarla la deja blanda. El fondo del archivo es el mismo --papel de la
+/* La imagen se muestra a su tamaño y nunca por encima: la fuente son 1086×1448
+   y ampliarla la deja blanda. El fondo del archivo es el mismo --papel de la
    página, así que el cuadro se apoya en la hoja sin marco ni sombra. */
 .hero-figure {
   width: 100%;
@@ -482,10 +482,11 @@ header > * {
   justify-self: end;
 }
 
-.hero-video {
+.hero-img {
   display: block;
   width: 100%;
-  aspect-ratio: 720 / 816;
+  height: auto;
+  aspect-ratio: 1086 / 1448;
   border-radius: var(--r);
   background: var(--papel);
 }
@@ -581,9 +582,9 @@ header > * {
 }
 
 @media (max-width: 820px) {
-  /* En una columna el orden es titular → video → CTA: el video queda en medio
-     y no empuja el botón fuera de la primera pantalla. `display: contents`
-     deshace la columna de texto para poder intercalarlo. */
+  /* En una columna el orden es titular → imagen → CTA: la imagen queda en
+     medio y no empuja el botón fuera de la primera pantalla. `display:
+     contents` deshace la columna de texto para poder intercalarla. */
   .hero-content {
     grid-template-columns: 1fr;
     align-items: start;
@@ -618,11 +619,12 @@ header > * {
   }
 }
 
-/* Pantalla ancha pero baja (el móvil acostado, una ventana aplastada): el
-   video se mide contra el alto disponible para que no empuje el CTA fuera. */
+/* Pantalla ancha pero baja (el móvil acostado, una ventana aplastada): la
+   imagen se mide contra el alto disponible para que no empuje el CTA fuera.
+   El factor es la razón de aspecto del archivo (1086 / 1448). */
 @media (min-width: 821px) and (max-height: 640px) {
   .hero-figure {
-    max-width: min(460px, calc(72svh * 0.882));
+    max-width: min(460px, calc(72svh * 0.75));
   }
 }
 

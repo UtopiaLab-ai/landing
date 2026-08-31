@@ -27,7 +27,7 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Decidir antes', 'de que la ventana', 'se cierre.'],
+      titleLines: ['Decidir antes', 'de que la ventana', 'se cierre'],
       sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. Un brief en 48 horas, un estudio en seis semanas o la capacidad instalada en su equipo: usted elige cuánto compromiso.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tiene pendiente.',
@@ -82,7 +82,7 @@ export const es: Content = {
     },
 
     catalog: {
-      h2: 'Ocho productos, cuatro escalones.',
+      h2: 'Ocho productos, cuatro escalones',
       sub: 'Ordenados por profundidad, no por tipo. Se entra por donde el problema lo pida y se sube solo si sirve.',
       label: ['El catálogo', '01 — 08'],
       speeds: [
@@ -156,7 +156,7 @@ export const es: Content = {
     },
 
     audience: {
-      h2: 'El mismo catálogo, seis compradores.',
+      h2: 'El mismo catálogo, seis compradores',
       sub: 'No cambian los productos: cambian la entrada, el argumento y quién firma.',
       label: ['Para quién', 'Señal fuerte primero'],
       strong: {
@@ -210,7 +210,7 @@ export const es: Content = {
     },
 
     cases: {
-      h2: 'Dónde se ha ejecutado.',
+      h2: 'Dónde se ha ejecutado',
       sub: 'Procesos abiertos, no monumentos terminados. Cada uno con lo que se puede verificar y lo que todavía no.',
       cards: [
         {
@@ -238,7 +238,7 @@ export const es: Content = {
     },
 
     team: {
-      h2: 'Quién lo ejecuta.',
+      h2: 'Quién lo ejecuta',
       sub: 'Un equipo chico: lo ejecutan las mismas personas que lo diseñan. Sin juniors facturados como seniors.',
       label: ['Equipo', '01 — 02'],
       members: [
@@ -257,7 +257,7 @@ export const es: Content = {
     },
 
     objections: {
-      h2: 'Las tres preguntas que siempre aparecen.',
+      h2: 'Las tres preguntas que siempre aparecen',
       label: ['Objeciones', '01 — 03'],
       items: [
         {
@@ -279,7 +279,7 @@ export const es: Content = {
     },
 
     closing: {
-      h2: 'Una hora sobre una decisión real.',
+      h2: 'Una hora sobre una decisión real',
       body: 'No es una presentación de servicios. Traiga una decisión que ya tenga pendiente y salga con el problema reformulado y las alternativas que no estaban sobre la mesa. Si después de eso no hay encargo, igual se lleva eso.',
       cta: 'Agendar la conversación',
     },
@@ -292,7 +292,7 @@ export const es: Content = {
         'El catálogo completo: ocho productos en cuatro escalones de compromiso, con definición, entregable, duración y la situación que gatilla cada uno.',
     },
     kicker: 'El catálogo',
-    titleLines: ['Ocho', 'productos.'],
+    titleLines: ['Ocho', 'productos'],
     sub: 'Lo único que se firma.',
     lead: [
       'Cada uno con su entregable y su duración declarados. ',
@@ -452,7 +452,7 @@ export const es: Content = {
 
     contracting: {
       label: ['Cómo se contrata', '01 — 04'],
-      h2: 'Cómo se contrata.',
+      h2: 'Cómo se contrata',
       intro:
         'Lo que un área de compras, un directorio o una unidad de licitaciones necesita saber antes de poder avanzar.',
       items: [
@@ -485,7 +485,7 @@ export const es: Content = {
         'Dónde se ha ejecutado el método: Ley Lafkenche, Consejo Municipal de Futuros, Unidad de Prospectiva del MINVU y Mesa del Transantiago. Contexto, problema, intervención, resultado y prueba.',
     },
     kicker: 'El método en obra',
-    titleLines: ['Dónde se ha', 'ejecutado.'],
+    titleLines: ['Dónde se ha', 'ejecutado'],
     sub: 'Procesos abiertos, no monumentos terminados.',
     lead: [
       'Cada caso se cuenta igual y sin excepciones: ',
@@ -576,7 +576,7 @@ export const es: Content = {
         'Quién ejecuta los encargos: Isabel Serra (Unidad de Prospectiva MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
     },
     kicker: 'Quién ejecuta',
-    titleLines: ['Las mismas', 'personas.'],
+    titleLines: ['Las mismas', 'personas'],
     sub: 'Quien diseña el encargo es quien lo ejecuta.',
     lead: [
       'Un equipo chico y sin pirámide: ',

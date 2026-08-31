@@ -27,7 +27,7 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['Decide before', 'the window', 'closes.'],
+      titleLines: ['Decide before', 'the window', 'closes'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. A brief in 48 hours, a study in six weeks, or the capability installed in your own team: you choose how much commitment.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
       frames: ['Signal', 'Decision', 'Capability'],
@@ -81,7 +81,7 @@ export const en: Content = {
     },
 
     catalog: {
-      h2: 'Eight products, four steps.',
+      h2: 'Eight products, four steps',
       sub: 'Ordered by depth, not by type. You enter wherever the problem asks, and move up only if it helps.',
       label: ['The catalogue', '01 — 08'],
       speeds: [
@@ -155,7 +155,7 @@ export const en: Content = {
     },
 
     audience: {
-      h2: 'The same catalogue, six buyers.',
+      h2: 'The same catalogue, six buyers',
       sub: 'The products don’t change: the way in, the argument and the signatory do.',
       label: ['Who it is for', 'Strong signal first'],
       strong: {
@@ -209,7 +209,7 @@ export const en: Content = {
     },
 
     cases: {
-      h2: 'Where it has been run.',
+      h2: 'Where it has been run',
       sub: 'Open processes, not finished monuments. Each one with what can be verified — and what cannot yet.',
       cards: [
         {
@@ -237,7 +237,7 @@ export const en: Content = {
     },
 
     team: {
-      h2: 'Who runs the work.',
+      h2: 'Who runs the work',
       sub: 'A small team: the people who design the engagement are the ones who execute it. No juniors billed as seniors.',
       label: ['Team', '01 — 02'],
       members: [
@@ -256,7 +256,7 @@ export const en: Content = {
     },
 
     objections: {
-      h2: 'The three questions that always come up.',
+      h2: 'The three questions that always come up',
       label: ['Objections', '01 — 03'],
       items: [
         {
@@ -278,7 +278,7 @@ export const en: Content = {
     },
 
     closing: {
-      h2: 'One hour on a real decision.',
+      h2: 'One hour on a real decision',
       body: 'It is not a services pitch. Bring a decision you already have pending and leave with the problem reframed and the alternatives that were not on the table. If no engagement follows, you keep that anyway.',
       cta: 'Book the conversation',
     },
@@ -291,7 +291,7 @@ export const en: Content = {
         'The full catalogue: eight products across four steps of commitment, with definition, deliverable, duration and the situation that triggers each one.',
     },
     kicker: 'The catalogue',
-    titleLines: ['Eight', 'products.'],
+    titleLines: ['Eight', 'products'],
     sub: 'The only thing that gets signed.',
     lead: [
       'Each with its deliverable and duration declared. ',
@@ -451,7 +451,7 @@ export const en: Content = {
 
     contracting: {
       label: ['How to contract', '01 — 04'],
-      h2: 'How to contract.',
+      h2: 'How to contract',
       intro:
         'What a procurement team, a board or a tender unit needs to know before they can move.',
       items: [
@@ -484,7 +484,7 @@ export const en: Content = {
         'Where the method has been run: Lafkenche Law, Municipal Futures Council, MINVU Foresight Unit and the Transantiago Roundtable. Context, problem, intervention, result and proof.',
     },
     kicker: 'The method at work',
-    titleLines: ['Where it has', 'been run.'],
+    titleLines: ['Where it has', 'been run'],
     sub: 'Open processes, not finished monuments.',
     lead: ['Every case is told the same way, without exceptions: ', { b: 'what can be verified' }, ' and what cannot yet.'],
 
@@ -570,7 +570,7 @@ export const en: Content = {
         'Who runs the engagements: Isabel Serra (MINVU Foresight Unit, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
     },
     kicker: 'Who runs the work',
-    titleLines: ['The same', 'people.'],
+    titleLines: ['The same', 'people'],
     sub: 'Whoever designs the engagement is the one who executes it.',
     lead: [
       'A small team with no pyramid: ',

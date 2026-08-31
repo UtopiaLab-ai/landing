@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 
 /**
- * El hero es el paisaje en movimiento: el mismo cuadro de las ilustraciones,
- * animado en loop detrás del titular. El recorrido de la tesis —ruido, método,
- * señal— lo marca el scroll sobre el rótulo, no un cambio de imagen.
+ * El hero es el cuadro fijo de la marca junto al titular. El recorrido de la
+ * tesis —ruido, método, señal— lo marca el scroll sobre el rótulo, no un
+ * cambio de imagen.
  *
  * El titular y el CTA están visibles desde el primer scroll —quien llega a
  * evaluar un proveedor no debería tener que bajar tres pantallas para saber
- * qué se ofrece—. Lo que avanza detrás es el video.
+ * qué se ofrece—.
  */
 export function HeroSequence({
   frames,
@@ -17,15 +17,12 @@ export function HeroSequence({
   children: React.ReactNode
 }) {
   const stage = useRef<HTMLDivElement>(null)
-  const video = useRef<HTMLVideoElement>(null)
   const [active, setActive] = useState(0)
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) {
-      // Sin movimiento: el video se congela en su primer cuadro y el rótulo
-      // se queda en el final del recorrido.
-      video.current?.pause()
+      // Sin movimiento: no hay recorrido, el rótulo se queda en el final.
       setActive(2)
       return
     }
@@ -61,20 +58,19 @@ export function HeroSequence({
         <div className="hero-content wrap">
           <div className="hero-copy">{children}</div>
 
-          {/* El video va a su tamaño, junto al texto y no debajo: la fuente son
-              720×816 y a pantalla completa se ampliaba hasta verse blanda.
-              `muted` y `playsInline` son lo que permite el autoplay en móvil;
-              el archivo no tiene pista de audio, así que no silencian nada. */}
+          {/* La imagen va a su tamaño, junto al texto y no debajo: la fuente
+              son 1086×1448 y a pantalla completa se ampliaba hasta verse
+              blanda. Es decorativa —el titular ya dice lo que hay que leer—,
+              así que va con `alt` vacío bajo un figure oculto al lector. */}
           <figure className="hero-figure" aria-hidden="true">
-            <video
-              className="hero-video"
-              ref={video}
-              src="/utopialab.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
+            <img
+              className="hero-img"
+              src="/image/utopialab-white.png"
+              alt=""
+              width={1086}
+              height={1448}
+              fetchPriority="high"
+              decoding="async"
             />
           </figure>
         </div>
