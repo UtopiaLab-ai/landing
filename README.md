@@ -118,22 +118,34 @@ convertirse en tarifario.
 
 ### Tipografía
 
-Cuatro familias, según §05 del manual de marca. Se definen al inicio de
-[`src/styles.css`](src/styles.css):
+**Una sola familia: Helvetica.** Los cuatro tokens siguen existiendo —el resto de la hoja
+los usa por rol y no por nombre— pero hoy apuntan todos al mismo stack. Se definen al
+inicio de [`src/styles.css`](src/styles.css):
 
 | Variable | Familia | Para qué |
 | --- | --- | --- |
 | `--font-sans` | Helvetica | Wordmark, datos, texto corrido |
-| `--font-display` | Bricolage Grotesque 600 | Titulares (`h1`, `h2`) |
-| `--font-serif` | Fraunces itálica 400 | Citas — las cinco frases del cliente en la home |
-| `--font-mono` | JetBrains Mono | Rótulos, numeración y datos |
+| `--font-display` | Helvetica 700 | Titulares (`h1`, `h2`) |
+| `--font-serif` | Helvetica itálica 400 | Citas — las cinco frases del cliente en la home |
+| `--font-mono` | Helvetica + tracking | Rótulos, numeración y datos (clase `.mono`) |
 
 Helvetica es de licencia propietaria, así que va como stack de sistema (`Helvetica Neue`
 → `Helvetica` → `Arial` → `Liberation Sans`) y donde no esté instalada cae en Arial, que
-comparte métricas. Las otras tres se descargan de Google Fonts en `index.html`.
+comparte métricas. **El sitio no descarga ninguna webfont**: `index.html` ya no llama a
+Google Fonts.
 
-Los titulares van a 600 y no a 800: el 800 existía porque Helvetica solo trae 400 y 700 y
-era la manera de pedir negrita. Bricolage sí tiene la escala completa.
+Consecuencia de tener dos pesos reales (400 y 700 — Arial no trae más): **la jerarquía no
+se hace con peso**. Se hace con cuerpo, interletrado y opacidad.
+
+- Titulares y nombres: 700 con tracking negativo. Helvetica se dibujó para cuerpos de
+  texto y a 60–100 px se abre; el tracking negativo (−0.04 em y más abajo mientras más
+  grande) devuelve la mancha compacta. Es corrección obligatoria, no gusto.
+- Bajadas y frases-claim: 400 con cuerpo grande. En negrita competirían con el `h2`.
+- Rótulos: caja alta con tracking positivo (0.10–0.14 em). Helvetica en versalitas pide
+  más aire que una monoespaciada.
+- Citas: la oblicua de Helvetica, que es un corte real y no una inclinación sintética.
+- Nunca 500/600/800: el navegador los sintetiza o los redondea y el resultado no es
+  estable entre máquinas.
 
 ### Estilos
 

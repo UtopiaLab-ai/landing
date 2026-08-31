@@ -19,14 +19,11 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- §05 del manual: Helvetica para el wordmark y los datos, Bricolage para
-       titulares, Fraunces itálica para las citas, JetBrains Mono para rótulos.
-       Helvetica es propietaria y no se puede servir como webfont (va como stack
-       de sistema, ver --font-sans); las otras tres se descargan acá. De
-       Fraunces solo la itálica, que es el único corte que usa el sistema. -->
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Sin webfonts. El sistema tipográfico es Helvetica y nada más (ver
+       --font-sans en src/styles.css): es propietaria, no se puede servir como
+       webfont y cae en Arial, que comparte métricas. Los cuatro registros
+       —titular, cuerpo, cita y rótulo— se resuelven con cuerpo, interletrado y
+       caja, no con cuatro familias descargadas. -->
 </head>
 <body>
   <div id="root"></div>

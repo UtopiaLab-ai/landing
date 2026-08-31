@@ -18,11 +18,11 @@ export type SectionLabel = readonly [left: string, right: string]
 export interface Common {
   langName: string
   nav: {
+    home: string
     products: string
     cases: string
     team: string
   }
-  home: string
   book: string
   bookShort: string
   switchLang: string

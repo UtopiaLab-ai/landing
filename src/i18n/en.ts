@@ -4,11 +4,11 @@ export const en: Content = {
   common: {
     langName: 'English',
     nav: {
+      home: 'Home',
       products: 'Products',
       cases: 'Cases',
       team: 'Team',
     },
-    home: 'Home',
     book: 'Book a diagnostic hour',
     bookShort: 'Book',
     switchLang: 'Switch language',
@@ -27,7 +27,7 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['Decide before', 'the window', 'closes'],
+      titleLines: ['From noise', 'to signal,', 'from signal', 'to anticipation'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. A brief in 48 hours, a study in six weeks, or the capability installed in your own team: you choose how much commitment.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
       frames: ['Signal', 'Decision', 'Capability'],

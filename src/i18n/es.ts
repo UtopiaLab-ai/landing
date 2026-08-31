@@ -4,11 +4,11 @@ export const es: Content = {
   common: {
     langName: 'Español',
     nav: {
+      home: 'Inicio',
       products: 'Productos',
       cases: 'Casos',
       team: 'Equipo',
     },
-    home: 'Inicio',
     book: 'Agendar una hora de diagnóstico',
     bookShort: 'Agendar',
     switchLang: 'Cambiar idioma',
@@ -27,7 +27,7 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Decidir antes', 'de que la ventana', 'se cierre'],
+      titleLines: ['Del ruido', 'a la señal,', 'de la señal', 'a la anticipación'],
       sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. Un brief en 48 horas, un estudio en seis semanas o la capacidad instalada en su equipo: usted elige cuánto compromiso.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tiene pendiente.',

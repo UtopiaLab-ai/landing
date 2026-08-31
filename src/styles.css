@@ -47,17 +47,28 @@
   --r-win: 28px;
   --r-pill: 999px;
 
-  /* Tipografía, según §05 del manual: Helvetica para el wordmark y los datos,
-     Bricolage para titulares, Fraunces itálica para las citas y JetBrains Mono
-     para etiquetas.
+  /* Tipografía: Helvetica y nada más. Antes el sistema mezclaba cuatro
+     familias (Bricolage titulares, Fraunces citas, JetBrains Mono rótulos);
+     ahora una sola resuelve los cuatro registros y la página no descarga
+     ninguna webfont.
 
      Helvetica es de licencia propietaria y no se puede servir como webfont:
-     va como stack de sistema y cae en Arial, que comparte métricas. Las otras
-     tres sí se descargan (ver index.html). */
+     va como stack de sistema y cae en Arial, que comparte métricas.
+
+     Los cuatro tokens siguen existiendo —el resto de la hoja los usa por
+     rol, no por nombre— y hoy apuntan todos al mismo stack: así el día que
+     entre una licencia real se cambia un token y no doscientas reglas.
+
+     Consecuencia de tener una sola familia con solo dos pesos reales (400 y
+     700, porque el fallback Arial no trae más): la jerarquía NO se hace con
+     peso. Se hace con cuerpo, interletrado y opacidad. Titulares y nombres a
+     700 con tracking negativo; leads y bajadas a 400 con cuerpo grande;
+     rótulos a 400 con tracking positivo y versalitas. Nunca 500/600/800: el
+     navegador los sintetiza o los redondea y el resultado no es estable. */
   --font-sans: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
-  --font-display: 'Bricolage Grotesque', var(--font-sans);
-  --font-serif: Fraunces, Georgia, 'Times New Roman', serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: var(--font-sans);
+  --font-serif: var(--font-sans);
+  --font-mono: var(--font-sans);
 }
 
 .invert {
@@ -96,8 +107,15 @@ body {
   margin: 10px;
 }
 
+/* El registro de rótulo. Antes lo marcaba JetBrains Mono; con una sola
+   familia lo marcan el interletrado abierto y las cifras tabulares —Helvetica
+   no las trae por defecto y sin ellas los «01 — 05» bailan de fila a fila—.
+   Va en la clase base y no repetido en cada rótulo: las reglas que ya fijan su
+   propio `letter-spacing` ganan por especificidad u orden y no se tocan. */
 .mono {
   font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
 }
 
 a {
@@ -201,7 +219,7 @@ header > * {
   border-radius: var(--r-pill);
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
@@ -237,7 +255,7 @@ header > * {
   display: flex;
   align-items: center;
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   white-space: nowrap;
   background: var(--papel);
   border-radius: var(--r-pill);
@@ -256,7 +274,7 @@ header > * {
 }
 
 .lang-on {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .lang-sep {
@@ -273,7 +291,7 @@ header > * {
   align-items: center;
   gap: 10px;
   font-size: 12px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: var(--r-pill);
@@ -396,7 +414,7 @@ header > * {
     justify-content: space-between;
     gap: 2px;
     font-size: 10px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.09em;
   }
 
   .nav a {
@@ -504,13 +522,28 @@ header > * {
   padding: 7px 14px;
 }
 
-/* El titular ya no ocupa el ancho de la pantalla sino el de su columna, así
-   que el tope baja: a 168px «From noise» se salía del texto. */
+/* La columna del titular se declara contenedor para que el cuerpo del `h1` se
+   mida contra ELLA y no contra el viewport. El titular tiene cuatro versos y
+   el más largo —«a la anticipación»— es el que manda: con `vw` había una
+   franja (~860-1000px) donde la columna ya se había angostado contra la
+   imagen pero el cuerpo todavía no, y el verso se partía en dos.
+
+   El `width: 100%` no es decorativo: `.hero-copy` alinea a `start`, así que
+   sin él la caja se mediría por su contenido —justo lo que la contención
+   inline prohíbe— y colapsaría a cero. */
+.hero-left {
+  container-type: inline-size;
+  width: 100%;
+}
+
 .hero-left h1 {
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 0.86;
-  font-size: clamp(46px, 6.6vw, 108px);
+  font-weight: 700;
+  letter-spacing: -0.052em;
+  /* 0.86 servía con Bricolage, que tiene descendentes cortas. Las de
+     Helvetica bajan más y a ese interlineado la «q» de «que» pisaba la línea
+     siguiente. */
+  line-height: 0.9;
+  font-size: clamp(38px, 13cqw, 96px);
   color: var(--tinta);
 }
 
@@ -708,31 +741,34 @@ header > * {
   opacity: 0.9;
 }
 
-/* Titulares en Bricolage Grotesque, §05 del manual: es lo que diferencia al Lab
-   de cualquier consultora, que es exactamente el argumento del manual para
-   elegirla.
+/* Titulares en Helvetica 700. La familia no aporta personalidad —esa es la
+   gracia: la ponen los glifos, el naranja y el texto—, así que el titular
+   tiene que trabajar la forma en el interletrado.
 
-   Van a 600 y no a 800 como antes: el 800 existía porque Helvetica solo trae
-   400 y 700 y era la manera de pedir negrita. Bricolage sí tiene la escala
-   completa, y a 800 su personalidad compite con el trazo capilar de los
-   glifos —el riesgo que el propio manual anota—. */
+   Helvetica se dibujó para cuerpos de texto: a 60-100px las contraformas se
+   abren y el titular se desarma. El tracking negativo (-0.04em y más abajo
+   mientras más grande) devuelve la mancha compacta que hace legible un
+   titular grande. Es la corrección clásica y es obligatoria acá, no un
+   gusto. */
 h1,
 h2 {
   font-family: var(--font-display);
+  font-feature-settings: 'kern' 1;
+  text-wrap: balance;
 }
 
 h1 {
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 0.92;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.94;
   font-size: clamp(44px, 8vw, 104px);
 }
 
 .hero .sub {
   margin-top: clamp(26px, 4vh, 44px);
   max-width: 32ch;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: -0.025em;
   line-height: 1.12;
   font-size: clamp(18px, 2vw, 26px);
   opacity: 0.95;
@@ -749,21 +785,21 @@ h1 {
 
 .intro .lead {
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.024em;
   line-height: 1.16;
   font-size: clamp(21px, 2.7vw, 38px);
   max-width: 24ch;
 }
 
 .intro .lead b {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .intro .note {
   margin-top: clamp(26px, 4vh, 42px);
   font-family: var(--font-mono);
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.62;
   max-width: 70ch;
   letter-spacing: 0.01em;
   opacity: 0.9;
@@ -851,7 +887,7 @@ footer {
   gap: 14px;
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   opacity: 0.7;
 }
@@ -867,9 +903,9 @@ footer {
 }
 
 .page-home .cierre h2 {
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.042em;
+  line-height: 1.02;
   font-size: clamp(30px, 4.8vw, 66px);
   max-width: 20ch;
 }
@@ -916,12 +952,12 @@ footer {
   gap: 9px;
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
 .caso-meta .op {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .caso-meta .dim {
@@ -939,8 +975,8 @@ footer {
 }
 
 .caso .ttl {
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.036em;
   line-height: 1;
   font-size: clamp(26px, 3.1vw, 42px);
   margin-bottom: 16px;
@@ -980,9 +1016,9 @@ footer {
 .equipo h2,
 .objeciones h2,
 .contratacion h2 {
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.042em;
+  line-height: 1.02;
   font-size: clamp(30px, 4.8vw, 62px);
   max-width: 22ch;
 }
@@ -997,43 +1033,13 @@ footer {
   opacity: 0.85;
 }
 
-.sintomas {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(22px, 3vw, 52px);
-  padding: clamp(30px, 4.5vh, 52px) 0;
-  border-bottom: 1px solid var(--ink);
-}
-
-.sintoma .sttl {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  font-size: clamp(18px, 2.1vw, 25px);
-  margin-bottom: 12px;
-}
-
-.sintoma .sdesc {
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: clamp(15px, 1.6vw, 18px);
-  opacity: 0.78;
-}
-
 .problema .pclose {
   margin-top: clamp(30px, 4.5vh, 52px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: -0.025em;
   line-height: 1.25;
   font-size: clamp(19px, 2.3vw, 30px);
   max-width: 36ch;
-}
-
-@media (max-width: 860px) {
-  .sintomas {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
 }
 
 /* --- 03 · Para quién ------------------------------------------------------ */
@@ -1047,60 +1053,11 @@ footer {
   margin-top: clamp(30px, 4.5vh, 52px);
 }
 
-.carril {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(16px, 3vw, 46px);
-  padding: clamp(30px, 4.6vh, 54px) 0;
-  border-bottom: 1px solid var(--ink);
-}
-
-.carril:last-child {
-  border-bottom: none;
-}
-
-.carril .cnum {
-  font-size: 12px;
-  opacity: 0.5;
-  min-width: 30px;
-}
-
-.carril .cttl {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.04;
-  font-size: clamp(23px, 2.9vw, 38px);
-  margin-bottom: 14px;
-  max-width: 24ch;
-}
-
-.carril .cdesc {
-  font-weight: 400;
-  line-height: 1.46;
-  font-size: clamp(15px, 1.7vw, 19px);
-  max-width: 60ch;
-  opacity: 0.82;
-}
-
-.carril .cref {
-  margin-top: 16px;
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-  opacity: 0.7;
-}
-
-.carril .cref .crl {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.6;
-}
-
 .clink,
 .puente-link {
   display: inline-block;
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
@@ -1115,7 +1072,6 @@ footer {
 }
 
 /* Solo cuando el enlace va suelto, no incrustado en un párrafo. */
-.carril .clink,
 .casos-home > .wrap > .puente-link {
   margin-top: 14px;
 }
@@ -1155,7 +1111,7 @@ footer {
 }
 
 .paso .pttl {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
   font-size: clamp(17px, 1.9vw, 22px);
@@ -1222,8 +1178,8 @@ footer {
 }
 
 .pdef p {
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  font-weight: 400;
+  letter-spacing: -0.022em;
   line-height: 1.28;
   font-size: clamp(17px, 2vw, 24px);
   max-width: 34ch;
@@ -1247,7 +1203,7 @@ footer {
 }
 
 .entregable .ettl {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.06;
   font-size: clamp(20px, 2.4vw, 30px);
@@ -1358,7 +1314,7 @@ footer {
 }
 
 .tarjeta .tttl {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.06;
   font-size: clamp(20px, 2.3vw, 29px);
@@ -1421,7 +1377,7 @@ footer {
 /* TODO (contenidos): faltan las fotos reales del equipo. Cuando lleguen van
    sobre .qname, con la misma caja cuadrada en blanco y negro. Nada de stock. */
 .persona .qname {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.06;
   font-size: clamp(20px, 2.3vw, 28px);
@@ -1479,7 +1435,7 @@ footer {
 }
 
 .tramo-meta .rname {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.04;
   font-size: clamp(23px, 2.8vw, 36px);
@@ -1540,9 +1496,9 @@ footer {
 
 .tablero h2 {
   margin-top: clamp(30px, 4.5vh, 52px);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.042em;
+  line-height: 1.02;
   font-size: clamp(28px, 4.4vw, 56px);
 }
 
@@ -1554,7 +1510,7 @@ footer {
 }
 
 .regla .gttl {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
   font-size: clamp(18px, 2.1vw, 25px);
@@ -1605,7 +1561,7 @@ footer {
 }
 
 .pregunta .q {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.1;
   font-size: clamp(19px, 2.3vw, 29px);
@@ -1629,8 +1585,8 @@ footer {
 
 .organiza h2 {
   margin-top: clamp(30px, 4.5vh, 52px);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.036em;
   line-height: 1.06;
   font-size: clamp(22px, 3vw, 40px);
 }
@@ -1658,7 +1614,7 @@ footer {
 }
 
 .dispositivo .vn {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1;
   font-size: clamp(21px, 2.4vw, 30px);
@@ -1697,8 +1653,8 @@ footer {
 
 .plantilla .tintro {
   margin-top: clamp(24px, 3.5vh, 38px);
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  font-weight: 400;
+  letter-spacing: -0.022em;
   line-height: 1.3;
   font-size: clamp(17px, 2vw, 24px);
   max-width: 40ch;
@@ -1837,15 +1793,14 @@ footer {
 
 /* La frase del cliente es la que se lee primero y la que hay que reconocer:
    va en el cuerpo mayor, y las otras dos columnas la acompañan.
-   
-   Fraunces itálica, el registro que el manual reserva para las citas: marca
-   sin decir que ahí habla el cliente y no el Lab. Es el único lugar del sitio
-   donde hay palabras ajenas entre comillas. */
+
+   La cita se marca con la oblicua de Helvetica, que es un corte real y no una
+   inclinación sintética: dice sin decirlo que ahí habla el cliente y no el
+   Lab. Es el único lugar del sitio con palabras ajenas entre comillas. */
 .sit-q {
-  font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.022em;
   line-height: 1.28;
   font-size: clamp(19px, 2.2vw, 27px);
 }
@@ -1860,8 +1815,9 @@ footer {
 .sclose {
   margin-top: clamp(30px, 4.5vh, 52px);
   font-family: var(--font-mono);
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.62;
+  letter-spacing: 0.01em;
   max-width: 66ch;
   opacity: 0.8;
 }
@@ -1904,9 +1860,9 @@ footer {
 }
 
 .vel-name {
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-display);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.032em;
   line-height: 1.05;
   font-size: clamp(20px, 2.4vw, 29px);
 }
@@ -1951,7 +1907,7 @@ footer {
 
 .prod-dur {
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   opacity: 0.55;
   white-space: nowrap;
@@ -1979,22 +1935,211 @@ footer {
 /* El radar separa demanda observada de apuesta de posicionamiento. La
    separación se mantiene a la vista: dar por vendido lo segundo es lo que
    hace que se prospecte en el orden equivocado. */
-.aud-tag {
-  margin: clamp(26px, 4vh, 40px) 0 clamp(16px, 2.2vh, 22px);
+/* --- El mazo de compradores ----------------------------------------------
+   Los seis compradores no son una lista: son seis cartas que se apilan. Cada
+   una queda fija bajo el header mientras la siguiente sube y la tapa, dejando
+   ver el canto de las anteriores. Se lee un comprador a la vez, que es lo que
+   pide la sección —usted se reconoce en UNO, no compara seis—.
+
+   Todo el efecto es `position: sticky`: cero JavaScript, cero listener de
+   scroll, y el navegador lo compone fuera del hilo principal.
+
+   El apilado necesita tres cosas y ninguna más:
+   · el tope de cada carta escalonado por su índice (`--i`, que pone el JSX
+     desde la posición de la carta, no un `nth-child` que se rompería con un
+     séptimo comprador);
+   · fondo opaco y borde, o la carta de abajo se transparenta;
+   · recorrido en el flujo —el `margin-bottom`— que es el scroll que separa
+     una carta de la siguiente. */
+
+.aud-stack {
+  /* El tope del mazo despeja el header flotante (top 22px + alto de la
+     píldora). El paso es el canto visible de cada carta ya apilada. */
+  --aud-top: clamp(76px, 11vh, 104px);
+  --aud-step: clamp(7px, 0.9vh, 12px);
+  /* Cuánto se scrollea entre carta y carta. Es la duración del efecto y, a la
+     vez, el aire que se ve entre dos cartas mientras la de abajo sube. Más
+     alto se lee como un hueco vacío; más bajo, como un salto. */
+  --aud-travel: clamp(70px, 17vh, 170px);
+
+  margin-top: clamp(24px, 3.4vh, 34px);
+  /* Colchón final: sostiene la sexta carta fija un momento antes de soltar el
+     mazo, para que se alcance a leer sola. */
+  padding-bottom: clamp(40px, 20vh, 200px);
+}
+
+.aud-card {
+  position: sticky;
+  top: calc(var(--aud-top) + var(--i) * var(--aud-step));
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vh, 18px);
+  /* Alto parejo en las seis, y no ajustado al contenido de cada una: en un
+     mazo la carta que tapa tiene que ser al menos tan alta como la tapada, o
+     la de abajo asoma por el pie y se rompe la ilusión. Como la primera carta
+     es la de texto más largo, cualquier alto automático las deja en orden
+     decreciente, que es justo el orden que no sirve.
+
+     Valor fijo y no fluido a propósito: el alto que necesita el contenido
+     depende de dónde corta el texto, no del viewport —el máximo medido son
+     339px, alrededor de los 820px de ancho, donde las fichas de entrada
+     todavía van debajo de la descripción—. 350px cubre las seis en todo el
+     rango donde el mazo está activo. */
+  min-height: 350px;
+  margin-bottom: var(--aud-travel);
+  padding: clamp(22px, 3.2vh, 36px) clamp(20px, 2.8vw, 40px);
+  background: var(--papel);
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  /* Sombra solo hacia arriba: es lo único que hace legible el momento en que
+     una carta cubre a la anterior. Sin ella el corte del texto de abajo se lee
+     como un error de maquetación y no como una carta que pasa por encima.
+
+     Corta y poco difusa a propósito: el header flota fijo sobre el contenido y
+     una sombra más larga que el tope del mazo (--aud-top) le pinta un halo
+     sucio por detrás. */
+  box-shadow: 0 -10px 24px -16px rgba(15, 15, 15, 0.5);
+}
+
+/* La última no lleva recorrido: el colchón del contenedor hace ese trabajo y
+   duplicarlo dejaría un hueco muerto antes del cierre. */
+.aud-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Alternar el fondo hace visible el borde entre dos cartas apiladas incluso
+   cuando el canto es de 7px. */
+.aud-card:nth-child(even) {
+  background: var(--arena);
+}
+
+.aud-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: clamp(12px, 1.8vh, 18px);
+  border-bottom: 1px solid var(--ink);
+}
+
+.aud-n {
+  font-weight: 700;
+  font-size: clamp(13px, 1.4vw, 15px);
+  letter-spacing: 0.06em;
+  color: var(--sol);
+}
+
+/* El rótulo de grupo: de qué baraja viene esta carta. Alineado a la derecha
+   porque el largo cambia mucho entre los dos grupos —«Demanda observada»
+   contra la frase entera de la apuesta— y por la izquierda quedarían
+   descalzados del número. */
+.aud-kind {
+  text-align: right;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.55;
+  opacity: 0.5;
 }
 
-.aud-tag-weak {
-  margin-top: clamp(40px, 6vh, 72px);
-  padding-top: clamp(24px, 3.4vh, 34px);
-  border-top: 2px solid var(--ink);
+/* La apuesta de posicionamiento se dice con el color, no con otra forma: misma
+   carta, rótulo en naranja porque es lo que todavía no está probado. */
+.aud-card-weak .aud-kind {
+  color: var(--sol);
+  opacity: 0.75;
+}
+
+/* Estos cuatro se describen en una línea y con el cuerpo de los otros la carta
+   quedaba casi vacía. El alto del mazo es parejo por obligación, así que el
+   texto sube de cuerpo para ocuparlo en vez de dejar el hueco. */
+.aud-card-weak .aud-desc {
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.4;
+  max-width: 46ch;
+}
+
+.aud-ttl {
+  font-weight: 700;
+  letter-spacing: -0.032em;
+  line-height: 1.04;
+  font-size: clamp(23px, 3vw, 40px);
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+/* El cuerpo va pegado al título y no al pie de la carta: cuatro de los seis
+   compradores se describen en una línea, y empujarlos abajo dejaba el texto
+   flotando lejos de su propio título. El aire sobrante queda al pie, que es
+   donde se lee como margen y no como error. */
+.aud-body {
+  display: grid;
+  gap: clamp(14px, 2vh, 20px) clamp(20px, 3vw, 44px);
+}
+
+.aud-desc {
+  font-weight: 400;
+  line-height: 1.46;
+  font-size: clamp(15px, 1.7vw, 18px);
+  max-width: 56ch;
+  opacity: 0.82;
+}
+
+.aud-refs .cref {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+.aud-refs .cref + .cref {
+  margin-top: 10px;
+}
+
+.aud-refs .crl {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
 }
 
 .publicos .caja {
   margin-top: clamp(36px, 5.5vh, 64px);
+}
+
+/* Las fichas de entrada solo se ponen al costado donde hay ancho: en una
+   columna angosta compiten con la descripción, que es lo que se lee primero. */
+@media (min-width: 860px) {
+  .aud-card:has(.aud-refs) .aud-body {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  }
+}
+
+/* Bajo este ancho la carta corre riesgo de ser más alta que la pantalla, y una
+   carta fija más alta que el viewport esconde su propio final. El mazo se
+   desarma en una lista normal. */
+@media (max-width: 620px), (max-height: 560px) {
+  .aud-stack {
+    padding-bottom: 0;
+  }
+
+  .aud-card {
+    position: static;
+    min-height: 0;
+    margin-bottom: 14px;
+  }
+}
+
+/* Quien pidió no ver movimiento tampoco quiere seis pantallas de scroll para
+   leer seis párrafos. */
+@media (prefers-reduced-motion: reduce) {
+  .aud-stack {
+    padding-bottom: 0;
+  }
+
+  .aud-card {
+    position: static;
+    min-height: 0;
+    margin-bottom: 14px;
+  }
 }
 
 /* ==========================================================================
@@ -2051,8 +2196,8 @@ footer {
 
 .gname {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.036em;
   line-height: 1.04;
   font-size: clamp(23px, 2.9vw, 38px);
 }
@@ -2107,8 +2252,8 @@ footer {
 .hz-name {
   margin-top: 12px;
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.036em;
   line-height: 1.04;
   font-size: clamp(24px, 3.2vw, 42px);
 }

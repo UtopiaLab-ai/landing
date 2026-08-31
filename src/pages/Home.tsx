@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { Glyph } from '../brand/Glyph'
 import type { GlyphName } from '../brand/glyphs'
@@ -139,38 +140,78 @@ export function Home() {
         </div>
       </section>
 
-      {/* 05 · PARA QUIÉN */}
+      {/* 05 · PARA QUIÉN · los seis compradores son un mazo: cada carta queda
+          fija mientras la siguiente la tapa, así se lee un comprador a la vez.
+
+          Van los seis en una sola baraja porque el h2 promete «seis
+          compradores» y la sección los partía en dos bloques con forma
+          distinta —dos carriles anchos y cuatro tarjetas chicas—, que se leía
+          como dos listas y no como un catálogo de seis. El grupo del que viene
+          cada carta no se pierde: va como rótulo arriba, junto al número.
+
+          El orden es el de venta —primero los dos con demanda observada,
+          después los cuatro que son apuesta— y es el que dice el propio
+          rótulo de sección, «Señal fuerte primero».
+
+          El apilado es CSS puro; acá solo se pasa el índice de la carta, que
+          es lo que escalona su tope. */}
       <section className="publicos" id="publicos">
         <div className="wrap">
           <h2>{c.audience.h2}</h2>
           <p className="asub">{c.audience.sub}</p>
           <SectionLabel label={c.audience.label} />
 
-          <div className="aud-tag mono">{c.audience.strong.tag}</div>
-          {c.audience.strong.tracks.map((track) => (
-            <div className="carril" key={track.n}>
-              <span className="cnum mono">{track.n}</span>
-              <div className="cbody">
-                <div className="cttl">{track.title}</div>
-                <p className="cdesc">{track.text}</p>
-                <p className="cref mono">
-                  <span className="crl">{track.entryLabel}</span> {track.entry}
-                </p>
-                <p className="cref mono">
-                  <span className="crl">{track.anchorLabel}</span> {track.anchor}
-                </p>
-              </div>
-            </div>
-          ))}
+          <div className="aud-stack">
+            {c.audience.strong.tracks.map((track, i) => (
+              <article
+                className="aud-card"
+                key={track.n}
+                style={{ '--i': i } as CSSProperties}
+              >
+                <div className="aud-top">
+                  <span className="aud-n mono">{track.n}</span>
+                  <span className="aud-kind mono">{c.audience.strong.tag}</span>
+                </div>
 
-          <div className="aud-tag mono aud-tag-weak">{c.audience.others.tag}</div>
-          <div className="sintomas">
-            {c.audience.others.items.map((item) => (
-              <div className="sintoma" key={item.name}>
-                <div className="sttl">{item.name}</div>
-                <p className="sdesc">{item.text}</p>
-              </div>
+                <div className="aud-ttl">{track.title}</div>
+
+                <div className="aud-body">
+                  <p className="aud-desc">{track.text}</p>
+                  <div className="aud-refs">
+                    <p className="cref mono">
+                      <span className="crl">{track.entryLabel}</span> {track.entry}
+                    </p>
+                    <p className="cref mono">
+                      <span className="crl">{track.anchorLabel}</span> {track.anchor}
+                    </p>
+                  </div>
+                </div>
+              </article>
             ))}
+
+            {/* La numeración sigue corrida desde los carriles: es un mazo de
+                seis, no cuatro cartas aparte. */}
+            {c.audience.others.items.map((item, i) => {
+              const n = c.audience.strong.tracks.length + i
+              return (
+                <article
+                  className="aud-card aud-card-weak"
+                  key={item.name}
+                  style={{ '--i': n } as CSSProperties}
+                >
+                  <div className="aud-top">
+                    <span className="aud-n mono">{String(n + 1).padStart(2, '0')}</span>
+                    <span className="aud-kind mono">{c.audience.others.tag}</span>
+                  </div>
+
+                  <div className="aud-ttl">{item.name}</div>
+
+                  <div className="aud-body">
+                    <p className="aud-desc">{item.text}</p>
+                  </div>
+                </article>
+              )
+            })}
           </div>
 
           <div className="caja">

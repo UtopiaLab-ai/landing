@@ -12,8 +12,12 @@ import { LangSwitch } from './LangSwitch'
  *
  * Tres puertas y el CTA. Quien llega a evaluar un proveedor necesita saber qué
  * se vende, dónde se ha ejecutado y quién lo hace — nada más en la barra.
+ *
+ * Inicio va explícito y no solo bajo la marca: el logo como única vuelta atrás
+ * es una convención que hay que conocer, y desde una interior no hay ninguna
+ * otra manera de volver a la home.
  */
-const NAV_PAGES = ['products', 'cases', 'team'] as const
+const NAV_PAGES = ['home', 'products', 'cases', 'team'] as const
 
 export function Header() {
   const { locale, page, t } = useSite()
