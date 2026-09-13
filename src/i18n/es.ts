@@ -37,7 +37,7 @@ export const es: Content = {
     proof: {
       label: 'Dónde se ha ejecutado este método',
       items: [
-        { name: 'MINVU', text: 'Primera Unidad de Prospectiva del ministerio' },
+        { name: 'MINVU', text: 'Diseño de la primera Unidad de Prospectiva del ministerio' },
         { name: 'CEPAL · ONU', text: 'Consultoría en movilidad y desarrollo urbano' },
         { name: 'ONU Derechos Humanos', text: 'Análisis territorial para la abogacía del Alto Comisionado' },
         { name: 'BID · SERCOTEC', text: 'Programa de Barrios Comerciales' },
@@ -221,12 +221,12 @@ export const es: Content = {
         {
           n: '02',
           title: 'Consejo Municipal de Futuros',
-          proof: 'Instrumento operando en el gobierno local',
+          proof: 'Diseño entregado, pendiente de constitución',
         },
         {
           n: '03',
           title: 'Unidad de Prospectiva MINVU',
-          proof: 'Primera unidad de su tipo en el ministerio',
+          proof: 'Diseño entregado, pendiente de implementación',
         },
         {
           n: '04',
@@ -534,10 +534,10 @@ export const es: Content = {
           'Un gobierno local que decide a veinticinco años con dispositivos que duran un período de alcaldía.',
         problem:
           'La capacidad de anticipar se iba con las personas que la portaban. Cada ciclo redescubría el largo plazo y lo volvía a perder.',
-        work: 'Instalación del dispositivo: qué señales mirar, con qué frecuencia revisarlas y quién queda a cargo cuando el equipo cambia.',
+        work: 'Diseño del dispositivo: qué señales mirar, con qué frecuencia revisarlas y quién queda a cargo cuando el equipo cambia.',
         result:
-          'El instrumento quedó operando en el municipio, con reglas de traspaso escritas en su diseño.',
-        proof: 'Instrumento instalado y operando en el gobierno local.',
+          'El diseño quedó entregado, con las reglas de traspaso escritas en el propio instrumento. No está constituido: eso depende de una decisión del municipio que todavía no se toma.',
+        status: 'Diseño entregado · sin constituir',
       },
       {
         n: '03',
@@ -547,10 +547,10 @@ export const es: Content = {
           'El Centro de Estudios Ciudad y Territorio del Ministerio de Vivienda y Urbanismo, entre febrero de 2024 y octubre de 2025.',
         problem:
           'El ministerio producía conocimiento sobre políticas urbanas y habitacionales, pero no tenía ninguna unidad encargada de anticipar escenarios de largo plazo.',
-        work: 'Diseño y creación de la primera Unidad de Prospectiva institucional del ministerio: estudios de escenarios, análisis de tendencias sociotécnicas, territoriales y climáticas, y formación interna en pensamiento de futuros.',
+        work: 'Diseño de la primera Unidad de Prospectiva institucional del ministerio: mandato, funciones, dotación y ciclo de trabajo —estudios de escenarios, análisis de tendencias sociotécnicas, territoriales y climáticas, y formación interna en pensamiento de futuros—.',
         result:
-          'Unidad constituida dentro de un centro de 26 profesionales en cinco equipos, con la función anticipatoria incorporada a la gestión.',
-        proof: 'Primera unidad de su tipo en el MINVU. Dirigida por Isabel Serra.',
+          'El diseño quedó entregado dentro del Centro de Estudios Ciudad y Territorio, un equipo de 26 profesionales en cinco áreas. La unidad no se implementó: constituirla es una decisión del ministerio que no se ha tomado.',
+        status: 'Diseño entregado · sin implementar',
       },
       {
         n: '04',

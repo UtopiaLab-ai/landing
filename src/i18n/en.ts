@@ -36,7 +36,7 @@ export const en: Content = {
     proof: {
       label: 'Where this method has been run',
       items: [
-        { name: 'MINVU', text: 'The ministry’s first Foresight Unit' },
+        { name: 'MINVU', text: 'Design of the ministry’s first Foresight Unit' },
         { name: 'ECLAC · UN', text: 'Consultancy on mobility and urban development' },
         { name: 'UN Human Rights', text: 'Territorial analysis for the High Commissioner’s advocacy' },
         { name: 'IDB · SERCOTEC', text: 'Commercial Neighbourhoods Programme' },
@@ -220,12 +220,12 @@ export const en: Content = {
         {
           n: '02',
           title: 'Municipal Futures Council',
-          proof: 'Instrument operating inside the local government',
+          proof: 'Design delivered, not yet constituted',
         },
         {
           n: '03',
           title: 'MINVU Foresight Unit',
-          proof: 'First unit of its kind in the ministry',
+          proof: 'Design delivered, not yet implemented',
         },
         {
           n: '04',
@@ -528,10 +528,10 @@ export const en: Content = {
           'A local government deciding on a twenty-five-year horizon with instruments that last one mayoral term.',
         problem:
           'The capability to anticipate left with the people who carried it. Each cycle rediscovered the long term and lost it again.',
-        work: 'Installation of the instrument: which signals to watch, how often to review them, and who takes over when the team changes.',
+        work: 'Design of the instrument: which signals to watch, how often to review them, and who takes over when the team changes.',
         result:
-          'The instrument stayed operating in the municipality, with handover rules written into its design.',
-        proof: 'Instrument installed and operating in the local government.',
+          'The design was delivered, with the handover rules written into the instrument itself. It is not constituted: that depends on a decision the municipality has yet to take.',
+        status: 'Design delivered · not constituted',
       },
       {
         n: '03',
@@ -541,10 +541,10 @@ export const en: Content = {
           'The Centre for City and Territory Studies at the Ministry of Housing and Urbanism, between February 2024 and October 2025.',
         problem:
           'The ministry produced knowledge on urban and housing policy, but had no unit responsible for anticipating long-term scenarios.',
-        work: 'Design and creation of the ministry’s first institutional Foresight Unit: scenario studies, analysis of sociotechnical, territorial and climate trends, and internal training in futures thinking.',
+        work: 'Design of the ministry’s first institutional Foresight Unit: mandate, functions, staffing and working cycle — scenario studies, analysis of sociotechnical, territorial and climate trends, and internal training in futures thinking.',
         result:
-          'A unit established within a centre of 26 professionals across five teams, with the anticipatory function built into day-to-day management.',
-        proof: 'First unit of its kind at MINVU. Led by Isabel Serra.',
+          'The design was delivered inside the Centre for City and Territory Studies, a team of 26 professionals across five areas. The unit was not implemented: constituting it is a ministry decision that has not been taken.',
+        status: 'Design delivered · not implemented',
       },
       {
         n: '04',
