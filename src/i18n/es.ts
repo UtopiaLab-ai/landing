@@ -27,10 +27,10 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Las reglas', 'cambian cada año.', 'Las decisiones', 'duran veinte.'],
-      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en su equipo.',
+      titleLines: ['Decidir', 'cuando el futuro', 'todavía', 'está abierto.'],
+      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
       microcopy:
-        'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tiene pendiente.',
+        'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tienes pendiente.',
       frames: ['Señal', 'Decisión', 'Capacidad'],
     },
 
@@ -46,50 +46,65 @@ export const es: Content = {
     },
 
     situations: {
-      h2: '¿Se reconoce en alguna de estas frases?',
-      sub: 'No vendemos método. Vendemos salir de una situación que usted ya sabe describir.',
-      label: ['Cinco situaciones', '01 — 05'],
-      heads: ['Su situación', 'Qué hacemos', 'Qué queda instalado'],
+      h2: '¿Te reconoces en alguna de estas frases?',
+      sub: 'No vendemos método. Vendemos salir de una situación que ya sabes describir.',
+      label: ['Ocho situaciones', '01 — 08'],
+      heads: ['Tu situación', 'El problema', 'Lo que proponemos'],
       rows: [
         {
-          situation: '«Tenemos que decidir y no sabemos qué escenarios mirar.»',
-          doing: 'Reformulamos el problema y ampliamos el conjunto de alternativas antes de comparar.',
-          installed: 'Un menú de opciones más ancho, con criterios explícitos.',
+          situation: '«Tenemos que decidir, pero no sabemos qué posibilidades considerar.»',
+          problem: 'La pregunta inicial está demasiado cerrada y las alternativas siguen siendo las mismas.',
+          proposal: 'Reformular la decisión, explorar futuros posibles y ampliar las alternativas antes de elegir.',
+        },
+        {
+          situation: '«El problema es tan complejo que no sabemos por dónde empezar.»',
+          problem: 'Intervienen demasiadas variables, actores y cambios simultáneos; todo parece importante y no se logra identificar qué decisión ordenar primero.',
+          proposal: 'Delimitar el problema, visualizar el sistema, identificar dependencias y construir una primera decisión que permita avanzar.',
         },
         {
           situation: '«Todo lo interesante nos lo descartan como no viable.»',
-          doing: 'Convertimos cada «no viable» en condiciones, dependencias y responsables.',
-          installed: 'Una agenda de condiciones habilitantes en vez de un veredicto.',
+          problem: 'El límite se formula como un veredicto y no como una condición que podría transformarse.',
+          proposal: 'Identificar dependencias, responsables y condiciones habilitantes para abrir opciones reales.',
         },
         {
-          situation: '«Cada área quiere algo distinto y terminamos en un consenso que no convence a nadie.»',
-          doing: 'Hacemos explícitos los deseos incompatibles y clasificamos la tensión antes de decidir.',
-          installed: 'Una decisión que reconoce el desacuerdo en vez de taparlo.',
+          situation: '«Cada área ve una parte, pero nadie logra ver el conjunto.»',
+          problem: 'Diagnósticos, intereses y datos quedan fragmentados; las conexiones entre decisiones no se hacen visibles hasta que aparecen bloqueos o contradicciones.',
+          proposal: 'Integrar perspectivas, hacer visibles las interdependencias y construir una visión compartida que permita coordinar la acción.',
         },
         {
-          situation: '«Nos enteramos tarde de lo que nos afecta.»',
-          doing: 'Instalamos el subciclo de observación con umbrales y responsables de alerta.',
-          installed: 'Un tablero con señales, umbrales y quién mira qué.',
+          situation: '«Vemos que viene un cambio, pero no dónde conviene actuar.»',
+          problem: 'Todas las tendencias parecen igualmente importantes y no se reconocen oportunidades pertinentes.',
+          proposal: 'Evaluar relevancia, potencial y condiciones de acción para enfocar el esfuerzo donde puede generar valor.',
         },
         {
-          situation: '«Decidimos, pero nadie recuerda por qué.»',
-          doing: 'Registramos qué era dato, qué supuesto y qué condición obligaría a revisar.',
-          installed: 'Fichas de procedencia que permiten responder meses después.',
+          situation: '«Tenemos una estrategia, pero no sabemos cuándo ni cómo revisarla.»',
+          problem: 'El plan queda fijo mientras cambian las condiciones que le dieron sentido.',
+          proposal: 'Traducir la visión en secuencias, prioridades, umbrales y decisiones de ajuste.',
+        },
+        {
+          situation: '«La IA puede transformar nuestro trabajo, pero no sabemos cómo incorporarla sin perder lo que importa.»',
+          problem: 'La capacidad técnica avanza más rápido que la capacidad de la organización para decidir qué transformar, qué resguardar y qué responsabilidades redefinir.',
+          proposal: 'Convertir el potencial tecnológico en una trayectoria de transformación con prioridades, criterios, resguardos, responsables y revisión.',
+        },
+        {
+          situation: '«El trabajo termina y volvemos a depender de una o dos personas.»',
+          problem: 'La capacidad para anticipar y decidir no queda instalada en la organización.',
+          proposal: 'Dejar lenguaje, herramientas, rutinas y responsabilidades que el equipo pueda sostener.',
         },
       ],
       close:
-        'En la reunión trabajamos una sola de estas filas: la que usted acaba de describir con sus palabras.',
+        'En la reunión trabajamos una sola de estas filas: la que acabas de describir con tus palabras.',
     },
 
     catalog: {
-      h2: 'Ocho productos, cuatro escalones',
-      sub: 'Ordenados por profundidad, no por tipo. Se entra por donde el problema lo pida y se sube solo si sirve.',
+      h2: 'Ocho formas de intervención',
+      sub: 'Tenemos metodología propia para problemas de decisión en contextos latinoamericanos de incertidumbre, policrisis y desconfianza institucional. No aplicamos recetas: cada encargo se ajusta al territorio, la organización, los actores y el momento de decisión. Se entra por donde el problema lo pida y se sube solo si sirve.',
       label: ['El catálogo', '01 — 08'],
       speeds: [
         {
           key: 'caja',
           name: 'Producen análisis',
-          note: 'Entregan una lectura que usted no tenía. No prometen instalar nada.',
+          note: 'Entregan una lectura que no tenías. No prometen instalar nada.',
           products: [
             {
               name: 'Brief de coyuntura',
@@ -116,7 +131,7 @@ export const es: Content = {
         {
           key: 'capacidad',
           name: 'Instalan capacidad',
-          note: 'Los únicos tres a los que les corresponde esa promesa. Terminan con su equipo operando sin nosotros.',
+          note: 'Los únicos tres a los que les corresponde esa promesa. Terminan con tu equipo operando sin nosotros.',
           products: [
             {
               name: 'Laboratorio de Futuro',
@@ -151,57 +166,58 @@ export const es: Content = {
       cta: 'Ver las fichas completas →',
     },
 
-    audience: {
-      h2: 'El mismo catálogo, seis compradores',
-      sub: 'No cambian los productos: cambian la entrada, el argumento y quién firma.',
-      label: ['Para quién', 'Señal fuerte primero'],
-      strong: {
-        tag: 'Demanda observada',
-        tracks: [
-          {
-            n: '01',
-            title: 'Empresas con exposición regulatoria y territorial',
-            text: 'Minería, energía, agroindustria, construcción e inversión patrimonial: decisiones a diez o veinte años en un entorno cuyas reglas cambian cada año. Anticipación como gestión de riesgo sistémico, no como reporte de sostenibilidad.',
-            entryLabel: 'Entrada típica',
-            entry: 'Brief de coyuntura · sala de directorio',
-            anchorLabel: 'Producto ancla',
-            anchor: 'Estudio de Futuros',
-          },
-          {
-            n: '02',
-            title: 'Sector público y gobiernos locales',
-            text: 'Municipios y servicios que deciden bajo presión, con información asimétrica y ciclo presupuestario fijo. La capacidad de anticipar está hoy donde hay presupuesto para comprarla, y eso reparte el largo plazo de forma desigual entre territorios. Quien no la tiene instalada llega tarde a la decisión que importa.',
-            entryLabel: 'Entrada típica',
-            entry: 'Inteligencia territorial · evaluación de instrumentos',
-            anchorLabel: 'Producto ancla',
-            anchor: 'Estudio territorial + Laboratorio',
-          },
-        ],
-      },
-      others: {
-        tag: 'Apuesta de posicionamiento, sin demanda probada todavía',
-        items: [
-          {
-            name: 'Cooperación internacional',
-            text: 'Procesos de futuros con legitimidad multi-actor. Ciclos largos, presupuesto por proyecto.',
-          },
-          {
-            name: 'Universidades',
-            text: 'Credencial metodológica y planificación bajo caída de matrícula. Ventana octubre–diciembre.',
-          },
-          {
-            name: 'Fundaciones y fondos de impacto',
-            text: 'Rigor para sostener la tesis de impacto, con observatorio temático como entrada.',
-          },
-          {
-            name: 'Partidos políticos',
-            text: 'Anticipar el escenario y construir posición, no encuestar el presente. Ventana electoral.',
-          },
-        ],
-      },
-      neutrality: {
-        tag: 'Condición de neutralidad',
-        text: 'No atendemos, sobre la misma materia regulatoria o territorial y dentro de la misma ventana, a un partido y a un cliente privado o público cuyos intereses en esa materia estén en conflicto. Cada encargo declara su perímetro por escrito. Sin ese perímetro, el encargo no se toma.',
+    method: {
+      kicker: 'Cómo trabajamos',
+      h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo.',
+      sub: 'Las tres etapas corresponden a un punto preciso del esquema: detectar el cambio, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
+      label: ['El núcleo del método', '01 — 03'],
+      markerLabel: 'En el esquema',
+      steps: [
+        {
+          n: '01',
+          title: 'Situar la señal',
+          text: 'Leemos el territorio, las reglas y los actores para distinguir un cambio relevante del ruido.',
+          marker: 'señal',
+        },
+        {
+          n: '02',
+          title: 'Visualizar la bifurcación',
+          text: 'Hacemos comparables alternativas, tensiones y futuros que el curso habitual todavía no permite ver.',
+          marker: 'bifurcación',
+        },
+        {
+          n: '03',
+          title: 'Decidir en la ventana',
+          text: 'Definimos criterios, responsables, alertas y condiciones para actuar o revisar antes del punto de no retorno.',
+          marker: 'ventana de decisión',
+        },
+      ],
+      close:
+        'Anticipar no es predecir el escenario: es decidir mientras la decisión todavía incide. Pasado el punto de no retorno queda gestionar el efecto, no elegirlo.',
+    },
+
+    value: {
+      kicker: 'Qué gana tu organización',
+      h2: 'Anticipar no es un ejercicio abstracto: mejora la calidad, la velocidad y el efecto de las decisiones.',
+      sub: 'El valor está en actuar con más opciones abiertas, menos sorpresas y criterios compartidos para invertir, coordinar y crecer.',
+      label: ['Qué se gana', '01 — 03'],
+      items: [
+        {
+          title: 'Mejor rendimiento',
+          text: 'Decisiones más claras, trazables y ejecutables; menos retrabajo, bloqueos y recursos destinados a corregir tarde.',
+        },
+        {
+          title: 'Crecimiento con menor exposición',
+          text: 'Capacidad para detectar oportunidades y riesgos emergentes antes de que se vuelvan urgencias o costos inevitables.',
+        },
+        {
+          title: 'Capacidad que permanece',
+          text: 'Un lenguaje común, alertas y criterios que quedan instalados en el equipo para revisar y ajustar el rumbo.',
+        },
+      ],
+      evidence: {
+        text: 'En su muestra, las empresas con alta preparación de futuro registraron 33% más rentabilidad y 200% más crecimiento; McKinsey asocia decisiones rápidas y de alta calidad con mejores retornos. La CEPAL advierte que la falta de perspectiva de largo plazo limita las oportunidades y la contención de riesgos en América Latina y el Caribe, y la OCDE vincula la prospectiva con decisiones más resilientes. Son asociaciones, no promesas: el resultado depende de la calidad de la decisión y de su ejecución.',
+        sources: 'Rohrbeck & Kum (2018) · McKinsey (2019) · CEPAL (2016) · OCDE (2023)',
       },
     },
 
@@ -231,6 +247,10 @@ export const es: Content = {
         },
       ],
       cta: 'Ver los casos completos →',
+      figureAlt:
+        'Esquema del núcleo del método: la señal emerge del ruido, cruza un umbral difuso, se bifurca en un cono de futuros y abre una ventana de decisión que se cierra en el punto de no retorno.',
+      figureCaption:
+        'Los cuatro casos son el mismo esquema en obra: dónde estaba la señal, cuándo se bifurcó y qué tan abierta seguía la ventana.',
     },
 
     team: {
@@ -262,31 +282,9 @@ export const es: Content = {
       cta: 'Ver las credenciales completas →',
     },
 
-    objections: {
-      h2: 'Las tres preguntas que siempre aparecen',
-      label: ['Objeciones', '01 — 03'],
-      items: [
-        {
-          id: 'ia',
-          q: '¿Esto no lo hace ChatGPT?',
-          a: 'Un asistente genérico está optimizado para darle una respuesta limpia. Nuestro proceso está diseñado para no hacerlo cuando hay desacuerdo real: preserva la contradicción, etiqueta qué es dato y qué es supuesto, y no recomienda una única opción sin mostrar las descartadas. Usamos modelos existentes como herramienta; la deliberación queda humana.',
-        },
-        {
-          id: 'planificacion',
-          q: '¿En qué se diferencia de la planificación estratégica que ya hacemos?',
-          a: 'La planificación parte de objetivos ya formulados. Nosotros empezamos una etapa antes —auditamos quién formuló el problema y qué opciones quedaron fuera— y terminamos una etapa después, registrando qué condición obligaría a revisar la decisión.',
-        },
-        {
-          id: 'nombre',
-          q: '¿Por qué le llaman utopía?',
-          a: 'Porque obliga a declarar qué futuro se considera mejor y para quién, en vez de esconder ese juicio detrás de proyecciones. No es idealismo: es la disciplina de no dejar el criterio implícito. No prometemos una sociedad perfecta, ni un futuro único preferible, ni un plan cerrado.',
-        },
-      ],
-    },
-
     closing: {
-      h2: 'Una hora sobre una decisión real',
-      body: 'No es una presentación de servicios. Traiga una decisión que ya tenga pendiente y salga con el problema reformulado y las alternativas que no estaban sobre la mesa. Si después de eso no hay encargo, igual se lleva eso.',
+      h2: 'Trae una decisión que no puedas postergar.',
+      body: 'No es una presentación de servicios. En una hora identificamos qué información falta, qué posibilidades conviene abrir y cuál es tu próxima decisión. Si después de eso no hay encargo, igual te llevas eso.',
       cta: 'Agendar la conversación',
     },
   },
@@ -476,11 +474,16 @@ export const es: Content = {
         },
         {
           title: 'Compra pública y licitación',
-          text: 'Trabajamos con municipios y servicios por la vía formal que corresponda. Para bases y requisitos administrativos, escríbanos antes del cierre: el ciclo presupuestario municipal corre entre agosto y octubre.',
+          text: 'Trabajamos con municipios y servicios por la vía formal que corresponda. Para bases y requisitos administrativos, escríbenos antes del cierre: el ciclo presupuestario municipal corre entre agosto y octubre.',
         },
       ],
       priceNote:
         'Los valores dependen del alcance, del número de equipos y de las antenas que haya que instalar. Se definen después de la hora de diagnóstico, y los encargos mayores se estructuran en tramos para caber en presupuesto corriente.',
+    },
+
+    neutrality: {
+      tag: 'Condición de neutralidad',
+      text: 'No atendemos, sobre la misma materia regulatoria o territorial y dentro de la misma ventana, a un partido y a un cliente privado o público cuyos intereses en esa materia estén en conflicto. Cada encargo declara su perímetro por escrito. Sin ese perímetro, el encargo no se toma.',
     },
   },
 

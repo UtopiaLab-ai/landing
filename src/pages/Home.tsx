@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { Glyph } from '../brand/Glyph'
 import type { GlyphName } from '../brand/glyphs'
@@ -10,14 +9,17 @@ import { CATALOG_ANCHOR, pathFor } from '../routes'
 import { useSite } from '../site-context'
 
 /**
- * Home en nueve bloques, en el orden del buyer journey: hero, prueba,
- * situación reconocible, catálogo, para quién, casos, equipo, objeciones y
- * cierre.
+ * Home en ocho bloques: hero, prueba, situación reconocible, catálogo, cómo
+ * trabajamos, qué se gana, casos, equipo y cierre.
  *
  * El orden no es narrativo sino comercial: la prueba va arriba porque quien
  * evalúa un proveedor decide la credibilidad antes de leer la oferta, y las
  * situaciones van antes que el catálogo porque nadie compra un producto que
  * no sabe a qué problema suyo corresponde.
+ *
+ * El método y lo que se gana van después del catálogo y no antes: primero se
+ * ve qué se compra, después cómo se hace y qué deja. El esquema del núcleo
+ * cierra los casos, que son ese mismo esquema en obra.
  */
 
 /**
@@ -89,8 +91,8 @@ export function Home() {
             {c.situations.rows.map((row) => (
               <div className="sitrow" key={row.situation}>
                 <p className="sit-q">{row.situation}</p>
-                <p className="sit-d">{row.doing}</p>
-                <p className="sit-i">{row.installed}</p>
+                <p className="sit-d">{row.problem}</p>
+                <p className="sit-i">{row.proposal}</p>
               </div>
             ))}
           </div>
@@ -136,88 +138,59 @@ export function Home() {
         </div>
       </section>
 
-      {/* 05 · PARA QUIÉN · los seis compradores son un mazo: cada carta queda
-          fija mientras la siguiente la tapa, así se lee un comprador a la vez.
-
-          Van los seis en una sola baraja porque el h2 promete «seis
-          compradores» y la sección los partía en dos bloques con forma
-          distinta —dos carriles anchos y cuatro tarjetas chicas—, que se leía
-          como dos listas y no como un catálogo de seis. El grupo del que viene
-          cada carta no se pierde: va como rótulo arriba, junto al número.
-
-          El orden es el de venta —primero los dos con demanda observada,
-          después los cuatro que son apuesta— y es el que dice el propio
-          rótulo de sección, «Señal fuerte primero».
-
-          El apilado es CSS puro; acá solo se pasa el índice de la carta, que
-          es lo que escalona su tope. */}
-      <section className="publicos" id="publicos">
+      {/* 05 · CÓMO TRABAJAMOS · las tres etapas del núcleo */}
+      <section className="metodo" id="metodo">
         <div className="wrap">
-          <h2>{c.audience.h2}</h2>
-          <p className="asub">{c.audience.sub}</p>
-          <SectionLabel label={c.audience.label} />
+          <div className="kicker mono">{c.method.kicker}</div>
+          <h2>{c.method.h2}</h2>
+          <p className="msub">{c.method.sub}</p>
+          <SectionLabel label={c.method.label} />
 
-          <div className="aud-stack">
-            {c.audience.strong.tracks.map((track, i) => (
-              <article
-                className="aud-card"
-                key={track.n}
-                style={{ '--i': i } as CSSProperties}
-              >
-                <div className="aud-top">
-                  <span className="aud-n mono">{track.n}</span>
-                  <span className="aud-kind mono">{c.audience.strong.tag}</span>
-                </div>
-
-                <div className="aud-ttl">{track.title}</div>
-
-                <div className="aud-body">
-                  <p className="aud-desc">{track.text}</p>
-                  <div className="aud-refs">
-                    <p className="cref mono">
-                      <span className="crl">{track.entryLabel}</span> {track.entry}
-                    </p>
-                    <p className="cref mono">
-                      <span className="crl">{track.anchorLabel}</span> {track.anchor}
-                    </p>
-                  </div>
-                </div>
-              </article>
+          <ol className="etapas">
+            {c.method.steps.map((step) => (
+              <li className="etapa" key={step.n}>
+                <span className="enum mono">{step.n}</span>
+                <h3 className="ettl">{step.title}</h3>
+                <p className="etxt">{step.text}</p>
+                <p className="emark mono">
+                  <span className="crl">{c.method.markerLabel}</span> {step.marker}
+                </p>
+              </li>
             ))}
+          </ol>
 
-            {/* La numeración sigue corrida desde los carriles: es un mazo de
-                seis, no cuatro cartas aparte. */}
-            {c.audience.others.items.map((item, i) => {
-              const n = c.audience.strong.tracks.length + i
-              return (
-                <article
-                  className="aud-card aud-card-weak"
-                  key={item.name}
-                  style={{ '--i': n } as CSSProperties}
-                >
-                  <div className="aud-top">
-                    <span className="aud-n mono">{String(n + 1).padStart(2, '0')}</span>
-                    <span className="aud-kind mono">{c.audience.others.tag}</span>
-                  </div>
+          <p className="mclose">{c.method.close}</p>
+        </div>
+      </section>
 
-                  <div className="aud-ttl">{item.name}</div>
+      {/* 06 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
+      <section className="valor" id="valor">
+        <div className="wrap">
+          <div className="kicker mono">{c.value.kicker}</div>
+          <h2>{c.value.h2}</h2>
+          <p className="vsub">{c.value.sub}</p>
+          <SectionLabel label={c.value.label} />
 
-                  <div className="aud-body">
-                    <p className="aud-desc">{item.text}</p>
-                  </div>
-                </article>
-              )
-            })}
+          <div className="ganancias">
+            {c.value.items.map((item) => (
+              <div className="ganancia" key={item.title}>
+                <h3 className="gttl">{item.title}</h3>
+                <p className="gtxt">{item.text}</p>
+              </div>
+            ))}
           </div>
 
+          {/* La evidencia va con su límite pegado —«son asociaciones, no
+              promesas»— y las fuentes citadas. Sin eso, las cifras leen como
+              una promesa de resultado que el Lab no puede firmar. */}
           <div className="caja">
-            <div className="tag mono">{c.audience.neutrality.tag}</div>
-            <p>{c.audience.neutrality.text}</p>
+            <p>{c.value.evidence.text}</p>
+            <p className="fuentes mono">{c.value.evidence.sources}</p>
           </div>
         </div>
       </section>
 
-      {/* 06 · CASOS */}
+      {/* 07 · CASOS */}
       <section className="casos-home" id="casos">
         <div className="wrap">
           <h2>{c.cases.h2}</h2>
@@ -235,10 +208,25 @@ export function Home() {
           <Link className="puente-link mono" to={casesPath}>
             {c.cases.cta}
           </Link>
+
+          {/* El esquema del núcleo cierra los casos: son el mismo diagrama en
+              obra. Va a ancho completo y con figcaption porque el dibujo no se
+              explica solo, y con loading diferido por estar bajo el pliegue. */}
+          <figure className="esquema">
+            <img
+              src="/image/nucleo-metodo.svg"
+              alt={c.cases.figureAlt}
+              width={1640}
+              height={980}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{c.cases.figureCaption}</figcaption>
+          </figure>
         </div>
       </section>
 
-      {/* 07 · EQUIPO */}
+      {/* 08 · EQUIPO */}
       <section className="equipo" id="equipo">
         <div className="wrap">
           <h2>{c.team.h2}</h2>
@@ -256,22 +244,6 @@ export function Home() {
           <Link className="puente-link mono" to={teamPath}>
             {c.team.cta}
           </Link>
-        </div>
-      </section>
-
-      {/* 08 · OBJECIONES */}
-      <section className="objeciones">
-        <div className="wrap">
-          <h2>{c.objections.h2}</h2>
-          <SectionLabel label={c.objections.label} />
-          <div className="faq">
-            {c.objections.items.map((item) => (
-              <div className="pregunta" key={item.id} id={item.id}>
-                <div className="q">{item.q}</div>
-                <p className="a">{item.a}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

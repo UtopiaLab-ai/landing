@@ -33,9 +33,9 @@ export interface Common {
 }
 
 /* --- Home ------------------------------------------------------------------
-   Nueve bloques, en el orden del buyer journey del TCBF: hero (trigger),
-   prueba, situación reconocible, catálogo, para quién, casos, equipo,
-   objeciones y cierre. */
+   Ocho bloques, en el orden del buyer journey: hero (trigger), prueba,
+   situación reconocible, catálogo, cómo trabajamos, qué se gana, casos,
+   equipo y cierre. */
 
 export interface HomeContent {
   meta: Meta
@@ -56,15 +56,17 @@ export interface HomeContent {
   }
 
   /**
-   * Las cinco situaciones de la lámina A2 de la NMU: el cliente se reconoce en
-   * la primera columna. Reemplaza al bloque abstracto de síntomas.
+   * Las ocho situaciones: el cliente se reconoce en la cita, y las otras dos
+   * columnas separan qué traba la decisión de qué se propone hacer. La cita va
+   * primero porque nadie compra un producto que no sabe a qué problema suyo
+   * corresponde.
    */
   situations: {
     h2: string
     sub: string
     label: SectionLabel
-    heads: readonly [situation: string, doing: string, installed: string]
-    rows: readonly { situation: string; doing: string; installed: string }[]
+    heads: readonly [situation: string, problem: string, proposal: string]
+    rows: readonly { situation: string; problem: string; proposal: string }[]
     close: string
   }
 
@@ -85,30 +87,28 @@ export interface HomeContent {
     cta: string
   }
 
-  audience: {
+  /**
+   * El núcleo del método, en tres etapas que nombran puntos del esquema: la
+   * señal, la bifurcación y la ventana en que la decisión todavía incide.
+   */
+  method: {
+    kicker: string
     h2: string
     sub: string
     label: SectionLabel
-    /** Los dos verticales con demanda observada en el radar. */
-    strong: {
-      tag: string
-      tracks: readonly {
-        n: string
-        title: string
-        text: string
-        entryLabel: string
-        entry: string
-        anchorLabel: string
-        anchor: string
-      }[]
-    }
-    /** Los cuatro restantes: apuesta de posicionamiento, no demanda probada. */
-    others: {
-      tag: string
-      items: readonly { name: string; text: string }[]
-    }
-    /** Condición de activación del vertical político, no recomendación. */
-    neutrality: { tag: string; text: string }
+    steps: readonly { n: string; title: string; text: string; marker: string }[]
+    markerLabel: string
+    close: string
+  }
+
+  /** Qué gana la organización, con la evidencia que lo respalda y sus límites. */
+  value: {
+    kicker: string
+    h2: string
+    sub: string
+    label: SectionLabel
+    items: readonly { title: string; text: string }[]
+    evidence: { text: string; sources: string }
   }
 
   cases: {
@@ -116,6 +116,9 @@ export interface HomeContent {
     sub: string
     cards: readonly { n: string; title: string; proof: string }[]
     cta: string
+    /** El esquema del método cierra los casos. */
+    figureAlt: string
+    figureCaption: string
   }
 
   team: {
@@ -124,13 +127,6 @@ export interface HomeContent {
     label: SectionLabel
     members: readonly { name: string; role: string; text: string }[]
     cta: string
-  }
-
-  /** Las tres preguntas de la lámina A4 de la NMU. */
-  objections: {
-    h2: string
-    label: SectionLabel
-    items: readonly { id: string; q: string; a: string }[]
   }
 
   closing: { h2: string; body: string; cta: string }
@@ -192,6 +188,10 @@ export interface ProductsContent {
     items: readonly { title: string; text: string }[]
     priceNote: string
   }
+
+  /** Condición de activación del vertical político. Vive acá porque es parte
+      de lo que se firma, no de lo que se ofrece. */
+  neutrality: { tag: string; text: string }
 }
 
 /* --- Casos -----------------------------------------------------------------

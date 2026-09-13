@@ -27,7 +27,7 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['The rules', 'change every year.', 'The decisions', 'last twenty.'],
+      titleLines: ['Deciding', 'while the future', 'is still', 'open.'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
       frames: ['Signal', 'Decision', 'Capability'],
@@ -47,33 +47,48 @@ export const en: Content = {
     situations: {
       h2: 'Do you recognise any of these sentences?',
       sub: 'We don’t sell a method. We sell getting out of a situation you can already describe.',
-      label: ['Five situations', '01 — 05'],
-      heads: ['Your situation', 'What we do', 'What stays installed'],
+      label: ['Eight situations', '01 — 08'],
+      heads: ['Your situation', 'The problem', 'What we propose'],
       rows: [
         {
-          situation: '“We have to decide and we don’t know which scenarios to look at.”',
-          doing: 'We reframe the problem and widen the set of alternatives before comparing them.',
-          installed: 'A wider menu of options, with explicit criteria.',
+          situation: '“We have to decide, but we don’t know which possibilities to consider.”',
+          problem: 'The opening question is framed too narrowly and the alternatives stay the same ones.',
+          proposal: 'Reframe the decision, explore possible futures and widen the alternatives before choosing.',
+        },
+        {
+          situation: '“The problem is so complex we don’t know where to start.”',
+          problem: 'Too many variables, actors and simultaneous changes are in play; everything looks important and no one can tell which decision to settle first.',
+          proposal: 'Bound the problem, map the system, identify dependencies and build a first decision that lets the work move.',
         },
         {
           situation: '“Everything interesting gets ruled out as unfeasible.”',
-          doing: 'We turn every “unfeasible” into conditions, dependencies and owners.',
-          installed: 'An agenda of enabling conditions instead of a verdict.',
+          problem: 'The limit is stated as a verdict rather than as a condition that could be changed.',
+          proposal: 'Identify dependencies, owners and enabling conditions to open real options.',
         },
         {
-          situation: '“Every area wants something different and we end up with a consensus that convinces no one.”',
-          doing: 'We make the incompatible desires explicit and classify the tension before deciding.',
-          installed: 'A decision that acknowledges the disagreement instead of hiding it.',
+          situation: '“Each area sees a part, but nobody manages to see the whole.”',
+          problem: 'Diagnoses, interests and data stay fragmented; the connections between decisions only become visible once blockages or contradictions appear.',
+          proposal: 'Integrate perspectives, make the interdependencies visible and build a shared picture that lets action be coordinated.',
         },
         {
-          situation: '“We find out too late about the things that affect us.”',
-          doing: 'We install the observation cycle, with thresholds and named owners for each alert.',
-          installed: 'A dashboard with signals, thresholds and who watches what.',
+          situation: '“We can see a change coming, but not where it pays to act.”',
+          problem: 'Every trend looks equally important and the relevant opportunities go unrecognised.',
+          proposal: 'Assess relevance, potential and conditions for action, to focus effort where it can create value.',
         },
         {
-          situation: '“We decided, but nobody remembers why.”',
-          doing: 'We record what was evidence, what was assumption, and what condition would force a review.',
-          installed: 'Provenance records that can answer the question months later.',
+          situation: '“We have a strategy, but we don’t know when or how to revisit it.”',
+          problem: 'The plan stays fixed while the conditions that gave it sense keep changing.',
+          proposal: 'Translate the vision into sequences, priorities, thresholds and adjustment decisions.',
+        },
+        {
+          situation: '“AI could transform our work, but we don’t know how to bring it in without losing what matters.”',
+          problem: 'Technical capability advances faster than the organisation’s capacity to decide what to transform, what to protect and which responsibilities to redefine.',
+          proposal: 'Turn the technological potential into a transformation path with priorities, criteria, safeguards, owners and review.',
+        },
+        {
+          situation: '“The work ends and we go back to depending on one or two people.”',
+          problem: 'The capability to anticipate and decide does not stay inside the organisation.',
+          proposal: 'Leave language, tools, routines and responsibilities the team can sustain.',
         },
       ],
       close:
@@ -81,8 +96,8 @@ export const en: Content = {
     },
 
     catalog: {
-      h2: 'Eight products, four steps',
-      sub: 'Ordered by depth, not by type. You enter wherever the problem asks, and move up only if it helps.',
+      h2: 'Eight forms of intervention',
+      sub: 'We have our own methodology for decision problems in Latin American contexts of uncertainty, polycrisis and institutional distrust. We do not apply recipes: each engagement is fitted to the territory, the organisation, the actors and the moment of decision. You enter wherever the problem asks, and move up only if it helps.',
       label: ['The catalogue', '01 — 08'],
       speeds: [
         {
@@ -150,57 +165,58 @@ export const en: Content = {
       cta: 'See the full product sheets →',
     },
 
-    audience: {
-      h2: 'The same catalogue, six buyers',
-      sub: 'The products don’t change: the way in, the argument and the signatory do.',
-      label: ['Who it is for', 'Strong signal first'],
-      strong: {
-        tag: 'Observed demand',
-        tracks: [
-          {
-            n: '01',
-            title: 'Companies exposed to regulatory and territorial change',
-            text: 'Mining, energy, agribusiness, construction and patrimonial investment: ten- to twenty-year decisions in an environment whose rules change every year. Anticipation as systemic risk management, not as a sustainability report.',
-            entryLabel: 'Typical entry',
-            entry: 'Situation Brief · board room',
-            anchorLabel: 'Anchor product',
-            anchor: 'Futures Study',
-          },
-          {
-            n: '02',
-            title: 'Public sector and local government',
-            text: 'Municipalities and agencies deciding under pressure, with asymmetric information and a fixed budget cycle. The capacity to anticipate sits today wherever there is budget to buy it, which spreads the long term unevenly across territories. Whoever lacks it arrives late to the decision that matters.',
-            entryLabel: 'Typical entry',
-            entry: 'Territorial intelligence · instrument evaluation',
-            anchorLabel: 'Anchor product',
-            anchor: 'Territorial study + Futures Lab',
-          },
-        ],
-      },
-      others: {
-        tag: 'A positioning bet, with no proven demand yet',
-        items: [
-          {
-            name: 'International cooperation',
-            text: 'Futures processes with multi-actor legitimacy. Long cycles, budget by project.',
-          },
-          {
-            name: 'Universities',
-            text: 'Methodological credential and planning under falling enrolment. October–December window.',
-          },
-          {
-            name: 'Foundations and impact funds',
-            text: 'Rigour to sustain the impact thesis, with a thematic observatory as the way in.',
-          },
-          {
-            name: 'Political parties',
-            text: 'Anticipating the scenario and building a position, not polling the present. Electoral window.',
-          },
-        ],
-      },
-      neutrality: {
-        tag: 'Neutrality condition',
-        text: 'On the same regulatory or territorial matter and within the same window, we do not serve both a political party and a private or public client whose interests in that matter are in conflict. Every engagement declares its perimeter in writing. Without that perimeter, the engagement is not taken.',
+    method: {
+      kicker: 'How we work',
+      h2: 'We read the signal, open up possibilities and decide in time.',
+      sub: 'The three stages correspond to a precise point on the diagram: detect the change, recognise the fork, and act inside the window where the decision can still alter the outcome.',
+      label: ['The core of the method', '01 — 03'],
+      markerLabel: 'On the diagram',
+      steps: [
+        {
+          n: '01',
+          title: 'Locate the signal',
+          text: 'We read the territory, the rules and the actors to tell a relevant change apart from noise.',
+          marker: 'signal',
+        },
+        {
+          n: '02',
+          title: 'See the fork',
+          text: 'We make comparable the alternatives, tensions and futures that business as usual does not yet let anyone see.',
+          marker: 'fork',
+        },
+        {
+          n: '03',
+          title: 'Decide inside the window',
+          text: 'We set criteria, owners, alerts and conditions to act or revisit before the point of no return.',
+          marker: 'decision window',
+        },
+      ],
+      close:
+        'Anticipating is not predicting the scenario: it is deciding while the decision still counts. Past the point of no return, what is left is managing the effect, not choosing it.',
+    },
+
+    value: {
+      kicker: 'What your organisation gains',
+      h2: 'Anticipation is not an abstract exercise: it improves the quality, speed and effect of decisions.',
+      sub: 'The value is in acting with more options open, fewer surprises, and shared criteria for investing, coordinating and growing.',
+      label: ['What is gained', '01 — 03'],
+      items: [
+        {
+          title: 'Better performance',
+          text: 'Decisions that are clearer, traceable and executable; less rework, fewer blockages, fewer resources spent correcting late.',
+        },
+        {
+          title: 'Growth with less exposure',
+          text: 'The capacity to spot emerging opportunities and risks before they turn into emergencies or unavoidable costs.',
+        },
+        {
+          title: 'Capability that stays',
+          text: 'A shared language, alerts and criteria that remain with the team to review and adjust course.',
+        },
+      ],
+      evidence: {
+        text: 'In their sample, firms with high future preparedness recorded 33% higher profitability and 200% higher growth; McKinsey associates fast, high-quality decisions with better returns. ECLAC warns that the lack of a long-term perspective limits opportunities and risk containment in Latin America and the Caribbean, and the OECD links foresight to more resilient decisions. These are associations, not promises: the outcome depends on the quality of the decision and on its execution.',
+        sources: 'Rohrbeck & Kum (2018) · McKinsey (2019) · ECLAC (2016) · OECD (2023)',
       },
     },
 
@@ -230,6 +246,10 @@ export const en: Content = {
         },
       ],
       cta: 'See the full cases →',
+      figureAlt:
+        'Diagram of the core of the method: the signal emerges from noise, crosses a fuzzy threshold, forks into a cone of futures and opens a decision window that closes at the point of no return.',
+      figureCaption:
+        'The four cases are the same diagram at work: where the signal was, when it forked, and how far open the window still was.',
     },
 
     team: {
@@ -261,31 +281,9 @@ export const en: Content = {
       cta: 'See the full credentials →',
     },
 
-    objections: {
-      h2: 'The three questions that always come up',
-      label: ['Objections', '01 — 03'],
-      items: [
-        {
-          id: 'ia',
-          q: 'Isn’t this what ChatGPT does?',
-          a: 'A generic assistant is optimised to give you a clean answer. Our process is designed not to, when the disagreement is real: it preserves the contradiction, labels what is evidence and what is assumption, and does not recommend a single option without showing the discarded ones. We use existing models as a tool; the deliberation stays human.',
-        },
-        {
-          id: 'planificacion',
-          q: 'How is this different from the strategic planning we already do?',
-          a: 'Planning starts from objectives that are already formulated. We start one step earlier — auditing who framed the problem and which options were left out — and finish one step later, recording what condition would force the decision to be reviewed.',
-        },
-        {
-          id: 'nombre',
-          q: 'Why call it utopia?',
-          a: 'Because it forces you to state which future is considered better, and for whom, instead of hiding that judgement behind projections. It is not idealism: it is the discipline of not leaving the criterion implicit. We do not promise a perfect society, a single preferable future, or a closed plan.',
-        },
-      ],
-    },
-
     closing: {
-      h2: 'One hour on a real decision',
-      body: 'It is not a services pitch. Bring a decision you already have pending and leave with the problem reframed and the alternatives that were not on the table. If no engagement follows, you keep that anyway.',
+      h2: 'Bring a decision you cannot postpone.',
+      body: 'It is not a services pitch. In one hour we work out what information is missing, which possibilities are worth opening, and what your next decision is. If no engagement follows, you keep that anyway.',
       cta: 'Book the conversation',
     },
   },
@@ -480,6 +478,11 @@ export const en: Content = {
       ],
       priceNote:
         'Values depend on scope, on the number of teams and on the antennae that need installing. They are defined after the diagnostic hour, and larger engagements are structured in tranches so they fit within a running budget.',
+    },
+
+    neutrality: {
+      tag: 'Neutrality condition',
+      text: 'On the same regulatory or territorial matter and within the same window, we do not serve both a political party and a private or public client whose interests in that matter are in conflict. Every engagement declares its perimeter in writing. Without that perimeter, the engagement is not taken.',
     },
   },
 
