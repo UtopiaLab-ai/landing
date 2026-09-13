@@ -238,14 +238,14 @@ export const es: Content = {
     },
 
     team: {
-      h2: 'Quién lo ejecuta',
+      h2: 'Equipo',
       sub: 'Un equipo chico: lo ejecutan las mismas personas que lo diseñan. Sin juniors facturados como seniors.',
       label: ['Equipo', '01 — 02'],
       members: [
         {
           name: 'Isabel Serra',
           role: 'Dirección de producto',
-          text: 'Arquitecta. Creó la primera Unidad de Prospectiva del MINVU y dirigió su Centro de Estudios Ciudad y Territorio. Autora del Sistema Utopía.',
+          text: 'Urbanista. Dirigió el Centro de Estudios Ciudad y Territorio del MINVU y fue académica e investigadora de la Universidad Diego Portales durante diez años. Autora del Sistema Utopía.',
         },
         {
           name: 'Genaro Cuadros',
@@ -573,9 +573,9 @@ export const es: Content = {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Unidad de Prospectiva MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
     },
-    kicker: 'Quién ejecuta',
+    kicker: 'Equipo',
     titleLines: ['Las mismas', 'personas'],
     sub: 'Quien diseña el encargo es quien lo ejecuta.',
     lead: [
@@ -591,11 +591,10 @@ export const es: Content = {
         n: '01',
         name: 'Isabel Serra Benítez',
         role: 'Dirección de producto',
-        text: 'Arquitecta e investigadora urbana, con quince años en la intersección entre proyecto, pensamiento crítico y estudios de futuros. Autora del Sistema Utopía, el marco metodológico que ordena el trabajo del Lab. Conduce el diseño de los encargos: alcance, entregables y relación con las contrapartes.',
+        text: 'Urbanista e investigadora, con quince años en la intersección entre proyecto, pensamiento crítico y estudios de futuros —diez de ellos como académica e investigadora de la Universidad Diego Portales—. Autora del Sistema Utopía, el marco metodológico que ordena el trabajo del Lab. Conduce el diseño de los encargos: alcance, entregables y relación con las contrapartes.',
         credentials: [
           'Jefa del Centro de Estudios Ciudad y Territorio, MINVU (2024–2025): 26 profesionales en cinco equipos',
-          'Creación de la primera Unidad de Prospectiva institucional del MINVU',
-          'Profesora Titular, Universidad Diego Portales (2012–2022)',
+          'Académica e investigadora, Universidad Diego Portales (2012–2022)',
           'Dirección de once proyectos de investigación con CEPAL, GIZ, U. de St. Gallen y Columbia University',
           'Doctora (c) en Estudios Americanos, IDEA–USACH',
           'Magíster en Gestión y Políticas Públicas, Universidad de Chile — Premio Eugenio Lahera',

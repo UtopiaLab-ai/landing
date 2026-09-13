@@ -237,14 +237,14 @@ export const en: Content = {
     },
 
     team: {
-      h2: 'Who runs the work',
+      h2: 'Team',
       sub: 'A small team: the people who design the engagement are the ones who execute it. No juniors billed as seniors.',
       label: ['Team', '01 — 02'],
       members: [
         {
           name: 'Isabel Serra',
           role: 'Product lead',
-          text: 'Architect. Created MINVU’s first Foresight Unit and led its Centre for City and Territory Studies. Author of the Utopía System.',
+          text: 'Urbanist. Led MINVU’s Centre for City and Territory Studies, and was an academic and researcher at Universidad Diego Portales for ten years. Author of the Utopía System.',
         },
         {
           name: 'Genaro Cuadros',
@@ -567,9 +567,9 @@ export const en: Content = {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Foresight Unit, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
     },
-    kicker: 'Who runs the work',
+    kicker: 'Team',
     titleLines: ['The same', 'people'],
     sub: 'Whoever designs the engagement is the one who executes it.',
     lead: [
@@ -585,11 +585,10 @@ export const en: Content = {
         n: '01',
         name: 'Isabel Serra Benítez',
         role: 'Product lead',
-        text: 'Architect and urban researcher, with fifteen years at the intersection of design, critical thought and futures studies. Author of the Utopía System, the methodological frame that orders the Lab’s work. She leads the design of engagements: scope, deliverables and the relationship with counterparts.',
+        text: 'Urbanist and researcher, with fifteen years at the intersection of design, critical thought and futures studies — ten of them as an academic and researcher at Universidad Diego Portales. Author of the Utopía System, the methodological frame that orders the Lab’s work. She leads the design of engagements: scope, deliverables and the relationship with counterparts.',
         credentials: [
           'Head of the Centre for City and Territory Studies, MINVU (2024–2025): 26 professionals across five teams',
-          'Creation of MINVU’s first institutional Foresight Unit',
-          'Full Professor, Universidad Diego Portales (2012–2022)',
+          'Academic and researcher, Universidad Diego Portales (2012–2022)',
           'Led eleven research projects with ECLAC, GIZ, the University of St. Gallen and Columbia University',
           'PhD candidate in American Studies, IDEA–USACH',
           'MA in Public Management and Policy, Universidad de Chile — Eugenio Lahera Prize',
