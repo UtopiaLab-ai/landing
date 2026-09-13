@@ -239,7 +239,7 @@ export const en: Content = {
     team: {
       h2: 'Team',
       sub: 'A small team: the people who design the engagement are the ones who execute it. No juniors billed as seniors.',
-      label: ['Team', '01 — 02'],
+      label: ['Team', '01 — 04'],
       members: [
         {
           name: 'Isabel Serra',
@@ -250,6 +250,16 @@ export const en: Content = {
           name: 'Genaro Cuadros',
           role: 'Project lead',
           text: 'Architect and urban planner. Head of Recoleta’s Planning Secretariat; consultant to ECLAC–UN and the IDB on urban and territorial development.',
+        },
+        {
+          name: 'Ariel López',
+          role: 'Partner',
+          text: 'Transport engineer and urban planner. International consultant to ECLAC and UNDP, adviser to Chile’s National Council for Territorial Development, and court-appointed traffic expert.',
+        },
+        {
+          name: 'Willy Maikowski',
+          role: 'Partner',
+          text: 'Software engineer. Engineering Manager at Buk, previously at Universidad de Chile’s Ucampus Technology Centre. Built the real-time monitor of Santiago’s buses with Ariel.',
         },
       ],
       cta: 'See the full credentials →',
@@ -578,7 +588,7 @@ export const en: Content = {
       ', and no partner who appears only at the sales meeting.',
     ],
 
-    membersLabel: ['The team', '01 — 02'],
+    membersLabel: ['The team', '01 — 04'],
     credentialsLabel: 'Track record',
     members: [
       {
@@ -609,6 +619,36 @@ export const en: Content = {
           'Coordinator of Critical Neighbourhoods, Quiero Mi Barrio programme, MINVU (2005–2008)',
           'MSc in Applied Sciences, Urbanism and Territorial Development, UCLouvain — with distinction',
         ],
+      },
+      {
+        n: '03',
+        name: 'Ariel López López',
+        role: 'Partner',
+        text: 'Transport engineer and urban planner. He treats mobility as what it is — who can reach where, in how long and at what cost — rather than as an infrastructure problem solved by building. That reading is what he brings to territorial engagements: a transport system reveals a city’s structure of opportunity before any aggregate indicator does.',
+        credentials: [
+          'International consultant to ECLAC and UNDP',
+          'Adviser to the National Council for Territorial Development (CNDT)',
+          'Court-appointed traffic expert, Courts of Appeal of Santiago, Valparaíso and Rancagua',
+          'Head of Studies and Projects, W Ingeniería',
+          'Lecturer in Transport Engineering, UTEM and Universidad Andrés Bello',
+          'PhD candidate in Territory, Space and Society, FAU — Universidad de Chile',
+          'MA in Urbanism, Universidad de Chile',
+          'Transport and Traffic Engineer, UTEM',
+        ],
+        profile: 'https://www.linkedin.com/in/arielopez',
+      },
+      {
+        n: '04',
+        name: 'Willy Maikowski Correa',
+        role: 'Partner',
+        text: 'Software engineer, with his track record in systems that run every day rather than in demonstrations. Engineering Manager at Buk and previously at Universidad de Chile’s Ucampus Technology Centre, where thousands of people use the academic management software daily. With Ariel he built the real-time monitor of Santiago’s buses on Red Movilidad’s GPS feed: precisely the Observatory’s problem — turning a raw stream into something a person can look at and decide on — solved with public data and on nobody’s commission.',
+        credentials: [
+          'Engineering Manager at Buk',
+          'Ucampus Technology Centre, Universidad de Chile',
+          'Real-time monitor of Santiago’s buses (velocidades.seguimos.cl), with Ariel López',
+          'Thesis supervisor in Computer Science Engineering, FCFM — Universidad de Chile',
+        ],
+        profile: 'https://www.linkedin.com/in/willymaikowski',
       },
     ],
 

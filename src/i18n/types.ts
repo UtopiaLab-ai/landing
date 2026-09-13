@@ -254,6 +254,8 @@ export interface TeamContent {
     role: string
     text: string
     credentials: readonly string[]
+    /** Perfil público. Ausente donde la persona no publica uno. */
+    profile?: string
   }[]
 
   /** Capacidad declarada: cuántos encargos sostiene el Lab a la vez. */

@@ -240,7 +240,7 @@ export const es: Content = {
     team: {
       h2: 'Equipo',
       sub: 'Un equipo chico: lo ejecutan las mismas personas que lo diseñan. Sin juniors facturados como seniors.',
-      label: ['Equipo', '01 — 02'],
+      label: ['Equipo', '01 — 04'],
       members: [
         {
           name: 'Isabel Serra',
@@ -251,6 +251,16 @@ export const es: Content = {
           name: 'Genaro Cuadros',
           role: 'Dirección de proyectos',
           text: 'Arquitecto y urbanista. Director de la Secretaría de Planificación de Recoleta; consultor de CEPAL–ONU y del BID en desarrollo urbano y territorial.',
+        },
+        {
+          name: 'Ariel López',
+          role: 'Socio',
+          text: 'Ingeniero en transporte y urbanista. Consultor internacional de la CEPAL y el PNUD, asesor del Consejo Nacional de Desarrollo Territorial y perito judicial en tránsito.',
+        },
+        {
+          name: 'Willy Maikowski',
+          role: 'Socio',
+          text: 'Ingeniero de software. Engineering Manager en Buk, antes en el Centro Tecnológico Ucampus de la Universidad de Chile. Construyó con Ariel el monitor en tiempo real de los buses de Santiago.',
         },
       ],
       cta: 'Ver las credenciales completas →',
@@ -584,7 +594,7 @@ export const es: Content = {
       ' ni un socio que aparece solo en la reunión de venta.',
     ],
 
-    membersLabel: ['El equipo', '01 — 02'],
+    membersLabel: ['El equipo', '01 — 04'],
     credentialsLabel: 'Trayectoria',
     members: [
       {
@@ -615,6 +625,36 @@ export const es: Content = {
           'Coordinador de Barrios Críticos, programa Quiero Mi Barrio, MINVU (2005–2008)',
           'Máster en Ciencias Aplicadas mención Urbanismo y Desarrollo Territorial, UCLouvain — con distinción',
         ],
+      },
+      {
+        n: '03',
+        name: 'Ariel López López',
+        role: 'Socio',
+        text: 'Ingeniero en transporte y urbanista. Trabaja la movilidad como lo que es —quién puede llegar a dónde, en cuánto tiempo y a qué costo— y no como un problema de infraestructura que se resuelve construyendo. Esa lectura es la que aporta a los encargos territoriales: un sistema de transporte revela la estructura de oportunidades de una ciudad antes que cualquier indicador agregado.',
+        credentials: [
+          'Consultor internacional de la CEPAL y el PNUD',
+          'Asesor del Consejo Nacional de Desarrollo Territorial (CNDT)',
+          'Perito judicial en tránsito, Cortes de Apelaciones de Santiago, Valparaíso y Rancagua',
+          'Gerente de Estudios y Proyectos, W Ingeniería',
+          'Profesor de Ingeniería en Transporte, UTEM y Universidad Andrés Bello',
+          'Doctorando en Territorio, Espacio y Sociedad, FAU — Universidad de Chile',
+          'Magíster en Urbanismo, Universidad de Chile',
+          'Ingeniero en Transporte y Tránsito, UTEM',
+        ],
+        profile: 'https://www.linkedin.com/in/arielopez',
+      },
+      {
+        n: '04',
+        name: 'Willy Maikowski Correa',
+        role: 'Socio',
+        text: 'Ingeniero de software, con la trayectoria puesta en sistemas que operan todos los días y no en demostraciones. Engineering Manager en Buk y antes en el Centro Tecnológico Ucampus de la Universidad de Chile, donde el software de gestión académica lo usan miles de personas a diario. Con Ariel construyó el monitor en tiempo real de los buses de Santiago sobre los datos GPS de Red Movilidad: exactamente el problema del Observatorio —convertir un flujo crudo en algo que alguien pueda mirar y decidir—, resuelto con datos públicos y sin encargo de nadie.',
+        credentials: [
+          'Engineering Manager en Buk',
+          'Centro Tecnológico Ucampus, Universidad de Chile',
+          'Monitor en tiempo real de los buses de Santiago (velocidades.seguimos.cl), con Ariel López',
+          'Profesor guía de memorias en Ingeniería Civil en Computación, FCFM — Universidad de Chile',
+        ],
+        profile: 'https://www.linkedin.com/in/willymaikowski',
       },
     ],
 

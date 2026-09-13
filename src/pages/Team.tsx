@@ -54,6 +54,19 @@ export function Team() {
                     ))}
                   </ul>
                 </div>
+                {/* Perfil público, solo donde la persona publica uno. No es
+                    una credencial: va fuera de la lista, que son hechos
+                    verificables y no enlaces. */}
+                {m.profile && (
+                  <a
+                    className="perfil mono"
+                    href={m.profile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn ↗
+                  </a>
+                )}
               </div>
             </article>
           ))}
