@@ -82,7 +82,6 @@ export interface HomeContent {
       note: string
       products: readonly { name: string; text: string; duration: string }[]
     }[]
-    horizon: { tag: string; text: string }
     cta: string
   }
 

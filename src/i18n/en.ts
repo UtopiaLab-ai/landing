@@ -147,10 +147,6 @@ export const en: Content = {
           ],
         },
       ],
-      horizon: {
-        tag: 'Horizon, not product',
-        text: 'Recurring access to the software, the versioned decision memory and the permanent observatory exist as a prototype. Until they work in a verifiable way we do not offer them: they are named as the horizon of the agreement.',
-      },
       cta: 'See the full product sheets →',
     },
 

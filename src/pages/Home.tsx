@@ -129,10 +129,6 @@ export function Home() {
             </div>
           ))}
 
-          <div className="caja">
-            <div className="tag mono">{c.catalog.horizon.tag}</div>
-            <p>{c.catalog.horizon.text}</p>
-          </div>
 
           <Link className="puente-link mono" to={productsPath}>
             {c.catalog.cta}

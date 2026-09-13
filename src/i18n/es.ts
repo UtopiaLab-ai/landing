@@ -148,10 +148,6 @@ export const es: Content = {
           ],
         },
       ],
-      horizon: {
-        tag: 'Horizonte, no producto',
-        text: 'El acceso recurrente al software, la memoria de decisiones versionada y el observatorio permanente existen como prototipo. Mientras no funcionen de forma validable no se ofrecen: se nombran como horizonte del acuerdo.',
-      },
       cta: 'Ver las fichas completas →',
     },
 
