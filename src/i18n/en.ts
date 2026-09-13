@@ -30,7 +30,6 @@ export const en: Content = {
       titleLines: ['Deciding', 'while the future', 'is still', 'open.'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
-      frames: ['Signal', 'Decision', 'Capability'],
     },
 
     proof: {

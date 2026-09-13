@@ -429,11 +429,15 @@ header > * {
 }
 
 /* ==========================================================================
-   HERO · el paisaje en movimiento · ruido → método → señal
+   HERO · el cuadro fijo de la marca junto al titular
    ========================================================================== */
 
+/* Fue un recorrido de 180vh que encendía un rótulo de tres pasos a medida que
+   se scrolleaba. Sacado el rótulo, el recorrido no avanzaba nada: quedaban dos
+   pantallas de scroll sobre un hero idéntico. El par sigue existiendo porque
+   de él cuelga todo el responsive de abajo. */
 .hero-seq {
-  height: 180vh;
+  height: auto;
   position: relative;
 }
 
@@ -441,8 +445,7 @@ header > * {
    navegador, así que el hero se dimensiona para un alto que no existe todavía
    y el contenido termina más arriba de lo que se ve. */
 .hero-stage {
-  position: sticky;
-  top: 0;
+  position: relative;
   height: 100vh;
   height: 100svh;
   min-height: 620px;
@@ -579,41 +582,6 @@ header > * {
   }
 }
 
-/* El rótulo del recorrido: dice en qué punto de la tesis va el scroll. */
-.hero-track {
-  position: absolute;
-  left: clamp(20px, 5vw, 72px);
-  bottom: clamp(18px, 2.6vh, 26px);
-  display: flex;
-  gap: 20px;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.htick {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  opacity: 0.3;
-  transition: opacity 0.3s;
-}
-
-.htick i {
-  width: 18px;
-  height: 2px;
-  background: currentColor;
-  border-radius: 2px;
-}
-
-.htick.on {
-  opacity: 1;
-}
-
-.htick.on i {
-  background: var(--sol);
-}
-
 @media (max-width: 820px) {
   /* En una columna el orden es titular → imagen → CTA: la imagen queda en
      medio y no empuja el botón fuera de la primera pantalla. `display:
@@ -642,14 +610,6 @@ header > * {
     order: 3;
     margin-top: 0;
   }
-
-  .hero-track {
-    gap: 12px;
-  }
-
-  .htick i {
-    width: 12px;
-  }
 }
 
 /* Pantalla ancha pero baja (el móvil acostado, una ventana aplastada): la
@@ -658,18 +618,6 @@ header > * {
 @media (min-width: 821px) and (max-height: 640px) {
   .hero-figure {
     max-width: min(460px, calc(72svh * 0.75));
-  }
-}
-
-/* Sin movimiento: no hay recorrido, el hero es una sola pantalla. */
-@media (prefers-reduced-motion: reduce) {
-  .hero-seq {
-    height: auto;
-  }
-
-  .hero-stage {
-    position: relative;
-    height: 100vh;
   }
 }
 

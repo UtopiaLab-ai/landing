@@ -45,8 +45,6 @@ export interface HomeContent {
     titleLines: readonly string[]
     sub: string
     microcopy: string
-    /** Rótulo de cada cuadro de la secuencia; sigue la escalera de compromiso. */
-    frames: readonly [string, string, string]
   }
 
   /** Franja de credenciales bajo el hero. E6 de la Evidence Stack del TCBF. */

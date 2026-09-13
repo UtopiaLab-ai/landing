@@ -31,7 +31,6 @@ export const es: Content = {
       sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tienes pendiente.',
-      frames: ['Señal', 'Decisión', 'Capacidad'],
     },
 
     proof: {
