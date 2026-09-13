@@ -27,8 +27,8 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['From noise', 'to signal,', 'from signal', 'to anticipation'],
-      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. A brief in 48 hours, a study in six weeks, or the capability installed in your own team: you choose how much commitment.',
+      titleLines: ['The rules', 'change every year.', 'The decisions', 'last twenty.'],
+      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
       frames: ['Signal', 'Decision', 'Capability'],
     },
@@ -173,7 +173,7 @@ export const en: Content = {
           {
             n: '02',
             title: 'Public sector and local government',
-            text: 'Municipalities and agencies deciding under pressure, with asymmetric information and a fixed budget cycle. Whoever lacks installed capability arrives late to the decision that matters.',
+            text: 'Municipalities and agencies deciding under pressure, with asymmetric information and a fixed budget cycle. The capacity to anticipate sits today wherever there is budget to buy it, which spreads the long term unevenly across territories. Whoever lacks it arrives late to the decision that matters.',
             entryLabel: 'Typical entry',
             entry: 'Territorial intelligence · instrument evaluation',
             anchorLabel: 'Anchor product',

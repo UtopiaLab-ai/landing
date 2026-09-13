@@ -27,8 +27,8 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Del ruido', 'a la señal,', 'de la señal', 'a la anticipación'],
-      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. Un brief en 48 horas, un estudio en seis semanas o la capacidad instalada en su equipo: usted elige cuánto compromiso.',
+      titleLines: ['Las reglas', 'cambian cada año.', 'Las decisiones', 'duran veinte.'],
+      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en su equipo.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tiene pendiente.',
       frames: ['Señal', 'Decisión', 'Capacidad'],
@@ -174,7 +174,7 @@ export const es: Content = {
           {
             n: '02',
             title: 'Sector público y gobiernos locales',
-            text: 'Municipios y servicios que deciden bajo presión, con información asimétrica y ciclo presupuestario fijo. Quien no tiene capacidad instalada llega tarde a la decisión que importa.',
+            text: 'Municipios y servicios que deciden bajo presión, con información asimétrica y ciclo presupuestario fijo. La capacidad de anticipar está hoy donde hay presupuesto para comprarla, y eso reparte el largo plazo de forma desigual entre territorios. Quien no la tiene instalada llega tarde a la decisión que importa.',
             entryLabel: 'Entrada típica',
             entry: 'Inteligencia territorial · evaluación de instrumentos',
             anchorLabel: 'Producto ancla',
