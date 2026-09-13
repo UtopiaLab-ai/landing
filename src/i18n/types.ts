@@ -47,12 +47,6 @@ export interface HomeContent {
     microcopy: string
   }
 
-  /** Franja de credenciales bajo el hero. E6 de la Evidence Stack del TCBF. */
-  proof: {
-    label: string
-    items: readonly { name: string; text: string }[]
-  }
-
   /**
    * Las ocho situaciones: el cliente se reconoce en la cita, y las otras dos
    * columnas separan qué traba la decisión de qué se propone hacer. La cita va

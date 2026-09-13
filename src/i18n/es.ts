@@ -27,21 +27,10 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Decidir', 'cuando el futuro', 'todavía', 'está abierto.'],
+      titleLines: ['Decidir', 'cuando el futuro', 'todavía', 'está abierto'],
       sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tienes pendiente.',
-    },
-
-    proof: {
-      label: 'Dónde se ha ejecutado este método',
-      items: [
-        { name: 'MINVU', text: 'Diseño de la primera Unidad de Prospectiva del ministerio' },
-        { name: 'CEPAL · ONU', text: 'Consultoría en movilidad y desarrollo urbano' },
-        { name: 'ONU Derechos Humanos', text: 'Análisis territorial para la abogacía del Alto Comisionado' },
-        { name: 'BID · SERCOTEC', text: 'Programa de Barrios Comerciales' },
-        { name: 'Municipalidad de Recoleta', text: 'Dirección de la Secretaría de Planificación' },
-      ],
     },
 
     situations: {
@@ -167,7 +156,7 @@ export const es: Content = {
 
     method: {
       kicker: 'Cómo trabajamos',
-      h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo.',
+      h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo',
       sub: 'Las tres etapas corresponden a un punto preciso del esquema: detectar el cambio, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
       label: ['El núcleo del método', '01 — 03'],
       markerLabel: 'En el esquema',
@@ -197,7 +186,7 @@ export const es: Content = {
 
     value: {
       kicker: 'Qué gana tu organización',
-      h2: 'Anticipar no es un ejercicio abstracto: mejora la calidad, la velocidad y el efecto de las decisiones.',
+      h2: 'Anticipar no es un ejercicio abstracto: mejora la calidad, la velocidad y el efecto de las decisiones',
       sub: 'El valor está en actuar con más opciones abiertas, menos sorpresas y criterios compartidos para invertir, coordinar y crecer.',
       label: ['Qué se gana', '01 — 03'],
       items: [
@@ -282,7 +271,7 @@ export const es: Content = {
     },
 
     closing: {
-      h2: 'Trae una decisión que no puedas postergar.',
+      h2: 'Trae una decisión que no puedas postergar',
       body: 'No es una presentación de servicios. En una hora identificamos qué información falta, qué posibilidades conviene abrir y cuál es tu próxima decisión. Si después de eso no hay encargo, igual te llevas eso.',
       cta: 'Agendar la conversación',
     },

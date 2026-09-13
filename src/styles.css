@@ -27,9 +27,14 @@
 
      El texto va SIEMPRE en --tinta: el naranja sobre papel no pasa contraste y
      este sitio se mira al sol. El manual coincide —el naranja es acento y
-     punto de señal, nunca texto—. */
-  --papel: #f2f0ec;
-  --arena: #e6e2da;
+     punto de señal, nunca texto—.
+
+     El papel y la arena eran cremas (#f2f0ec y #e6e2da). Se neutralizaron a
+     casi blanco: el crema tiñe todas las bandas claras y el conjunto se leía
+     como una plantilla. El acento naranja y la tinta hacen el trabajo de
+     calidez que antes hacía el fondo. */
+  --papel: #fafafa;
+  --arena: #ececec;
   --tinta: #0f0f0f;
   --sol: #ef4a0f;
   --arco: #0b57a4;
@@ -441,18 +446,22 @@ header > * {
   position: relative;
 }
 
-/* `svh` y no `vh`: en el móvil, `vh` mide la pantalla sin las barras del
+/* `min-height` y no `height`: con alto fijo, un hero más alto que la pantalla
+   se centraba desbordando por arriba tanto como por abajo, y esa mitad se
+   metía debajo del header flotante —el kicker quedaba tapado por la píldora de
+   navegación antes de scrollear—. Con `min-height` el hero ocupa la pantalla
+   cuando cabe y crece cuando no, así que nunca hay nada que recortar arriba.
+
+   `svh` y no `vh`: en el móvil, `vh` mide la pantalla sin las barras del
    navegador, así que el hero se dimensiona para un alto que no existe todavía
    y el contenido termina más arriba de lo que se ve. */
 .hero-stage {
   position: relative;
-  height: 100vh;
-  height: 100svh;
   min-height: 620px;
+  min-height: max(620px, 100svh);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: clip;
 }
 
 /* Cuando el contenido del hero no cabe en una pantalla —el móvil en vertical,
@@ -467,7 +476,6 @@ header > * {
 
   .hero-stage {
     position: relative;
-    height: auto;
     min-height: 0;
     justify-content: flex-start;
   }
@@ -1742,56 +1750,6 @@ footer {
   text-transform: uppercase;
   opacity: 0.5;
   margin-bottom: 6px;
-}
-
-/* ==========================================================================
-   HOME · 02 · Franja de prueba
-   ========================================================================== */
-
-/* Va inmediatamente bajo el hero y antes de cualquier oferta: quien evalúa un
-   proveedor decide la credibilidad antes de leer lo que se le vende. Es una
-   lista y no una fila de logos porque lo que prueba no es la marca del tercero
-   sino la relación concreta, y esa hay que escribirla. */
-.prueba {
-  padding: clamp(30px, 5vh, 58px) 0;
-  border-bottom: 2px solid var(--ink);
-  background: var(--arena);
-}
-
-.prueba-label {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.55;
-  margin-bottom: clamp(20px, 3vh, 30px);
-}
-
-.prueba-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: clamp(18px, 2.6vw, 34px);
-}
-
-.pruebai {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding-left: 14px;
-  border-left: 2px solid var(--ink);
-}
-
-.pruebai .pin {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: clamp(15px, 1.5vw, 18px);
-  line-height: 1.1;
-}
-
-.pruebai .pit {
-  font-size: 13px;
-  line-height: 1.45;
-  opacity: 0.75;
 }
 
 /* ==========================================================================

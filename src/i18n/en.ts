@@ -27,20 +27,9 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['Deciding', 'while the future', 'is still', 'open.'],
+      titleLines: ['Deciding', 'while the future', 'is still', 'open'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
-    },
-
-    proof: {
-      label: 'Where this method has been run',
-      items: [
-        { name: 'MINVU', text: 'Design of the ministry’s first Foresight Unit' },
-        { name: 'ECLAC · UN', text: 'Consultancy on mobility and urban development' },
-        { name: 'UN Human Rights', text: 'Territorial analysis for the High Commissioner’s advocacy' },
-        { name: 'IDB · SERCOTEC', text: 'Commercial Neighbourhoods Programme' },
-        { name: 'Municipality of Recoleta', text: 'Head of the Planning Secretariat' },
-      ],
     },
 
     situations: {
@@ -166,7 +155,7 @@ export const en: Content = {
 
     method: {
       kicker: 'How we work',
-      h2: 'We read the signal, open up possibilities and decide in time.',
+      h2: 'We read the signal, open up possibilities and decide in time',
       sub: 'The three stages correspond to a precise point on the diagram: detect the change, recognise the fork, and act inside the window where the decision can still alter the outcome.',
       label: ['The core of the method', '01 — 03'],
       markerLabel: 'On the diagram',
@@ -196,7 +185,7 @@ export const en: Content = {
 
     value: {
       kicker: 'What your organisation gains',
-      h2: 'Anticipation is not an abstract exercise: it improves the quality, speed and effect of decisions.',
+      h2: 'Anticipation is not an abstract exercise: it improves the quality, speed and effect of decisions',
       sub: 'The value is in acting with more options open, fewer surprises, and shared criteria for investing, coordinating and growing.',
       label: ['What is gained', '01 — 03'],
       items: [
@@ -281,7 +270,7 @@ export const en: Content = {
     },
 
     closing: {
-      h2: 'Bring a decision you cannot postpone.',
+      h2: 'Bring a decision you cannot postpone',
       body: 'It is not a services pitch. In one hour we work out what information is missing, which possibilities are worth opening, and what your next decision is. If no engagement follows, you keep that anyway.',
       cta: 'Book the conversation',
     },

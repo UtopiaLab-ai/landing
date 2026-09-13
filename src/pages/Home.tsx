@@ -9,13 +9,13 @@ import { CATALOG_ANCHOR, pathFor } from '../routes'
 import { useSite } from '../site-context'
 
 /**
- * Home en ocho bloques: hero, prueba, situación reconocible, catálogo, cómo
+ * Home en ocho bloques: hero, situación reconocible, catálogo, cómo
  * trabajamos, qué se gana, casos, equipo y cierre.
  *
- * El orden no es narrativo sino comercial: la prueba va arriba porque quien
- * evalúa un proveedor decide la credibilidad antes de leer la oferta, y las
- * situaciones van antes que el catálogo porque nadie compra un producto que
- * no sabe a qué problema suyo corresponde.
+ * El orden no es narrativo sino comercial: las situaciones van antes que el
+ * catálogo porque nadie compra un producto que no sabe a qué problema suyo
+ * corresponde, y las credenciales quedaron para la página de Equipo, donde se
+ * pueden dar con la trayectoria completa en vez de como una franja de logos.
  *
  * El método y lo que se gana van después del catálogo y no antes: primero se
  * ve qué se compra, después cómo se hace y qué deja. El esquema del núcleo
@@ -60,22 +60,7 @@ export function Home() {
         </div>
       </HeroSequence>
 
-      {/* 02 · PRUEBA · las credenciales antes que la oferta */}
-      <section className="prueba">
-        <div className="wrap">
-          <div className="prueba-label mono">{c.proof.label}</div>
-          <ul className="prueba-list">
-            {c.proof.items.map((item) => (
-              <li className="pruebai" key={item.name}>
-                <span className="pin">{item.name}</span>
-                <span className="pit">{item.text}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 03 · SITUACIÓN RECONOCIBLE */}
+      {/* 02 · SITUACIÓN RECONOCIBLE */}
       <section className="situaciones" id="situaciones">
         <div className="wrap">
           <h2>{c.situations.h2}</h2>
@@ -101,7 +86,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 04 · EL CATÁLOGO */}
+      {/* 03 · EL CATÁLOGO */}
       <section className="catalogo invert" id={CATALOG_ANCHOR[locale]}>
         <div className="wrap">
           <h2>{c.catalog.h2}</h2>
@@ -138,7 +123,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 05 · CÓMO TRABAJAMOS · las tres etapas del núcleo */}
+      {/* 04 · CÓMO TRABAJAMOS · las tres etapas del núcleo */}
       <section className="metodo" id="metodo">
         <div className="wrap">
           <div className="kicker mono">{c.method.kicker}</div>
@@ -163,7 +148,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 06 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
+      {/* 05 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
       <section className="valor" id="valor">
         <div className="wrap">
           <div className="kicker mono">{c.value.kicker}</div>
@@ -190,7 +175,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 07 · CASOS */}
+      {/* 06 · CASOS */}
       <section className="casos-home" id="casos">
         <div className="wrap">
           <h2>{c.cases.h2}</h2>
@@ -226,7 +211,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 08 · EQUIPO */}
+      {/* 07 · EQUIPO */}
       <section className="equipo" id="equipo">
         <div className="wrap">
           <h2>{c.team.h2}</h2>
@@ -247,7 +232,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 09 · CIERRE */}
+      {/* 08 · CIERRE */}
       <section className="cierre">
         <div className="wrap">
           <h2>{c.closing.h2}</h2>
