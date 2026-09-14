@@ -320,6 +320,93 @@ html,body{height:100vh;background:var(--bg);color:var(--ink);font-family:var(--f
 .ti{display:flex;align-items:center;gap:5px;font-family:var(--mo);font-size:8.5px;color:var(--ink-3)}
 .ts{font-size:11px;font-weight:700}
 .ts.v{color:var(--green)}.ts.p{color:var(--amber)}.ts.n{color:var(--ink-4)}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   ADAPTACIÓN MÓVIL · utopialab.ai
+   Todo lo que sigue vive bajo max-width 820px: en escritorio el tablero queda
+   exactamente como estaba. El shell de paneles con scroll propio pasa a una
+   página que scrollea entera, el menú lateral a un cajón y las grillas anchas
+   a una columna o a scroll horizontal dentro de su recuadro.
+   ════════════════════════════════════════════════════════════════════════════ */
+.tb-menu,.nav-backdrop{display:none}
+
+@media (max-width:820px){
+  html,body{height:auto;overflow:visible}
+  html.nav-open,html.nav-open body{overflow:hidden}
+  .shell{display:block;height:auto}
+
+  /* Barra: fija arriba, solo menú, nombre y estado */
+  .topbar{position:sticky;top:0;z-index:70;height:48px;padding:0 12px;gap:10px}
+  .tb-menu{display:grid;place-items:center;width:38px;height:38px;flex-shrink:0;background:none;border:1px solid var(--rule-inv);color:#fff;font-size:17px;line-height:1;cursor:pointer}
+  .tb-name{border-right:none;padding-right:0;font-size:14px}
+  .tb-sub,.topbar>.tb-pill,.tb-r .tb-pill{display:none}
+
+  /* Menú lateral como cajón */
+  .sidebar{position:fixed;top:48px;left:0;bottom:0;width:min(86vw,320px);z-index:65;transform:translateX(-102%);transition:transform .22s ease}
+  .nav-open .sidebar{transform:none;box-shadow:12px 0 32px rgba(0,0,0,.28)}
+  .nav-backdrop{display:block;position:fixed;top:48px;left:0;right:0;bottom:0;z-index:60;background:rgba(0,0,0,.42);opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s}
+  .nav-open .nav-backdrop{opacity:1;visibility:visible}
+  .ns{font-size:9px;padding:16px 16px 6px}
+  .ni{padding:11px 16px;gap:10px}
+  .ni-ic{font-size:12px;width:14px}
+  .ni-lb{font-size:14px}
+  .ni-bd{font-size:9px}
+
+  /* Hero */
+  .main{overflow:visible;display:block}
+  .hero{padding:18px 16px 16px}
+  .hero-ey{font-size:9px;letter-spacing:.14em}
+  .hero-title{font-size:22px}
+  .hero-desc{font-size:13px}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 10px}
+  .svsep{display:none}
+  .st-n{font-size:20px}
+  .st-l{font-size:8.5px}
+
+  /* Vista general: una columna */
+  /* minmax(0,…): con 1fr a secas la columna crece hasta el ancho mínimo del atlas y empuja todo fuera de pantalla */
+  .cgrid{grid-template-columns:minmax(0,1fr)}
+  .cm{padding:18px 16px;border-right:none;border-bottom:1px solid var(--rule);overflow:visible}
+  .cs{padding:18px 16px;overflow:visible}
+  .ciclo{gap:4px 0}
+  .atlas-desc,.mv,.st,.pt,.dl,.obs-ds{font-size:12px}
+  .tst{font-size:12.5px}
+  .caso-hd{flex-wrap:wrap}
+  .caso-ts{flex-direction:column;gap:3px}
+
+  /* Grillas anchas: scroll horizontal dentro de su recuadro */
+  .ag{grid-template-columns:92px repeat(3,minmax(148px,1fr));overflow-x:auto;-webkit-overflow-scrolling:touch}
+  /* La matriz cabe entera: el eje de filas va en vertical en una columna angosta */
+  .esc-matrix{grid-template-columns:36px repeat(2,minmax(0,1fr))}
+  .em-cell{padding:10px}
+  .em-cell.axis{writing-mode:vertical-rl;transform:rotate(180deg);padding:10px 0;display:flex;align-items:center;justify-content:center;text-align:center}
+  .em-cell.axis .em-ax{letter-spacing:.08em}
+
+  /* Grillas de fichas: a una columna */
+  .mg,.conv-meta,.umb-2col,.capas{grid-template-columns:1fr}
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+
+  /* Vistas */
+  .senales-grid{grid-template-columns:1fr;padding:16px}
+  .sk-desc,.conv-desc,.umb-cond,.esc-intro,.bc-txt,.umb-bt{font-size:12.5px}
+  .sk-ft{flex-wrap:wrap}
+  .alerta-leg{flex-wrap:wrap;gap:8px 14px;padding:10px 16px}
+  .conv-wrap,.esc-wrap,.umb-wrap{padding:18px 16px;overflow:visible}
+  .conv-hd,.umb-hd{flex-wrap:wrap}
+  .conv-estado{margin-left:0}
+
+  /* Mapas apilados */
+  .ter-wrap{display:block}
+  .ter-header{flex-wrap:wrap;padding:14px 16px}
+  .ter-tabs{margin-left:0;flex-wrap:wrap}
+  .map-pane{height:320px;border-right:none;border-bottom:1px solid var(--rule)}
+
+  .mfooter{flex-wrap:wrap;padding:10px 16px}
+  .tleg{margin-left:0;flex-wrap:wrap}
+}
+@media (max-width:820px) and (prefers-reduced-motion:reduce){
+  .sidebar,.nav-backdrop{transition:none}
+}
 </style>
 </head>
 <body>
@@ -327,6 +414,7 @@ html,body{height:100vh;background:var(--bg);color:var(--ink);font-family:var(--f
 
 <!-- TOPBAR -->
 <header class="topbar">
+    <button class="tb-menu" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebarNav">☰</button>
   <div class="tb-name">ATALAYA</div>
   <div class="tb-sub">Inteligencia Anticipatoria · Conflicto Territorial Latinoamericano</div>
   <div class="tb-pill">(U)² Lab</div>
@@ -339,7 +427,7 @@ html,body{height:100vh;background:var(--bg);color:var(--ink);font-family:var(--f
 </header>
 
 <!-- SIDEBAR -->
-<nav class="sidebar">
+<nav class="sidebar" id="sidebarNav">
   <div class="ns">Observatorio</div>
   <div class="ni active" data-vista="general">
     <span class="ni-ic">◆</span><span class="ni-lb">Vista general</span><span class="odot a"></span>
@@ -396,6 +484,7 @@ html,body{height:100vh;background:var(--bg);color:var(--ink);font-family:var(--f
     <span class="ni-ic">§</span><span class="ni-lb">Glosario</span>
   </div>
 </nav>
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
 <!-- MAIN -->
 <main class="main">
@@ -1092,6 +1181,67 @@ document.querySelectorAll('.ag .ac:not(.hr):not(.hc)').forEach(cell => {
   });
   cell.addEventListener('mouseleave', () => tt.classList.remove('v'));
 });
+</script>
+
+<script>
+// ── ADAPTACIÓN MÓVIL · utopialab.ai ──────────────────────────────────────────
+// Cajón del menú lateral y tooltip del atlas por toque. Solo actúa bajo 820px;
+// en escritorio el tablero se comporta como siempre.
+(function () {
+  const mq = window.matchMedia('(max-width: 820px)');
+  const root = document.documentElement;
+  const btn = document.getElementById('navToggle');
+  const backdrop = document.getElementById('navBackdrop');
+
+  function setOpen(open) {
+    root.classList.toggle('nav-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    btn.textContent = open ? '✕' : '☰';
+  }
+
+  btn.addEventListener('click', () => setOpen(!root.classList.contains('nav-open')));
+  backdrop.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  mq.addEventListener('change', (e) => { if (!e.matches) setOpen(false); });
+
+  // Elegir una vista cierra el cajón y la muestra desde arriba.
+  document.querySelectorAll('.ni[data-vista]').forEach((item) => {
+    item.addEventListener('click', () => {
+      if (!mq.matches) return;
+      setOpen(false);
+      window.scrollTo({ top: 0 });
+    });
+  });
+
+  // Atlas: sin hover en pantallas táctiles, el tooltip se abre con un toque.
+  const tip = document.getElementById('tt');
+  if (tip && window.matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.ag .ac:not(.hr):not(.hc)').forEach((cell) => {
+      // El toque dispara un mousemove y luego un mouseleave sintéticos, y el
+      // hover original cerraba el tooltip apenas se abría. En captura, sobre la
+      // misma celda, se cortan antes de llegar a ese listener.
+      ['mousemove', 'mouseleave'].forEach((type) =>
+        cell.addEventListener(type, (e) => e.stopImmediatePropagation(), true));
+      cell.addEventListener('click', (e) => {
+        if (!cell.dataset.n) return;
+        e.stopPropagation();
+        document.getElementById('ttN').textContent = cell.dataset.n;
+        document.getElementById('ttD').textContent = cell.dataset.d || '';
+        document.getElementById('ttC').textContent = cell.dataset.c ? '→ ' + cell.dataset.c : '';
+        tip.classList.add('v');
+        const w = Math.min(230, window.innerWidth - 24);
+        tip.style.left = Math.max(12, Math.min(e.clientX - w / 2, window.innerWidth - w - 12)) + 'px';
+        tip.style.top = Math.min(e.clientY + 14, window.innerHeight - 140) + 'px';
+      });
+    });
+    document.addEventListener('click', () => tip.classList.remove('v'));
+    window.addEventListener('scroll', () => tip.classList.remove('v'), { passive: true });
+    document.querySelectorAll('.atlas-desc').forEach((el) => {
+      el.textContent = el.textContent.replace(/^Hover sobre/, 'Toca');
+    });
+  }
+})();
 </script>
 </body>
 </html>
