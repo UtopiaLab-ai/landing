@@ -1,6 +1,7 @@
 import { Lines } from '../components/Lines'
 import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
+import { Trama } from '../components/Trama'
 import { useSite } from '../site-context'
 
 /**
@@ -24,7 +25,8 @@ export function Products() {
 
   return (
     <>
-      <section className="hero invert">
+      <section className="hero invert hero-trama">
+        <Trama variant="escalera" />
         <div className="wrap">
           <div className="kicker mono">{c.kicker}</div>
           <h1>
