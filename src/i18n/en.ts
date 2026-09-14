@@ -84,8 +84,8 @@ export const en: Content = {
     },
 
     catalog: {
-      h2: 'Ten forms of intervention',
-      sub: 'We have our own methodology for decision problems in Latin American contexts of uncertainty, polycrisis and institutional distrust. We do not apply recipes: each engagement is fitted to the territory, the organisation, the actors and the moment of decision. You enter wherever the problem asks, and move up only if it helps.',
+      h2: 'Products',
+      sub: 'Solutions and deliverables',
       label: ['The catalogue', '01 — 10'],
       speeds: [
         {
@@ -285,8 +285,8 @@ export const en: Content = {
         'The full catalogue: ten products across four steps of commitment, with definition, deliverable, duration and the situation that triggers each one.',
     },
     kicker: 'The catalogue',
-    titleLines: ['Ten', 'products'],
-    sub: 'The only thing that gets signed.',
+    titleLines: ['Products'],
+    sub: 'Solutions and deliverables',
     lead: [
       'Each with its deliverable and duration declared. ',
       { b: 'You enter wherever the problem asks' },

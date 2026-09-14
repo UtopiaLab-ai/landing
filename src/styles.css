@@ -287,6 +287,56 @@ header > * {
   opacity: 0.3;
 }
 
+/* --- Header compacto -------------------------------------------------------
+   Con scroll la barra se reduce a la marca y el CTA. Lo demás se oculta sin
+   salir del flujo —`visibility` y no `display`—: la píldora conserva su ancho
+   y el CTA queda exactamente donde estaba, como si se desprendiera de la
+   barra. `visibility: hidden` además saca los enlaces del orden de tabulación
+   mientras no se ven.
+
+   El `.nav` transparente sigue ocupando su caja: sin `pointer-events: none`
+   taparía los clics sobre el contenido que pasa por debajo. */
+
+header.is-compact .lang,
+header.is-compact .nav a:not(.nav-cta) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+header.is-compact .nav {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+header.is-compact .nav-cta {
+  pointer-events: auto;
+}
+
+/* En compacto las píldoras pasan por encima de bandas de papel, donde la de la
+   marca se fundiría con el fondo: llevan sombra. */
+header.is-compact .brand,
+header.is-compact .nav-cta {
+  box-shadow: 0 6px 22px rgba(15, 15, 15, 0.14);
+}
+
+/* La píldora se vacía alrededor del CTA en vez de cortarse de golpe. */
+@media (prefers-reduced-motion: no-preference) {
+  .nav,
+  .lang {
+    transition:
+      background-color 0.2s,
+      opacity 0.2s,
+      visibility 0.2s;
+  }
+
+  header .nav a:not(.nav-cta) {
+    transition:
+      opacity 0.2s,
+      visibility 0.2s,
+      background 0.15s;
+  }
+}
+
 /* --- CTA "Agendar una hora de diagnóstico" --------------------------------
    Píldora con insignia de flecha. El naranja lleva texto en tinta: con texto
    claro el contraste cae a 2,8:1. */
