@@ -105,7 +105,7 @@ const fullText = []
 for (const { locale, page: key, path } of server.ALL_ROUTES) {
   const html = server.render(path)
   await write(join(path, 'index.html'), page({ lang: locale, head: server.headTags(locale, key, lastmod), html }))
-  fullText.push(`\n\n---\n\nURL: https://utopialab.ai${path}\n\n${toText(html)}`)
+  fullText.push(`\n\n---\n\nURL: ${server.SITE_URL}${path}\n\n${toText(html)}`)
 }
 
 await write('404.html', page({ lang: 'es', head: server.notFoundHead(), html: server.render('/404') }))

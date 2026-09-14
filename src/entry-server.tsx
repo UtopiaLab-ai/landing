@@ -18,5 +18,6 @@ export function render(url: string): string {
   )
 }
 
+export { SITE_URL } from './config'
 export { ALL_ROUTES } from './routes'
 export { headTags, llmsTxt, notFoundHead, robotsTxt, sitemapXml } from './seo'

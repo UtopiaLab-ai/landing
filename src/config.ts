@@ -17,8 +17,12 @@ export const SITE_DOMAIN = 'utopialab.ai'
  * Origen canónico, con protocolo. Lo usan el `<head>` prerenderizado, el
  * JSON-LD y el sitemap: buscadores y LLM necesitan URL absolutas, y en el
  * build no hay `window.location` de donde sacarlo.
+ *
+ * Es `www`: el dominio sin `www` responde 308 hacia acá, y un canonical que
+ * redirige es una señal contradictoria para Google. Si el dominio principal
+ * cambia en Vercel, cambia acá.
  */
-export const SITE_URL = 'https://utopialab.ai'
+export const SITE_URL = 'https://www.utopialab.ai'
 export const CONTACT_EMAIL = 'hola@utopialab.ai'
 
 export const COPYRIGHT_YEAR = 2026
