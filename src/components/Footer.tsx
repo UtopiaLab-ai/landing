@@ -38,6 +38,11 @@ export function Footer() {
           </div>
         </div>
 
+        {/* La frase que define la entidad, literal: es lo que buscadores y LLM
+            necesitan leer para saber qué es utopialab.ai. Va en el pie para
+            estar en todas las páginas sin competir con el titular. */}
+        <p className="foot-about">{t.common.about}</p>
+
         {/* En la home el bloque de cierre ya lleva el CTA: no se repite aquí. */}
         {page !== 'home' && <BookButton tone="papel" className="foot-book" />}
 

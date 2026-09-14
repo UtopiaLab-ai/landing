@@ -1,3 +1,4 @@
+import { ExploreButton } from '../components/ExploreButton'
 import { Lines } from '../components/Lines'
 import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
@@ -92,6 +93,7 @@ export function Products() {
                       <dt>{c.stepLabel}</dt>
                       <dd>{p.step}</dd>
                     </dl>
+                    {p.demo && <ExploreButton note={t.common.atalaya.productNote} />}
                   </div>
                 </article>
               ))}
@@ -137,6 +139,22 @@ export function Products() {
           <div className="caja">
             <div className="tag mono">{c.neutrality.tag}</div>
             <p>{c.neutrality.text}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PREGUNTAS FRECUENTES · respuestas directas, también en el JSON-LD */}
+      <section className="contratacion faq" id="preguntas">
+        <div className="wrap">
+          <SectionLabel label={c.faq.label} />
+          <h2>{c.faq.h2}</h2>
+          <div className="reglas">
+            {c.faq.items.map((item) => (
+              <div className="regla" key={item.q}>
+                <h3 className="rname">{item.q}</h3>
+                <p className="rdesc">{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

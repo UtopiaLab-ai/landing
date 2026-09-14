@@ -7,6 +7,7 @@ import type { Locale } from './i18n'
 import { CONTENT, DEFAULT_LOCALE } from './i18n'
 import { Cases } from './pages/Cases'
 import { Home } from './pages/Home'
+import { NotFound } from './pages/NotFound'
 import { Products } from './pages/Products'
 import { Team } from './pages/Team'
 import type { PageKey } from './routes'
@@ -72,7 +73,9 @@ export function AppRoutes() {
         {Object.entries(LEGACY_REDIRECTS).map(([from, to]) => (
           <Route key={from} path={from} element={<Navigate to={to} replace />} />
         ))}
-        <Route path="*" element={<Navigate to={pathFor(detectLocale(), 'home')} replace />} />
+        {/* Una URL que no existe es un 404, no la home: así la ve también el
+            servidor, que entrega el mismo componente prerenderizado. */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )

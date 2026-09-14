@@ -11,7 +11,21 @@ export const en: Content = {
     },
     book: 'Book a diagnostic hour',
     bookShort: 'Book',
+    atalaya: {
+      label: 'Explore Atalaya',
+      productNote:
+        'What an observatory in operation looks like: the Atalaya demo dashboard (in Spanish), with data from the Ley Lafkenche case.',
+      caseNote:
+        'The full case — thesis, evidence, signals and convergences — on the Atalaya demo dashboard (in Spanish).',
+    },
     switchLang: 'Switch language',
+    about:
+      'utopialab.ai is a strategic foresight lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
+    notFound: {
+      title: 'Page not found',
+      text: 'This address does not exist or has moved.',
+      cta: 'Go to the home page',
+    },
     footer: {
       location: 'Santiago, Chile',
       emailLabel: 'Write to us',
@@ -27,7 +41,7 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['Deciding', 'while the future', 'is still', 'open'],
+      titleLines: ['The future', 'is not automated:', 'it is decided'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
     },
@@ -35,52 +49,57 @@ export const en: Content = {
     situations: {
       h2: 'Do you recognise any of these sentences?',
       sub: 'We don’t sell a method. We sell getting out of a situation you can already describe.',
-      label: ['Eight situations', '01 — 08'],
+      label: ['Three situations', '01 — 03'],
       heads: ['Your situation', 'The problem', 'What we propose'],
       rows: [
         {
-          situation: '“We have to decide, but we don’t know which possibilities to consider.”',
-          problem: 'The opening question is framed too narrowly and the alternatives stay the same ones.',
-          proposal: 'Reframe the decision, explore possible futures and widen the alternatives before choosing.',
+          situation: '“We are adopting AI, or entering a change of cycle, and we don’t know what will happen to how we work.”',
+          problem: 'Technology advances faster than the organisation’s capacity to decide what to transform, what to protect and who answers for each change.',
+          proposal: 'Turn the change into a path with priorities, safeguards and owners, and leave the team able to revisit it without us.',
         },
         {
-          situation: '“The problem is so complex we don’t know where to start.”',
-          problem: 'Too many variables, actors and simultaneous changes are in play; everything looks important and no one can tell which decision to settle first.',
-          proposal: 'Bound the problem, map the system, identify dependencies and build a first decision that lets the work move.',
+          situation: '“Nobody watches the environment systematically and we always react late.”',
+          problem: 'The information exists, but it arrives once it is already news: too late to take a position, and without telling which signal matters.',
+          proposal: 'Watch the perimeter that matters and deliver what is relevant before the moment of decision, with sources and a level of confidence.',
         },
         {
-          situation: '“Everything interesting gets ruled out as unfeasible.”',
-          problem: 'The limit is stated as a verdict rather than as a condition that could be changed.',
-          proposal: 'Identify dependencies, owners and enabling conditions to open real options.',
-        },
-        {
-          situation: '“Each area sees a part, but nobody manages to see the whole.”',
-          problem: 'Diagnoses, interests and data stay fragmented; the connections between decisions only become visible once blockages or contradictions appear.',
-          proposal: 'Integrate perspectives, make the interdependencies visible and build a shared picture that lets action be coordinated.',
-        },
-        {
-          situation: '“We can see a change coming, but not where it pays to act.”',
-          problem: 'Every trend looks equally important and the relevant opportunities go unrecognised.',
-          proposal: 'Assess relevance, potential and conditions for action, to focus effort where it can create value.',
-        },
-        {
-          situation: '“We have a strategy, but we don’t know when or how to revisit it.”',
-          problem: 'The plan stays fixed while the conditions that gave it sense keep changing.',
-          proposal: 'Translate the vision into sequences, priorities, thresholds and adjustment decisions.',
-        },
-        {
-          situation: '“AI could transform our work, but we don’t know how to bring it in without losing what matters.”',
-          problem: 'Technical capability advances faster than the organisation’s capacity to decide what to transform, what to protect and which responsibilities to redefine.',
-          proposal: 'Turn the technological potential into a transformation path with priorities, criteria, safeguards, owners and review.',
-        },
-        {
-          situation: '“The work ends and we go back to depending on one or two people.”',
-          problem: 'The capability to anticipate and decide does not stay inside the organisation.',
-          proposal: 'Leave language, tools, routines and responsibilities the team can sustain.',
+          situation: '“We know our market is going to change, but not in which direction or where the competition will come from.”',
+          problem: 'Attention goes to today’s competitors and existing demand, while the change arrives from outside the sector.',
+          proposal: 'Read weak signals and outside disruptions to identify the emerging niche and the window to enter before anyone else.',
         },
       ],
       close:
         'In the meeting we work through a single one of these rows: the one you have just described in your own words.',
+    },
+
+    difference: {
+      kicker: 'What we do differently',
+      h2: 'From noise to decision',
+      sub: 'We do not produce more information: we turn what already exists into timely decisions.',
+      label: ['The core of the method', '01 — 04'],
+      steps: [
+        {
+          n: '01',
+          title: 'Locate the signal',
+          text: 'We separate what is changing from what is only noise.',
+        },
+        {
+          n: '02',
+          title: 'Set the threshold',
+          text: 'We agree in advance what would have to happen to revisit a decision, and raise the alert when it is crossed.',
+        },
+        {
+          n: '03',
+          title: 'See the fork',
+          text: 'We open up the alternatives that business as usual does not yet let anyone see.',
+        },
+        {
+          n: '04',
+          title: 'Decide inside the window',
+          text: 'We act while the decision can still change the outcome.',
+        },
+      ],
+      close: 'AI helps us read more, and faster. The decision stays with your team.',
     },
 
     catalog: {
@@ -345,6 +364,7 @@ export const en: Content = {
           {
             n: '02',
             name: 'Signals Observatory',
+            demo: true,
             def: 'Sustained watch over the perimeter of a debate that matters to the organisation — legislation, press, actors, counterparts — with a one-page memo and a dashboard delivered before the moment of decision.',
             text: 'Most organisations do not have an analysis problem: they have a problem arriving in time. The Observatory watches a perimeter defined by the client, not a general sweep, and before each moment of decision delivers what changed, which actor moved, which window is opening or closing, and how solid the evidence is. The form matters: a one-page memo, written, with sources and a declared level of confidence, that can be read between meetings and taken to a table; and a dashboard to follow the perimeter between one memo and the next.',
             trigger: '“Nobody watches the environment systematically and we always react late.”',
@@ -501,13 +521,44 @@ export const en: Content = {
       tag: 'Neutrality condition',
       text: 'On the same regulatory or territorial matter and within the same window, we do not serve both a political party and a private or public client whose interests in that matter are in conflict. Every engagement declares its perimeter in writing. Without that perimeter, the engagement is not taken.',
     },
+
+    faq: {
+      label: ['Frequently asked questions', '01 — 06'],
+      h2: 'Frequently asked questions',
+      items: [
+        {
+          q: 'What is utopialab.ai?',
+          a: 'A strategic foresight lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
+        },
+        {
+          q: 'What is strategic foresight?',
+          a: 'Reading the environment with method in order to anticipate change and decide in time. It is not about predicting a scenario: it is about locating the signal, setting the threshold that forces a decision to be revisited, seeing the alternatives, and acting while the decision can still change the outcome.',
+        },
+        {
+          q: 'How is this different from traditional consulting?',
+          a: 'Every engagement states its deliverable, its duration and what is out of scope in writing before it starts, and it can be stopped at any step. We do not produce more information: we turn what already exists into timely decisions, and the capability products end with the client’s team operating without us.',
+        },
+        {
+          q: 'Who do you work with?',
+          a: 'With companies and public bodies whose regulatory or territorial environment changes faster than their decisions — including municipalities, through the appropriate public procurement route — and with senior professionals who need to read their own horizon.',
+        },
+        {
+          q: 'How do we start, and what does it cost?',
+          a: 'With a one-hour diagnostic conversation, free of charge and with no prior quote, on a decision that is already pending. Fees are set afterwards, according to scope and the number of teams, and larger engagements are structured in stages.',
+        },
+        {
+          q: 'Do you use artificial intelligence?',
+          a: 'Yes, as support to read more information, faster. Relevant decisions keep human deliberation and judgement: the AI proposes and the team decides. The Machine access products, which run on AI, are prototypes and open by pilot.',
+        },
+      ],
+    },
   },
 
   cases: {
     meta: {
       title: 'Cases · utopialab.ai',
       description:
-        'Where the method has been run: the Lafkenche Law case, with context, problem, intervention, result and proof, and the three stages of the core of the method.',
+        'Where the method has been run: the Lafkenche Law case, with context, problem, intervention, result and proof, and the four stages of the core of the method.',
     },
     kicker: 'The method at work',
     titleLines: ['Cases'],
@@ -529,6 +580,7 @@ export const en: Content = {
       {
         n: '01',
         title: 'Lafkenche Law',
+        demo: true,
         subtitle: 'Rights, territory and the coastal edge',
         context:
           'The conflict between the coastal edge, the rights of Indigenous peoples and productive activity, mid-process and with actors who did not share a diagnosis.',
@@ -546,8 +598,8 @@ export const en: Content = {
     method: {
       kicker: 'How we work',
       h2: 'We read the signal, open up possibilities and decide in time',
-      sub: 'The three stages correspond to a precise point on the diagram: detect the change, recognise the fork, and act inside the window where the decision can still alter the outcome.',
-      label: ['The core of the method', '01 — 03'],
+      sub: 'The four stages correspond to a precise point on the diagram: detect the change, set the threshold that forces a review, recognise the fork, and act inside the window where the decision can still alter the outcome.',
+      label: ['The core of the method', '01 — 04'],
       markerLabel: 'On the diagram',
       steps: [
         {
@@ -558,12 +610,18 @@ export const en: Content = {
         },
         {
           n: '02',
+          title: 'Set the threshold',
+          text: 'We agree in advance what would have to happen to revisit a decision, and turn that condition into an alert that fires when it is crossed.',
+          marker: 'fuzzy threshold',
+        },
+        {
+          n: '03',
           title: 'See the fork',
           text: 'We make comparable the alternatives, tensions and futures that business as usual does not yet let anyone see.',
           marker: 'fork',
         },
         {
-          n: '03',
+          n: '04',
           title: 'Decide inside the window',
           text: 'We set criteria, owners, alerts and conditions to act or revisit before the point of no return.',
           marker: 'decision window',
@@ -574,7 +632,7 @@ export const en: Content = {
       chain: {
         label: ['The full chain', '01 — 11'],
         intro:
-          'The three stages are three links in a longer chain. Each glyph says what happens to the field: turquoise for what is observed, orange for what crosses into alert and blue for what gets decided.',
+          'The four stages are four links in a longer chain. Each glyph says what happens to the field: turquoise for what is observed, orange for what crosses into alert and blue for what gets decided.',
         stages: {
           senal: 'Signal',
           cadena: 'Chain',
@@ -598,7 +656,7 @@ export const en: Content = {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP) and Willy Maikowski (Buk). Verifiable credentials.',
     },
     kicker: 'Team',
     titleLines: ['Experience'],

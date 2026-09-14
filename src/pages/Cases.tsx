@@ -1,6 +1,7 @@
-import type { CSSProperties } from 'react'
 import { Glyph } from '../brand/Glyph'
 import { LEXICON_NAMES, type LexiconName } from '../brand/glyphs'
+import { ExploreButton } from '../components/ExploreButton'
+import { MethodSteps, TONE } from '../components/MethodSteps'
 import { Lines } from '../components/Lines'
 import { SectionLabel } from '../components/SectionLabel'
 import { Trama } from '../components/Trama'
@@ -15,34 +16,12 @@ import { useSite } from '../site-context'
  * con una frase de relleno sería convertir la prueba en claim, que es
  * exactamente lo que esta página existe para evitar.
  *
- * El esquema del núcleo cierra la página, debajo de las tres etapas del
- * método: el dibujo nombra los mismos tres puntos —señal, bifurcación,
- * ventana—, así que leerlo antes de las etapas obligaba a explicarlo dos
- * veces. Primero el caso, después el método y al final el dibujo que lo
+ * El esquema del núcleo cierra la página, debajo de las cuatro etapas del
+ * método: el dibujo nombra los mismos cuatro puntos —señal, umbral,
+ * bifurcación, ventana—, así que leerlo antes de las etapas obligaba a
+ * explicarlo dos veces. Primero el caso, después el método y al final el dibujo que lo
  * resume.
  */
-/**
- * Código de color del léxico (dossier de marca, «Léxico aplicado»): turquesa
- * observación, naranja alerta, azul decisión. El trazo queda siempre en tinta y
- * el color vive solo en el punto de señal; sin color la pieza se sigue leyendo,
- * porque el tamaño del punto ya dice el estatuto.
- */
-const TONE = {
-  observation: 'var(--agua)',
-  alert: 'var(--sol)',
-  decision: 'var(--arco)',
-} as const
-
-/**
- * El glifo y el color de cada etapa del método, por posición. Van acá y no en
- * `i18n/`: son decisiones de marca y no pueden divergir entre idiomas.
- */
-const STEP_MARKS: readonly { glyph: LexiconName; tone: string }[] = [
-  { glyph: 'senal', tone: TONE.observation },
-  { glyph: 'bifurcacion', tone: TONE.alert },
-  { glyph: 'decision', tone: TONE.decision },
-]
-
 /**
  * El color de cada eslabón de la cadena. Los que no aparecen van con el punto
  * en tinta: etapa sin estatuto de alerta asignado.
@@ -101,6 +80,7 @@ export function Cases() {
                       <span className="pl mono">{c.proofLabel}</span> {caso.proof}
                     </p>
                   )}
+                  {caso.demo && <ExploreButton note={t.common.atalaya.caseNote} />}
                 </div>
               </div>
             ))}
@@ -109,7 +89,7 @@ export function Cases() {
         </div>
       </section>
 
-      {/* CÓMO TRABAJAMOS · las tres etapas del núcleo */}
+      {/* CÓMO TRABAJAMOS · las cuatro etapas del núcleo */}
       <section className="metodo" id="metodo">
         <div className="wrap">
           <div className="kicker mono">{c.method.kicker}</div>
@@ -117,28 +97,12 @@ export function Cases() {
           <p className="msub">{c.method.sub}</p>
           <SectionLabel label={c.method.label} />
 
-          <ol className="etapas">
-            {c.method.steps.map((step, i) => (
-              <li
-                className="etapa"
-                key={step.n}
-                style={{ '--tone': STEP_MARKS[i].tone } as CSSProperties}
-              >
-                <Glyph name={STEP_MARKS[i].glyph} size={56} accent="var(--tone)" className="eglyph" />
-                <span className="enum mono">{step.n}</span>
-                <h3 className="ettl">{step.title}</h3>
-                <p className="etxt">{step.text}</p>
-                <p className="emark mono">
-                  <span className="crl">{c.method.markerLabel}</span> {step.marker}
-                </p>
-              </li>
-            ))}
-          </ol>
+          <MethodSteps steps={c.method.steps} markerLabel={c.method.markerLabel} />
 
           <p className="mclose">{c.method.close}</p>
 
           {/* La cadena completa del léxico: once glifos, uno por operación.
-              Las tres etapas de arriba son tres de sus eslabones. */}
+              Las cuatro etapas de arriba son cuatro de sus eslabones. */}
           <div className="cadena">
             <SectionLabel label={c.method.chain.label} />
             <p className="cintro">{c.method.chain.intro}</p>

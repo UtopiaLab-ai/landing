@@ -32,7 +32,18 @@ export interface Common {
   }
   book: string
   bookShort: string
+    /** El tablero demo de Atalaya: el botón y la línea que lo presenta en cada página. */
+    atalaya: { label: string; productNote: string; caseNote: string }
   switchLang: string
+  /**
+   * La frase que define la entidad, literal y sin metáfora: qué es utopialab.ai,
+   * dónde está y para quién trabaja. Va visible en el pie de todas las páginas y
+   * es la descripción de la organización en el JSON-LD y en llms.txt. El
+   * titular del hero habla a personas; esta frase habla a buscadores y LLM.
+   */
+  about: string
+  /** La página 404. Bilingüe: una URL que no existe no dice el idioma. */
+  notFound: { title: string; text: string; cta: string }
   footer: {
     location: string
     emailLabel: string
@@ -55,7 +66,8 @@ export interface HomeContent {
   }
 
   /**
-   * Las ocho situaciones: el cliente se reconoce en la cita, y las otras dos
+   * Las tres situaciones —las mismas citas que gatillan tres fichas del
+   * catálogo—: el cliente se reconoce en la cita, y las otras dos
    * columnas separan qué traba la decisión de qué se propone hacer. La cita va
    * primero porque nadie compra un producto que no sabe a qué problema suyo
    * corresponde.
@@ -66,6 +78,20 @@ export interface HomeContent {
     label: SectionLabel
     heads: readonly [situation: string, problem: string, proposal: string]
     rows: readonly { situation: string; problem: string; proposal: string }[]
+    close: string
+  }
+
+  /**
+   * Qué hacemos distinto: las mismas cuatro etapas del núcleo que desarrolla
+   * /casos, dichas en una línea cada una. Los títulos tienen que coincidir con
+   * `cases.method.steps`: el sitio nombra el método de una sola manera.
+   */
+  difference: {
+    kicker: string
+    h2: string
+    sub: string
+    label: SectionLabel
+    steps: readonly { n: string; title: string; text: string }[]
     close: string
   }
 
@@ -156,6 +182,8 @@ export interface ProductsContent {
       deliverable: string
       duration: string
       step: string
+      /** Con tablero demo para explorar (Atalaya). */
+      demo?: boolean
     }[]
   }[]
 
@@ -181,6 +209,18 @@ export interface ProductsContent {
   /** Condición de activación del vertical político. Vive acá porque es parte
       de lo que se firma, no de lo que se ofrece. */
   neutrality: { tag: string; text: string }
+
+  /**
+   * Preguntas frecuentes con respuesta directa. Es el formato que más extraen y
+   * citan los motores generativos, y se publica también como `FAQPage` en el
+   * JSON-LD. Cada respuesta repite algo que el sitio ya afirma: no se agregan
+   * promesas nuevas acá.
+   */
+  faq: {
+    label: SectionLabel
+    h2: string
+    items: readonly { q: string; a: string }[]
+  }
 }
 
 /* --- Casos -----------------------------------------------------------------
@@ -222,6 +262,8 @@ export interface CasesContent {
     proof?: string
     /** Estado, para los casos que aún no completan la plantilla. */
     status?: string
+    /** El caso se puede recorrer en el tablero demo de Atalaya. */
+    demo?: boolean
   }[]
 
   note: string

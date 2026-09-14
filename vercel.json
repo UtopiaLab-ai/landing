@@ -1,18 +1,124 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    { "source": "/es/servicios", "destination": "/es/productos", "statusCode": 301 },
-    { "source": "/en/services", "destination": "/en/products", "statusCode": 301 },
-    { "source": "/es/dispositivos", "destination": "/es/productos", "statusCode": 301 },
-    { "source": "/en/devices", "destination": "/en/products", "statusCode": 301 },
-    { "source": "/es/sistema", "destination": "/es/productos", "statusCode": 301 },
-    { "source": "/en/system", "destination": "/en/products", "statusCode": 301 },
-    { "source": "/es/que-es", "destination": "/es/productos", "statusCode": 301 },
-    { "source": "/en/what-it-is", "destination": "/en/products", "statusCode": 301 },
-    { "source": "/es/pensamiento", "destination": "/es", "statusCode": 301 },
-    { "source": "/en/thinking", "destination": "/en", "statusCode": 301 },
-    { "source": "/es/intervenciones", "destination": "/es/casos", "statusCode": 301 },
-    { "source": "/en/interventions", "destination": "/en/cases", "statusCode": 301 }
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "en.*"
+        }
+      ],
+      "destination": "/en",
+      "statusCode": 302
+    },
+    {
+      "source": "/",
+      "destination": "/es",
+      "statusCode": 302
+    },
+    {
+      "source": "/es/servicios",
+      "destination": "/es/productos",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/services",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/dispositivos",
+      "destination": "/es/productos",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/devices",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/sistema",
+      "destination": "/es/productos",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/system",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/que-es",
+      "destination": "/es/productos",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/what-it-is",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/pensamiento",
+      "destination": "/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/thinking",
+      "destination": "/en",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/intervenciones",
+      "destination": "/es/casos",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/interventions",
+      "destination": "/en/cases",
+      "statusCode": 301
+    }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/atalaya",
+      "destination": "/atalaya/index.html"
+    },
+    {
+      "source": "/atalaya/",
+      "destination": "/atalaya/index.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/es/productos",
+      "destination": "/es/productos/index.html"
+    },
+    {
+      "source": "/es/casos",
+      "destination": "/es/casos/index.html"
+    },
+    {
+      "source": "/es/equipo",
+      "destination": "/es/equipo/index.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/en/products",
+      "destination": "/en/products/index.html"
+    },
+    {
+      "source": "/en/cases",
+      "destination": "/en/cases/index.html"
+    },
+    {
+      "source": "/en/team",
+      "destination": "/en/team/index.html"
+    }
+  ]
 }

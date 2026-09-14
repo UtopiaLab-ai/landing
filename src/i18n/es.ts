@@ -11,7 +11,21 @@ export const es: Content = {
     },
     book: 'Agendar una hora de diagnóstico',
     bookShort: 'Agendar',
+    atalaya: {
+      label: 'Explorar Atalaya',
+      productNote:
+        'Así se ve un observatorio en operación: el tablero demo de Atalaya, con los datos del caso Ley Lafkenche.',
+      caseNote:
+        'El caso completo —tesis, evidencia, señales y convergencias— en el tablero demo de Atalaya.',
+    },
     switchLang: 'Cambiar idioma',
+    about:
+      'utopialab.ai es un laboratorio de prospectiva estratégica con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
+    notFound: {
+      title: 'Página no encontrada',
+      text: 'Esta dirección no existe o cambió de lugar.',
+      cta: 'Ir al inicio',
+    },
     footer: {
       location: 'Santiago de Chile',
       emailLabel: 'Escribir',
@@ -27,7 +41,7 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Decidir', 'cuando el futuro', 'todavía', 'está abierto'],
+      titleLines: ['El futuro', 'no se automatiza:', 'se decide'],
       sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tienes pendiente.',
@@ -36,52 +50,57 @@ export const es: Content = {
     situations: {
       h2: '¿Te reconoces en alguna de estas frases?',
       sub: 'No vendemos método. Vendemos salir de una situación que ya sabes describir.',
-      label: ['Ocho situaciones', '01 — 08'],
+      label: ['Tres situaciones', '01 — 03'],
       heads: ['Tu situación', 'El problema', 'Lo que proponemos'],
       rows: [
         {
-          situation: '«Tenemos que decidir, pero no sabemos qué posibilidades considerar.»',
-          problem: 'La pregunta inicial está demasiado cerrada y las alternativas siguen siendo las mismas.',
-          proposal: 'Reformular la decisión, explorar futuros posibles y ampliar las alternativas antes de elegir.',
+          situation: '«Adoptamos IA o entramos en un cambio de ciclo y no sabemos qué pasará con nuestra forma de trabajar.»',
+          problem: 'La tecnología avanza más rápido que la capacidad de la organización para decidir qué transformar, qué resguardar y quién responde por cada cambio.',
+          proposal: 'Convertir el cambio en una trayectoria con prioridades, resguardos y responsables, y dejar al equipo capaz de revisarla sin nosotros.',
         },
         {
-          situation: '«El problema es tan complejo que no sabemos por dónde empezar.»',
-          problem: 'Intervienen demasiadas variables, actores y cambios simultáneos; todo parece importante y no se logra identificar qué decisión ordenar primero.',
-          proposal: 'Delimitar el problema, visualizar el sistema, identificar dependencias y construir una primera decisión que permita avanzar.',
+          situation: '«Nadie mira el entorno de forma sistemática y siempre reaccionamos tarde.»',
+          problem: 'La información existe, pero llega cuando ya es noticia: tarde para posicionarse y sin distinguir qué señal importa.',
+          proposal: 'Vigilar el perímetro que importa y entregar lo relevante antes del momento de decidir, con fuentes y nivel de confianza.',
         },
         {
-          situation: '«Todo lo interesante nos lo descartan como no viable.»',
-          problem: 'El límite se formula como un veredicto y no como una condición que podría transformarse.',
-          proposal: 'Identificar dependencias, responsables y condiciones habilitantes para abrir opciones reales.',
-        },
-        {
-          situation: '«Cada área ve una parte, pero nadie logra ver el conjunto.»',
-          problem: 'Diagnósticos, intereses y datos quedan fragmentados; las conexiones entre decisiones no se hacen visibles hasta que aparecen bloqueos o contradicciones.',
-          proposal: 'Integrar perspectivas, hacer visibles las interdependencias y construir una visión compartida que permita coordinar la acción.',
-        },
-        {
-          situation: '«Vemos que viene un cambio, pero no dónde conviene actuar.»',
-          problem: 'Todas las tendencias parecen igualmente importantes y no se reconocen oportunidades pertinentes.',
-          proposal: 'Evaluar relevancia, potencial y condiciones de acción para enfocar el esfuerzo donde puede generar valor.',
-        },
-        {
-          situation: '«Tenemos una estrategia, pero no sabemos cuándo ni cómo revisarla.»',
-          problem: 'El plan queda fijo mientras cambian las condiciones que le dieron sentido.',
-          proposal: 'Traducir la visión en secuencias, prioridades, umbrales y decisiones de ajuste.',
-        },
-        {
-          situation: '«La IA puede transformar nuestro trabajo, pero no sabemos cómo incorporarla sin perder lo que importa.»',
-          problem: 'La capacidad técnica avanza más rápido que la capacidad de la organización para decidir qué transformar, qué resguardar y qué responsabilidades redefinir.',
-          proposal: 'Convertir el potencial tecnológico en una trayectoria de transformación con prioridades, criterios, resguardos, responsables y revisión.',
-        },
-        {
-          situation: '«El trabajo termina y volvemos a depender de una o dos personas.»',
-          problem: 'La capacidad para anticipar y decidir no queda instalada en la organización.',
-          proposal: 'Dejar lenguaje, herramientas, rutinas y responsabilidades que el equipo pueda sostener.',
+          situation: '«Sabemos que nuestro mercado va a cambiar, pero no hacia dónde ni por dónde nos va a llegar la competencia.»',
+          problem: 'Se mira a los competidores de hoy y a la demanda que ya existe, mientras el cambio llega desde fuera del sector.',
+          proposal: 'Leer señales débiles y disrupciones externas para identificar el nicho emergente y la ventana para entrar antes que el resto.',
         },
       ],
       close:
         'En la reunión trabajamos una sola de estas filas: la que acabas de describir con tus palabras.',
+    },
+
+    difference: {
+      kicker: 'Qué hacemos distinto',
+      h2: 'Del ruido a la decisión',
+      sub: 'No producimos más información: convertimos la que ya existe en decisiones a tiempo.',
+      label: ['El núcleo del método', '01 — 04'],
+      steps: [
+        {
+          n: '01',
+          title: 'Situar la señal',
+          text: 'Separamos lo que está cambiando de lo que es solo ruido.',
+        },
+        {
+          n: '02',
+          title: 'Fijar el umbral',
+          text: 'Acordamos de antemano qué tendría que pasar para revisar una decisión, y activamos la alerta cuando se cruza.',
+        },
+        {
+          n: '03',
+          title: 'Visualizar la bifurcación',
+          text: 'Abrimos las alternativas que el curso habitual todavía no deja ver.',
+        },
+        {
+          n: '04',
+          title: 'Decidir en la ventana',
+          text: 'Actuamos mientras la decisión todavía puede cambiar el resultado.',
+        },
+      ],
+      close: 'La IA nos ayuda a leer más y más rápido. La decisión sigue siendo de tu equipo.',
     },
 
     catalog: {
@@ -346,6 +365,7 @@ export const es: Content = {
           {
             n: '02',
             name: 'Observatorio de Señales',
+            demo: true,
             def: 'Vigilancia sostenida sobre el perímetro de una discusión que le importa a la organización —tramitación, prensa, actores, contraparte—, con una minuta de una plana y un dashboard entregados antes del momento de decidir.',
             text: 'La mayoría de las organizaciones no tiene un problema de análisis: tiene un problema de llegar a tiempo. El Observatorio vigila un perímetro definido por el cliente, no un barrido general, y antes de cada momento de decisión entrega qué cambió, qué actor se movió, qué ventana se abre o se cierra y qué tan sólida es la evidencia. La forma importa: una minuta de una plana, escrita, con fuentes y nivel de confianza declarado, que se puede leer entre reuniones y llevar a una mesa; y un dashboard para seguir el perímetro entre una minuta y la siguiente.',
             trigger: '«Nadie mira el entorno de forma sistemática y siempre reaccionamos tarde.»',
@@ -502,13 +522,44 @@ export const es: Content = {
       tag: 'Condición de neutralidad',
       text: 'No atendemos, sobre la misma materia regulatoria o territorial y dentro de la misma ventana, a un partido y a un cliente privado o público cuyos intereses en esa materia estén en conflicto. Cada encargo declara su perímetro por escrito. Sin ese perímetro, el encargo no se toma.',
     },
+
+    faq: {
+      label: ['Preguntas frecuentes', '01 — 06'],
+      h2: 'Preguntas frecuentes',
+      items: [
+        {
+          q: '¿Qué es utopialab.ai?',
+          a: 'Un laboratorio de prospectiva estratégica con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
+        },
+        {
+          q: '¿Qué es la prospectiva estratégica?',
+          a: 'Es leer el entorno con método para anticipar cambios y decidir a tiempo. No consiste en predecir un escenario: consiste en situar la señal, fijar el umbral que obliga a revisar una decisión, visualizar las alternativas y actuar mientras la decisión todavía puede cambiar el resultado.',
+        },
+        {
+          q: '¿En qué se diferencia de una consultoría tradicional?',
+          a: 'Cada encargo declara por escrito su entregable, su duración y qué queda fuera antes de empezar, y se puede detener en cualquier escalón. No producimos más información: convertimos la que ya existe en decisiones a tiempo, y los productos de capacidad terminan con el equipo del cliente operando sin nosotros.',
+        },
+        {
+          q: '¿Con quién trabajan?',
+          a: 'Con empresas y organismos públicos cuyo entorno regulatorio o territorial cambia más rápido que sus decisiones —incluidos municipios, por la vía de compra pública que corresponda— y con profesionales senior que necesitan leer su propio horizonte.',
+        },
+        {
+          q: '¿Cómo se empieza y cuánto cuesta?',
+          a: 'Con una hora de diagnóstico sin costo y sin cotización previa, sobre una decisión que ya está pendiente. Los valores se definen después, según el alcance y el número de equipos, y los encargos mayores se estructuran en tramos.',
+        },
+        {
+          q: '¿Usan inteligencia artificial?',
+          a: 'Sí, como apoyo para leer más información y más rápido. Las decisiones relevantes conservan deliberación y criterio humano: la IA propone y el equipo decide. Los productos de acceso a la Máquina, que funcionan con IA, están en prototipo y se abren por piloto.',
+        },
+      ],
+    },
   },
 
   cases: {
     meta: {
       title: 'Casos · utopialab.ai',
       description:
-        'Dónde se ha ejecutado el método: el caso de la Ley Lafkenche, con contexto, problema, intervención, resultado y prueba, y las tres etapas del núcleo del método.',
+        'Dónde se ha ejecutado el método: el caso de la Ley Lafkenche, con contexto, problema, intervención, resultado y prueba, y las cuatro etapas del núcleo del método.',
     },
     kicker: 'El método en obra',
     titleLines: ['Casos'],
@@ -530,6 +581,7 @@ export const es: Content = {
       {
         n: '01',
         title: 'Ley Lafkenche',
+        demo: true,
         subtitle: 'Derechos, territorio y borde costero',
         context:
           'El conflicto entre el borde costero, los derechos de los pueblos originarios y la actividad productiva, en pleno trámite y con actores que no compartían diagnóstico.',
@@ -548,8 +600,8 @@ export const es: Content = {
     method: {
       kicker: 'Cómo trabajamos',
       h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo',
-      sub: 'Las tres etapas corresponden a un punto preciso del esquema: detectar el cambio, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
-      label: ['El núcleo del método', '01 — 03'],
+      sub: 'Las cuatro etapas corresponden a un punto preciso del esquema: detectar el cambio, fijar el umbral que obliga a revisar, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
+      label: ['El núcleo del método', '01 — 04'],
       markerLabel: 'En el esquema',
       steps: [
         {
@@ -560,12 +612,18 @@ export const es: Content = {
         },
         {
           n: '02',
+          title: 'Fijar el umbral',
+          text: 'Acordamos de antemano qué tendría que pasar para revisar una decisión, y convertimos esa condición en una alerta que avisa cuando se cruza.',
+          marker: 'umbral difuso',
+        },
+        {
+          n: '03',
           title: 'Visualizar la bifurcación',
           text: 'Hacemos comparables alternativas, tensiones y futuros que el curso habitual todavía no permite ver.',
           marker: 'bifurcación',
         },
         {
-          n: '03',
+          n: '04',
           title: 'Decidir en la ventana',
           text: 'Definimos criterios, responsables, alertas y condiciones para actuar o revisar antes del punto de no retorno.',
           marker: 'ventana de decisión',
@@ -576,7 +634,7 @@ export const es: Content = {
       chain: {
         label: ['La cadena completa', '01 — 11'],
         intro:
-          'Las tres etapas son tres eslabones de una cadena más larga. Cada glifo dice qué le pasa al campo: en turquesa lo que se observa, en naranja lo que cruza a alerta y en azul lo que se decide.',
+          'Las cuatro etapas son cuatro eslabones de una cadena más larga. Cada glifo dice qué le pasa al campo: en turquesa lo que se observa, en naranja lo que cruza a alerta y en azul lo que se decide.',
         stages: {
           senal: 'Señal',
           cadena: 'Cadena',
@@ -600,7 +658,7 @@ export const es: Content = {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD) y Willy Maikowski (Buk). Credenciales verificables.',
     },
     kicker: 'Equipo',
     titleLines: ['Experiencia'],
