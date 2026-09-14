@@ -14,5 +14,9 @@
     { "source": "/es/intervenciones", "destination": "/es/casos", "statusCode": 301 },
     { "source": "/en/interventions", "destination": "/en/cases", "statusCode": 301 }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/atalaya", "destination": "/atalaya/index.html" },
+    { "source": "/atalaya/", "destination": "/atalaya/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

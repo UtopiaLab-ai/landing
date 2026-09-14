@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATALAYA · Inteligencia Anticipatoria sobre Conflicto Territorial Latinoamericano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:     #1A6B2A;
+  --green-dk:  #0F4019;
+  --green-md:  #2A8A3C;
+  --green-sf:  #E8F5EA;
+  --green-dim: #C8E6CB;
+  --amber:     #C8820A;
+  --amber-sf:  #FDF3E0;
+  --red:       #C8203A;
+  --bg:        #FFFFFF;
+  --bg-card:   #F4F4F2;
+  --bg-card2:  #E8E8E6;
+  --ink:       #0A0A0A;
+  --ink-2:     rgba(10,10,10,.72);
+  --ink-3:     rgba(10,10,10,.46);
+  --ink-4:     rgba(10,10,10,.22);
+  --inv:       #FFFFFF;
+  --inv-2:     rgba(255,255,255,.68);
+  --rule:      rgba(10,10,10,.13);
+  --rule-str:  rgba(10,10,10,.38);
+  --rule-inv:  rgba(255,255,255,.16);
+  --ff:  "Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --mo:  "JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100vh;background:var(--bg);color:var(--ink);font-family:var(--ff);font-size:13px;line-height:1.5;overflow:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--green);color:#fff}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg-card)}::-webkit-scrollbar-thumb{background:var(--green-dim)}
+
+/* SHELL */
+.shell{display:grid;grid-template-columns:248px 1fr;grid-template-rows:46px 1fr;height:100vh}
+
+/* TOPBAR */
+.topbar{grid-column:1/-1;background:var(--green-dk);border-bottom:2px solid var(--green-md);display:flex;align-items:center;padding:0 18px;gap:12px}
+.tb-name{font-family:var(--mo);font-size:15px;font-weight:600;color:#fff;letter-spacing:.14em;padding-right:12px;border-right:1px solid var(--rule-inv)}
+.tb-sub{font-family:var(--mo);font-size:9px;color:var(--inv-2);letter-spacing:.16em;text-transform:uppercase}
+.tb-pill{font-family:var(--mo);font-size:8px;padding:3px 8px;border:1px solid var(--rule-inv);color:var(--inv-2);letter-spacing:.09em;text-transform:uppercase}
+.tb-pill.on{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff}
+.tb-r{margin-left:auto;display:flex;align-items:center;gap:12px}
+.tb-live{display:flex;align-items:center;gap:6px;font-family:var(--mo);font-size:8.5px;color:#fff;letter-spacing:.10em;text-transform:uppercase}
+.ldot{width:7px;height:7px;background:#6FCF7A;border:1px solid rgba(0,0,0,.2)}
+
+/* SIDEBAR */
+.sidebar{background:var(--green);border-right:1px solid rgba(0,0,0,.22);overflow-y:auto;padding:8px 0 28px;grid-row:2}
+.ns{font-family:var(--mo);font-size:8px;font-weight:600;color:rgba(255,255,255,.38);letter-spacing:.22em;text-transform:uppercase;padding:14px 13px 5px;border-top:1px solid rgba(255,255,255,.08);margin-top:6px}
+.ns:first-child{border-top:none;margin-top:0;padding-top:6px}
+.ni{display:flex;align-items:center;gap:8px;padding:6px 13px;cursor:pointer;border-left:2px solid transparent}
+.ni:hover{background:rgba(255,255,255,.08)}
+.ni.active{background:rgba(255,255,255,.13);border-left-color:#fff}
+.ni-ic{font-family:var(--mo);font-size:10px;color:rgba(255,255,255,.32);width:12px;flex-shrink:0}
+.ni.active .ni-ic{color:#fff}
+.ni-lb{font-size:11.5px;color:rgba(255,255,255,.60);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ni.active .ni-lb{color:#fff;font-weight:500}
+.ni-bd{margin-left:auto;font-family:var(--mo);font-size:8px;padding:2px 5px;background:rgba(255,255,255,.10);color:rgba(255,255,255,.45)}
+.ni.active .ni-bd{background:rgba(255,255,255,.22);color:#fff}
+.odot{width:6px;height:6px;flex-shrink:0;margin-left:auto}
+.odot.a{background:#6FCF7A}
+.odot.i{background:transparent;border:1px solid rgba(255,255,255,.25)}
+
+/* MAIN */
+.main{overflow-y:auto;grid-row:2;display:flex;flex-direction:column}
+
+/* HERO */
+.hero{background:var(--green);padding:20px 26px 18px;border-bottom:1px solid var(--rule);flex-shrink:0}
+.hero-ey{font-family:var(--mo);font-size:9px;font-weight:600;color:rgba(255,255,255,.60);letter-spacing:.20em;text-transform:uppercase;margin-bottom:6px}
+.hero-title{font-size:20px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:4px}
+.hero-title em{font-style:normal;color:#A8E6B0}
+.hero-desc{font-size:11.5px;color:rgba(255,255,255,.70);max-width:560px;line-height:1.6;margin-bottom:16px}
+.hero-stats{display:flex;gap:20px;flex-wrap:wrap}
+.st-n{font-family:var(--mo);font-size:21px;font-weight:600;color:#fff;line-height:1}
+.st-n small{font-size:12px;font-weight:400;color:rgba(255,255,255,.60)}
+.st-l{font-family:var(--mo);font-size:8px;color:rgba(255,255,255,.52);letter-spacing:.12em;text-transform:uppercase;margin-top:1px}
+.svsep{width:1px;background:rgba(255,255,255,.18);align-self:stretch;margin:2px 0}
+
+/* VISTA WRAPPER */
+.vista{display:none;flex:1;flex-direction:column}
+.vista.active{display:flex}
+
+/* CONTENT GRID (vista general) */
+.cgrid{display:grid;grid-template-columns:1fr 302px;flex:1}
+.cm{padding:20px 24px;border-right:1px solid var(--rule);overflow-y:auto}
+.cs{padding:16px 16px;background:var(--bg-card);overflow-y:auto}
+
+/* SECTION HEADER */
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+.sh-lb{font-family:var(--mo);font-size:8.5px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;color:var(--ink-3)}
+.sh-lb.g{color:var(--green)}
+.sh-tg{margin-left:auto;font-family:var(--mo);font-size:8px;padding:2px 7px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.sh-tg.g{background:var(--green);color:#fff}
+.sh-tg.a{background:var(--amber);color:#fff}
+.sh-tg.o{background:transparent;border:1px solid var(--ink-4);color:var(--ink-3)}
+
+/* CICLO */
+.ciclo{display:flex;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.cn{font-family:var(--mo);font-size:8.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--rule-str);background:var(--bg);color:var(--ink-2);white-space:nowrap}
+.cn.done{background:var(--green-sf);border-color:var(--green);color:var(--green)}
+.cn.cur{background:var(--green);border-color:var(--green);color:#fff}
+.ca{font-family:var(--mo);font-size:10px;color:var(--ink-4);padding:0 3px}
+
+/* ATLAS */
+.atlas-desc{font-size:11px;color:var(--ink-3);line-height:1.5;margin-bottom:12px}
+.ag{display:grid;grid-template-columns:108px 1fr 1fr 1fr;gap:1px;background:var(--rule-str);border:1px solid var(--rule-str);margin-bottom:12px}
+.ac{background:var(--bg);padding:8px;cursor:pointer;transition:background .1s;position:relative}
+.ac:hover{background:var(--green-sf)}
+.ac.hr{background:var(--green);cursor:default}.ac.hr:hover{background:var(--green)}
+.ac.hc{background:var(--bg-card2);cursor:default}.ac.hc:hover{background:var(--bg-card2)}
+.ac.pos{background:var(--green-sf);outline:2px solid var(--green);outline-offset:-2px;z-index:1}
+.ac.pos:hover{background:var(--green-dim)}
+.ac.pos2{background:var(--bg-card2);outline:2px solid var(--ink-3);outline-offset:-2px}
+.ac-h{font-family:var(--mo);font-size:7.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;line-height:1.4}
+.ac-ax{font-family:var(--mo);font-size:7px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;color:var(--ink-2);line-height:1.4}
+.ac-nm{font-size:11px;font-weight:600;color:var(--ink);margin-bottom:2px;line-height:1.3}
+.ac-ds{font-size:9.5px;color:var(--ink-3);line-height:1.4}
+.ac-cs{display:inline-block;margin-top:4px;font-family:var(--mo);font-size:7.5px;padding:2px 5px;font-weight:600}
+.ac-cs.g{background:var(--green);color:#fff}
+.ac-cs.k{background:var(--ink);color:#fff}
+.ac-av{font-family:var(--mo);font-size:8.5px;color:var(--ink-4);margin-top:3px}
+
+/* CASO */
+.caso{border:1px solid var(--rule);margin-bottom:14px}
+.caso-hd{background:var(--ink);padding:8px 12px;display:flex;align-items:flex-start;gap:9px}
+.caso-cd{font-family:var(--mo);font-size:8.5px;font-weight:600;color:#6FCF7A;letter-spacing:.12em;white-space:nowrap;margin-top:1px}
+.caso-tt{font-size:12.5px;font-weight:600;color:#fff;line-height:1.3}
+.caso-sb{font-size:10.5px;color:rgba(255,255,255,.48);margin-top:2px}
+.caso-ts{padding:8px 12px;background:var(--green-sf);border-bottom:1px solid var(--green-dim);display:flex;gap:8px}
+.tsl{font-family:var(--mo);font-size:7.5px;font-weight:600;color:var(--green);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;margin-top:1px}
+.tst{font-size:11px;font-weight:600;color:var(--ink);line-height:1.4}
+.caso-bd{padding:10px 12px}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px}
+.mk{font-family:var(--mo);font-size:7.5px;color:var(--ink-3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2px}
+.mv{font-size:11px;color:var(--ink-2);line-height:1.4}
+.mv.hi{font-weight:600;color:var(--green)}
+.sep{height:1px;background:var(--rule);margin:12px 0}
+
+/* DATOS */
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px}
+.dato{border:1px solid var(--rule);padding:8px 10px;background:var(--bg)}
+.dn{font-family:var(--mo);font-size:19px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:2px}
+.dn small{font-size:11px;font-weight:400;color:var(--ink-3)}
+.dl{font-size:10px;color:var(--ink-3);line-height:1.4;margin-bottom:3px}
+.dm{font-family:var(--mo);font-size:8px;font-weight:600;color:var(--green)}
+
+/* PENDIENTES */
+.pr{display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.pr:last-child{border-bottom:none}
+.pc{font-family:var(--mo);font-size:8px;font-weight:600;color:var(--ink-3);letter-spacing:.10em;white-space:nowrap;margin-top:1px;min-width:32px}
+.pt{font-size:11px;color:var(--ink-2);line-height:1.4;flex:1}
+.pm{font-family:var(--mo);font-size:8.5px;font-weight:600;margin-top:1px;white-space:nowrap}
+.pm.cr{color:var(--red)}.pm.al{color:var(--amber)}.pm.me{color:var(--ink-3)}
+
+/* OBSERVATORIOS SIDEBAR */
+.obs-c{border:1px solid var(--rule);background:var(--bg);margin-bottom:7px}
+.obs-ch{padding:7px 10px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--rule);background:var(--bg-card2)}
+.obs-cn{font-size:11px;font-weight:600;color:var(--ink)}
+.obs-st{margin-left:auto;font-family:var(--mo);font-size:7.5px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;padding:2px 5px}
+.obs-st.a{background:var(--green);color:#fff}
+.obs-st.i{background:var(--bg-card);color:var(--ink-3);border:1px solid var(--rule)}
+.obs-cb{padding:7px 10px}
+.obs-ds{font-size:10px;color:var(--ink-3);line-height:1.5;margin-bottom:4px}
+.obs-sg{font-family:var(--mo);font-size:8.5px;color:var(--ink-3)}
+.obs-sg b{color:var(--green);font-weight:600}
+
+/* SEÑALES */
+.sr{display:flex;align-items:flex-start;gap:7px;padding:7px 0;border-bottom:1px solid var(--rule)}
+.sr:last-child{border-bottom:none}
+.ad{width:8px;height:8px;flex-shrink:0;margin-top:3px}
+.ad.al{background:var(--red)}.ad.me{background:var(--amber)}.ad.ba{background:var(--ink-4)}
+.sc{font-family:var(--mo);font-size:7.5px;color:var(--ink-4);white-space:nowrap;margin-top:1px}
+.st{font-size:11px;color:var(--ink-2);line-height:1.4;flex:1}
+.sob{font-family:var(--mo);font-size:7.5px;color:var(--ink-4);white-space:nowrap;margin-top:1px}
+
+/* CAPAS */
+.capas{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:9px}
+.capa{padding:7px 9px;border:1px solid var(--rule);background:var(--bg)}
+.capa-c{font-family:var(--mo);font-size:11px;font-weight:700;color:var(--green);margin-bottom:1px}
+.capa-n{font-size:10px;font-weight:600;color:var(--ink-2);margin-bottom:1px}
+.capa-d{font-size:9px;color:var(--ink-3);line-height:1.4}
+
+/* ── VISTA: SEÑALES ACTIVAS ── */
+.senales-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;padding:22px 24px}
+.senal-card{border:1px solid var(--rule);background:var(--bg)}
+.sk-hd{padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--rule)}
+.sk-cod{font-family:var(--mo);font-size:8.5px;font-weight:600;color:var(--ink-3);letter-spacing:.10em}
+.sk-obs{font-family:var(--mo);font-size:8px;padding:2px 6px;margin-left:auto;text-transform:uppercase;font-weight:600;letter-spacing:.08em}
+.sk-obs.ter{background:var(--green-sf);color:var(--green);border:1px solid var(--green-dim)}
+.sk-obs.eco{background:var(--amber-sf);color:var(--amber);border:1px solid #F5D69A}
+.sk-obs.jud{background:#EEF2FF;color:#3730A3;border:1px solid #C7D2FE}
+.sk-obs.hid{background:#E0F7FA;color:#006064;border:1px solid #B2EBF2}
+.sk-obs.min{background:#FFF3E0;color:#BF360C;border:1px solid #FFCCBC}
+.alerta-bar{height:3px;flex-shrink:0}
+.alerta-bar.al{background:var(--red)}.alerta-bar.me{background:var(--amber)}.alerta-bar.ba{background:var(--ink-4)}
+.sk-bd{padding:9px 12px}
+.sk-ttl{font-size:12px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.sk-desc{font-size:10.5px;color:var(--ink-3);line-height:1.5;margin-bottom:8px}
+.sk-ft{display:flex;align-items:center;gap:8px}
+.sk-pais{font-family:var(--mo);font-size:8px;color:var(--ink-4);letter-spacing:.08em;text-transform:uppercase}
+.sk-capa{font-family:var(--mo);font-size:8px;padding:2px 5px;background:var(--bg-card2);color:var(--ink-3)}
+.sk-mark{font-family:var(--mo);font-size:9px;font-weight:600;margin-left:auto}
+.sk-mark.v{color:var(--green)}.sk-mark.p{color:var(--amber)}.sk-mark.n{color:var(--ink-4)}
+.alerta-leg{display:flex;align-items:center;gap:16px;padding:10px 24px;border-bottom:1px solid var(--rule);background:var(--bg-card);flex-shrink:0}
+.al-item{display:flex;align-items:center;gap:6px;font-family:var(--mo);font-size:9px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase}
+.al-dot-s{width:10px;height:10px}
+.al-dot-s.al{background:var(--red)}.al-dot-s.me{background:var(--amber)}.al-dot-s.ba{background:var(--ink-4)}
+
+/* ── VISTA: CONVERGENCIAS ── */
+.conv-wrap{padding:22px 24px;flex:1;overflow-y:auto}
+.conv-card{border:1px solid var(--rule);margin-bottom:16px}
+.conv-hd{padding:10px 14px;border-bottom:1px solid var(--rule);display:flex;align-items:flex-start;gap:10px}
+.conv-id{font-family:var(--mo);font-size:8.5px;font-weight:600;color:var(--ink-3);letter-spacing:.12em;white-space:nowrap;margin-top:2px}
+.conv-estado{font-family:var(--mo);font-size:8px;padding:3px 8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;margin-left:auto}
+.conv-estado.madura{background:var(--green);color:#fff}
+.conv-estado.incip{background:var(--amber-sf);color:var(--amber);border:1px solid #F5D69A}
+.conv-ttl{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3}
+.conv-sub{font-size:10.5px;color:var(--ink-3);margin-top:2px}
+.conv-bd{padding:12px 14px}
+.conv-desc{font-size:12px;color:var(--ink-2);line-height:1.6;margin-bottom:12px;border-left:3px solid var(--green-dim);padding-left:12px}
+.conv-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
+.conv-mk{font-family:var(--mo);font-size:7.5px;color:var(--ink-3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+.conv-mv{font-size:11px;color:var(--ink-2);line-height:1.4}
+.conv-mv.g{color:var(--green);font-weight:600}
+.senales-tag{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.s-tag{font-family:var(--mo);font-size:8px;padding:3px 7px;background:var(--bg-card2);color:var(--ink-3);letter-spacing:.06em}
+.gatillo-box{background:var(--green-sf);border:1px solid var(--green-dim);padding:8px 12px}
+.gatillo-lbl{font-family:var(--mo);font-size:7.5px;font-weight:600;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.gatillo-txt{font-size:11px;color:var(--ink);font-weight:500}
+
+/* ── VISTA: ESCENARIOS ── */
+.esc-wrap{padding:22px 24px;flex:1;overflow-y:auto}
+.esc-intro{font-size:12px;color:var(--ink-2);line-height:1.6;margin-bottom:20px;max-width:640px}
+.esc-matrix{display:grid;grid-template-columns:100px 1fr 1fr;gap:1px;background:var(--rule-str);border:1px solid var(--rule-str);margin-bottom:20px}
+.em-cell{background:var(--bg);padding:10px 12px}
+.em-cell.header{background:var(--ink);cursor:default}
+.em-cell.axis{background:var(--bg-card2)}
+.em-cell.A{background:var(--green-sf);border:2px solid var(--green)}
+.em-cell.B{background:#FFF8F0}
+.em-cell.C{background:#FFF3F5}
+.em-cell.D{background:#1C1A14;border:2px solid #555}
+.em-h{font-family:var(--mo);font-size:8px;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase}
+.em-ax{font-family:var(--mo);font-size:8px;font-weight:600;color:var(--ink-2);letter-spacing:.10em;text-transform:uppercase;line-height:1.4}
+.em-letter{font-family:var(--mo);font-size:22px;font-weight:700;margin-bottom:3px}
+.em-letter.A{color:var(--green)}.em-letter.B{color:var(--amber)}.em-letter.C{color:var(--red)}.em-letter.D{color:rgba(255,255,255,.6)}
+.em-name{font-size:11.5px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.em-cell.D .em-name{color:rgba(255,255,255,.85)}
+.em-def{font-size:10px;color:var(--ink-3);line-height:1.4}
+.em-cell.D .em-def{color:rgba(255,255,255,.45)}
+.backcasting{margin-bottom:16px}
+.bc-title{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:10px}
+.bc-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid var(--rule)}
+.bc-row:last-child{border-bottom:none}
+.bc-yr{font-family:var(--mo);font-size:11px;font-weight:600;color:var(--green);white-space:nowrap;min-width:38px}
+.bc-txt{font-size:11px;color:var(--ink-2);line-height:1.4}
+
+/* ── VISTA: UMBRALES ── */
+.umb-wrap{padding:22px 24px;flex:1;overflow-y:auto}
+.umb-card{border:1px solid var(--rule);margin-bottom:14px}
+.umb-hd{padding:8px 12px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:9px;background:var(--bg-card2)}
+.umb-id{font-family:var(--mo);font-size:8px;font-weight:600;color:var(--ink-3);letter-spacing:.12em}
+.umb-nm{font-size:12px;font-weight:600;color:var(--ink)}
+.umb-lv{margin-left:auto;font-family:var(--mo);font-size:8px;padding:2px 6px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.umb-lv.cr{background:var(--red);color:#fff}
+.umb-lv.al{background:var(--amber);color:#fff}
+.umb-lv.md{background:var(--bg-card);color:var(--ink-3);border:1px solid var(--rule)}
+.umb-bd{padding:10px 12px}
+.umb-cond{font-size:11.5px;color:var(--ink-2);line-height:1.5;margin-bottom:10px}
+.umb-2col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.umb-box{padding:8px 10px;border:1px solid var(--rule)}
+.umb-box.si{background:var(--green-sf);border-color:var(--green-dim)}
+.umb-box.no{background:#FFF3F5;border-color:#FECDD3}
+.umb-bl{font-family:var(--mo);font-size:7.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.umb-box.si .umb-bl{color:var(--green)}
+.umb-box.no .umb-bl{color:var(--red)}
+.umb-bt{font-size:10.5px;color:var(--ink-2);line-height:1.4}
+
+/* ── VISTA: TERRITORIAL ── */
+.ter-wrap{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr 1fr;gap:0;flex:1;min-height:0}
+.ter-header{grid-column:1/-1;padding:14px 22px;border-bottom:1px solid var(--rule);background:var(--bg-card);flex-shrink:0;display:flex;align-items:center;gap:14px}
+.ter-htitle{font-size:14px;font-weight:700;color:var(--ink)}
+.ter-hdesc{font-size:11px;color:var(--ink-3)}
+.ter-tabs{display:flex;gap:0;margin-left:auto}
+.ter-tab{font-family:var(--mo);font-size:8.5px;padding:5px 12px;cursor:pointer;border:1px solid var(--rule);border-right:none;color:var(--ink-3);background:var(--bg);text-transform:uppercase;letter-spacing:.10em}
+.ter-tab:last-child{border-right:1px solid var(--rule)}
+.ter-tab.active{background:var(--green);color:#fff;border-color:var(--green)}
+.map-pane{display:flex;flex-direction:column;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);min-height:0}
+.map-pane:nth-child(even){border-right:none}
+.map-pane:nth-last-child(-n+2){border-bottom:none}
+.map-label{padding:8px 14px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:8px;flex-shrink:0;background:var(--bg-card)}
+.ml-flag{font-size:16px;line-height:1}
+.ml-name{font-size:12px;font-weight:600;color:var(--ink)}
+.ml-obs{font-family:var(--mo);font-size:8px;padding:2px 6px;margin-left:auto;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.ml-obs.a{background:var(--green);color:#fff}
+.ml-obs.i{background:var(--bg-card2);color:var(--ink-3);border:1px solid var(--rule)}
+.map-iframe-wrap{flex:1;position:relative;min-height:0}
+.map-iframe-wrap iframe{width:100%;height:100%;border:none;display:block}
+.map-overlay{position:absolute;bottom:6px;left:6px;right:6px;background:rgba(255,255,255,.92);padding:6px 10px;pointer-events:none}
+.mo-case{font-family:var(--mo);font-size:8px;font-weight:600;color:var(--green);letter-spacing:.10em;text-transform:uppercase;margin-bottom:2px}
+.mo-desc{font-size:10px;color:var(--ink-2);line-height:1.4}
+
+/* TOOLTIP */
+#tt{display:none;position:fixed;background:var(--green-dk);border:1px solid var(--green-md);padding:9px 13px;max-width:230px;z-index:100;pointer-events:none}
+#tt.v{display:block}
+.tt-top{font-family:var(--mo);font-size:7.5px;color:rgba(255,255,255,.50);letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px}
+.tt-n{font-size:12px;font-weight:600;color:#fff;margin-bottom:3px}
+.tt-d{font-size:10px;color:rgba(255,255,255,.65);line-height:1.5}
+.tt-c{margin-top:5px;font-family:var(--mo);font-size:8.5px;color:#6FCF7A}
+
+/* FOOTER */
+.mfooter{border-top:1px solid var(--rule);padding:8px 24px;display:flex;align-items:center;gap:12px;background:var(--bg-card);flex-shrink:0}
+.ft{font-family:var(--mo);font-size:8.5px;color:var(--ink-3);letter-spacing:.10em;text-transform:uppercase}
+.tleg{display:flex;gap:12px;margin-left:auto;align-items:center}
+.ti{display:flex;align-items:center;gap:5px;font-family:var(--mo);font-size:8.5px;color:var(--ink-3)}
+.ts{font-size:11px;font-weight:700}
+.ts.v{color:var(--green)}.ts.p{color:var(--amber)}.ts.n{color:var(--ink-4)}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="tb-name">ATALAYA</div>
+  <div class="tb-sub">Inteligencia Anticipatoria · Conflicto Territorial Latinoamericano</div>
+  <div class="tb-pill">(U)² Lab</div>
+  <div class="tb-pill">Böll Santiago</div>
+  <div class="tb-pill on">OBS-01 · Piloto 2026</div>
+  <div class="tb-r">
+    <div class="tb-pill">Chile · Perú · Bolivia</div>
+    <div class="tb-live"><span class="ldot"></span>Sistema activo</div>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="ns">Observatorio</div>
+  <div class="ni active" data-vista="general">
+    <span class="ni-ic">◆</span><span class="ni-lb">Vista general</span><span class="odot a"></span>
+  </div>
+  <div class="ni" data-vista="senales">
+    <span class="ni-ic">◇</span><span class="ni-lb">Señales activas</span><span class="ni-bd">6</span>
+  </div>
+  <div class="ni" data-vista="convergencias">
+    <span class="ni-ic">⟳</span><span class="ni-lb">Convergencias</span><span class="ni-bd">1</span>
+  </div>
+  <div class="ni" data-vista="escenarios">
+    <span class="ni-ic">▦</span><span class="ni-lb">Escenarios</span>
+  </div>
+  <div class="ni" data-vista="umbrales">
+    <span class="ni-ic">⚠</span><span class="ni-lb">Umbrales · gatillos</span>
+  </div>
+  <div class="ni" data-vista="territorial">
+    <span class="ni-ic">⊞</span><span class="ni-lb">Mapas territoriales</span>
+  </div>
+
+  <div class="ns">Observatorios temáticos</div>
+  <div class="ni active" data-vista="obs-territorial">
+    <span class="ni-ic">⊕</span><span class="ni-lb">Derechos Territoriales</span><span class="odot a"></span>
+  </div>
+  <div class="ni" data-vista="obs-hidrico">
+    <span class="ni-ic">◇</span><span class="ni-lb">Gobernanza Hídrica</span><span class="odot a"></span>
+  </div>
+  <div class="ni" data-vista="obs-minerales">
+    <span class="ni-ic">◇</span><span class="ni-lb">Minerales Críticos</span><span class="odot a"></span>
+  </div>
+  <div class="ni" data-vista="obs-instalado">
+    <span class="ni-ic">◇</span><span class="ni-lb">Urbano-Habitacional</span><span class="odot i"></span>
+  </div>
+  <div class="ni" data-vista="obs-instalado">
+    <span class="ni-ic">◇</span><span class="ni-lb">Energía y Transición</span><span class="odot i"></span>
+  </div>
+  <div class="ni" data-vista="obs-instalado">
+    <span class="ni-ic">◇</span><span class="ni-lb">DDHH</span><span class="odot i"></span>
+  </div>
+
+  <div class="ns">Análisis</div>
+  <div class="ni" data-vista="convergencias">
+    <span class="ni-ic">⊕</span><span class="ni-lb">Convergencias cruzadas</span>
+  </div>
+  <div class="ni" data-vista="atlas">
+    <span class="ni-ic">◆</span><span class="ni-lb">Atlas de tesis</span>
+  </div>
+
+  <div class="ns">Sistema</div>
+  <div class="ni" data-vista="territorial">
+    <span class="ni-ic">⊞</span><span class="ni-lb">Mapas territoriales</span>
+  </div>
+  <div class="ni" data-vista="glosario">
+    <span class="ni-ic">§</span><span class="ni-lb">Glosario</span>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HERO (compartido) -->
+  <div class="hero" id="heroBlock">
+    <div class="hero-ey" id="heroEy">ATALAYA · ATL-CL-001 · Ciclo piloto · Junio 2026</div>
+    <div class="hero-title">Observatorio: <em id="heroTitle">Derechos Territoriales Indígenas</em></div>
+    <div class="hero-desc" id="heroDesc">Caso activo: Ley 20.249 / ECMPO · Chile · 2008–2026. Tesis estructural verificada. Seis componentes del dispositivo producidos. Capa 2 en curso.</div>
+    <div class="hero-stats">
+      <div><div class="st-n">103</div><div class="st-l">Solicitudes</div></div>
+      <div class="svsep"></div>
+      <div><div class="st-n">24</div><div class="st-l">Con decreto</div></div>
+      <div class="svsep"></div>
+      <div><div class="st-n">35<small>%</small></div><div class="st-l">Desistimientos</div></div>
+      <div class="svsep"></div>
+      <div><div class="st-n">477</div><div class="st-l">Actos adm.</div></div>
+      <div class="svsep"></div>
+      <div><div class="st-n">6</div><div class="st-l">Señales activas</div></div>
+      <div class="svsep"></div>
+      <div><div class="st-n">1</div><div class="st-l">Convergencia</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: GENERAL
+       ════════════════════════════════ -->
+  <div class="vista active" id="v-general">
+    <div class="cgrid">
+      <div class="cm">
+        <div class="sh"><div class="sh-lb g">Ciclo de inteligencia</div><div class="sh-tg o">Jerarquía conceptual</div></div>
+        <div class="ciclo">
+          <span class="cn done">Señal</span><span class="ca">→</span>
+          <span class="cn done">Convergencia</span><span class="ca">→</span>
+          <span class="cn done">Umbral·Gatillo</span><span class="ca">→</span>
+          <span class="cn cur">Análisis sistémico</span><span class="ca">→</span>
+          <span class="cn">Escenario</span><span class="ca">→</span>
+          <span class="cn">Incidencia</span>
+        </div>
+
+        <div class="sh"><div class="sh-lb g">Atlas de Tesis Estructurales Latinoamericanas</div><div class="sh-tg g">2 posicionados</div></div>
+        <div class="atlas-desc">Hover sobre cada celda para ver definición. Celdas destacadas tienen caso posicionado.</div>
+        <div class="ag">
+          <div class="ac hr"><div class="ac-h" style="color:rgba(255,255,255,.60);font-size:7px">Efecto ↓ / Locus →</div></div>
+          <div class="ac hr"><div class="ac-h">Texto legal</div></div>
+          <div class="ac hr"><div class="ac-h">Aparato administrativo</div></div>
+          <div class="ac hr"><div class="ac-h">Campo de poder / economía</div></div>
+          <div class="ac hc"><div class="ac-ax">Diseñado<br>/ buscado</div></div>
+          <div class="ac" data-n="Defecto de diseño legal" data-d="El efecto indeseado está en el propio texto de la norma. La norma falla porque fue mal concebida." data-c="">
+            <div class="ac-nm">Defecto de diseño legal</div><div class="ac-av">— disponible</div></div>
+          <div class="ac pos" data-n="Captura por diseño procedimental" data-d="El procedimiento produce, por su diseño, el bloqueo o inversión del derecho reconocido. La norma sustantiva está bien; el aparato administrativo está capturado." data-c="Ley Lafkenche / ECMPO · Chile (2008–2026)">
+            <div class="ac-nm">Captura procedimental</div><div class="ac-ds">Procedimiento bloquea el derecho que la ley reconoce.</div><div class="ac-cs g">Ley Lafkenche · Chile</div></div>
+          <div class="ac pos2" data-n="Gobierno de mercado / captura corporativa" data-d="La norma delega al mercado o actores corporativos las decisiones estructurales del territorio." data-c="PRMS 100 · Chile (2012)">
+            <div class="ac-nm">Gobierno de mercado</div><div class="ac-ds">La norma delega al mercado las decisiones territoriales.</div><div class="ac-cs k">PRMS 100 · Chile</div></div>
+          <div class="ac hc"><div class="ac-ax">Emergente<br>/ no buscado</div></div>
+          <div class="ac" data-n="Obsolescencia regulatoria" data-d="La norma era adecuada pero el contexto cambió y quedó desfasada." data-c=""><div class="ac-nm">Obsolescencia regulatoria</div><div class="ac-av">— disponible</div></div>
+          <div class="ac" data-n="Incapacidad institucional" data-d="La norma es adecuada pero el aparato no tiene capacidad técnica o presupuestal de implementarla." data-c=""><div class="ac-nm">Incapacidad institucional</div><div class="ac-av">— disponible</div></div>
+          <div class="ac" data-n="Dependencia de trayectoria" data-d="El efecto emerge de decisiones acumuladas históricamente. No hay un diseño actual que lo produzca: es inercia institucional." data-c=""><div class="ac-nm">Dependencia de trayectoria</div><div class="ac-av">— disponible</div></div>
+        </div>
+
+        <div class="sh" style="margin-top:16px"><div class="sh-lb g">Caso activo · ATL-CL-001</div><div class="sh-tg g">6/10 componentes ◉</div></div>
+        <div class="caso">
+          <div class="caso-hd"><div class="caso-cd">ATL-CL-001</div><div>
+            <div class="caso-tt">Ley 20.249 — Espacios Costeros Marinos de Pueblos Originarios</div>
+            <div class="caso-sb">Chile · 2008–2026 · Borde costero · Comunidades Lafkenche</div>
+          </div></div>
+          <div class="caso-ts"><div class="tsl">Tesis</div><div class="tst">La lentitud y el bloqueo no derivan de la Ley 20.249, sino del diseño administrativo, concesional y procedimental que la implementa. El procedimiento —no el texto legal— es el mecanismo de bloqueo.</div></div>
+          <div class="caso-bd">
+            <div class="mg">
+              <div><div class="mk">Región en el Atlas</div><div class="mv hi">Captura por diseño procedimental</div></div>
+              <div><div class="mk">Locus de la causa</div><div class="mv">Aparato adm. (CRUBC, CONADI, Subpesca)</div></div>
+              <div><div class="mk">Naturaleza del efecto</div><div class="mv">Diseñado / buscado · convergencia alta</div></div>
+              <div><div class="mk">Estado</div><div class="mv">Capa 1 ◉ · Capa 2 en curso</div></div>
+            </div>
+            <div class="sep"></div>
+            <div class="sh"><div class="sh-lb">Evidencia verificada ◉</div></div>
+            <div class="dg">
+              <div class="dato"><div class="dn">103</div><div class="dl">Solicitudes ECMPO registradas</div><div class="dm">◉ Subpesca 2026</div></div>
+              <div class="dato"><div class="dn">24</div><div class="dl">Alcanzan sector decretado — 23%</div><div class="dm">◉ Catastro</div></div>
+              <div class="dato"><div class="dn">168</div><div class="dl">Desistimientos · 35,2% de los actos</div><div class="dm">◉ Registro</div></div>
+              <div class="dato"><div class="dn">72<small>%</small></div><div class="dl">Solicitudes en Los Lagos</div><div class="dm">◉ Catastro+SIG</div></div>
+              <div class="dato"><div class="dn">17.614<small>ha</small></div><div class="dl">ECMPO vs 34.439 ha AMERB</div><div class="dm">◉ Subpesca</div></div>
+              <div class="dato"><div class="dn">US$6.271<small>M</small></div><div class="dl">Exportaciones salmoneras 2024</div><div class="dm">◉ Aduanas</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs">
+        <div class="sh"><div class="sh-lb">Observatorios activos</div><div class="sh-tg g">3 activos</div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Derechos Territoriales</div><div class="obs-st a">Activo</div></div><div class="obs-cb"><div class="obs-ds">Borde costero, territorios indígenas, derechos consuetudinarios. Chile · Perú · Colombia.</div><div class="obs-sg">Señales: <b>4</b> · Conv.: <b>1</b></div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Gobernanza Hídrica</div><div class="obs-st a">Activo</div></div><div class="obs-cb"><div class="obs-ds">Cuencas, derechos de agua. Aconcagua–Petorca · cuencas andinas Perú–Bolivia.</div><div class="obs-sg">Señales: <b>1</b> · Conv.: <b>0</b></div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Minerales Críticos</div><div class="obs-st a">Activo</div></div><div class="obs-cb"><div class="obs-ds">Litio, cobre, comunidades altiplánicas. Chile · Bolivia · Perú · Colombia.</div><div class="obs-sg">Señales: <b>1</b> · Conv.: <b>0</b></div></div></div>
+        <div class="sep"></div>
+        <div class="sh"><div class="sh-lb">Señales recientes</div></div>
+        <div class="sr"><div class="ad al"></div><div class="sc">ATL-001</div><div class="st">Bol. 15.862-21: votación pendiente Sala Senado</div><div class="sob">Leg.</div></div>
+        <div class="sr"><div class="ad al"></div><div class="sc">ATL-002</div><div class="st">CS roles 1687/1688-2025: doctrina favorable</div><div class="sob">Jud.</div></div>
+        <div class="sr"><div class="ad me"></div><div class="sc">ATL-003</div><div class="st">Indicaciones Ejecutivo: posición pendiente</div><div class="sob">Ejec.</div></div>
+        <div class="sr"><div class="ad me"></div><div class="sc">ATL-004</div><div class="st">Cosechas 2025: +14,9% — refuta paralización</div><div class="sob">Econ.</div></div>
+        <div class="sr"><div class="ad me"></div><div class="sc">ATL-005</div><div class="st">Aconcagua: DIPRES presupuesto MINVU</div><div class="sob">Hídr.</div></div>
+        <div class="sr"><div class="ad ba"></div><div class="sc">ATL-006</div><div class="st">Böll Bolivia: análisis gobernanza litio</div><div class="sob">Min.</div></div>
+        <div class="sep"></div>
+        <div class="sh"><div class="sh-lb">Fuentes C1–C4</div></div>
+        <div class="capas">
+          <div class="capa"><div class="capa-c">C1</div><div class="capa-n">Operacional</div><div class="capa-d">Inteligencia semanal</div></div>
+          <div class="capa"><div class="capa-c">C2</div><div class="capa-n">Interpretativa</div><div class="capa-d">Diagnóstico de fondo</div></div>
+          <div class="capa"><div class="capa-c">C3</div><div class="capa-n">Narrativa</div><div class="capa-d">Framing mediático</div></div>
+          <div class="capa"><div class="capa-c">C4</div><div class="capa-n">Datos duros</div><div class="capa-d">Verificación ◉</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: SEÑALES ACTIVAS
+       ════════════════════════════════ -->
+  <div class="vista" id="v-senales">
+    <div class="alerta-leg">
+      <div class="al-item"><div class="al-dot-s al"></div>Alto</div>
+      <div class="al-item"><div class="al-dot-s me"></div>Medio</div>
+      <div class="al-item"><div class="al-dot-s ba"></div>Bajo</div>
+      <span style="font-family:var(--mo);font-size:9px;color:var(--ink-3);margin-left:auto;letter-spacing:.10em;text-transform:uppercase">6 señales activas · OBS-01 · Junio 2026</span>
+    </div>
+    <div class="senales-grid">
+      <div class="senal-card">
+        <div class="alerta-bar al"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-001</div><div class="sk-obs ter">Territorial</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">Boletín 15.862-21: votación particular pendiente en Sala Senado</div>
+          <div class="sk-desc">El proyecto de modificación de la Ley 20.249 completó comisión y aguarda votación en Sala. El segundo trámite en Cámara permanece abierto. Ventana de dos cámaras activa — margen de incidencia real.</div>
+          <div class="sk-ft"><div class="sk-pais">Chile</div><div class="sk-capa">C1 Legislativo</div><div class="sk-mark v">◉</div></div>
+        </div>
+      </div>
+      <div class="senal-card">
+        <div class="alerta-bar al"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-002</div><div class="sk-obs jud">Judicial</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">CS roles 1687/1688-2025 (Aysén): estándar exigente contra rechazos CRUBC</div>
+          <div class="sk-desc">Única doctrina de fondo vigente: exige fundamentación pormenorizada, ponderación del informe CONADI y estándar Convenio 169. Los fallos posteriores son procesales y no contradicen esta línea.</div>
+          <div class="sk-ft"><div class="sk-pais">Chile</div><div class="sk-capa">C4 Judicial</div><div class="sk-mark v">◉</div></div>
+        </div>
+      </div>
+      <div class="senal-card">
+        <div class="alerta-bar me"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-003</div><div class="sk-obs ter">Territorial</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">Indicaciones Ejecutivo al Boletín 15.862-21: posición sin formalizar</div>
+          <div class="sk-desc">El Ejecutivo anunció indicaciones a la moción. Texto efectivo pendiente de SEGPRES. Incógnita central para calibrar el mapa de actores y la arquitectura de incidencia de capa 2.</div>
+          <div class="sk-ft"><div class="sk-pais">Chile</div><div class="sk-capa">C1 Ejecutivo</div><div class="sk-mark n">◌ P-01/P-02</div></div>
+        </div>
+      </div>
+      <div class="senal-card">
+        <div class="alerta-bar me"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-004</div><div class="sk-obs eco">Económico</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">Cosechas salmoneras 2025: +14,9% respecto de 2024 — refutación del frame económico</div>
+          <div class="sk-desc">La industria alcanzó 1,14 millones de toneladas con la ley vigente. El argumento de «paralización económica por ECMPO» queda sin sustento empírico. Dato disponible para vocería.</div>
+          <div class="sk-ft"><div class="sk-pais">Chile</div><div class="sk-capa">C4 Sectorial</div><div class="sk-mark v">◉</div></div>
+        </div>
+      </div>
+      <div class="senal-card">
+        <div class="alerta-bar me"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-005</div><div class="sk-obs hid">Hídrico</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">Gobernanza hídrica Aconcagua: DIPRES presupuesto MINVU — entrada al observatorio hídrico</div>
+          <div class="sk-desc">La publicación del policy report Böll sobre gobernanza hídrica Aconcagua–Petorca (agosto 2025) activa el observatorio hídrico de ATALAYA. Posible convergencia con el eje fiscal-capacidad estatal del SYNC.</div>
+          <div class="sk-ft"><div class="sk-pais">Chile</div><div class="sk-capa">C2 Institucional</div><div class="sk-mark p">◎</div></div>
+        </div>
+      </div>
+      <div class="senal-card">
+        <div class="alerta-bar ba"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-006</div><div class="sk-obs min">Minerales</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">Böll Bolivia: publicación análisis gobernanza litio — caso candidato fase II</div>
+          <div class="sk-desc">La publicación de mayo 2026 sobre gobernanza del litio en Bolivia ofrece base documental para el tercer observatorio activo de ATALAYA. Caso posible para el Atlas en la región dependencia de trayectoria.</div>
+          <div class="sk-ft"><div class="sk-pais">Bolivia</div><div class="sk-capa">C2 Académico</div><div class="sk-mark p">◎</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: CONVERGENCIAS
+       ════════════════════════════════ -->
+  <div class="vista" id="v-convergencias">
+    <div class="conv-wrap">
+      <div class="conv-card">
+        <div class="conv-hd">
+          <div class="conv-id">CONV-ATL-2026-01</div>
+          <div><div class="conv-ttl">Cadena procedimental-económica · Ley Lafkenche</div><div class="conv-sub">Familias cruzadas: Territorial × Económico × Judicial</div></div>
+          <div class="conv-estado madura">Madura · lista para cargar</div>
+        </div>
+        <div class="conv-bd">
+          <div class="conv-desc">El mismo aparato procedimental que bloquea el derecho (CRUBC sin reloj, CONADI como cuello político, Subpesca sin plazo) produce simultáneamente el efecto económico: desgaste de las comunidades hasta el desistimiento, mientras la industria consolida concesiones. La convergencia cruza el registro territorial (diseño del procedimiento), el económico (refutación del frame de paralización) y el judicial (doctrina Aysén como contrapeso). Los tres registros apuntan a la misma tesis estructural.</div>
+          <div class="conv-meta">
+            <div><div class="conv-mk">Estado</div><div class="conv-mv g">Madura · lista para escalar</div></div>
+            <div><div class="conv-mk">Familias cruzadas</div><div class="conv-mv">Territorial × Económico × Judicial</div></div>
+            <div><div class="conv-mk">Observatorios</div><div class="conv-mv">Derechos Territoriales · Minerales Críticos</div></div>
+          </div>
+          <div class="sh"><div class="sh-lb">Señales nodo de la convergencia</div></div>
+          <div class="senales-tag">
+            <div class="s-tag">ATL-001 · Bol. 15.862-21 en Sala</div>
+            <div class="s-tag">ATL-002 · Doctrina CS Aysén</div>
+            <div class="s-tag">ATL-003 · Indicaciones Ejecutivo</div>
+            <div class="s-tag">ATL-004 · Exportaciones salmoneras</div>
+          </div>
+          <div class="gatillo-box">
+            <div class="gatillo-lbl">Indicador gatillo</div>
+            <div class="gatillo-txt">Texto efectivo de indicaciones del Ejecutivo publicado por SEGPRES → activar análisis de capa 2 (motor de descubrimiento) dentro de 72 horas desde ingreso.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conv-card">
+        <div class="conv-hd">
+          <div class="conv-id">CONV-ATL-2026-02</div>
+          <div><div class="conv-ttl">Geopolítica de minerales críticos en AL</div><div class="conv-sub">Familias cruzadas: Económico × Planeta × Territorial</div></div>
+          <div class="conv-estado incip">Incipiente · monitorear</div>
+        </div>
+        <div class="conv-bd">
+          <div class="conv-desc">Dos señales del mismo macro-patrón: presión externa sobre cadenas estratégicas regionales (litio Bolivia, cobre Perú). Insuficientes para convergencia formal — requieren 3 señales empíricas mínimas. El caso Bolivia (ATL-006) es candidato a señal nodo si se incorpora el eje comunitario-territorial de la publicación Böll. Vigilar próximo ciclo.</div>
+          <div class="conv-meta">
+            <div><div class="conv-mk">Estado</div><div class="conv-mv">Incipiente · 2 señales</div></div>
+            <div><div class="conv-mk">Familias cruzadas</div><div class="conv-mv">Económico × Planeta × Territorial</div></div>
+            <div><div class="conv-mk">Umbrales mínimos</div><div class="conv-mv">3–5 señales empíricas requeridas</div></div>
+          </div>
+          <div class="senales-tag">
+            <div class="s-tag">ATL-005 · Hídrico Aconcagua</div>
+            <div class="s-tag">ATL-006 · Litio Bolivia</div>
+            <div class="s-tag">+ 1 señal requerida</div>
+          </div>
+          <div class="gatillo-box">
+            <div class="gatillo-lbl">Indicador gatillo propuesto</div>
+            <div class="gatillo-txt">Publicación con impacto territorial documentado sobre comunidades indígenas en zona minera Perú o Bolivia → elevar a convergencia madura.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: ESCENARIOS
+       ════════════════════════════════ -->
+  <div class="vista" id="v-escenarios">
+    <div class="esc-wrap">
+      <div class="esc-intro">Cuatro escenarios al horizonte 2030, construidos desde dos incertidumbres críticas: (1) ¿el análisis produce incidencia en tiempo? y (2) ¿los actores institucionales responden al diagnóstico sistémico? La región sombreada es el escenario objetivo del Lab.</div>
+      <div class="esc-matrix">
+        <div class="em-cell header"></div>
+        <div class="em-cell header"><div class="em-h">Incidencia en tiempo</div></div>
+        <div class="em-cell header"><div class="em-h">Sin incidencia efectiva</div></div>
+        <div class="em-cell axis"><div class="em-ax">Respuesta<br>institucional</div></div>
+        <div class="em-cell A">
+          <div class="em-letter A">A</div>
+          <div class="em-name">Incidencia anticipatoria</div>
+          <div class="em-def">El análisis sistémico llega antes del cierre legislativo. Los actores institucionales lo incorporan. La plataforma demuestra valor de anticipación.</div>
+        </div>
+        <div class="em-cell B">
+          <div class="em-letter B">B</div>
+          <div class="em-name">Incidencia reactiva</div>
+          <div class="em-def">El análisis es sólido pero llega tarde. Los actores lo usan para litigio posterior o para el próximo ciclo. Valor documental, no anticipatorio.</div>
+        </div>
+        <div class="em-cell axis"><div class="em-ax">Sin respuesta<br>institucional</div></div>
+        <div class="em-cell C">
+          <div class="em-letter C">C</div>
+          <div class="em-name">Diagnóstico sin receptor</div>
+          <div class="em-def">El análisis es riguroso y oportuno, pero no hay actor político que lo incorpore. El conocimiento se produce sin incidencia.</div>
+        </div>
+        <div class="em-cell D">
+          <div class="em-letter D">D</div>
+          <div class="em-name">Cristalización del bloqueo</div>
+          <div class="em-def">El Boletín 15.862-21 avanza sin resistencia. La captura procedimental se institucionaliza. La tesis estructural del caso se confirma en su peor versión.</div>
+        </div>
+      </div>
+
+      <div class="backcasting">
+        <div class="bc-title">Backcasting desde escenario A — hitos datables hacia 2026</div>
+        <div class="bc-row"><div class="bc-yr">2030</div><div class="bc-txt">ATALAYA opera con 10 casos en el Atlas comparado. La plataforma es referencia en incidencia anticipatoria territorial en América Latina.</div></div>
+        <div class="bc-row"><div class="bc-yr">2029</div><div class="bc-txt">Atlas definitivo con casos de Chile, Perú, Bolivia y Colombia. Programa de formación para actores municipales y legislativos de la red Böll en operación.</div></div>
+        <div class="bc-row"><div class="bc-yr">2028</div><div class="bc-txt">Serie de informes regionales publicados. Primera convergencia cruzada documentada entre observatorios de dos países distintos.</div></div>
+        <div class="bc-row"><div class="bc-yr">2027</div><div class="bc-txt">Caso piloto Lafkenche con incidencia documentada. Dos casos adicionales (Perú + Bolivia) incorporados al Atlas. Seminario regional de lanzamiento.</div></div>
+        <div class="bc-row"><div class="bc-yr">2026</div><div class="bc-txt"><b>Ahora:</b> completar capa 2 del caso Lafkenche antes del cierre legislativo del Boletín 15.862-21. Texto de indicaciones como insumo central.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: UMBRALES
+       ════════════════════════════════ -->
+  <div class="vista" id="v-umbrales">
+    <div class="umb-wrap">
+      <div class="umb-card">
+        <div class="umb-hd">
+          <div class="umb-id">UMB-ATL-001</div>
+          <div class="umb-nm">Publicación de indicaciones del Ejecutivo al Boletín 15.862-21</div>
+          <div class="umb-lv cr">Crítico</div>
+        </div>
+        <div class="umb-bd">
+          <div class="umb-cond">Condición de escala: texto efectivo de indicaciones ingresado formalmente por SEGPRES al Senado y disponible en el sistema de tramitación del Congreso.</div>
+          <div class="umb-2col">
+            <div class="umb-box si">
+              <div class="umb-bl">Si se activa →</div>
+              <div class="umb-bt">Activar capa 2 del dispositivo dentro de 72 horas. Cruzar con doctrina Aysén (ATL-002). Producir análisis de convergencia CONV-ATL-2026-01. Emitir alerta al Dispositivo Político.</div>
+            </div>
+            <div class="umb-box no">
+              <div class="umb-bl">Si no se activa →</div>
+              <div class="umb-bt">Mantener como umbral crítico. Revisar en próximo ciclo semanal. Usar texto del Oficio 15.862-21 aprobado en Comisión como referencia provisional.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="umb-card">
+        <div class="umb-hd">
+          <div class="umb-id">UMB-ATL-002</div>
+          <div class="umb-nm">Votación en Sala del Senado — Boletín 15.862-21</div>
+          <div class="umb-lv cr">Crítico</div>
+        </div>
+        <div class="umb-bd">
+          <div class="umb-cond">Condición de escala: la Sala del Senado vota el proyecto con o sin modificaciones sustantivas. Resultado del voto como bifurcación que determina la trayectoria del caso.</div>
+          <div class="umb-2col">
+            <div class="umb-box si">
+              <div class="umb-bl">Si aprueba con indicaciones →</div>
+              <div class="umb-bt">Analizar las modificaciones contra la tesis de captura procedimental. Evaluar si las indicaciones resuelven el mecanismo o solo ajustan la forma. Segundo trámite Cámara como nueva ventana.</div>
+            </div>
+            <div class="umb-box no">
+              <div class="umb-bl">Si aprueba sin indicaciones →</div>
+              <div class="umb-bt">Activar campaña de dos cámaras en Cámara de Diputadas. La tesis estructural del caso se confirma como urgente. Emitir policy brief inmediato.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="umb-card">
+        <div class="umb-hd">
+          <div class="umb-id">UMB-ATL-003</div>
+          <div class="umb-nm">Convergencia geopolítica minerales críticos — ATL-006 Bolivia</div>
+          <div class="umb-lv al">Alto</div>
+        </div>
+        <div class="umb-bd">
+          <div class="umb-cond">Condición de escala: aparece una tercera señal empírica con impacto territorial documentado en comunidades indígenas de zona minera en Perú o Bolivia.</div>
+          <div class="umb-2col">
+            <div class="umb-box si">
+              <div class="umb-bl">Si se activa →</div>
+              <div class="umb-bt">Elevar CONV-ATL-2026-02 de incipiente a madura. Iniciar comparado ATL Bolivia como segundo caso del Atlas. Consultar oficinas Böll Perú y Bolivia.</div>
+            </div>
+            <div class="umb-box no">
+              <div class="umb-bl">Si no se activa →</div>
+              <div class="umb-bt">Mantener en vigilancia. Usar publicación Böll Bolivia como base documental sin declarar convergencia formal. Revisar en ciclo OBS-02.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: TERRITORIAL
+       ════════════════════════════════ -->
+  <div class="vista" id="v-territorial">
+    <div class="ter-wrap">
+      <div class="ter-header">
+        <div>
+          <div class="ter-htitle">Mapas territoriales</div>
+          <div class="ter-hdesc">Territorios monitoreados por ATALAYA · Observatorios activos y casos en análisis</div>
+        </div>
+        <div class="ter-tabs">
+          <div class="ter-tab active">Los 4 territorios</div>
+        </div>
+      </div>
+
+      <!-- Chile — Borde Costero Lafkenche -->
+      <div class="map-pane">
+        <div class="map-label">
+          <span class="ml-flag">🇨🇱</span>
+          <div>
+            <div class="ml-name">Chile · Borde Costero Sur</div>
+            <div style="font-size:10px;color:var(--ink-3)">Los Lagos · Región costero-indígena Lafkenche</div>
+          </div>
+          <div class="ml-obs a">Activo · ATL-CL-001</div>
+        </div>
+        <div class="map-iframe-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1500000!2d-73.0!3d-40.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1718900000000!5m2!1ses!2scl"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-overlay">
+            <div class="mo-case">ATL-CL-001 · Ley Lafkenche / ECMPO</div>
+            <div class="mo-desc">72,8% de las 103 solicitudes ECMPO en esta región. Tesis: captura por diseño procedimental.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chile — Cuenca Aconcagua -->
+      <div class="map-pane">
+        <div class="map-label">
+          <span class="ml-flag">🇨🇱</span>
+          <div>
+            <div class="ml-name">Chile · Cuenca Aconcagua–Petorca</div>
+            <div style="font-size:10px;color:var(--ink-3)">Valparaíso · Gobernanza hídrica en estrés</div>
+          </div>
+          <div class="ml-obs a">Activo · Hídrico</div>
+        </div>
+        <div class="map-iframe-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d600000!2d-70.8!3d-32.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1718900000000!5m2!1ses!2scl"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-overlay">
+            <div class="mo-case">Gobernanza Hídrica · Cuenca Aconcagua</div>
+            <div class="mo-desc">Megasequía + conflicto hídrico. Policy report Böll agosto 2025. Observatorio en fase de instalación.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bolivia — Altiplano litio -->
+      <div class="map-pane">
+        <div class="map-label">
+          <span class="ml-flag">🇧🇴</span>
+          <div>
+            <div class="ml-name">Bolivia · Altiplano · Salar de Uyuni</div>
+            <div style="font-size:10px;color:var(--ink-3)">Potosí · Zona estratégica minerales críticos</div>
+          </div>
+          <div class="ml-obs a">Activo · Minerales</div>
+        </div>
+        <div class="map-iframe-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d800000!2d-67.5!3d-20.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbo!4v1718900000000!5m2!1ses!2sbo"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-overlay">
+            <div class="mo-case">ATL-006 · Gobernanza litio Bolivia</div>
+            <div class="mo-desc">Publicación Böll mayo 2026. Candidato a caso fase II del Atlas. Región: dependencia de trayectoria.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Perú — Costa norte -->
+      <div class="map-pane">
+        <div class="map-label">
+          <span class="ml-flag">🇵🇪</span>
+          <div>
+            <div class="ml-name">Perú · Territorios costeros indígenas</div>
+            <div style="font-size:10px;color:var(--ink-3)">Costa norte · Derechos territoriales comparados</div>
+          </div>
+          <div class="ml-obs i">Instalado · Fase II</div>
+        </div>
+        <div class="map-iframe-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2000000!2d-77.0!3d-6.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2spe!4v1718900000000!5m2!1ses!2spe"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-overlay">
+            <div class="mo-case">Perú · Derechos territoriales costeros · Fase II</div>
+            <div class="mo-desc">Caso comparado programado 2027. Diálogo con ATL-CL-001. Red Böll Lima como nodo activo.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: OBS HÍDRICO
+       ════════════════════════════════ -->
+  <div class="vista" id="v-obs-hidrico">
+    <div class="esc-wrap">
+      <div class="sh"><div class="sh-lb g">Gobernanza Hídrica · Observatorio activo</div><div class="sh-tg g">Activo · Fase I</div></div>
+      <div class="esc-intro">Cuencas hidrográficas, derechos de agua y conflicto hídrico. Eje estructurante: Aconcagua–Petorca en Chile en diálogo con cuencas peruanas y bolivianas. Base documental: policy report Böll agosto 2025 sobre gobernanza hídrica en agenda presidencial 2026–2030.</div>
+      <div class="obs-c" style="max-width:640px">
+        <div class="obs-ch"><div class="obs-cn">Estado del observatorio</div><div class="obs-st a">Activo · 1 señal</div></div>
+        <div class="obs-cb">
+          <div class="obs-ds" style="font-size:11px;margin-bottom:10px">El observatorio tiene base documental sólida (policy report Böll + publicación Aconcagua mayo 2026) pero aún no alcanza el umbral de convergencia formal (requiere 3–5 señales). La señal ATL-005 es el nodo inicial.</div>
+          <div class="mg" style="margin-bottom:0">
+            <div><div class="mk">Caso ancla</div><div class="mv">Cuenca Aconcagua–Petorca · estrés hídrico</div></div>
+            <div><div class="mk">Casos comparados (fase II)</div><div class="mv">Cuencas andinas Perú · Altiplano Bolivia</div></div>
+            <div><div class="mk">Señales activas</div><div class="mv">1 · ATL-005 (nivel medio)</div></div>
+            <div><div class="mk">Convergencia</div><div class="mv">No declarada · incipiente con fiscal-estatal</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sep" style="max-width:640px"></div>
+      <div class="sh"><div class="sh-lb">Señal nodo</div></div>
+      <div class="senal-card" style="max-width:640px">
+        <div class="alerta-bar me"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-005</div><div class="sk-obs hid">Hídrico</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">Gobernanza hídrica Aconcagua: policy report Böll agosto 2025 + publicación mayo 2026</div>
+          <div class="sk-desc">Böll Santiago publicó en agosto 2025 recomendaciones de política pública para la gobernanza hídrica en la agenda presidencial 2026–2030, y en mayo 2026 un análisis sobre la cuenca Aconcagua frente al cambio climático. Ambos documentos activan el observatorio hídrico de ATALAYA y ofrecen base comparada.</div>
+          <div class="sk-ft"><div class="sk-pais">Chile</div><div class="sk-capa">C2 Institucional</div><div class="sk-mark p">◎</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: OBS MINERALES
+       ════════════════════════════════ -->
+  <div class="vista" id="v-obs-minerales">
+    <div class="esc-wrap">
+      <div class="sh"><div class="sh-lb g">Minerales Críticos y Territorio · Observatorio activo</div><div class="sh-tg g">Activo · Fase I</div></div>
+      <div class="esc-intro">Litio, cobre y comunidades altiplánicas y costeras. Chile · Bolivia · Perú · Colombia. La Böll tiene cuatro publicaciones sobre minerales críticos en la región (mayo–octubre 2025). El observatorio lee la dimensión territorial y comunitaria que esas publicaciones diagnostican.</div>
+      <div class="obs-c" style="max-width:640px">
+        <div class="obs-ch"><div class="obs-cn">Estado del observatorio</div><div class="obs-st a">Activo · 1 señal</div></div>
+        <div class="obs-cb">
+          <div class="obs-ds" style="font-size:11px;margin-bottom:10px">Base documental sólida: análisis Böll litio Bolivia (mayo 2026), litio Chile, cobre Perú, cobre Colombia. El observatorio está instalado y la señal ATL-006 es el nodo candidato a convergencia con el eje de derechos territoriales.</div>
+          <div class="mg" style="margin-bottom:0">
+            <div><div class="mk">Casos candidatos fase II</div><div class="mv">Litio Bolivia · Cobre Perú</div></div>
+            <div><div class="mk">Posición probable en Atlas</div><div class="mv">Dependencia de trayectoria / Gobierno de mercado</div></div>
+            <div><div class="mk">Señales activas</div><div class="mv">1 · ATL-006 (nivel bajo)</div></div>
+            <div><div class="mk">Convergencia</div><div class="mv">Incipiente con Derechos Territoriales</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sep" style="max-width:640px"></div>
+      <div class="sh"><div class="sh-lb">Señal nodo</div></div>
+      <div class="senal-card" style="max-width:640px">
+        <div class="alerta-bar ba"></div>
+        <div class="sk-hd"><div class="sk-cod">ATL-006</div><div class="sk-obs min">Minerales</div></div>
+        <div class="sk-bd">
+          <div class="sk-ttl">Böll Bolivia: análisis gobernanza, regulación y desafíos del litio · Mayo 2026</div>
+          <div class="sk-desc">La publicación ofrece análisis profundo sobre el litio en Bolivia en el contexto de la transición energética global. Sitúa el impacto territorial en comunidades altiplánicas. Candidato a caso fase II del Atlas de Tesis Estructurales: posible región «dependencia de trayectoria» por el diseño histórico de la política extractiva.</div>
+          <div class="sk-ft"><div class="sk-pais">Bolivia</div><div class="sk-capa">C2 Académico · Böll</div><div class="sk-mark p">◎</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: OBS INSTALADO (genérico)
+       ════════════════════════════════ -->
+  <div class="vista" id="v-obs-instalado">
+    <div class="esc-wrap">
+      <div class="sh"><div class="sh-lb">Observatorio instalado · Sin producción regular</div><div class="sh-tg o">Instalado</div></div>
+      <div class="esc-intro" style="margin-bottom:24px">Este observatorio tiene estructura metodológica definida pero no está en producción regular de señales. Se activa cuando un dispositivo del Lab o de la red Böll lo requiere y hay capacidad operativa para sostenerlo. El paso de Instalado a Activo requiere decisión del Comité de Dirección de ATALAYA.</div>
+      <div style="max-width:480px;border:1px solid var(--rule);padding:16px 20px;background:var(--bg-card)">
+        <div style="font-family:var(--mo);font-size:9px;color:var(--ink-3);letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px">Condiciones de activación</div>
+        <div class="bc-row"><div class="bc-yr" style="color:var(--ink-3);font-size:11px">01</div><div class="bc-txt">Un dispositivo del Lab (Político, Académico o Empresarial) requiere señales de este observatorio para un análisis en curso.</div></div>
+        <div class="bc-row"><div class="bc-yr" style="color:var(--ink-3);font-size:11px">02</div><div class="bc-txt">Hay capacidad operativa disponible: rol de captura, rol de validación y rol de integración confirmados.</div></div>
+        <div class="bc-row"><div class="bc-yr" style="color:var(--ink-3);font-size:11px">03</div><div class="bc-txt">El Comité de Dirección ATALAYA aprueba la activación en sesión ordinaria o de emergencia.</div></div>
+        <div class="bc-row" style="border-bottom:none"><div class="bc-yr" style="color:var(--ink-3);font-size:11px">04</div><div class="bc-txt">Se designa responsable de ciclo y se fija periodicidad mínima (semanal o quincenal).</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: ATLAS DE TESIS
+       ════════════════════════════════ -->
+  <div class="vista" id="v-atlas">
+    <div class="esc-wrap">
+      <div class="sh"><div class="sh-lb g">Atlas de Tesis Estructurales Latinoamericanas</div><div class="sh-tg g">2 posicionados · 4 disponibles</div></div>
+      <div class="esc-intro">Cada caso analizado con el Dispositivo de Tres Capas deposita su tesis en este atlas. Con diez casos en cuatro años, ATALAYA tiene el primer atlas comparado latinoamericano de cómo operan y fallan las políticas territoriales complejas. Es el conocimiento distintivo de la plataforma.</div>
+      <div class="ag" style="max-width:860px">
+        <div class="ac hr"><div class="ac-h" style="color:rgba(255,255,255,.55);font-size:7px">Efecto ↓ / Locus →</div></div>
+        <div class="ac hr"><div class="ac-h">Texto legal</div></div>
+        <div class="ac hr"><div class="ac-h">Aparato administrativo</div></div>
+        <div class="ac hr"><div class="ac-h">Campo de poder / economía</div></div>
+        <div class="ac hc"><div class="ac-ax">Diseñado<br>/ buscado</div></div>
+        <div class="ac" data-n="Defecto de diseño legal" data-d="El efecto indeseado está en el propio texto de la norma. Falla de concepción, no de implementación." data-c=""><div class="ac-nm">Defecto de diseño legal</div><div class="ac-ds">El texto produce el efecto indeseado directamente.</div><div class="ac-av">— disponible</div></div>
+        <div class="ac pos" data-n="Captura por diseño procedimental" data-d="El procedimiento produce, por su diseño, el bloqueo del derecho reconocido. El aparato implementa en sentido contrario al propósito declarado." data-c="Ley Lafkenche / ECMPO · Chile (2008–2026)"><div class="ac-nm">Captura por diseño procedimental</div><div class="ac-ds">El procedimiento bloquea el derecho que la ley reconoce.</div><div class="ac-cs g">Ley Lafkenche · Chile · 2026</div></div>
+        <div class="ac pos2" data-n="Gobierno de mercado / captura corporativa" data-d="La norma delega en el mercado o actores corporativos las decisiones estructurales del territorio. El Estado retrocede formalmente." data-c="PRMS 100 · Chile · 2012"><div class="ac-nm">Gobierno de mercado</div><div class="ac-ds">La norma delega al mercado las decisiones territoriales.</div><div class="ac-cs k">PRMS 100 · Chile · 2012</div></div>
+        <div class="ac hc"><div class="ac-ax">Emergente<br>/ no buscado</div></div>
+        <div class="ac" data-n="Obsolescencia regulatoria" data-d="La norma era adecuada pero el contexto cambió. El efecto indeseado es consecuencia del tiempo y del cambio de condiciones." data-c=""><div class="ac-nm">Obsolescencia regulatoria</div><div class="ac-av">— disponible · candidato Bolivia</div></div>
+        <div class="ac" data-n="Incapacidad institucional" data-d="La norma es adecuada pero el aparato no tiene capacidad técnica o presupuestal de implementarla. Brecha entre diseño y capacidad." data-c=""><div class="ac-nm">Incapacidad institucional</div><div class="ac-av">— disponible</div></div>
+        <div class="ac" data-n="Dependencia de trayectoria" data-d="El efecto emerge de decisiones acumuladas históricamente. No hay un diseño actual que lo produzca: es inercia institucional de largo plazo." data-c=""><div class="ac-nm">Dependencia de trayectoria</div><div class="ac-av">— disponible · candidato minerales</div></div>
+      </div>
+      <div style="margin-top:16px;max-width:560px;padding:12px 16px;background:var(--green-sf);border:1px solid var(--green-dim)">
+        <div style="font-family:var(--mo);font-size:8px;font-weight:600;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px">Protocolo de posicionamiento</div>
+        <div style="font-size:11px;color:var(--ink-2);line-height:1.6">Las cartografías institucional-procedimental, territorial y de fuerzas fijan la coordenada horizontal (locus). La convergencia de las cinco dimensiones del Sistema Utopía fija la vertical (naturaleza del efecto). La intersección posiciona el caso. La tesis es del caso; el rigor y la posición son de ATALAYA.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       VISTA: GLOSARIO
+       ════════════════════════════════ -->
+  <div class="vista" id="v-glosario">
+    <div class="esc-wrap">
+      <div class="sh"><div class="sh-lb g">Glosario · Infraestructura léxica de ATALAYA</div></div>
+      <div class="esc-intro">Conceptos, métodos, instituciones y siglas que operan en el sistema. Toda afirmación pública de ATALAYA tiene trazabilidad contra fuente primaria. Términos marcados con ◉ están verificados; ◌ pendiente de incorporación completa.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:820px">
+        <div class="obs-c"><div class="obs-ch" style="background:var(--ink)"><div class="obs-cn" style="color:#fff">Trazabilidad (◉ ◎ ◌)</div></div><div class="obs-cb"><div class="obs-ds">Sistema de tres estados: ◉ verificado contra fuente primaria · ◎ estimado o fuente secundaria · ◌ pendiente. Solo los datos ◉ entran en vocería pública. Es la condición constitutiva de la plataforma.</div></div></div>
+        <div class="obs-c"><div class="obs-ch" style="background:var(--ink)"><div class="obs-cn" style="color:#fff">Dispositivo de Análisis Sistémico</div></div><div class="obs-cb"><div class="obs-ds">Metodología de tres capas: (1) análisis de componentes (descripción), (2) motor de descubrimiento (cartografías + tesis), (3) repertorio de tesis (acumulación comparada). Infraestructura, no contenido.</div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Captura por diseño procedimental</div></div><div class="obs-cb"><div class="obs-ds">El procedimiento administrativo produce, por su diseño, el bloqueo o inversión del derecho reconocido. Región 1.2 del Atlas. Caso posicionado: Ley Lafkenche / ECMPO.</div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Convergencia cruzada</div></div><div class="obs-cb"><div class="obs-ds">Patrón detectado entre señales de distintas familias de observatorios. Requiere mínimo 3–5 señales empíricas, cruce de al menos 2 familias, e indicador gatillo verificable. Sin esto: convergencia incipiente.</div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Indicador gatillo</div></div><div class="obs-cb"><div class="obs-ds">Evento empírico verificable cuya ocurrencia escala una convergencia de incipiente a formal, o activa un umbral. Debe ser observable, datable y no ambiguo.</div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Ventana crítica</div></div><div class="obs-cb"><div class="obs-ds">Momento acotado en que una intervención cambia la trayectoria del sistema. Una ventana es crítica solo si cruza con indicador gatillo de una convergencia activa y la decisión vs. no-decisión produce bifurcación verificable.</div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Sistema Utopía (SU)</div></div><div class="obs-cb"><div class="obs-ds">Dispositivo analítico central del (U)² Lab. Triada operativa: espacialización / visualización / futurización. Cuatro registros: lo declarado · lo posible · lo debido · lo deseable. El SYNC y ATALAYA son sus operacionalizaciones.</div></div></div>
+        <div class="obs-c"><div class="obs-ch"><div class="obs-cn">Capas de fuentes C1–C4</div></div><div class="obs-cb"><div class="obs-ds">C1 operacional · C2 interpretativa · C3 narrativa · C4 datos duros. Ninguna capa es superior: la triangulación entre las cuatro produce inteligencia. Confundir C2 con C4 es error metodológico crítico.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="mfooter">
+    <div class="ft">ATALAYA v1 · (U)² Lab + Fundación Heinrich Böll · Junio 2026</div>
+    <div class="tleg">
+      <div class="ti"><span class="ts v">◉</span> Verificado</div>
+      <div class="ti"><span class="ts p">◎</span> Estimado</div>
+      <div class="ti"><span class="ts n">◌</span> Pendiente</div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<!-- Tooltip atlas -->
+<div id="tt">
+  <div class="tt-top">Región del Atlas</div>
+  <div class="tt-n" id="ttN"></div>
+  <div class="tt-d" id="ttD"></div>
+  <div class="tt-c" id="ttC"></div>
+</div>
+
+<script>
+// ── NAVEGACIÓN ──────────────────────────────────────────────────────────────
+// Mapa: data-vista → id del elemento DOM de la vista
+// Observatorios instalados y alias comparten la vista "instalado" o la vista
+// del observatorio activo correspondiente.
+const vistaMap = {
+  'general':         'v-general',
+  'senales':         'v-senales',
+  'convergencias':   'v-convergencias',
+  'escenarios':      'v-escenarios',
+  'umbrales':        'v-umbrales',
+  'territorial':     'v-territorial',
+  'obs-territorial': 'v-general',      // observatorio activo → vista general con su caso
+  'obs-hidrico':     'v-obs-hidrico',
+  'obs-minerales':   'v-obs-minerales',
+  'obs-instalado':   'v-obs-instalado',
+  'atlas':           'v-atlas',
+  'glosario':        'v-glosario',
+};
+
+// Conjunto de todos los IDs de vista reales
+const allVistas = new Set(Object.values(vistaMap));
+
+// Hero meta: qué muestra el hero según data-vista clickeado
+const heroMeta = {
+  general:          { ey:'ATALAYA · ATL-CL-001 · Ciclo piloto · Junio 2026', title:'Vista general · Derechos Territoriales Indígenas', desc:'Caso activo: Ley 20.249 / ECMPO · Chile · 2008–2026. Tesis: captura por diseño procedimental. Capa 2 en curso.' },
+  senales:          { ey:'ATALAYA · Señales activas · OBS-01 · Junio 2026', title:'6 señales activas', desc:'2 alertas altas · 3 medias · 1 baja. Observatorios: Territorial · Económico · Judicial · Hídrico · Minerales.' },
+  convergencias:    { ey:'ATALAYA · Convergencias · OBS-01', title:'Tablero de convergencias', desc:'1 convergencia madura lista para cargar · 1 incipiente en monitoreo. Protocolo: mínimo 3–5 señales + indicador gatillo.' },
+  escenarios:       { ey:'ATALAYA · Escenarios · Horizonte 2030', title:'Matriz de escenarios 2030', desc:'Dos incertidumbres críticas: incidencia en tiempo × respuesta institucional. Objetivo: escenario A.' },
+  umbrales:         { ey:'ATALAYA · Umbrales y gatillos · OBS-01', title:'3 umbrales activos', desc:'2 críticos · 1 alto. El umbral UMB-ATL-001 (indicaciones Ejecutivo) es la prioridad operativa del ciclo.' },
+  territorial:      { ey:'ATALAYA · Mapas territoriales · 4 territorios', title:'Territorios monitoreados', desc:'Chile (×2) · Bolivia · Perú. 3 observatorios activos · 1 instalado en fase II.' },
+  'obs-territorial':{ ey:'ATALAYA · Observatorio: Derechos Territoriales Indígenas', title:'Derechos Territoriales Indígenas', desc:'Caso activo ATL-CL-001: Ley 20.249 / ECMPO · Chile · 2008–2026. Tesis: captura por diseño procedimental.' },
+  'obs-hidrico':    { ey:'ATALAYA · Observatorio: Gobernanza Hídrica · Activo', title:'Gobernanza Hídrica', desc:'Cuencas hidrográficas, derechos de agua, conflicto hídrico. Eje Aconcagua–Petorca en diálogo con cuencas peruanas y bolivianas.' },
+  'obs-minerales':  { ey:'ATALAYA · Observatorio: Minerales Críticos y Territorio · Activo', title:'Minerales Críticos y Territorio', desc:'Litio, cobre, comunidades costeras y altiplánicas. Chile · Bolivia · Perú · Colombia. Caso Bolivia candidato fase II.' },
+  'obs-instalado':  { ey:'ATALAYA · Observatorio instalado · Sin producción regular', title:'Observatorio instalado', desc:'Marco metodológico definido. Sin producción regular de señales. Se activa cuando un dispositivo lo requiere y hay capacidad operativa.' },
+  atlas:            { ey:'ATALAYA · Atlas de Tesis Estructurales Latinoamericanas', title:'Atlas de Tesis Estructurales', desc:'2 casos posicionados · 4 regiones disponibles. Cada caso analizado deposita su tesis y enriquece el atlas comparado regional.' },
+  glosario:         { ey:'ATALAYA · Glosario · Infraestructura léxica', title:'Glosario', desc:'Conceptos, métodos, instituciones, actores, normas y siglas del sistema. Infraestructura léxica de ATALAYA.' },
+};
+
+let activeNavItem = null; // rastrea el elemento DOM activo en la nav
+
+function goVista(vistaKey, clickedItem) {
+  const targetId = vistaMap[vistaKey] || 'v-general';
+
+  // Desactivar todas las vistas DOM
+  allVistas.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('active');
+  });
+
+  // Activar la vista correcta
+  const target = document.getElementById(targetId);
+  if (target) target.classList.add('active');
+
+  // Actualizar hero
+  const m = heroMeta[vistaKey] || heroMeta.general;
+  document.getElementById('heroEy').textContent = m.ey;
+  document.getElementById('heroTitle').textContent = m.title;
+  document.getElementById('heroDesc').textContent = m.desc;
+
+  // Highlight nav: quitar active de todos, poner solo en el clickeado
+  document.querySelectorAll('.ni').forEach(n => n.classList.remove('active'));
+  if (clickedItem) clickedItem.classList.add('active');
+  activeNavItem = clickedItem;
+}
+
+document.querySelectorAll('.ni[data-vista]').forEach(item => {
+  item.addEventListener('click', () => goVista(item.dataset.vista, item));
+});
+
+// ── ATLAS TOOLTIP ────────────────────────────────────────────────────────────
+const tt = document.getElementById('tt');
+document.querySelectorAll('.ag .ac:not(.hr):not(.hc)').forEach(cell => {
+  cell.addEventListener('mousemove', e => {
+    const n = cell.dataset.n, d = cell.dataset.d, c = cell.dataset.c;
+    if (!n) return;
+    document.getElementById('ttN').textContent = n;
+    document.getElementById('ttD').textContent = d;
+    document.getElementById('ttC').textContent = c ? '→ ' + c : '';
+    tt.classList.add('v');
+    tt.style.left = Math.min(e.clientX + 12, window.innerWidth - 242) + 'px';
+    tt.style.top = Math.max(e.clientY - 8, 10) + 'px';
+  });
+  cell.addEventListener('mouseleave', () => tt.classList.remove('v'));
+});
+</script>
+</body>
+</html>

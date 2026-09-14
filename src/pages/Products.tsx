@@ -1,3 +1,4 @@
+import { ExploreButton } from '../components/ExploreButton'
 import { Lines } from '../components/Lines'
 import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
@@ -92,6 +93,7 @@ export function Products() {
                       <dt>{c.stepLabel}</dt>
                       <dd>{p.step}</dd>
                     </dl>
+                    {p.demo && <ExploreButton note={t.common.atalaya.productNote} />}
                   </div>
                 </article>
               ))}

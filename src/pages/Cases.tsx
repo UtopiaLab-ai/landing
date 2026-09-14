@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
 import { Glyph } from '../brand/Glyph'
 import { LEXICON_NAMES, type LexiconName } from '../brand/glyphs'
+import { ExploreButton } from '../components/ExploreButton'
 import { Lines } from '../components/Lines'
 import { SectionLabel } from '../components/SectionLabel'
 import { Trama } from '../components/Trama'
@@ -101,6 +102,7 @@ export function Cases() {
                       <span className="pl mono">{c.proofLabel}</span> {caso.proof}
                     </p>
                   )}
+                  {caso.demo && <ExploreButton note={t.common.atalaya.caseNote} />}
                 </div>
               </div>
             ))}

@@ -21,5 +21,9 @@
 /es/intervenciones      /es/casos       301
 /en/interventions       /en/cases       301
 
+# Tablero demo de Atalaya: HTML autónomo, fuera de la SPA.
+/atalaya                /atalaya/index.html     200
+/atalaya/               /atalaya/index.html     200
+
 # SPA: cualquier otra ruta la resuelve el router.
 /*                      /index.html     200

@@ -11,6 +11,13 @@ export const en: Content = {
     },
     book: 'Book a diagnostic hour',
     bookShort: 'Book',
+    atalaya: {
+      label: 'Explore Atalaya',
+      productNote:
+        'What an observatory in operation looks like: the Atalaya demo dashboard (in Spanish), with data from the Ley Lafkenche case.',
+      caseNote:
+        'The full case — thesis, evidence, signals and convergences — on the Atalaya demo dashboard (in Spanish).',
+    },
     switchLang: 'Switch language',
     footer: {
       location: 'Santiago, Chile',
@@ -345,6 +352,7 @@ export const en: Content = {
           {
             n: '02',
             name: 'Signals Observatory',
+            demo: true,
             def: 'Sustained watch over the perimeter of a debate that matters to the organisation — legislation, press, actors, counterparts — with a one-page memo and a dashboard delivered before the moment of decision.',
             text: 'Most organisations do not have an analysis problem: they have a problem arriving in time. The Observatory watches a perimeter defined by the client, not a general sweep, and before each moment of decision delivers what changed, which actor moved, which window is opening or closing, and how solid the evidence is. The form matters: a one-page memo, written, with sources and a declared level of confidence, that can be read between meetings and taken to a table; and a dashboard to follow the perimeter between one memo and the next.',
             trigger: '“Nobody watches the environment systematically and we always react late.”',
@@ -529,6 +537,7 @@ export const en: Content = {
       {
         n: '01',
         title: 'Lafkenche Law',
+        demo: true,
         subtitle: 'Rights, territory and the coastal edge',
         context:
           'The conflict between the coastal edge, the rights of Indigenous peoples and productive activity, mid-process and with actors who did not share a diagnosis.',

@@ -11,6 +11,13 @@ export const es: Content = {
     },
     book: 'Agendar una hora de diagnóstico',
     bookShort: 'Agendar',
+    atalaya: {
+      label: 'Explorar Atalaya',
+      productNote:
+        'Así se ve un observatorio en operación: el tablero demo de Atalaya, con los datos del caso Ley Lafkenche.',
+      caseNote:
+        'El caso completo —tesis, evidencia, señales y convergencias— en el tablero demo de Atalaya.',
+    },
     switchLang: 'Cambiar idioma',
     footer: {
       location: 'Santiago de Chile',
@@ -346,6 +353,7 @@ export const es: Content = {
           {
             n: '02',
             name: 'Observatorio de Señales',
+            demo: true,
             def: 'Vigilancia sostenida sobre el perímetro de una discusión que le importa a la organización —tramitación, prensa, actores, contraparte—, con una minuta de una plana y un dashboard entregados antes del momento de decidir.',
             text: 'La mayoría de las organizaciones no tiene un problema de análisis: tiene un problema de llegar a tiempo. El Observatorio vigila un perímetro definido por el cliente, no un barrido general, y antes de cada momento de decisión entrega qué cambió, qué actor se movió, qué ventana se abre o se cierra y qué tan sólida es la evidencia. La forma importa: una minuta de una plana, escrita, con fuentes y nivel de confianza declarado, que se puede leer entre reuniones y llevar a una mesa; y un dashboard para seguir el perímetro entre una minuta y la siguiente.',
             trigger: '«Nadie mira el entorno de forma sistemática y siempre reaccionamos tarde.»',
@@ -530,6 +538,7 @@ export const es: Content = {
       {
         n: '01',
         title: 'Ley Lafkenche',
+        demo: true,
         subtitle: 'Derechos, territorio y borde costero',
         context:
           'El conflicto entre el borde costero, los derechos de los pueblos originarios y la actividad productiva, en pleno trámite y con actores que no compartían diagnóstico.',

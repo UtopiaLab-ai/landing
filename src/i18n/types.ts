@@ -32,6 +32,8 @@ export interface Common {
   }
   book: string
   bookShort: string
+    /** El tablero demo de Atalaya: el botón y la línea que lo presenta en cada página. */
+    atalaya: { label: string; productNote: string; caseNote: string }
   switchLang: string
   footer: {
     location: string
@@ -156,6 +158,8 @@ export interface ProductsContent {
       deliverable: string
       duration: string
       step: string
+      /** Con tablero demo para explorar (Atalaya). */
+      demo?: boolean
     }[]
   }[]
 
@@ -222,6 +226,8 @@ export interface CasesContent {
     proof?: string
     /** Estado, para los casos que aún no completan la plantilla. */
     status?: string
+    /** El caso se puede recorrer en el tablero demo de Atalaya. */
+    demo?: boolean
   }[]
 
   note: string

@@ -398,9 +398,9 @@ header.is-compact .nav-cta {
   flex: none;
 }
 
-.book-badge::before {
-  content: '→';
-}
+/* La flecha va como texto dentro de la insignia y no en un `::before`: así
+   cada botón elige la suya (→ agenda, ↗ abre otra aplicación) y no se dibujan
+   dos apiladas. */
 
 /* La insignia invierte el botón: círculo en el color contrario, glifo en el
    color del fondo del botón. */
@@ -417,6 +417,24 @@ header.is-compact .nav-cta {
 .book-papel .book-badge {
   background: var(--tinta);
   color: var(--papel);
+}
+
+/* Enlace al tablero demo de Atalaya, al pie de la ficha o del caso que lo usa:
+   la píldora y, al lado, la línea que dice qué se va a ver. */
+.explorar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: 22px;
+}
+
+.explorar-nota {
+  flex: 1 1 28ch;
+  max-width: 52ch;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.7;
 }
 
 .book:hover .book-badge {
