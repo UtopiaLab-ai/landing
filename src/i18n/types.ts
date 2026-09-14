@@ -76,8 +76,6 @@ export interface HomeContent {
   catalog: {
     h2: string
     sub: string
-    /** Cómo se trabaja: el párrafo que sigue a la bajada. */
-    intro: string
     label: SectionLabel
     speeds: readonly {
       key: string
