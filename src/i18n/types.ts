@@ -1,3 +1,5 @@
+import type { LexiconName } from '../brand/glyphs'
+
 /**
  * Forma del contenido del sitio. Cada locale debe implementar `Content`
  * completo, así que TypeScript avisa si una traducción queda a medias.
@@ -68,7 +70,7 @@ export interface HomeContent {
   }
 
   /**
-   * El catálogo en la home: los ocho productos agrupados por velocidad, con
+   * El catálogo en la home: los diez productos agrupados por velocidad, con
    * definición de una línea y duración. Las fichas completas van en /productos.
    */
   catalog: {
@@ -119,7 +121,7 @@ export interface HomeContent {
 }
 
 /* --- Productos -------------------------------------------------------------
-   El catálogo cerrado: escalera de compromiso, ocho productos vendibles con
+   El catálogo cerrado: escalera de compromiso, diez productos vendibles con
    ficha completa, la Máquina como horizonte y cómo se contrata. */
 
 export interface ProductsContent {
@@ -157,7 +159,8 @@ export interface ProductsContent {
     }[]
   }[]
 
-  /** No es producto: se nombra como horizonte del acuerdo. */
+  /** El estado declarado de la Máquina, sobre la que corren los productos de
+      acceso: en piloto, no como servicio maduro. */
   horizon: {
     label: SectionLabel
     tag: string
@@ -200,10 +203,6 @@ export interface CasesContent {
   figureAlt: string
   figureCaption: string
 
-  templateLabel: SectionLabel
-  templateIntro: string
-  templateSteps: readonly { n: string; title: string; text: string }[]
-
   casesLabel: SectionLabel
   contextLabel: string
   problemLabel: string
@@ -240,6 +239,18 @@ export interface CasesContent {
     steps: readonly { n: string; title: string; text: string; marker: string }[]
     markerLabel: string
     close: string
+    /**
+     * La cadena anticipatoria completa, en los once glifos del léxico. Los
+     * nombres van por glifo y no en lista para que no pueda faltar ni
+     * desordenarse ninguno: el orden lo fija `LEXICON_NAMES`.
+     */
+    chain: {
+      label: SectionLabel
+      intro: string
+      stages: Record<LexiconName, string>
+      legend: { observation: string; alert: string; decision: string }
+      returnNote: string
+    }
   }
 }
 

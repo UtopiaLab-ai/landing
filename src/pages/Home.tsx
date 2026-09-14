@@ -35,9 +35,31 @@ import { useSite } from '../site-context'
  * La anomalía nombra los productos-caja —la señal que aparece antes que
  * nadie—, la triada los productos-capacidad —las tres cosas que quedan
  * instaladas— y la secante el comprador individual, que corta transversal al
- * catálogo organizacional.
+ * catálogo organizacional. El observatorio nombra el acceso a la Máquina:
+ * vigilancia sostenida sobre un espacio delimitado, que es lo que hacen el
+ * asistente y el bot de noticias.
  */
-const SPEED_GLYPHS: readonly GlyphName[] = ['anomalia', 'nmu', 'hipotesis']
+const SPEED_GLYPHS: readonly GlyphName[] = ['anomalia', 'nmu', 'hipotesis', 'observatorio']
+
+/**
+ * El color de cada velocidad, por posición igual que el glifo.
+ *
+ * Sale del código de color del dossier de marca: turquesa observación —los
+ * productos que producen análisis leen el entorno—, azul decisión —los que
+ * instalan capacidad dejan al equipo decidiendo solo— y ámbar para el
+ * comprador individual, que corta fuera del eje organizacional. El acceso a la
+ * Máquina va en rosa, el tono de «qué mirar» en la ficha del observatorio del
+ * dossier. El naranja no entra: en el sitio está reservado a la acción.
+ *
+ * Un color dominante por pieza: el color es el fondo del cuadro y el glifo va
+ * encima en tinta o papel, según contraste. El glifo nunca se pinta.
+ */
+const SPEED_TONES: readonly { bg: string; ink: string }[] = [
+  { bg: 'var(--agua)', ink: 'var(--tinta)' },
+  { bg: 'var(--arco)', ink: 'var(--papel)' },
+  { bg: 'var(--ambar)', ink: 'var(--tinta)' },
+  { bg: 'var(--rosa)', ink: 'var(--tinta)' },
+]
 
 /**
  * Logos de las instituciones citadas en la evidencia, en el orden en que
@@ -146,7 +168,14 @@ export function Home() {
           {c.catalog.speeds.map((speed, i) => (
             <div className="velocidad" key={speed.key}>
               <div className="vel-head">
-                <Glyph name={SPEED_GLYPHS[i]} size={42} className="vel-glyph" />
+                <span
+                  className="vel-tile"
+                  style={
+                    { '--tone': SPEED_TONES[i].bg, '--tone-ink': SPEED_TONES[i].ink } as CSSProperties
+                  }
+                >
+                  <Glyph name={SPEED_GLYPHS[i]} size={42} />
+                </span>
                 <div>
                   <div className="vel-name">{speed.name}</div>
                   <p className="vel-note">{speed.note}</p>

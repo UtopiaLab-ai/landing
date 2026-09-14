@@ -22,7 +22,7 @@ export const en: Content = {
     meta: {
       title: 'utopialab.ai · Strategic foresight for deciding under uncertainty',
       description:
-        'Applied strategic foresight for companies and public bodies exposed to regulatory and territorial change. Eight products, from a 48-hour brief to installed capability. Santiago, Chile.',
+        'Applied strategic foresight for companies and public bodies exposed to regulatory and territorial change. Ten products, from a 48-hour brief to installed capability and access to the Machine. Santiago, Chile.',
     },
 
     hero: {
@@ -84,9 +84,9 @@ export const en: Content = {
     },
 
     catalog: {
-      h2: 'Eight forms of intervention',
+      h2: 'Ten forms of intervention',
       sub: 'We have our own methodology for decision problems in Latin American contexts of uncertainty, polycrisis and institutional distrust. We do not apply recipes: each engagement is fitted to the territory, the organisation, the actors and the moment of decision. You enter wherever the problem asks, and move up only if it helps.',
-      label: ['The catalogue', '01 — 08'],
+      label: ['The catalogue', '01 — 10'],
       speeds: [
         {
           key: 'caja',
@@ -100,7 +100,7 @@ export const en: Content = {
             },
             {
               name: 'Signals Observatory',
-              text: 'A monthly subscription that turns environmental noise into signals with interpretation.',
+              text: 'Watches the perimeter you define and delivers a one-page memo and a dashboard before the moment of decision.',
               duration: 'Subscription',
             },
             {
@@ -146,6 +146,23 @@ export const en: Content = {
               name: 'Trajectory Architecture',
               text: 'Foresight on the personal horizon of an executive or senior professional.',
               duration: '3 – 6 weeks',
+            },
+          ],
+        },
+        {
+          key: 'maquina',
+          name: 'Access to the Machine',
+          note: 'The Lab’s memory and watch running inside your organisation. They are prototypes: access is by pilot.',
+          products: [
+            {
+              name: 'Futures Assistant',
+              text: 'A chatbot holding your organisation’s decisions, information and context, to build scenarios and project them.',
+              duration: 'Continuous access',
+            },
+            {
+              name: 'News Bot',
+              text: 'Each team member defines their perimeter and receives what appears in it, without having to go looking.',
+              duration: 'Subscription',
             },
           ],
         },
@@ -255,9 +272,9 @@ export const en: Content = {
     },
 
     closing: {
-      h2: 'Bring a decision you cannot postpone',
+      h2: 'Want to see the signals in the noise?',
       body: 'It is not a services pitch. In one hour we work out what information is missing, which possibilities are worth opening, and what your next decision is. If no engagement follows, you keep that anyway.',
-      cta: 'Book the conversation',
+      cta: 'Book an hour',
     },
   },
 
@@ -265,10 +282,10 @@ export const en: Content = {
     meta: {
       title: 'Products · utopialab.ai',
       description:
-        'The full catalogue: eight products across four steps of commitment, with definition, deliverable, duration and the situation that triggers each one.',
+        'The full catalogue: ten products across four steps of commitment, with definition, deliverable, duration and the situation that triggers each one.',
     },
     kicker: 'The catalogue',
-    titleLines: ['Eight', 'products'],
+    titleLines: ['Ten', 'products'],
     sub: 'The only thing that gets signed.',
     lead: [
       'Each with its deliverable and duration declared. ',
@@ -298,11 +315,11 @@ export const en: Content = {
       {
         n: '04',
         name: 'Recurring',
-        text: 'Continuous access to the observatory and the decision memory.',
+        text: 'Continuous access to the Machine: the observatory, the news bot and an assistant holding the organisation’s decision memory.',
       },
     ],
 
-    productsLabel: ['The product sheets', '01 — 08'],
+    productsLabel: ['The product sheets', '01 — 10'],
     definitionLabel: 'What it is',
     triggerLabel: 'Situation that triggers it',
     deliverableLabel: 'Deliverable',
@@ -328,10 +345,10 @@ export const en: Content = {
           {
             n: '02',
             name: 'Signals Observatory',
-            def: 'A monthly subscription that turns environmental noise into critical signals with strategic reading, calibrated by sector.',
-            text: 'Most organisations learn about changes in their environment once they are already news — that is, once it is already too late to take a position. The Observatory delivers each month the signals that matter for that specific client, with interpretation and not just headlines: what is changing, why it matters to their decision, and what is worth watching. It is the lowest-commitment relationship that establishes continuous presence.',
+            def: 'Sustained watch over the perimeter of a debate that matters to the organisation — legislation, press, actors, counterparts — with a one-page memo and a dashboard delivered before the moment of decision.',
+            text: 'Most organisations do not have an analysis problem: they have a problem arriving in time. The Observatory watches a perimeter defined by the client, not a general sweep, and before each moment of decision delivers what changed, which actor moved, which window is opening or closing, and how solid the evidence is. The form matters: a one-page memo, written, with sources and a declared level of confidence, that can be read between meetings and taken to a table; and a dashboard to follow the perimeter between one memo and the next.',
             trigger: '“Nobody watches the environment systematically and we always react late.”',
-            deliverable: 'Monthly radar + interpretation + off-cycle alerts',
+            deliverable: 'One-page memo + dashboard + off-cycle alerts',
             duration: 'Monthly subscription',
             step: 'Continuous',
           },
@@ -415,15 +432,42 @@ export const en: Content = {
           },
         ],
       },
+      {
+        key: 'maquina',
+        name: 'Access to the Machine',
+        note: 'The fourth speed: the Utopian Machine running inside the organisation, with its memory and its watch. They are prototypes and open by pilot.',
+        products: [
+          {
+            n: '09',
+            name: 'Futures Assistant',
+            def: 'A chatbot with the organisation’s decisions, information and context built in, to consult what was decided, build scenarios and project their effects.',
+            text: 'What a team learns while deciding tends to leave with the people. The Assistant keeps what was decided, with what information and under which assumption, and warns when that assumption stops holding. On top of that memory you can ask what was known at the time, request alternative scenarios, or project what changes if a variable moves. It is queried from Telegram and runs on an open model, in the organisation’s own instance: its deliberations do not live on the Lab’s server or an AI company’s, and if the engagement ends, the instance and the memory stay with the organisation. The AI proposes; the team commits.',
+            trigger: '“Every time someone leaves, we lose why we decided what we decided.”',
+            deliverable: 'Own instance + decision memory + scenarios on request',
+            duration: 'Continuous access',
+            step: 'Recurring',
+          },
+          {
+            n: '10',
+            name: 'News Bot',
+            def: 'A bot that delivers to each team member whatever appears in the perimeter they defined, without them having to go looking.',
+            text: 'Up to five people set their own search terms — press, legislation, actors, counterparts — and receive what appears in their perimeter as soon as it appears. It does not replace the Observatory memo: it is the daily layer, the one that avoids finding out from the press. What the bot picks up feeds the memo and the Assistant’s memory.',
+            trigger: '“Everyone finds out about their own piece on their own, and almost always late.”',
+            deliverable: 'Bot with a perimeter per person, up to five team members',
+            duration: 'Monthly subscription',
+            step: 'Recurring',
+          },
+        ],
+      },
     ],
 
     horizon: {
-      label: ['What does not exist yet', 'Honesty condition'],
-      tag: 'Not available',
+      label: ['Status of the Machine', 'Honesty condition'],
+      tag: 'In pilot',
       name: 'Access to the Machine',
-      text: 'Recurring access to the software, the versioned decision memory and the permanent observatory. It is the horizon of the ladder, and it is a prototype. Until it works in a verifiable way it is named as the horizon of the agreement, never as an available product: promising it would be selling what does not yet exist.',
+      text: 'The Futures Assistant and the News Bot run on the Utopian Machine, which is a prototype. They open by pilot, with a limited number of organisations and with scope and limits in writing. We say it this way because selling them as a mature service would be promising what is still being validated.',
       stateLabel: 'Status',
-      state: 'Prototype · not commercially available',
+      state: 'Prototype · access by pilot',
     },
 
     contracting: {
@@ -473,17 +517,6 @@ export const en: Content = {
       'Diagram of the core of the method: the signal emerges from noise, crosses a fuzzy threshold, forks into a cone of futures and opens a decision window that closes at the point of no return.',
     figureCaption:
       'The core of the method: where the signal was, when it forked, and how far open the window still was. Every case is this same drawing at work.',
-
-    templateLabel: ['How each case is told', '01 — 05'],
-    templateIntro:
-      'The same template for every case, published or not. Where a field is missing, it is missing because there is no publishable data — it does not get filled in.',
-    templateSteps: [
-      { n: '01', title: 'Context', text: 'Who was deciding, and within what frame.' },
-      { n: '02', title: 'Problem', text: 'What was blocked or at risk.' },
-      { n: '03', title: 'Intervention', text: 'What the Lab did, concretely.' },
-      { n: '04', title: 'Result', text: 'What was installed or delivered.' },
-      { n: '05', title: 'Proof', text: 'Which third party can confirm it.' },
-    ],
 
     casesLabel: ['The case', '01 — 01'],
     contextLabel: 'Context',
@@ -538,6 +571,26 @@ export const en: Content = {
       ],
       close:
         'Anticipating is not predicting the scenario: it is deciding while the decision still counts. Past the point of no return, what is left is managing the effect, not choosing it.',
+      chain: {
+        label: ['The full chain', '01 — 11'],
+        intro:
+          'The three stages are three links in a longer chain. Each glyph says what happens to the field: turquoise for what is observed, orange for what crosses into alert and blue for what gets decided.',
+        stages: {
+          senal: 'Signal',
+          cadena: 'Chain',
+          umbral: 'Threshold',
+          convergencia: 'Convergence',
+          bifurcacion: 'Fork',
+          trayectoria: 'Trajectory',
+          escenario: 'Scenario',
+          implicancia: 'Implication',
+          decision: 'Decision',
+          experimento: 'Experiment',
+          ajuste: 'Learning and adjustment',
+        },
+        legend: { observation: 'Observation', alert: 'Alert', decision: 'Decision' },
+        returnNote: 'The cycle does not close: adjustment returns to the field and opens a new observation.',
+      },
     },
   },
 

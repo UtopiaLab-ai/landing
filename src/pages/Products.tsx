@@ -8,10 +8,15 @@ import { useSite } from '../site-context'
  * "cuatro tramos" eran uno de los cinco listados que el sistema comercial
  * consolidó en éste.
  *
- * Las dos velocidades van marcadas a propósito y no se aplanan: los
- * productos-caja producen análisis y los productos-capacidad instalan
- * capacidad. Colgarle la segunda promesa a los primeros sería prometer lo que
- * no hacen.
+ * Las velocidades van marcadas a propósito y no se aplanan: los
+ * productos-caja producen análisis, los productos-capacidad instalan
+ * capacidad y los de acceso a la Máquina dejan la memoria y la vigilancia
+ * operando dentro de la organización. Colgarle a un grupo la promesa de otro
+ * sería prometer lo que no hace.
+ *
+ * El bloque de estado va inmediatamente después de las fichas porque los
+ * productos de la Máquina están en piloto, y eso tiene que leerse junto a
+ * ellos y no en letra chica.
  */
 export function Products() {
   const { t } = useSite()
@@ -93,7 +98,7 @@ export function Products() {
         </div>
       </section>
 
-      {/* EL HORIZONTE · lo que no se vende */}
+      {/* ESTADO DE LA MÁQUINA · en piloto, no como servicio maduro */}
       <section className="horizonte" id="horizonte">
         <div className="wrap">
           <SectionLabel label={c.horizon.label} />
