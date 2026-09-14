@@ -288,24 +288,28 @@ header > * {
 }
 
 /* --- Header compacto -------------------------------------------------------
-   Con scroll la barra se reduce a la marca y el CTA. Navegación e idioma se
-   sacan con `display` y no con opacidad, para que tampoco queden en el orden
-   de tabulación mientras no se ven. El CTA se va solo a la derecha: sin el
-   idioma, `.nav` queda como último hijo del `space-between`.
+   Con scroll la barra se reduce a la marca y el CTA. Lo demás se oculta sin
+   salir del flujo —`visibility` y no `display`—: la píldora conserva su ancho
+   y el CTA queda exactamente donde estaba, como si se desprendiera de la
+   barra. `visibility: hidden` además saca los enlaces del orden de tabulación
+   mientras no se ven.
 
-   Los selectores llevan `header.is-compact` y por especificidad ganan también
-   a las reglas de pantalla chica, donde `.nav` es una segunda fila a lo ancho. */
+   El `.nav` transparente sigue ocupando su caja: sin `pointer-events: none`
+   taparía los clics sobre el contenido que pasa por debajo. */
 
 header.is-compact .lang,
 header.is-compact .nav a:not(.nav-cta) {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 header.is-compact .nav {
-  order: 0;
-  width: auto;
-  padding: 0;
-  background: none;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+header.is-compact .nav-cta {
+  pointer-events: auto;
 }
 
 /* En compacto las píldoras pasan por encima de bandas de papel, donde la de la
@@ -315,16 +319,21 @@ header.is-compact .nav-cta {
   box-shadow: 0 6px 22px rgba(15, 15, 15, 0.14);
 }
 
+/* La píldora se vacía alrededor del CTA en vez de cortarse de golpe. */
 @media (prefers-reduced-motion: no-preference) {
-  header.is-compact .nav {
-    animation: header-cta-in 0.22s ease-out;
+  .nav,
+  .lang {
+    transition:
+      background-color 0.2s,
+      opacity 0.2s,
+      visibility 0.2s;
   }
-}
 
-@keyframes header-cta-in {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
+  header .nav a:not(.nav-cta) {
+    transition:
+      opacity 0.2s,
+      visibility 0.2s,
+      background 0.15s;
   }
 }
 
