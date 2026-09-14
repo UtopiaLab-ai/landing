@@ -91,7 +91,6 @@ export interface HomeContent {
 
   cases: {
     h2: string
-    sub: string
     cards: readonly { n: string; title: string; proof: string }[]
     cta: string
   }
@@ -176,16 +175,16 @@ export interface ProductsContent {
 
    El esquema del núcleo y las tres etapas del método viven acá y no en la
    home: el dibujo y el caso son la misma cosa vista dos veces, y separarlos
-   obligaba a explicar el esquema dos veces. */
+   obligaba a explicar el esquema dos veces. El esquema cierra la página, ya
+   dichas las etapas que nombra. */
 
 export interface CasesContent {
   meta: Meta
   kicker: string
   titleLines: readonly string[]
   sub: string
-  lead: RichText
 
-  /** El esquema del núcleo, entre la descripción y la plantilla. */
+  /** El esquema del núcleo, cerrando la página bajo las tres etapas. */
   figureAlt: string
   figureCaption: string
 

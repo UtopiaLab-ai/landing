@@ -180,8 +180,7 @@ export const es: Content = {
     },
 
     cases: {
-      h2: 'Dónde se ha ejecutado',
-      sub: 'Un proceso abierto, no un monumento terminado: con lo que se puede verificar y lo que todavía no.',
+      h2: 'Casos',
       cards: [
         {
           n: '01',
@@ -434,13 +433,8 @@ export const es: Content = {
         'Dónde se ha ejecutado el método: el caso de la Ley Lafkenche, con contexto, problema, intervención, resultado y prueba, y las tres etapas del núcleo del método.',
     },
     kicker: 'El método en obra',
-    titleLines: ['Dónde se ha', 'ejecutado'],
+    titleLines: ['Casos'],
     sub: 'Procesos abiertos, no monumentos terminados.',
-    lead: [
-      'Cada caso se cuenta igual y sin excepciones: ',
-      { b: 'qué se puede verificar' },
-      ' y qué todavía no.',
-    ],
 
     figureAlt:
       'Esquema del núcleo del método: la señal emerge del ruido, cruza un umbral difuso, se bifurca en un cono de futuros y abre una ventana de decisión que se cierra en el punto de no retorno.',

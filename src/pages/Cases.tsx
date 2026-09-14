@@ -1,5 +1,4 @@
 import { Lines } from '../components/Lines'
-import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
 import { useSite } from '../site-context'
 
@@ -12,9 +11,11 @@ import { useSite } from '../site-context'
  * con una frase de relleno sería convertir la prueba en claim, que es
  * exactamente lo que esta página existe para evitar.
  *
- * El esquema del núcleo va arriba, apenas dicho qué es un caso, y las tres
- * etapas del método cierran abajo: primero el dibujo, después el caso que lo
- * recorre y al final el método que lo produjo.
+ * El esquema del núcleo cierra la página, debajo de las tres etapas del
+ * método: el dibujo nombra los mismos tres puntos —señal, bifurcación,
+ * ventana—, así que leerlo antes de las etapas obligaba a explicarlo dos
+ * veces. Primero el caso, después el método y al final el dibujo que lo
+ * resume.
  */
 export function Cases() {
   const { t } = useSite()
@@ -29,29 +30,6 @@ export function Cases() {
             <Lines lines={c.titleLines} />
           </h1>
           <p className="sub">{c.sub}</p>
-        </div>
-      </section>
-
-      <section className="intro">
-        <div className="wrap">
-          <p className="lead">
-            <Rich text={c.lead} />
-          </p>
-
-          {/* El esquema va a ancho completo y con figcaption porque el dibujo
-              no se explica solo, y con carga diferida por estar bajo el
-              pliegue. */}
-          <figure className="esquema">
-            <img
-              src="/image/nucleo-metodo.svg"
-              alt={c.figureAlt}
-              width={1640}
-              height={980}
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>{c.figureCaption}</figcaption>
-          </figure>
         </div>
       </section>
 
@@ -131,6 +109,21 @@ export function Cases() {
           </ol>
 
           <p className="mclose">{c.method.close}</p>
+
+          {/* El esquema va a ancho completo y con figcaption porque el dibujo
+              no se explica solo, y con carga diferida por estar al final de
+              la página. */}
+          <figure className="esquema">
+            <img
+              src="/image/nucleo-metodo.svg"
+              alt={c.figureAlt}
+              width={1640}
+              height={980}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{c.figureCaption}</figcaption>
+          </figure>
         </div>
       </section>
     </>

@@ -154,7 +154,6 @@ export function Home() {
       <section className="casos-home" id="casos">
         <div className="wrap">
           <h2>{c.cases.h2}</h2>
-          <p className="csub">{c.cases.sub}</p>
           {/* Con un caso publicado la grilla de tres columnas dejaría la
               tarjeta ocupando un tercio del ancho y dos huecos al lado. La
               clase lo declara acá y no en el CSS porque depende del contenido,

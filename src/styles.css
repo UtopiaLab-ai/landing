@@ -1774,8 +1774,11 @@ footer {
    CASOS · plantilla y lección
    ========================================================================== */
 
+/* La plantilla abre el cuerpo de la página, ya sin lead entre ella y el hero:
+   el colchón de arriba es el mismo que usa `.intro` en las otras interiores,
+   para que el primer bloque no quede pegado a la franja negra. */
 .plantilla {
-  padding: clamp(20px, 4vh, 44px) 0 clamp(30px, 5vh, 60px);
+  padding: clamp(44px, 7vh, 96px) 0 clamp(30px, 5vh, 60px);
   border-bottom: 2px solid var(--ink);
 }
 

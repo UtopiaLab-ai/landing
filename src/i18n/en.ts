@@ -179,8 +179,7 @@ export const en: Content = {
     },
 
     cases: {
-      h2: 'Where it has been run',
-      sub: 'An open process, not a finished monument: with what can be verified — and what cannot yet.',
+      h2: 'Cases',
       cards: [
         {
           n: '01',
@@ -433,9 +432,8 @@ export const en: Content = {
         'Where the method has been run: the Lafkenche Law case, with context, problem, intervention, result and proof, and the three stages of the core of the method.',
     },
     kicker: 'The method at work',
-    titleLines: ['Where it has', 'been run'],
+    titleLines: ['Cases'],
     sub: 'Open processes, not finished monuments.',
-    lead: ['Every case is told the same way, without exceptions: ', { b: 'what can be verified' }, ' and what cannot yet.'],
 
     figureAlt:
       'Diagram of the core of the method: the signal emerges from noise, crosses a fuzzy threshold, forks into a cone of futures and opens a decision window that closes at the point of no return.',
