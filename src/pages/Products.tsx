@@ -142,6 +142,22 @@ export function Products() {
           </div>
         </div>
       </section>
+
+      {/* PREGUNTAS FRECUENTES · respuestas directas, también en el JSON-LD */}
+      <section className="contratacion faq" id="preguntas">
+        <div className="wrap">
+          <SectionLabel label={c.faq.label} />
+          <h2>{c.faq.h2}</h2>
+          <div className="reglas">
+            {c.faq.items.map((item) => (
+              <div className="regla" key={item.q}>
+                <h3 className="rname">{item.q}</h3>
+                <p className="rdesc">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

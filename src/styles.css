@@ -2580,3 +2580,53 @@ footer {
   max-width: 68ch;
   opacity: 0.75;
 }
+
+/* ==========================================================================
+   GEO · lo que existe sobre todo para buscadores y LLM
+   ========================================================================== */
+
+/* La frase que define la entidad. Discreta: está para ser leída por máquinas
+   y por quien busca qué es el Lab, no para competir con el titular. */
+.foot-about {
+  margin-top: clamp(22px, 3vh, 34px);
+  max-width: 62ch;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.55;
+  opacity: 0.72;
+}
+
+/* Preguntas frecuentes: la grilla de «Cómo se contrata», con la pregunta como
+   `h3` para que la jerarquía de encabezados sea real. */
+.faq .regla h3.rname {
+  margin: 0 0 8px;
+}
+
+/* 404: una sola pantalla, los dos idiomas uno bajo el otro. */
+.notfound {
+  /* El marco `.site` lleva 10 px de margen por lado. */
+  min-height: calc(100svh - 20px);
+  padding: clamp(28px, 5vh, 56px) clamp(16px, 5vw, 92px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vh, 56px);
+}
+
+/* En la columna flex la píldora de la marca se estiraría a todo el ancho. */
+.notfound .brand {
+  align-self: flex-start;
+}
+
+.notfound .nf-block h1,
+.notfound .nf-block h2 {
+  font-weight: 700;
+  letter-spacing: -0.042em;
+  line-height: 1.02;
+  font-size: clamp(30px, 4.8vw, 62px);
+}
+
+.notfound .nf-block p {
+  margin: 14px 0 18px;
+  font-size: clamp(16px, 1.9vw, 22px);
+  line-height: 1.4;
+  opacity: 0.8;
+}

@@ -35,6 +35,15 @@ export interface Common {
     /** El tablero demo de Atalaya: el botón y la línea que lo presenta en cada página. */
     atalaya: { label: string; productNote: string; caseNote: string }
   switchLang: string
+  /**
+   * La frase que define la entidad, literal y sin metáfora: qué es utopialab.ai,
+   * dónde está y para quién trabaja. Va visible en el pie de todas las páginas y
+   * es la descripción de la organización en el JSON-LD y en llms.txt. El
+   * titular del hero habla a personas; esta frase habla a buscadores y LLM.
+   */
+  about: string
+  /** La página 404. Bilingüe: una URL que no existe no dice el idioma. */
+  notFound: { title: string; text: string; cta: string }
   footer: {
     location: string
     emailLabel: string
@@ -200,6 +209,18 @@ export interface ProductsContent {
   /** Condición de activación del vertical político. Vive acá porque es parte
       de lo que se firma, no de lo que se ofrece. */
   neutrality: { tag: string; text: string }
+
+  /**
+   * Preguntas frecuentes con respuesta directa. Es el formato que más extraen y
+   * citan los motores generativos, y se publica también como `FAQPage` en el
+   * JSON-LD. Cada respuesta repite algo que el sitio ya afirma: no se agregan
+   * promesas nuevas acá.
+   */
+  faq: {
+    label: SectionLabel
+    h2: string
+    items: readonly { q: string; a: string }[]
+  }
 }
 
 /* --- Casos -----------------------------------------------------------------

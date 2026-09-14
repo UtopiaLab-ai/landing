@@ -25,5 +25,17 @@
 /atalaya                /atalaya/index.html     200
 /atalaya/               /atalaya/index.html     200
 
-# SPA: cualquier otra ruta la resuelve el router.
-/*                      /index.html     200
+# La raíz elige idioma en el servidor: los bots no ejecutan el JS que lo hacía.
+/                       /en             302     Language=en
+/                       /es             302
+
+# Páginas prerenderizadas. Lo que no está acá responde 404.html con estado 404:
+# ya no hay comodín que devuelva 200 para cualquier dirección.
+/es                     /es/index.html          200
+/es/productos           /es/productos/index.html200
+/es/casos               /es/casos/index.html    200
+/es/equipo              /es/equipo/index.html   200
+/en                     /en/index.html          200
+/en/products            /en/products/index.html 200
+/en/cases               /en/cases/index.html    200
+/en/team                /en/team/index.html     200

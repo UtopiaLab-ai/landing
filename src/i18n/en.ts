@@ -19,6 +19,13 @@ export const en: Content = {
         'The full case — thesis, evidence, signals and convergences — on the Atalaya demo dashboard (in Spanish).',
     },
     switchLang: 'Switch language',
+    about:
+      'utopialab.ai is a strategic foresight lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
+    notFound: {
+      title: 'Page not found',
+      text: 'This address does not exist or has moved.',
+      cta: 'Go to the home page',
+    },
     footer: {
       location: 'Santiago, Chile',
       emailLabel: 'Write to us',
@@ -514,13 +521,44 @@ export const en: Content = {
       tag: 'Neutrality condition',
       text: 'On the same regulatory or territorial matter and within the same window, we do not serve both a political party and a private or public client whose interests in that matter are in conflict. Every engagement declares its perimeter in writing. Without that perimeter, the engagement is not taken.',
     },
+
+    faq: {
+      label: ['Frequently asked questions', '01 — 06'],
+      h2: 'Frequently asked questions',
+      items: [
+        {
+          q: 'What is utopialab.ai?',
+          a: 'A strategic foresight lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
+        },
+        {
+          q: 'What is strategic foresight?',
+          a: 'Reading the environment with method in order to anticipate change and decide in time. It is not about predicting a scenario: it is about locating the signal, setting the threshold that forces a decision to be revisited, seeing the alternatives, and acting while the decision can still change the outcome.',
+        },
+        {
+          q: 'How is this different from traditional consulting?',
+          a: 'Every engagement states its deliverable, its duration and what is out of scope in writing before it starts, and it can be stopped at any step. We do not produce more information: we turn what already exists into timely decisions, and the capability products end with the client’s team operating without us.',
+        },
+        {
+          q: 'Who do you work with?',
+          a: 'With companies and public bodies whose regulatory or territorial environment changes faster than their decisions — including municipalities, through the appropriate public procurement route — and with senior professionals who need to read their own horizon.',
+        },
+        {
+          q: 'How do we start, and what does it cost?',
+          a: 'With a one-hour diagnostic conversation, free of charge and with no prior quote, on a decision that is already pending. Fees are set afterwards, according to scope and the number of teams, and larger engagements are structured in stages.',
+        },
+        {
+          q: 'Do you use artificial intelligence?',
+          a: 'Yes, as support to read more information, faster. Relevant decisions keep human deliberation and judgement: the AI proposes and the team decides. The Machine access products, which run on AI, are prototypes and open by pilot.',
+        },
+      ],
+    },
   },
 
   cases: {
     meta: {
       title: 'Cases · utopialab.ai',
       description:
-        'Where the method has been run: the Lafkenche Law case, with context, problem, intervention, result and proof, and the three stages of the core of the method.',
+        'Where the method has been run: the Lafkenche Law case, with context, problem, intervention, result and proof, and the four stages of the core of the method.',
     },
     kicker: 'The method at work',
     titleLines: ['Cases'],
@@ -618,7 +656,7 @@ export const en: Content = {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP) and Willy Maikowski (Buk). Verifiable credentials.',
     },
     kicker: 'Team',
     titleLines: ['Experience'],

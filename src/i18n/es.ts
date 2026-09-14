@@ -19,6 +19,13 @@ export const es: Content = {
         'El caso completo —tesis, evidencia, señales y convergencias— en el tablero demo de Atalaya.',
     },
     switchLang: 'Cambiar idioma',
+    about:
+      'utopialab.ai es un laboratorio de prospectiva estratégica con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
+    notFound: {
+      title: 'Página no encontrada',
+      text: 'Esta dirección no existe o cambió de lugar.',
+      cta: 'Ir al inicio',
+    },
     footer: {
       location: 'Santiago de Chile',
       emailLabel: 'Escribir',
@@ -515,13 +522,44 @@ export const es: Content = {
       tag: 'Condición de neutralidad',
       text: 'No atendemos, sobre la misma materia regulatoria o territorial y dentro de la misma ventana, a un partido y a un cliente privado o público cuyos intereses en esa materia estén en conflicto. Cada encargo declara su perímetro por escrito. Sin ese perímetro, el encargo no se toma.',
     },
+
+    faq: {
+      label: ['Preguntas frecuentes', '01 — 06'],
+      h2: 'Preguntas frecuentes',
+      items: [
+        {
+          q: '¿Qué es utopialab.ai?',
+          a: 'Un laboratorio de prospectiva estratégica con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
+        },
+        {
+          q: '¿Qué es la prospectiva estratégica?',
+          a: 'Es leer el entorno con método para anticipar cambios y decidir a tiempo. No consiste en predecir un escenario: consiste en situar la señal, fijar el umbral que obliga a revisar una decisión, visualizar las alternativas y actuar mientras la decisión todavía puede cambiar el resultado.',
+        },
+        {
+          q: '¿En qué se diferencia de una consultoría tradicional?',
+          a: 'Cada encargo declara por escrito su entregable, su duración y qué queda fuera antes de empezar, y se puede detener en cualquier escalón. No producimos más información: convertimos la que ya existe en decisiones a tiempo, y los productos de capacidad terminan con el equipo del cliente operando sin nosotros.',
+        },
+        {
+          q: '¿Con quién trabajan?',
+          a: 'Con empresas y organismos públicos cuyo entorno regulatorio o territorial cambia más rápido que sus decisiones —incluidos municipios, por la vía de compra pública que corresponda— y con profesionales senior que necesitan leer su propio horizonte.',
+        },
+        {
+          q: '¿Cómo se empieza y cuánto cuesta?',
+          a: 'Con una hora de diagnóstico sin costo y sin cotización previa, sobre una decisión que ya está pendiente. Los valores se definen después, según el alcance y el número de equipos, y los encargos mayores se estructuran en tramos.',
+        },
+        {
+          q: '¿Usan inteligencia artificial?',
+          a: 'Sí, como apoyo para leer más información y más rápido. Las decisiones relevantes conservan deliberación y criterio humano: la IA propone y el equipo decide. Los productos de acceso a la Máquina, que funcionan con IA, están en prototipo y se abren por piloto.',
+        },
+      ],
+    },
   },
 
   cases: {
     meta: {
       title: 'Casos · utopialab.ai',
       description:
-        'Dónde se ha ejecutado el método: el caso de la Ley Lafkenche, con contexto, problema, intervención, resultado y prueba, y las tres etapas del núcleo del método.',
+        'Dónde se ha ejecutado el método: el caso de la Ley Lafkenche, con contexto, problema, intervención, resultado y prueba, y las cuatro etapas del núcleo del método.',
     },
     kicker: 'El método en obra',
     titleLines: ['Casos'],
@@ -620,7 +658,7 @@ export const es: Content = {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD) y Willy Maikowski (Buk). Credenciales verificables.',
     },
     kicker: 'Equipo',
     titleLines: ['Experiencia'],

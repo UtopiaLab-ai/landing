@@ -12,6 +12,13 @@ export const BOOKING_URL = 'https://cal.com/princesodan/ulab-consulting'
 export const BRAND = 'utopialab'
 export const BRAND_TLD = 'ai'
 export const SITE_DOMAIN = 'utopialab.ai'
+
+/**
+ * Origen canónico, con protocolo. Lo usan el `<head>` prerenderizado, el
+ * JSON-LD y el sitemap: buscadores y LLM necesitan URL absolutas, y en el
+ * build no hay `window.location` de donde sacarlo.
+ */
+export const SITE_URL = 'https://utopialab.ai'
 export const CONTACT_EMAIL = 'hola@utopialab.ai'
 
 export const COPYRIGHT_YEAR = 2026
