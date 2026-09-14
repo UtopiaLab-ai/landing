@@ -5,19 +5,24 @@ import type { GlyphName } from '../brand/glyphs'
 import { BookButton } from '../components/BookButton'
 import { HeroSequence } from '../components/HeroSequence'
 import { Lines } from '../components/Lines'
+import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
 import { CATALOG_ANCHOR, pathFor } from '../routes'
+import type { Locale } from '../i18n'
 import { useSite } from '../site-context'
 
 /**
- * Home en nueve bloques, en el orden del buyer journey: hero, prueba,
- * situación reconocible, catálogo, para quién, casos, equipo, objeciones y
- * cierre.
+ * Home en siete bloques: hero, situación reconocible, catálogo, qué se gana,
+ * casos, equipo y cierre.
  *
- * El orden no es narrativo sino comercial: la prueba va arriba porque quien
- * evalúa un proveedor decide la credibilidad antes de leer la oferta, y las
- * situaciones van antes que el catálogo porque nadie compra un producto que
- * no sabe a qué problema suyo corresponde.
+ * El orden no es narrativo sino comercial: las situaciones van antes que el
+ * catálogo porque nadie compra un producto que no sabe a qué problema suyo
+ * corresponde, y las credenciales quedaron para la página de Equipo, donde se
+ * pueden dar con la trayectoria completa en vez de como una franja de logos.
+ *
+ * El método completo —las tres etapas y el esquema del núcleo— vive en
+ * /casos: el dibujo y el caso son la misma cosa vista dos veces, y contarlos
+ * separados obligaba a explicar el esquema en dos páginas.
  */
 
 /**
@@ -34,6 +39,53 @@ import { useSite } from '../site-context'
  */
 const SPEED_GLYPHS: readonly GlyphName[] = ['anomalia', 'nmu', 'hipotesis']
 
+/**
+ * Logos de las instituciones citadas en la evidencia, en el orden en que
+ * aparecen en el texto. Cada uno enlaza a la misma fuente que su frase.
+ *
+ * Van acá y no en `i18n/` por la misma razón que los glifos: qué logo se
+ * muestra es una decisión de marca. Lo único que cambia por idioma es la
+ * versión de la CEPAL, que publica su logo en español y en inglés (ECLAC).
+ * Rohrbeck y Kum no tienen logo: son autores de un artículo académico, no una
+ * institución.
+ *
+ * `w` y `h` son las proporciones del viewBox de cada SVG, para reservar el
+ * espacio antes de que cargue la imagen.
+ */
+const SOURCE_LOGOS: Record<
+  Locale,
+  readonly { name: string; src: string; href: string; w: number; h: number; height: number }[]
+> = (() => {
+  const mckinsey = {
+    src: '/image/fuentes/mckinsey.svg',
+    href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
+    w: 38.883,
+    h: 12,
+    height: 34,
+  }
+  const cepalHref =
+    'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos'
+  const ocde = {
+    src: '/image/fuentes/ocde.svg',
+    href: 'https://doi.org/10.1787/1d78c791-en',
+    w: 629,
+    h: 199,
+    height: 30,
+  }
+  return {
+    es: [
+      { name: 'McKinsey & Company', ...mckinsey },
+      { name: 'CEPAL', src: '/image/fuentes/cepal.svg', href: cepalHref, w: 442.5, h: 542, height: 72 },
+      { name: 'OCDE', ...ocde },
+    ],
+    en: [
+      { name: 'McKinsey & Company', ...mckinsey },
+      { name: 'ECLAC', src: '/image/fuentes/eclac.svg', href: cepalHref, w: 362, h: 473.3, height: 72 },
+      { name: 'OECD', ...ocde },
+    ],
+  }
+})()
+
 export function Home() {
   const { locale, t } = useSite()
   const c = t.home
@@ -43,8 +95,8 @@ export function Home() {
 
   return (
     <>
-      {/* 01 · HERO · el paisaje en movimiento, señal → decisión → capacidad */}
-      <HeroSequence frames={c.hero.frames}>
+      {/* 01 · HERO */}
+      <HeroSequence>
         <div className="hero-left">
           <div className="kicker mono">{c.hero.kicker}</div>
           <h1>
@@ -58,22 +110,7 @@ export function Home() {
         </div>
       </HeroSequence>
 
-      {/* 02 · PRUEBA · las credenciales antes que la oferta */}
-      <section className="prueba">
-        <div className="wrap">
-          <div className="prueba-label mono">{c.proof.label}</div>
-          <ul className="prueba-list">
-            {c.proof.items.map((item) => (
-              <li className="pruebai" key={item.name}>
-                <span className="pin">{item.name}</span>
-                <span className="pit">{item.text}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 03 · SITUACIÓN RECONOCIBLE */}
+      {/* 02 · SITUACIÓN RECONOCIBLE */}
       <section className="situaciones" id="situaciones">
         <div className="wrap">
           <h2>{c.situations.h2}</h2>
@@ -89,8 +126,8 @@ export function Home() {
             {c.situations.rows.map((row) => (
               <div className="sitrow" key={row.situation}>
                 <p className="sit-q">{row.situation}</p>
-                <p className="sit-d">{row.doing}</p>
-                <p className="sit-i">{row.installed}</p>
+                <p className="sit-d">{row.problem}</p>
+                <p className="sit-i">{row.proposal}</p>
               </div>
             ))}
           </div>
@@ -99,7 +136,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 04 · EL CATÁLOGO */}
+      {/* 03 · EL CATÁLOGO */}
       <section className="catalogo invert" id={CATALOG_ANCHOR[locale]}>
         <div className="wrap">
           <h2>{c.catalog.h2}</h2>
@@ -129,10 +166,6 @@ export function Home() {
             </div>
           ))}
 
-          <div className="caja">
-            <div className="tag mono">{c.catalog.horizon.tag}</div>
-            <p>{c.catalog.horizon.text}</p>
-          </div>
 
           <Link className="puente-link mono" to={productsPath}>
             {c.catalog.cta}
@@ -140,93 +173,67 @@ export function Home() {
         </div>
       </section>
 
-      {/* 05 · PARA QUIÉN · los seis compradores son un mazo: cada carta queda
-          fija mientras la siguiente la tapa, así se lee un comprador a la vez.
-
-          Van los seis en una sola baraja porque el h2 promete «seis
-          compradores» y la sección los partía en dos bloques con forma
-          distinta —dos carriles anchos y cuatro tarjetas chicas—, que se leía
-          como dos listas y no como un catálogo de seis. El grupo del que viene
-          cada carta no se pierde: va como rótulo arriba, junto al número.
-
-          El orden es el de venta —primero los dos con demanda observada,
-          después los cuatro que son apuesta— y es el que dice el propio
-          rótulo de sección, «Señal fuerte primero».
-
-          El apilado es CSS puro; acá solo se pasa el índice de la carta, que
-          es lo que escalona su tope. */}
-      <section className="publicos" id="publicos">
+      {/* 04 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
+      <section className="valor" id="valor">
         <div className="wrap">
-          <h2>{c.audience.h2}</h2>
-          <p className="asub">{c.audience.sub}</p>
-          <SectionLabel label={c.audience.label} />
+          <div className="kicker mono">{c.value.kicker}</div>
+          <h2>{c.value.h2}</h2>
+          <p className="vsub">{c.value.sub}</p>
+          <SectionLabel label={c.value.label} />
 
-          <div className="aud-stack">
-            {c.audience.strong.tracks.map((track, i) => (
-              <article
-                className="aud-card"
-                key={track.n}
-                style={{ '--i': i } as CSSProperties}
-              >
-                <div className="aud-top">
-                  <span className="aud-n mono">{track.n}</span>
-                  <span className="aud-kind mono">{c.audience.strong.tag}</span>
-                </div>
-
-                <div className="aud-ttl">{track.title}</div>
-
-                <div className="aud-body">
-                  <p className="aud-desc">{track.text}</p>
-                  <div className="aud-refs">
-                    <p className="cref mono">
-                      <span className="crl">{track.entryLabel}</span> {track.entry}
-                    </p>
-                    <p className="cref mono">
-                      <span className="crl">{track.anchorLabel}</span> {track.anchor}
-                    </p>
-                  </div>
-                </div>
-              </article>
+          <div className="ganancias">
+            {c.value.items.map((item) => (
+              <div className="ganancia" key={item.title}>
+                <h3 className="gttl">{item.title}</h3>
+                <p className="gtxt">{item.text}</p>
+              </div>
             ))}
-
-            {/* La numeración sigue corrida desde los carriles: es un mazo de
-                seis, no cuatro cartas aparte. */}
-            {c.audience.others.items.map((item, i) => {
-              const n = c.audience.strong.tracks.length + i
-              return (
-                <article
-                  className="aud-card aud-card-weak"
-                  key={item.name}
-                  style={{ '--i': n } as CSSProperties}
-                >
-                  <div className="aud-top">
-                    <span className="aud-n mono">{String(n + 1).padStart(2, '0')}</span>
-                    <span className="aud-kind mono">{c.audience.others.tag}</span>
-                  </div>
-
-                  <div className="aud-ttl">{item.name}</div>
-
-                  <div className="aud-body">
-                    <p className="aud-desc">{item.text}</p>
-                  </div>
-                </article>
-              )
-            })}
           </div>
 
-          <div className="caja">
-            <div className="tag mono">{c.audience.neutrality.tag}</div>
-            <p>{c.audience.neutrality.text}</p>
+          {/* La evidencia va con su límite pegado —«son asociaciones, no
+              promesas»— y las fuentes citadas. Sin eso, las cifras leen como
+              una promesa de resultado que el Lab no puede firmar. */}
+          <div className="caja caja-fuentes">
+            <div>
+              <p>
+                <Rich text={c.value.evidence.text} />
+              </p>
+              <p className="fuentes mono">
+                <Rich text={c.value.evidence.sources} />
+              </p>
+            </div>
+            <ul className="logos-fuentes">
+              {SOURCE_LOGOS[locale].map((logo) => (
+                <li key={logo.name}>
+                  <a href={logo.href} target="_blank" rel="noopener noreferrer">
+                    {/* La altura va como variable y no fija en CSS: cada logo
+                        tiene la suya, y en móvil se escalan todas juntas. */}
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      width={Math.round((logo.height * logo.w) / logo.h)}
+                      height={logo.height}
+                      style={{ '--h': `${logo.height}px` } as CSSProperties}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* 06 · CASOS */}
+      {/* 05 · CASOS */}
       <section className="casos-home" id="casos">
         <div className="wrap">
           <h2>{c.cases.h2}</h2>
-          <p className="csub">{c.cases.sub}</p>
-          <div className="tarjetas">
+          {/* Con un caso publicado la grilla de tres columnas dejaría la
+              tarjeta ocupando un tercio del ancho y dos huecos al lado. La
+              clase lo declara acá y no en el CSS porque depende del contenido,
+              que cambia cuando se publica el siguiente caso. */}
+          <div className={c.cases.cards.length === 1 ? 'tarjetas una' : 'tarjetas'}>
             {c.cases.cards.map((card) => (
               <Link className="tarjeta" key={card.n} to={casesPath}>
                 <span className="tnum mono">{card.n}</span>
@@ -242,7 +249,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 07 · EQUIPO */}
+      {/* 06 · EQUIPO */}
       <section className="equipo" id="equipo">
         <div className="wrap">
           <h2>{c.team.h2}</h2>
@@ -254,6 +261,16 @@ export function Home() {
                 <div className="qname">{m.name}</div>
                 <div className="qrole mono">{m.role}</div>
                 <p className="qdesc">{m.text}</p>
+                {m.profile && (
+                  <a
+                    className="perfil mono"
+                    href={m.profile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn ↗
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -263,23 +280,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 08 · OBJECIONES */}
-      <section className="objeciones">
-        <div className="wrap">
-          <h2>{c.objections.h2}</h2>
-          <SectionLabel label={c.objections.label} />
-          <div className="faq">
-            {c.objections.items.map((item) => (
-              <div className="pregunta" key={item.id} id={item.id}>
-                <div className="q">{item.q}</div>
-                <p className="a">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 09 · CIERRE */}
+      {/* 07 · CIERRE */}
       <section className="cierre">
         <div className="wrap">
           <h2>{c.closing.h2}</h2>

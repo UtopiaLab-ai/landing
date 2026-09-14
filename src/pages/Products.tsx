@@ -123,6 +123,14 @@ export function Products() {
             ))}
           </div>
           <p className="nota mono">{c.contracting.priceNote}</p>
+
+          {/* La condición de neutralidad vive acá y no en el Home: es parte de
+              lo que se firma, y quien la necesita la busca junto al resto de
+              las reglas de contratación. */}
+          <div className="caja">
+            <div className="tag mono">{c.neutrality.tag}</div>
+            <p>{c.neutrality.text}</p>
+          </div>
         </div>
       </section>
     </>

@@ -3,8 +3,13 @@
  * completo, así que TypeScript avisa si una traducción queda a medias.
  */
 
-/** Fragmento de texto enriquecido: string plano o `{ b }` para <b>. */
-export type Frag = string | { b: string }
+/**
+ * Fragmento de texto enriquecido: string plano, `{ b }` para <b> o `{ a, href }`
+ * para un enlace externo. El enlace va dentro del texto y no en un campo
+ * aparte porque lo que se enlaza es la frase que hace la afirmación, no una
+ * lista de fuentes al pie.
+ */
+export type Frag = string | { b: string } | { a: string; href: string }
 export type RichText = readonly Frag[]
 
 export interface Meta {
@@ -33,9 +38,9 @@ export interface Common {
 }
 
 /* --- Home ------------------------------------------------------------------
-   Nueve bloques, en el orden del buyer journey del TCBF: hero (trigger),
-   prueba, situación reconocible, catálogo, para quién, casos, equipo,
-   objeciones y cierre. */
+   Siete bloques, en el orden del buyer journey: hero (trigger), situación
+   reconocible, catálogo, qué se gana, casos, equipo y cierre. El método se
+   cuenta entero en /casos, junto al caso que lo prueba. */
 
 export interface HomeContent {
   meta: Meta
@@ -45,26 +50,20 @@ export interface HomeContent {
     titleLines: readonly string[]
     sub: string
     microcopy: string
-    /** Rótulo de cada cuadro de la secuencia; sigue la escalera de compromiso. */
-    frames: readonly [string, string, string]
-  }
-
-  /** Franja de credenciales bajo el hero. E6 de la Evidence Stack del TCBF. */
-  proof: {
-    label: string
-    items: readonly { name: string; text: string }[]
   }
 
   /**
-   * Las cinco situaciones de la lámina A2 de la NMU: el cliente se reconoce en
-   * la primera columna. Reemplaza al bloque abstracto de síntomas.
+   * Las ocho situaciones: el cliente se reconoce en la cita, y las otras dos
+   * columnas separan qué traba la decisión de qué se propone hacer. La cita va
+   * primero porque nadie compra un producto que no sabe a qué problema suyo
+   * corresponde.
    */
   situations: {
     h2: string
     sub: string
     label: SectionLabel
-    heads: readonly [situation: string, doing: string, installed: string]
-    rows: readonly { situation: string; doing: string; installed: string }[]
+    heads: readonly [situation: string, problem: string, proposal: string]
+    rows: readonly { situation: string; problem: string; proposal: string }[]
     close: string
   }
 
@@ -82,39 +81,22 @@ export interface HomeContent {
       note: string
       products: readonly { name: string; text: string; duration: string }[]
     }[]
-    horizon: { tag: string; text: string }
     cta: string
   }
 
-  audience: {
+  /** Qué gana la organización, con la evidencia que lo respalda y sus límites. */
+  value: {
+    kicker: string
     h2: string
     sub: string
     label: SectionLabel
-    /** Los dos verticales con demanda observada en el radar. */
-    strong: {
-      tag: string
-      tracks: readonly {
-        n: string
-        title: string
-        text: string
-        entryLabel: string
-        entry: string
-        anchorLabel: string
-        anchor: string
-      }[]
-    }
-    /** Los cuatro restantes: apuesta de posicionamiento, no demanda probada. */
-    others: {
-      tag: string
-      items: readonly { name: string; text: string }[]
-    }
-    /** Condición de activación del vertical político, no recomendación. */
-    neutrality: { tag: string; text: string }
+    items: readonly { title: string; text: string }[]
+    /** Cada afirmación enlaza a su fuente primaria, en el texto y al pie. */
+    evidence: { text: RichText; sources: RichText }
   }
 
   cases: {
     h2: string
-    sub: string
     cards: readonly { n: string; title: string; proof: string }[]
     cta: string
   }
@@ -123,15 +105,14 @@ export interface HomeContent {
     h2: string
     sub: string
     label: SectionLabel
-    members: readonly { name: string; role: string; text: string }[]
+    members: readonly {
+      name: string
+      role: string
+      text: string
+      /** Perfil público. Ausente donde la persona no publica uno. */
+      profile?: string
+    }[]
     cta: string
-  }
-
-  /** Las tres preguntas de la lámina A4 de la NMU. */
-  objections: {
-    h2: string
-    label: SectionLabel
-    items: readonly { id: string; q: string; a: string }[]
   }
 
   closing: { h2: string; body: string; cta: string }
@@ -193,19 +174,31 @@ export interface ProductsContent {
     items: readonly { title: string; text: string }[]
     priceNote: string
   }
+
+  /** Condición de activación del vertical político. Vive acá porque es parte
+      de lo que se firma, no de lo que se ofrece. */
+  neutrality: { tag: string; text: string }
 }
 
 /* --- Casos -----------------------------------------------------------------
    Anatomía del case study del TCBF §9, recortada a los cinco campos que se
    pueden sostener con evidencia: contexto, problema, intervención, resultado
-   y prueba. Los campos opcionales faltan donde todavía no hay dato. */
+   y prueba. Los campos opcionales faltan donde todavía no hay dato.
+
+   El esquema del núcleo y las tres etapas del método viven acá y no en la
+   home: el dibujo y el caso son la misma cosa vista dos veces, y separarlos
+   obligaba a explicar el esquema dos veces. El esquema cierra la página, ya
+   dichas las etapas que nombra. */
 
 export interface CasesContent {
   meta: Meta
   kicker: string
   titleLines: readonly string[]
   sub: string
-  lead: RichText
+
+  /** El esquema del núcleo, cerrando la página bajo las tres etapas. */
+  figureAlt: string
+  figureCaption: string
 
   templateLabel: SectionLabel
   templateIntro: string
@@ -233,6 +226,21 @@ export interface CasesContent {
   }[]
 
   note: string
+
+  /**
+   * El núcleo del método, en tres etapas que nombran puntos del esquema: la
+   * señal, la bifurcación y la ventana en que la decisión todavía incide.
+   * Cierra la página: primero el caso, después el método que lo produjo.
+   */
+  method: {
+    kicker: string
+    h2: string
+    sub: string
+    label: SectionLabel
+    steps: readonly { n: string; title: string; text: string; marker: string }[]
+    markerLabel: string
+    close: string
+  }
 }
 
 /* --- Equipo ----------------------------------------------------------------
@@ -254,6 +262,8 @@ export interface TeamContent {
     role: string
     text: string
     credentials: readonly string[]
+    /** Perfil público. Ausente donde la persona no publica uno. */
+    profile?: string
   }[]
 
   /** Capacidad declarada: cuántos encargos sostiene el Lab a la vez. */

@@ -27,69 +27,72 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Del ruido', 'a la señal,', 'de la señal', 'a la anticipación'],
-      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. Un brief en 48 horas, un estudio en seis semanas o la capacidad instalada en su equipo: usted elige cuánto compromiso.',
+      titleLines: ['Decidir', 'cuando el futuro', 'todavía', 'está abierto'],
+      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
       microcopy:
-        'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tiene pendiente.',
-      frames: ['Señal', 'Decisión', 'Capacidad'],
-    },
-
-    proof: {
-      label: 'Dónde se ha ejecutado este método',
-      items: [
-        { name: 'MINVU', text: 'Primera Unidad de Prospectiva del ministerio' },
-        { name: 'CEPAL · ONU', text: 'Consultoría en movilidad y desarrollo urbano' },
-        { name: 'ONU Derechos Humanos', text: 'Análisis territorial para la abogacía del Alto Comisionado' },
-        { name: 'BID · SERCOTEC', text: 'Programa de Barrios Comerciales' },
-        { name: 'Municipalidad de Recoleta', text: 'Dirección de la Secretaría de Planificación' },
-      ],
+        'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tienes pendiente.',
     },
 
     situations: {
-      h2: '¿Se reconoce en alguna de estas frases?',
-      sub: 'No vendemos método. Vendemos salir de una situación que usted ya sabe describir.',
-      label: ['Cinco situaciones', '01 — 05'],
-      heads: ['Su situación', 'Qué hacemos', 'Qué queda instalado'],
+      h2: '¿Te reconoces en alguna de estas frases?',
+      sub: 'No vendemos método. Vendemos salir de una situación que ya sabes describir.',
+      label: ['Ocho situaciones', '01 — 08'],
+      heads: ['Tu situación', 'El problema', 'Lo que proponemos'],
       rows: [
         {
-          situation: '«Tenemos que decidir y no sabemos qué escenarios mirar.»',
-          doing: 'Reformulamos el problema y ampliamos el conjunto de alternativas antes de comparar.',
-          installed: 'Un menú de opciones más ancho, con criterios explícitos.',
+          situation: '«Tenemos que decidir, pero no sabemos qué posibilidades considerar.»',
+          problem: 'La pregunta inicial está demasiado cerrada y las alternativas siguen siendo las mismas.',
+          proposal: 'Reformular la decisión, explorar futuros posibles y ampliar las alternativas antes de elegir.',
+        },
+        {
+          situation: '«El problema es tan complejo que no sabemos por dónde empezar.»',
+          problem: 'Intervienen demasiadas variables, actores y cambios simultáneos; todo parece importante y no se logra identificar qué decisión ordenar primero.',
+          proposal: 'Delimitar el problema, visualizar el sistema, identificar dependencias y construir una primera decisión que permita avanzar.',
         },
         {
           situation: '«Todo lo interesante nos lo descartan como no viable.»',
-          doing: 'Convertimos cada «no viable» en condiciones, dependencias y responsables.',
-          installed: 'Una agenda de condiciones habilitantes en vez de un veredicto.',
+          problem: 'El límite se formula como un veredicto y no como una condición que podría transformarse.',
+          proposal: 'Identificar dependencias, responsables y condiciones habilitantes para abrir opciones reales.',
         },
         {
-          situation: '«Cada área quiere algo distinto y terminamos en un consenso que no convence a nadie.»',
-          doing: 'Hacemos explícitos los deseos incompatibles y clasificamos la tensión antes de decidir.',
-          installed: 'Una decisión que reconoce el desacuerdo en vez de taparlo.',
+          situation: '«Cada área ve una parte, pero nadie logra ver el conjunto.»',
+          problem: 'Diagnósticos, intereses y datos quedan fragmentados; las conexiones entre decisiones no se hacen visibles hasta que aparecen bloqueos o contradicciones.',
+          proposal: 'Integrar perspectivas, hacer visibles las interdependencias y construir una visión compartida que permita coordinar la acción.',
         },
         {
-          situation: '«Nos enteramos tarde de lo que nos afecta.»',
-          doing: 'Instalamos el subciclo de observación con umbrales y responsables de alerta.',
-          installed: 'Un tablero con señales, umbrales y quién mira qué.',
+          situation: '«Vemos que viene un cambio, pero no dónde conviene actuar.»',
+          problem: 'Todas las tendencias parecen igualmente importantes y no se reconocen oportunidades pertinentes.',
+          proposal: 'Evaluar relevancia, potencial y condiciones de acción para enfocar el esfuerzo donde puede generar valor.',
         },
         {
-          situation: '«Decidimos, pero nadie recuerda por qué.»',
-          doing: 'Registramos qué era dato, qué supuesto y qué condición obligaría a revisar.',
-          installed: 'Fichas de procedencia que permiten responder meses después.',
+          situation: '«Tenemos una estrategia, pero no sabemos cuándo ni cómo revisarla.»',
+          problem: 'El plan queda fijo mientras cambian las condiciones que le dieron sentido.',
+          proposal: 'Traducir la visión en secuencias, prioridades, umbrales y decisiones de ajuste.',
+        },
+        {
+          situation: '«La IA puede transformar nuestro trabajo, pero no sabemos cómo incorporarla sin perder lo que importa.»',
+          problem: 'La capacidad técnica avanza más rápido que la capacidad de la organización para decidir qué transformar, qué resguardar y qué responsabilidades redefinir.',
+          proposal: 'Convertir el potencial tecnológico en una trayectoria de transformación con prioridades, criterios, resguardos, responsables y revisión.',
+        },
+        {
+          situation: '«El trabajo termina y volvemos a depender de una o dos personas.»',
+          problem: 'La capacidad para anticipar y decidir no queda instalada en la organización.',
+          proposal: 'Dejar lenguaje, herramientas, rutinas y responsabilidades que el equipo pueda sostener.',
         },
       ],
       close:
-        'En la reunión trabajamos una sola de estas filas: la que usted acaba de describir con sus palabras.',
+        'En la reunión trabajamos una sola de estas filas: la que acabas de describir con tus palabras.',
     },
 
     catalog: {
-      h2: 'Ocho productos, cuatro escalones',
-      sub: 'Ordenados por profundidad, no por tipo. Se entra por donde el problema lo pida y se sube solo si sirve.',
+      h2: 'Ocho formas de intervención',
+      sub: 'Tenemos metodología propia para problemas de decisión en contextos latinoamericanos de incertidumbre, policrisis y desconfianza institucional. No aplicamos recetas: cada encargo se ajusta al territorio, la organización, los actores y el momento de decisión. Se entra por donde el problema lo pida y se sube solo si sirve.',
       label: ['El catálogo', '01 — 08'],
       speeds: [
         {
           key: 'caja',
           name: 'Producen análisis',
-          note: 'Entregan una lectura que usted no tenía. No prometen instalar nada.',
+          note: 'Entregan una lectura que no tenías. No prometen instalar nada.',
           products: [
             {
               name: 'Brief de coyuntura',
@@ -116,7 +119,7 @@ export const es: Content = {
         {
           key: 'capacidad',
           name: 'Instalan capacidad',
-          note: 'Los únicos tres a los que les corresponde esa promesa. Terminan con su equipo operando sin nosotros.',
+          note: 'Los únicos tres a los que les corresponde esa promesa. Terminan con tu equipo operando sin nosotros.',
           products: [
             {
               name: 'Laboratorio de Futuro',
@@ -148,139 +151,113 @@ export const es: Content = {
           ],
         },
       ],
-      horizon: {
-        tag: 'Horizonte, no producto',
-        text: 'El acceso recurrente al software, la memoria de decisiones versionada y el observatorio permanente existen como prototipo. Mientras no funcionen de forma validable no se ofrecen: se nombran como horizonte del acuerdo.',
-      },
       cta: 'Ver las fichas completas →',
     },
 
-    audience: {
-      h2: 'El mismo catálogo, seis compradores',
-      sub: 'No cambian los productos: cambian la entrada, el argumento y quién firma.',
-      label: ['Para quién', 'Señal fuerte primero'],
-      strong: {
-        tag: 'Demanda observada',
-        tracks: [
+    value: {
+      kicker: 'Qué gana tu organización',
+      h2: 'Anticipar no es un ejercicio abstracto: mejora la calidad, la velocidad y el efecto de las decisiones',
+      sub: 'El valor está en actuar con más opciones abiertas, menos sorpresas y criterios compartidos para invertir, coordinar y crecer.',
+      label: ['Qué se gana', '01 — 03'],
+      items: [
+        {
+          title: 'Mejor rendimiento',
+          text: 'Decisiones más claras, trazables y ejecutables; menos retrabajo, bloqueos y recursos destinados a corregir tarde.',
+        },
+        {
+          title: 'Crecimiento con menor exposición',
+          text: 'Capacidad para detectar oportunidades y riesgos emergentes antes de que se vuelvan urgencias o costos inevitables.',
+        },
+        {
+          title: 'Capacidad que permanece',
+          text: 'Un lenguaje común, alertas y criterios que quedan instalados en el equipo para revisar y ajustar el rumbo.',
+        },
+      ],
+      evidence: {
+        text: [
+          'En el estudio longitudinal de ',
+          { a: 'Rohrbeck y Kum', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ', las empresas con alta preparación de futuro registraron 33% más rentabilidad y 200% más crecimiento de capitalización bursátil que el promedio; ',
           {
-            n: '01',
-            title: 'Empresas con exposición regulatoria y territorial',
-            text: 'Minería, energía, agroindustria, construcción e inversión patrimonial: decisiones a diez o veinte años en un entorno cuyas reglas cambian cada año. Anticipación como gestión de riesgo sistémico, no como reporte de sostenibilidad.',
-            entryLabel: 'Entrada típica',
-            entry: 'Brief de coyuntura · sala de directorio',
-            anchorLabel: 'Producto ancla',
-            anchor: 'Estudio de Futuros',
+            a: 'McKinsey',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
           },
+          ' asocia decisiones rápidas y de alta calidad con mejores retornos. ',
           {
-            n: '02',
-            title: 'Sector público y gobiernos locales',
-            text: 'Municipios y servicios que deciden bajo presión, con información asimétrica y ciclo presupuestario fijo. Quien no tiene capacidad instalada llega tarde a la decisión que importa.',
-            entryLabel: 'Entrada típica',
-            entry: 'Inteligencia territorial · evaluación de instrumentos',
-            anchorLabel: 'Producto ancla',
-            anchor: 'Estudio territorial + Laboratorio',
+            a: 'La CEPAL',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
           },
+          ' constata que los gobiernos de América Latina y el Caribe han sido poco proclives a incorporar perspectivas de largo plazo, y que anticipar riesgos y oportunidades exige ese horizonte; ',
+          { a: 'la OCDE', href: 'https://doi.org/10.1787/1d78c791-en' },
+          ' vincula la prospectiva con políticas más resilientes. Son asociaciones, no promesas: el resultado depende de la calidad de la decisión y de su ejecución.',
         ],
-      },
-      others: {
-        tag: 'Apuesta de posicionamiento, sin demanda probada todavía',
-        items: [
+        sources: [
+          { a: 'Rohrbeck & Kum (2018)', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ' · ',
           {
-            name: 'Cooperación internacional',
-            text: 'Procesos de futuros con legitimidad multi-actor. Ciclos largos, presupuesto por proyecto.',
+            a: 'McKinsey (2019)',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
           },
+          ' · ',
           {
-            name: 'Universidades',
-            text: 'Credencial metodológica y planificación bajo caída de matrícula. Ventana octubre–diciembre.',
+            a: 'CEPAL (2016)',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
           },
-          {
-            name: 'Fundaciones y fondos de impacto',
-            text: 'Rigor para sostener la tesis de impacto, con observatorio temático como entrada.',
-          },
-          {
-            name: 'Partidos políticos',
-            text: 'Anticipar el escenario y construir posición, no encuestar el presente. Ventana electoral.',
-          },
+          ' · ',
+          { a: 'OCDE (2023)', href: 'https://doi.org/10.1787/1d78c791-en' },
         ],
-      },
-      neutrality: {
-        tag: 'Condición de neutralidad',
-        text: 'No atendemos, sobre la misma materia regulatoria o territorial y dentro de la misma ventana, a un partido y a un cliente privado o público cuyos intereses en esa materia estén en conflicto. Cada encargo declara su perímetro por escrito. Sin ese perímetro, el encargo no se toma.',
       },
     },
 
     cases: {
-      h2: 'Dónde se ha ejecutado',
-      sub: 'Procesos abiertos, no monumentos terminados. Cada uno con lo que se puede verificar y lo que todavía no.',
+      h2: 'Casos',
       cards: [
         {
           n: '01',
           title: 'Ley Lafkenche',
           proof: 'Entregado a la abogacía del Alto Comisionado de DD.HH. de la ONU',
         },
-        {
-          n: '02',
-          title: 'Consejo Municipal de Futuros',
-          proof: 'Instrumento operando en el gobierno local',
-        },
-        {
-          n: '03',
-          title: 'Unidad de Prospectiva MINVU',
-          proof: 'Primera unidad de su tipo en el ministerio',
-        },
-        {
-          n: '04',
-          title: 'Mesa del Transantiago',
-          proof: 'Posición común entre organizaciones distintas',
-        },
       ],
-      cta: 'Ver los casos completos →',
+      cta: 'Ver el caso completo →',
     },
 
     team: {
-      h2: 'Quién lo ejecuta',
-      sub: 'Un equipo chico: lo ejecutan las mismas personas que lo diseñan. Sin juniors facturados como seniors.',
-      label: ['Equipo', '01 — 02'],
+      h2: 'Equipo',
+      sub:
+        'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: una sinergia poco común, potenciada además por las capacidades que ofrece la IA.',
+      label: ['Equipo', '01 — 04'],
       members: [
         {
           name: 'Isabel Serra',
           role: 'Dirección de producto',
-          text: 'Arquitecta. Creó la primera Unidad de Prospectiva del MINVU y dirigió su Centro de Estudios Ciudad y Territorio. Autora del Sistema Utopía.',
+          text: 'Urbanista. Dirigió el Centro de Estudios Ciudad y Territorio del MINVU y fue académica e investigadora de la Universidad Diego Portales durante diez años. Autora del Sistema Utopía.',
+          profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
         },
         {
           name: 'Genaro Cuadros',
           role: 'Dirección de proyectos',
           text: 'Arquitecto y urbanista. Director de la Secretaría de Planificación de Recoleta; consultor de CEPAL–ONU y del BID en desarrollo urbano y territorial.',
+          profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
+        },
+        {
+          name: 'Ariel López',
+          role: 'Miembro del equipo',
+          text: 'Ingeniero en transporte y urbanista. Consultor internacional de la CEPAL y el PNUD, asesor del Consejo Nacional de Desarrollo Territorial y perito judicial en tránsito.',
+          profile: 'https://www.linkedin.com/in/arielopez',
+        },
+        {
+          name: 'Willy Maikowski',
+          role: 'Miembro del equipo',
+          text: 'Ingeniero de software. Engineering Manager en Buk, antes en el Centro Tecnológico Ucampus de la Universidad de Chile. Construyó con Ariel el monitor en tiempo real de los buses de Santiago.',
+          profile: 'https://www.linkedin.com/in/willymaikowski',
         },
       ],
       cta: 'Ver las credenciales completas →',
     },
 
-    objections: {
-      h2: 'Las tres preguntas que siempre aparecen',
-      label: ['Objeciones', '01 — 03'],
-      items: [
-        {
-          id: 'ia',
-          q: '¿Esto no lo hace ChatGPT?',
-          a: 'Un asistente genérico está optimizado para darle una respuesta limpia. Nuestro proceso está diseñado para no hacerlo cuando hay desacuerdo real: preserva la contradicción, etiqueta qué es dato y qué es supuesto, y no recomienda una única opción sin mostrar las descartadas. Usamos modelos existentes como herramienta; la deliberación queda humana.',
-        },
-        {
-          id: 'planificacion',
-          q: '¿En qué se diferencia de la planificación estratégica que ya hacemos?',
-          a: 'La planificación parte de objetivos ya formulados. Nosotros empezamos una etapa antes —auditamos quién formuló el problema y qué opciones quedaron fuera— y terminamos una etapa después, registrando qué condición obligaría a revisar la decisión.',
-        },
-        {
-          id: 'nombre',
-          q: '¿Por qué le llaman utopía?',
-          a: 'Porque obliga a declarar qué futuro se considera mejor y para quién, en vez de esconder ese juicio detrás de proyecciones. No es idealismo: es la disciplina de no dejar el criterio implícito. No prometemos una sociedad perfecta, ni un futuro único preferible, ni un plan cerrado.',
-        },
-      ],
-    },
-
     closing: {
-      h2: 'Una hora sobre una decisión real',
-      body: 'No es una presentación de servicios. Traiga una decisión que ya tenga pendiente y salga con el problema reformulado y las alternativas que no estaban sobre la mesa. Si después de eso no hay encargo, igual se lleva eso.',
+      h2: 'Trae una decisión que no puedas postergar',
+      body: 'No es una presentación de servicios. En una hora identificamos qué información falta, qué posibilidades conviene abrir y cuál es tu próxima decisión. Si después de eso no hay encargo, igual te llevas eso.',
       cta: 'Agendar la conversación',
     },
   },
@@ -470,11 +447,16 @@ export const es: Content = {
         },
         {
           title: 'Compra pública y licitación',
-          text: 'Trabajamos con municipios y servicios por la vía formal que corresponda. Para bases y requisitos administrativos, escríbanos antes del cierre: el ciclo presupuestario municipal corre entre agosto y octubre.',
+          text: 'Trabajamos con municipios y servicios por la vía formal que corresponda. Para bases y requisitos administrativos, escríbenos antes del cierre: el ciclo presupuestario municipal corre entre agosto y octubre.',
         },
       ],
       priceNote:
         'Los valores dependen del alcance, del número de equipos y de las antenas que haya que instalar. Se definen después de la hora de diagnóstico, y los encargos mayores se estructuran en tramos para caber en presupuesto corriente.',
+    },
+
+    neutrality: {
+      tag: 'Condición de neutralidad',
+      text: 'No atendemos, sobre la misma materia regulatoria o territorial y dentro de la misma ventana, a un partido y a un cliente privado o público cuyos intereses en esa materia estén en conflicto. Cada encargo declara su perímetro por escrito. Sin ese perímetro, el encargo no se toma.',
     },
   },
 
@@ -482,20 +464,20 @@ export const es: Content = {
     meta: {
       title: 'Casos · utopialab.ai',
       description:
-        'Dónde se ha ejecutado el método: Ley Lafkenche, Consejo Municipal de Futuros, Unidad de Prospectiva del MINVU y Mesa del Transantiago. Contexto, problema, intervención, resultado y prueba.',
+        'Dónde se ha ejecutado el método: el caso de la Ley Lafkenche, con contexto, problema, intervención, resultado y prueba, y las tres etapas del núcleo del método.',
     },
     kicker: 'El método en obra',
-    titleLines: ['Dónde se ha', 'ejecutado'],
+    titleLines: ['Casos'],
     sub: 'Procesos abiertos, no monumentos terminados.',
-    lead: [
-      'Cada caso se cuenta igual y sin excepciones: ',
-      { b: 'qué se puede verificar' },
-      ' y qué todavía no.',
-    ],
+
+    figureAlt:
+      'Esquema del núcleo del método: la señal emerge del ruido, cruza un umbral difuso, se bifurca en un cono de futuros y abre una ventana de decisión que se cierra en el punto de no retorno.',
+    figureCaption:
+      'El esquema del núcleo: dónde estaba la señal, cuándo se bifurcó y qué tan abierta seguía la ventana. Cada caso es este mismo dibujo en obra.',
 
     templateLabel: ['Cómo se cuenta cada caso', '01 — 05'],
     templateIntro:
-      'La misma plantilla para todos. Donde falta un campo, falta porque no hay dato publicable — no se rellena.',
+      'La misma plantilla para todos los casos, publicados o no. Donde falta un campo, falta porque no hay dato publicable — no se rellena.',
     templateSteps: [
       { n: '01', title: 'Contexto', text: 'Quién decidía y en qué marco.' },
       { n: '02', title: 'Problema', text: 'Qué estaba bloqueado o en riesgo.' },
@@ -504,7 +486,7 @@ export const es: Content = {
       { n: '05', title: 'Prueba', text: 'Qué tercero lo puede confirmar.' },
     ],
 
-    casesLabel: ['Los casos', '01 — 04'],
+    casesLabel: ['El caso', '01 — 01'],
     contextLabel: 'Contexto',
     problemLabel: 'Problema',
     workLabel: 'Intervención',
@@ -526,81 +508,73 @@ export const es: Content = {
         proof:
           'Entregado a la abogacía del Alto Comisionado de Derechos Humanos de las Naciones Unidas.',
       },
-      {
-        n: '02',
-        title: 'Consejo Municipal de Futuros',
-        subtitle: 'Prospectiva en gobierno local',
-        context:
-          'Un gobierno local que decide a veinticinco años con dispositivos que duran un período de alcaldía.',
-        problem:
-          'La capacidad de anticipar se iba con las personas que la portaban. Cada ciclo redescubría el largo plazo y lo volvía a perder.',
-        work: 'Instalación del dispositivo: qué señales mirar, con qué frecuencia revisarlas y quién queda a cargo cuando el equipo cambia.',
-        result:
-          'El instrumento quedó operando en el municipio, con reglas de traspaso escritas en su diseño.',
-        proof: 'Instrumento instalado y operando en el gobierno local.',
-      },
-      {
-        n: '03',
-        title: 'Unidad de Prospectiva del MINVU',
-        subtitle: 'Capacidad anticipatoria en el aparato público',
-        context:
-          'El Centro de Estudios Ciudad y Territorio del Ministerio de Vivienda y Urbanismo, entre febrero de 2024 y octubre de 2025.',
-        problem:
-          'El ministerio producía conocimiento sobre políticas urbanas y habitacionales, pero no tenía ninguna unidad encargada de anticipar escenarios de largo plazo.',
-        work: 'Diseño y creación de la primera Unidad de Prospectiva institucional del ministerio: estudios de escenarios, análisis de tendencias sociotécnicas, territoriales y climáticas, y formación interna en pensamiento de futuros.',
-        result:
-          'Unidad constituida dentro de un centro de 26 profesionales en cinco equipos, con la función anticipatoria incorporada a la gestión.',
-        proof: 'Primera unidad de su tipo en el MINVU. Dirigida por Isabel Serra.',
-      },
-      {
-        n: '04',
-        title: 'Mesa del Transantiago',
-        subtitle: 'Coordinación multiactor',
-        context:
-          'Múltiples organizaciones con señales dispersas sobre el mismo sistema de transporte, desde el Laboratorio de Desarrollo Urbano.',
-        problem:
-          'Organizaciones distintas trabajando el mismo tema sin lograr firmar una posición común.',
-        work: 'Consolidación de las señales dispersas en una sola posición, sostenible por actores con intereses distintos.',
-        result: 'Una posición común entre organizaciones que no comparten mandato.',
-        status: 'Documentación en curso',
-      },
     ],
 
     note: 'Hay encargos en curso que todavía no se pueden publicar: los casos con cliente vivo se documentan cuando el cliente lo autoriza, no antes.',
+
+    method: {
+      kicker: 'Cómo trabajamos',
+      h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo',
+      sub: 'Las tres etapas corresponden a un punto preciso del esquema: detectar el cambio, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
+      label: ['El núcleo del método', '01 — 03'],
+      markerLabel: 'En el esquema',
+      steps: [
+        {
+          n: '01',
+          title: 'Situar la señal',
+          text: 'Leemos el territorio, las reglas y los actores para distinguir un cambio relevante del ruido.',
+          marker: 'señal',
+        },
+        {
+          n: '02',
+          title: 'Visualizar la bifurcación',
+          text: 'Hacemos comparables alternativas, tensiones y futuros que el curso habitual todavía no permite ver.',
+          marker: 'bifurcación',
+        },
+        {
+          n: '03',
+          title: 'Decidir en la ventana',
+          text: 'Definimos criterios, responsables, alertas y condiciones para actuar o revisar antes del punto de no retorno.',
+          marker: 'ventana de decisión',
+        },
+      ],
+      close:
+        'Anticipar no es predecir el escenario: es decidir mientras la decisión todavía incide. Pasado el punto de no retorno queda gestionar el efecto, no elegirlo.',
+    },
   },
 
   team: {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Unidad de Prospectiva MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
     },
-    kicker: 'Quién ejecuta',
-    titleLines: ['Las mismas', 'personas'],
-    sub: 'Quien diseña el encargo es quien lo ejecuta.',
+    kicker: 'Equipo',
+    titleLines: ['Experiencia'],
+    sub: 'Incidencia, toma de decisiones, innovación y tecnología.',
     lead: [
-      'Un equipo chico y sin pirámide: ',
-      { b: 'no hay juniors facturados como seniors' },
-      ' ni un socio que aparece solo en la reunión de venta.',
+      'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: ',
+      { b: 'una sinergia poco común' },
+      ', potenciada además por las capacidades que ofrece la IA.',
     ],
 
-    membersLabel: ['El equipo', '01 — 02'],
+    membersLabel: ['El equipo', '01 — 04'],
     credentialsLabel: 'Trayectoria',
     members: [
       {
         n: '01',
         name: 'Isabel Serra Benítez',
         role: 'Dirección de producto',
-        text: 'Arquitecta e investigadora urbana, con quince años en la intersección entre proyecto, pensamiento crítico y estudios de futuros. Autora del Sistema Utopía, el marco metodológico que ordena el trabajo del Lab. Conduce el diseño de los encargos: alcance, entregables y relación con las contrapartes.',
+        text: 'Urbanista e investigadora, con quince años en la intersección entre proyecto, pensamiento crítico y estudios de futuros —diez de ellos como académica e investigadora de la Universidad Diego Portales—. Autora del Sistema Utopía, el marco metodológico que ordena el trabajo del Lab. Conduce el diseño de los encargos: alcance, entregables y relación con las contrapartes.',
         credentials: [
           'Jefa del Centro de Estudios Ciudad y Territorio, MINVU (2024–2025): 26 profesionales en cinco equipos',
-          'Creación de la primera Unidad de Prospectiva institucional del MINVU',
-          'Profesora Titular, Universidad Diego Portales (2012–2022)',
+          'Académica e investigadora, Universidad Diego Portales (2012–2022)',
           'Dirección de once proyectos de investigación con CEPAL, GIZ, U. de St. Gallen y Columbia University',
           'Doctora (c) en Estudios Americanos, IDEA–USACH',
           'Magíster en Gestión y Políticas Públicas, Universidad de Chile — Premio Eugenio Lahera',
           'Arquitecta, Pontificia Universidad Católica de Chile',
         ],
+        profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
       },
       {
         n: '02',
@@ -616,6 +590,37 @@ export const es: Content = {
           'Coordinador de Barrios Críticos, programa Quiero Mi Barrio, MINVU (2005–2008)',
           'Máster en Ciencias Aplicadas mención Urbanismo y Desarrollo Territorial, UCLouvain — con distinción',
         ],
+        profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
+      },
+      {
+        n: '03',
+        name: 'Ariel López López',
+        role: 'Miembro del equipo',
+        text: 'Ingeniero en transporte y urbanista. Trabaja la movilidad como lo que es —quién puede llegar a dónde, en cuánto tiempo y a qué costo— y no como un problema de infraestructura que se resuelve construyendo. Esa lectura es la que aporta a los encargos territoriales: un sistema de transporte revela la estructura de oportunidades de una ciudad antes que cualquier indicador agregado.',
+        credentials: [
+          'Consultor internacional de la CEPAL y el PNUD',
+          'Asesor del Consejo Nacional de Desarrollo Territorial (CNDT)',
+          'Perito judicial en tránsito, Cortes de Apelaciones de Santiago, Valparaíso y Rancagua',
+          'Gerente de Estudios y Proyectos, W Ingeniería',
+          'Profesor de Ingeniería en Transporte, UTEM y Universidad Andrés Bello',
+          'Doctorando en Territorio, Espacio y Sociedad, FAU — Universidad de Chile',
+          'Magíster en Urbanismo, Universidad de Chile',
+          'Ingeniero en Transporte y Tránsito, UTEM',
+        ],
+        profile: 'https://www.linkedin.com/in/arielopez',
+      },
+      {
+        n: '04',
+        name: 'Willy Maikowski Correa',
+        role: 'Miembro del equipo',
+        text: 'Ingeniero de software, con la trayectoria puesta en sistemas que operan todos los días y no en demostraciones. Engineering Manager en Buk y antes en el Centro Tecnológico Ucampus de la Universidad de Chile, donde el software de gestión académica lo usan miles de personas a diario. Con Ariel construyó el monitor en tiempo real de los buses de Santiago sobre los datos GPS de Red Movilidad: exactamente el problema del Observatorio —convertir un flujo crudo en algo que alguien pueda mirar y decidir—, resuelto con datos públicos y sin encargo de nadie.',
+        credentials: [
+          'Engineering Manager en Buk',
+          'Centro Tecnológico Ucampus, Universidad de Chile',
+          'Monitor en tiempo real de los buses de Santiago (velocidades.seguimos.cl), con Ariel López',
+          'Profesor guía de memorias en Ingeniería Civil en Computación, FCFM — Universidad de Chile',
+        ],
+        profile: 'https://www.linkedin.com/in/willymaikowski',
       },
     ],
 

@@ -1,5 +1,4 @@
 import { Lines } from '../components/Lines'
-import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
 import { useSite } from '../site-context'
 
@@ -11,6 +10,12 @@ import { useSite } from '../site-context'
  * publica igual, pero con el campo ausente y su estado a la vista: rellenarlo
  * con una frase de relleno sería convertir la prueba en claim, que es
  * exactamente lo que esta página existe para evitar.
+ *
+ * El esquema del núcleo cierra la página, debajo de las tres etapas del
+ * método: el dibujo nombra los mismos tres puntos —señal, bifurcación,
+ * ventana—, así que leerlo antes de las etapas obligaba a explicarlo dos
+ * veces. Primero el caso, después el método y al final el dibujo que lo
+ * resume.
  */
 export function Cases() {
   const { t } = useSite()
@@ -25,14 +30,6 @@ export function Cases() {
             <Lines lines={c.titleLines} />
           </h1>
           <p className="sub">{c.sub}</p>
-        </div>
-      </section>
-
-      <section className="intro">
-        <div className="wrap">
-          <p className="lead">
-            <Rich text={c.lead} />
-          </p>
         </div>
       </section>
 
@@ -87,6 +84,46 @@ export function Cases() {
             ))}
           </div>
           <p className="nota mono">{c.note}</p>
+        </div>
+      </section>
+
+      {/* CÓMO TRABAJAMOS · las tres etapas del núcleo */}
+      <section className="metodo" id="metodo">
+        <div className="wrap">
+          <div className="kicker mono">{c.method.kicker}</div>
+          <h2>{c.method.h2}</h2>
+          <p className="msub">{c.method.sub}</p>
+          <SectionLabel label={c.method.label} />
+
+          <ol className="etapas">
+            {c.method.steps.map((step) => (
+              <li className="etapa" key={step.n}>
+                <span className="enum mono">{step.n}</span>
+                <h3 className="ettl">{step.title}</h3>
+                <p className="etxt">{step.text}</p>
+                <p className="emark mono">
+                  <span className="crl">{c.method.markerLabel}</span> {step.marker}
+                </p>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mclose">{c.method.close}</p>
+
+          {/* El esquema va a ancho completo y con figcaption porque el dibujo
+              no se explica solo, y con carga diferida por estar al final de
+              la página. */}
+          <figure className="esquema">
+            <img
+              src="/image/nucleo-metodo.svg"
+              alt={c.figureAlt}
+              width={1640}
+              height={980}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{c.figureCaption}</figcaption>
+          </figure>
         </div>
       </section>
     </>

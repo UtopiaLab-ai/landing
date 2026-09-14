@@ -27,53 +27,56 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['From noise', 'to signal,', 'from signal', 'to anticipation'],
-      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. A brief in 48 hours, a study in six weeks, or the capability installed in your own team: you choose how much commitment.',
+      titleLines: ['Deciding', 'while the future', 'is still', 'open'],
+      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
-      frames: ['Signal', 'Decision', 'Capability'],
-    },
-
-    proof: {
-      label: 'Where this method has been run',
-      items: [
-        { name: 'MINVU', text: 'The ministry’s first Foresight Unit' },
-        { name: 'ECLAC · UN', text: 'Consultancy on mobility and urban development' },
-        { name: 'UN Human Rights', text: 'Territorial analysis for the High Commissioner’s advocacy' },
-        { name: 'IDB · SERCOTEC', text: 'Commercial Neighbourhoods Programme' },
-        { name: 'Municipality of Recoleta', text: 'Head of the Planning Secretariat' },
-      ],
     },
 
     situations: {
       h2: 'Do you recognise any of these sentences?',
       sub: 'We don’t sell a method. We sell getting out of a situation you can already describe.',
-      label: ['Five situations', '01 — 05'],
-      heads: ['Your situation', 'What we do', 'What stays installed'],
+      label: ['Eight situations', '01 — 08'],
+      heads: ['Your situation', 'The problem', 'What we propose'],
       rows: [
         {
-          situation: '“We have to decide and we don’t know which scenarios to look at.”',
-          doing: 'We reframe the problem and widen the set of alternatives before comparing them.',
-          installed: 'A wider menu of options, with explicit criteria.',
+          situation: '“We have to decide, but we don’t know which possibilities to consider.”',
+          problem: 'The opening question is framed too narrowly and the alternatives stay the same ones.',
+          proposal: 'Reframe the decision, explore possible futures and widen the alternatives before choosing.',
+        },
+        {
+          situation: '“The problem is so complex we don’t know where to start.”',
+          problem: 'Too many variables, actors and simultaneous changes are in play; everything looks important and no one can tell which decision to settle first.',
+          proposal: 'Bound the problem, map the system, identify dependencies and build a first decision that lets the work move.',
         },
         {
           situation: '“Everything interesting gets ruled out as unfeasible.”',
-          doing: 'We turn every “unfeasible” into conditions, dependencies and owners.',
-          installed: 'An agenda of enabling conditions instead of a verdict.',
+          problem: 'The limit is stated as a verdict rather than as a condition that could be changed.',
+          proposal: 'Identify dependencies, owners and enabling conditions to open real options.',
         },
         {
-          situation: '“Every area wants something different and we end up with a consensus that convinces no one.”',
-          doing: 'We make the incompatible desires explicit and classify the tension before deciding.',
-          installed: 'A decision that acknowledges the disagreement instead of hiding it.',
+          situation: '“Each area sees a part, but nobody manages to see the whole.”',
+          problem: 'Diagnoses, interests and data stay fragmented; the connections between decisions only become visible once blockages or contradictions appear.',
+          proposal: 'Integrate perspectives, make the interdependencies visible and build a shared picture that lets action be coordinated.',
         },
         {
-          situation: '“We find out too late about the things that affect us.”',
-          doing: 'We install the observation cycle, with thresholds and named owners for each alert.',
-          installed: 'A dashboard with signals, thresholds and who watches what.',
+          situation: '“We can see a change coming, but not where it pays to act.”',
+          problem: 'Every trend looks equally important and the relevant opportunities go unrecognised.',
+          proposal: 'Assess relevance, potential and conditions for action, to focus effort where it can create value.',
         },
         {
-          situation: '“We decided, but nobody remembers why.”',
-          doing: 'We record what was evidence, what was assumption, and what condition would force a review.',
-          installed: 'Provenance records that can answer the question months later.',
+          situation: '“We have a strategy, but we don’t know when or how to revisit it.”',
+          problem: 'The plan stays fixed while the conditions that gave it sense keep changing.',
+          proposal: 'Translate the vision into sequences, priorities, thresholds and adjustment decisions.',
+        },
+        {
+          situation: '“AI could transform our work, but we don’t know how to bring it in without losing what matters.”',
+          problem: 'Technical capability advances faster than the organisation’s capacity to decide what to transform, what to protect and which responsibilities to redefine.',
+          proposal: 'Turn the technological potential into a transformation path with priorities, criteria, safeguards, owners and review.',
+        },
+        {
+          situation: '“The work ends and we go back to depending on one or two people.”',
+          problem: 'The capability to anticipate and decide does not stay inside the organisation.',
+          proposal: 'Leave language, tools, routines and responsibilities the team can sustain.',
         },
       ],
       close:
@@ -81,8 +84,8 @@ export const en: Content = {
     },
 
     catalog: {
-      h2: 'Eight products, four steps',
-      sub: 'Ordered by depth, not by type. You enter wherever the problem asks, and move up only if it helps.',
+      h2: 'Eight forms of intervention',
+      sub: 'We have our own methodology for decision problems in Latin American contexts of uncertainty, polycrisis and institutional distrust. We do not apply recipes: each engagement is fitted to the territory, the organisation, the actors and the moment of decision. You enter wherever the problem asks, and move up only if it helps.',
       label: ['The catalogue', '01 — 08'],
       speeds: [
         {
@@ -147,139 +150,113 @@ export const en: Content = {
           ],
         },
       ],
-      horizon: {
-        tag: 'Horizon, not product',
-        text: 'Recurring access to the software, the versioned decision memory and the permanent observatory exist as a prototype. Until they work in a verifiable way we do not offer them: they are named as the horizon of the agreement.',
-      },
       cta: 'See the full product sheets →',
     },
 
-    audience: {
-      h2: 'The same catalogue, six buyers',
-      sub: 'The products don’t change: the way in, the argument and the signatory do.',
-      label: ['Who it is for', 'Strong signal first'],
-      strong: {
-        tag: 'Observed demand',
-        tracks: [
+    value: {
+      kicker: 'What your organisation gains',
+      h2: 'Anticipation is not an abstract exercise: it improves the quality, speed and effect of decisions',
+      sub: 'The value is in acting with more options open, fewer surprises, and shared criteria for investing, coordinating and growing.',
+      label: ['What is gained', '01 — 03'],
+      items: [
+        {
+          title: 'Better performance',
+          text: 'Decisions that are clearer, traceable and executable; less rework, fewer blockages, fewer resources spent correcting late.',
+        },
+        {
+          title: 'Growth with less exposure',
+          text: 'The capacity to spot emerging opportunities and risks before they turn into emergencies or unavoidable costs.',
+        },
+        {
+          title: 'Capability that stays',
+          text: 'A shared language, alerts and criteria that remain with the team to review and adjust course.',
+        },
+      ],
+      evidence: {
+        text: [
+          'In ',
+          { a: 'Rohrbeck and Kum’s', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ' longitudinal study, firms with high future preparedness recorded 33% higher profitability and 200% higher market-capitalisation growth than the average; ',
           {
-            n: '01',
-            title: 'Companies exposed to regulatory and territorial change',
-            text: 'Mining, energy, agribusiness, construction and patrimonial investment: ten- to twenty-year decisions in an environment whose rules change every year. Anticipation as systemic risk management, not as a sustainability report.',
-            entryLabel: 'Typical entry',
-            entry: 'Situation Brief · board room',
-            anchorLabel: 'Anchor product',
-            anchor: 'Futures Study',
+            a: 'McKinsey',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
           },
+          ' associates fast, high-quality decisions with better returns. ',
           {
-            n: '02',
-            title: 'Public sector and local government',
-            text: 'Municipalities and agencies deciding under pressure, with asymmetric information and a fixed budget cycle. Whoever lacks installed capability arrives late to the decision that matters.',
-            entryLabel: 'Typical entry',
-            entry: 'Territorial intelligence · instrument evaluation',
-            anchorLabel: 'Anchor product',
-            anchor: 'Territorial study + Futures Lab',
+            a: 'ECLAC',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
           },
+          ' finds that governments in Latin America and the Caribbean have been reluctant to adopt long-term perspectives, and that anticipating risks and opportunities requires that horizon; ',
+          { a: 'the OECD', href: 'https://doi.org/10.1787/1d78c791-en' },
+          ' links foresight to more resilient policies. These are associations, not promises: the outcome depends on the quality of the decision and on its execution.',
         ],
-      },
-      others: {
-        tag: 'A positioning bet, with no proven demand yet',
-        items: [
+        sources: [
+          { a: 'Rohrbeck & Kum (2018)', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ' · ',
           {
-            name: 'International cooperation',
-            text: 'Futures processes with multi-actor legitimacy. Long cycles, budget by project.',
+            a: 'McKinsey (2019)',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
           },
+          ' · ',
           {
-            name: 'Universities',
-            text: 'Methodological credential and planning under falling enrolment. October–December window.',
+            a: 'ECLAC (2016)',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
           },
-          {
-            name: 'Foundations and impact funds',
-            text: 'Rigour to sustain the impact thesis, with a thematic observatory as the way in.',
-          },
-          {
-            name: 'Political parties',
-            text: 'Anticipating the scenario and building a position, not polling the present. Electoral window.',
-          },
+          ' · ',
+          { a: 'OECD (2023)', href: 'https://doi.org/10.1787/1d78c791-en' },
         ],
-      },
-      neutrality: {
-        tag: 'Neutrality condition',
-        text: 'On the same regulatory or territorial matter and within the same window, we do not serve both a political party and a private or public client whose interests in that matter are in conflict. Every engagement declares its perimeter in writing. Without that perimeter, the engagement is not taken.',
       },
     },
 
     cases: {
-      h2: 'Where it has been run',
-      sub: 'Open processes, not finished monuments. Each one with what can be verified — and what cannot yet.',
+      h2: 'Cases',
       cards: [
         {
           n: '01',
           title: 'Lafkenche Law',
           proof: 'Delivered to the advocacy of the UN High Commissioner for Human Rights',
         },
-        {
-          n: '02',
-          title: 'Municipal Futures Council',
-          proof: 'Instrument operating inside the local government',
-        },
-        {
-          n: '03',
-          title: 'MINVU Foresight Unit',
-          proof: 'First unit of its kind in the ministry',
-        },
-        {
-          n: '04',
-          title: 'Transantiago Roundtable',
-          proof: 'A common position across separate organisations',
-        },
       ],
-      cta: 'See the full cases →',
+      cta: 'See the full case →',
     },
 
     team: {
-      h2: 'Who runs the work',
-      sub: 'A small team: the people who design the engagement are the ones who execute it. No juniors billed as seniors.',
-      label: ['Team', '01 — 02'],
+      h2: 'Team',
+      sub:
+        'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: an uncommon synergy, and one further amplified by what AI now makes possible.',
+      label: ['Team', '01 — 04'],
       members: [
         {
           name: 'Isabel Serra',
           role: 'Product lead',
-          text: 'Architect. Created MINVU’s first Foresight Unit and led its Centre for City and Territory Studies. Author of the Utopía System.',
+          text: 'Urbanist. Led MINVU’s Centre for City and Territory Studies, and was an academic and researcher at Universidad Diego Portales for ten years. Author of the Utopía System.',
+          profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
         },
         {
           name: 'Genaro Cuadros',
           role: 'Project lead',
           text: 'Architect and urban planner. Head of Recoleta’s Planning Secretariat; consultant to ECLAC–UN and the IDB on urban and territorial development.',
+          profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
+        },
+        {
+          name: 'Ariel López',
+          role: 'Team member',
+          text: 'Transport engineer and urban planner. International consultant to ECLAC and UNDP, adviser to Chile’s National Council for Territorial Development, and court-appointed traffic expert.',
+          profile: 'https://www.linkedin.com/in/arielopez',
+        },
+        {
+          name: 'Willy Maikowski',
+          role: 'Team member',
+          text: 'Software engineer. Engineering Manager at Buk, previously at Universidad de Chile’s Ucampus Technology Centre. Built the real-time monitor of Santiago’s buses with Ariel.',
+          profile: 'https://www.linkedin.com/in/willymaikowski',
         },
       ],
       cta: 'See the full credentials →',
     },
 
-    objections: {
-      h2: 'The three questions that always come up',
-      label: ['Objections', '01 — 03'],
-      items: [
-        {
-          id: 'ia',
-          q: 'Isn’t this what ChatGPT does?',
-          a: 'A generic assistant is optimised to give you a clean answer. Our process is designed not to, when the disagreement is real: it preserves the contradiction, labels what is evidence and what is assumption, and does not recommend a single option without showing the discarded ones. We use existing models as a tool; the deliberation stays human.',
-        },
-        {
-          id: 'planificacion',
-          q: 'How is this different from the strategic planning we already do?',
-          a: 'Planning starts from objectives that are already formulated. We start one step earlier — auditing who framed the problem and which options were left out — and finish one step later, recording what condition would force the decision to be reviewed.',
-        },
-        {
-          id: 'nombre',
-          q: 'Why call it utopia?',
-          a: 'Because it forces you to state which future is considered better, and for whom, instead of hiding that judgement behind projections. It is not idealism: it is the discipline of not leaving the criterion implicit. We do not promise a perfect society, a single preferable future, or a closed plan.',
-        },
-      ],
-    },
-
     closing: {
-      h2: 'One hour on a real decision',
-      body: 'It is not a services pitch. Bring a decision you already have pending and leave with the problem reframed and the alternatives that were not on the table. If no engagement follows, you keep that anyway.',
+      h2: 'Bring a decision you cannot postpone',
+      body: 'It is not a services pitch. In one hour we work out what information is missing, which possibilities are worth opening, and what your next decision is. If no engagement follows, you keep that anyway.',
       cta: 'Book the conversation',
     },
   },
@@ -475,22 +452,31 @@ export const en: Content = {
       priceNote:
         'Values depend on scope, on the number of teams and on the antennae that need installing. They are defined after the diagnostic hour, and larger engagements are structured in tranches so they fit within a running budget.',
     },
+
+    neutrality: {
+      tag: 'Neutrality condition',
+      text: 'On the same regulatory or territorial matter and within the same window, we do not serve both a political party and a private or public client whose interests in that matter are in conflict. Every engagement declares its perimeter in writing. Without that perimeter, the engagement is not taken.',
+    },
   },
 
   cases: {
     meta: {
       title: 'Cases · utopialab.ai',
       description:
-        'Where the method has been run: Lafkenche Law, Municipal Futures Council, MINVU Foresight Unit and the Transantiago Roundtable. Context, problem, intervention, result and proof.',
+        'Where the method has been run: the Lafkenche Law case, with context, problem, intervention, result and proof, and the three stages of the core of the method.',
     },
     kicker: 'The method at work',
-    titleLines: ['Where it has', 'been run'],
+    titleLines: ['Cases'],
     sub: 'Open processes, not finished monuments.',
-    lead: ['Every case is told the same way, without exceptions: ', { b: 'what can be verified' }, ' and what cannot yet.'],
+
+    figureAlt:
+      'Diagram of the core of the method: the signal emerges from noise, crosses a fuzzy threshold, forks into a cone of futures and opens a decision window that closes at the point of no return.',
+    figureCaption:
+      'The core of the method: where the signal was, when it forked, and how far open the window still was. Every case is this same drawing at work.',
 
     templateLabel: ['How each case is told', '01 — 05'],
     templateIntro:
-      'The same template for all of them. Where a field is missing, it is missing because there is no publishable data — it does not get filled in.',
+      'The same template for every case, published or not. Where a field is missing, it is missing because there is no publishable data — it does not get filled in.',
     templateSteps: [
       { n: '01', title: 'Context', text: 'Who was deciding, and within what frame.' },
       { n: '02', title: 'Problem', text: 'What was blocked or at risk.' },
@@ -499,7 +485,7 @@ export const en: Content = {
       { n: '05', title: 'Proof', text: 'Which third party can confirm it.' },
     ],
 
-    casesLabel: ['The cases', '01 — 04'],
+    casesLabel: ['The case', '01 — 01'],
     contextLabel: 'Context',
     problemLabel: 'Problem',
     workLabel: 'Intervention',
@@ -520,81 +506,73 @@ export const en: Content = {
         proof:
           'Delivered to the advocacy team of the UN High Commissioner for Human Rights.',
       },
-      {
-        n: '02',
-        title: 'Municipal Futures Council',
-        subtitle: 'Foresight in local government',
-        context:
-          'A local government deciding on a twenty-five-year horizon with instruments that last one mayoral term.',
-        problem:
-          'The capability to anticipate left with the people who carried it. Each cycle rediscovered the long term and lost it again.',
-        work: 'Installation of the instrument: which signals to watch, how often to review them, and who takes over when the team changes.',
-        result:
-          'The instrument stayed operating in the municipality, with handover rules written into its design.',
-        proof: 'Instrument installed and operating in the local government.',
-      },
-      {
-        n: '03',
-        title: 'MINVU Foresight Unit',
-        subtitle: 'Anticipatory capability inside the state',
-        context:
-          'The Centre for City and Territory Studies at the Ministry of Housing and Urbanism, between February 2024 and October 2025.',
-        problem:
-          'The ministry produced knowledge on urban and housing policy, but had no unit responsible for anticipating long-term scenarios.',
-        work: 'Design and creation of the ministry’s first institutional Foresight Unit: scenario studies, analysis of sociotechnical, territorial and climate trends, and internal training in futures thinking.',
-        result:
-          'A unit established within a centre of 26 professionals across five teams, with the anticipatory function built into day-to-day management.',
-        proof: 'First unit of its kind at MINVU. Led by Isabel Serra.',
-      },
-      {
-        n: '04',
-        title: 'Transantiago Roundtable',
-        subtitle: 'Multi-actor coordination',
-        context:
-          'Multiple organisations holding scattered signals about the same transport system, from the Urban Development Laboratory.',
-        problem:
-          'Separate organisations working the same issue without managing to sign a common position.',
-        work: 'Consolidation of the scattered signals into a single position, sustainable by actors with different interests.',
-        result: 'A common position across organisations that do not share a mandate.',
-        status: 'Documentation in progress',
-      },
     ],
 
     note: 'There are live engagements that cannot be published yet: cases with an active client are documented when the client authorises it, not before.',
+
+    method: {
+      kicker: 'How we work',
+      h2: 'We read the signal, open up possibilities and decide in time',
+      sub: 'The three stages correspond to a precise point on the diagram: detect the change, recognise the fork, and act inside the window where the decision can still alter the outcome.',
+      label: ['The core of the method', '01 — 03'],
+      markerLabel: 'On the diagram',
+      steps: [
+        {
+          n: '01',
+          title: 'Locate the signal',
+          text: 'We read the territory, the rules and the actors to tell a relevant change apart from noise.',
+          marker: 'signal',
+        },
+        {
+          n: '02',
+          title: 'See the fork',
+          text: 'We make comparable the alternatives, tensions and futures that business as usual does not yet let anyone see.',
+          marker: 'fork',
+        },
+        {
+          n: '03',
+          title: 'Decide inside the window',
+          text: 'We set criteria, owners, alerts and conditions to act or revisit before the point of no return.',
+          marker: 'decision window',
+        },
+      ],
+      close:
+        'Anticipating is not predicting the scenario: it is deciding while the decision still counts. Past the point of no return, what is left is managing the effect, not choosing it.',
+    },
   },
 
   team: {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Foresight Unit, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
     },
-    kicker: 'Who runs the work',
-    titleLines: ['The same', 'people'],
-    sub: 'Whoever designs the engagement is the one who executes it.',
+    kicker: 'Team',
+    titleLines: ['Experience'],
+    sub: 'Advocacy, decision-making, innovation and technology.',
     lead: [
-      'A small team with no pyramid: ',
-      { b: 'no juniors billed as seniors' },
-      ', and no partner who appears only at the sales meeting.',
+      'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: ',
+      { b: 'an uncommon synergy' },
+      ', and one further amplified by what AI now makes possible.',
     ],
 
-    membersLabel: ['The team', '01 — 02'],
+    membersLabel: ['The team', '01 — 04'],
     credentialsLabel: 'Track record',
     members: [
       {
         n: '01',
         name: 'Isabel Serra Benítez',
         role: 'Product lead',
-        text: 'Architect and urban researcher, with fifteen years at the intersection of design, critical thought and futures studies. Author of the Utopía System, the methodological frame that orders the Lab’s work. She leads the design of engagements: scope, deliverables and the relationship with counterparts.',
+        text: 'Urbanist and researcher, with fifteen years at the intersection of design, critical thought and futures studies — ten of them as an academic and researcher at Universidad Diego Portales. Author of the Utopía System, the methodological frame that orders the Lab’s work. She leads the design of engagements: scope, deliverables and the relationship with counterparts.',
         credentials: [
           'Head of the Centre for City and Territory Studies, MINVU (2024–2025): 26 professionals across five teams',
-          'Creation of MINVU’s first institutional Foresight Unit',
-          'Full Professor, Universidad Diego Portales (2012–2022)',
+          'Academic and researcher, Universidad Diego Portales (2012–2022)',
           'Led eleven research projects with ECLAC, GIZ, the University of St. Gallen and Columbia University',
           'PhD candidate in American Studies, IDEA–USACH',
           'MA in Public Management and Policy, Universidad de Chile — Eugenio Lahera Prize',
           'Architect, Pontificia Universidad Católica de Chile',
         ],
+        profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
       },
       {
         n: '02',
@@ -610,6 +588,37 @@ export const en: Content = {
           'Coordinator of Critical Neighbourhoods, Quiero Mi Barrio programme, MINVU (2005–2008)',
           'MSc in Applied Sciences, Urbanism and Territorial Development, UCLouvain — with distinction',
         ],
+        profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
+      },
+      {
+        n: '03',
+        name: 'Ariel López López',
+        role: 'Team member',
+        text: 'Transport engineer and urban planner. He treats mobility as what it is — who can reach where, in how long and at what cost — rather than as an infrastructure problem solved by building. That reading is what he brings to territorial engagements: a transport system reveals a city’s structure of opportunity before any aggregate indicator does.',
+        credentials: [
+          'International consultant to ECLAC and UNDP',
+          'Adviser to the National Council for Territorial Development (CNDT)',
+          'Court-appointed traffic expert, Courts of Appeal of Santiago, Valparaíso and Rancagua',
+          'Head of Studies and Projects, W Ingeniería',
+          'Lecturer in Transport Engineering, UTEM and Universidad Andrés Bello',
+          'PhD candidate in Territory, Space and Society, FAU — Universidad de Chile',
+          'MA in Urbanism, Universidad de Chile',
+          'Transport and Traffic Engineer, UTEM',
+        ],
+        profile: 'https://www.linkedin.com/in/arielopez',
+      },
+      {
+        n: '04',
+        name: 'Willy Maikowski Correa',
+        role: 'Team member',
+        text: 'Software engineer, with his track record in systems that run every day rather than in demonstrations. Engineering Manager at Buk and previously at Universidad de Chile’s Ucampus Technology Centre, where thousands of people use the academic management software daily. With Ariel he built the real-time monitor of Santiago’s buses on Red Movilidad’s GPS feed: precisely the Observatory’s problem — turning a raw stream into something a person can look at and decide on — solved with public data and on nobody’s commission.',
+        credentials: [
+          'Engineering Manager at Buk',
+          'Ucampus Technology Centre, Universidad de Chile',
+          'Real-time monitor of Santiago’s buses (velocidades.seguimos.cl), with Ariel López',
+          'Thesis supervisor in Computer Science Engineering, FCFM — Universidad de Chile',
+        ],
+        profile: 'https://www.linkedin.com/in/willymaikowski',
       },
     ],
 
