@@ -256,9 +256,9 @@ export const es: Content = {
     },
 
     closing: {
-      h2: 'Trae una decisión que no puedas postergar',
+      h2: '¿Quieres ver las señales en el ruido?',
       body: 'No es una presentación de servicios. En una hora identificamos qué información falta, qué posibilidades conviene abrir y cuál es tu próxima decisión. Si después de eso no hay encargo, igual te llevas eso.',
-      cta: 'Agendar la conversación',
+      cta: 'Agenda una hora',
     },
   },
 
@@ -475,17 +475,6 @@ export const es: Content = {
     figureCaption:
       'El esquema del núcleo: dónde estaba la señal, cuándo se bifurcó y qué tan abierta seguía la ventana. Cada caso es este mismo dibujo en obra.',
 
-    templateLabel: ['Cómo se cuenta cada caso', '01 — 05'],
-    templateIntro:
-      'La misma plantilla para todos los casos, publicados o no. Donde falta un campo, falta porque no hay dato publicable — no se rellena.',
-    templateSteps: [
-      { n: '01', title: 'Contexto', text: 'Quién decidía y en qué marco.' },
-      { n: '02', title: 'Problema', text: 'Qué estaba bloqueado o en riesgo.' },
-      { n: '03', title: 'Intervención', text: 'Qué hizo el Lab, concretamente.' },
-      { n: '04', title: 'Resultado', text: 'Qué quedó instalado o entregado.' },
-      { n: '05', title: 'Prueba', text: 'Qué tercero lo puede confirmar.' },
-    ],
-
     casesLabel: ['El caso', '01 — 01'],
     contextLabel: 'Contexto',
     problemLabel: 'Problema',
@@ -540,6 +529,26 @@ export const es: Content = {
       ],
       close:
         'Anticipar no es predecir el escenario: es decidir mientras la decisión todavía incide. Pasado el punto de no retorno queda gestionar el efecto, no elegirlo.',
+      chain: {
+        label: ['La cadena completa', '01 — 11'],
+        intro:
+          'Las tres etapas son tres eslabones de una cadena más larga. Cada glifo dice qué le pasa al campo: en turquesa lo que se observa, en naranja lo que cruza a alerta y en azul lo que se decide.',
+        stages: {
+          senal: 'Señal',
+          cadena: 'Cadena',
+          umbral: 'Umbral',
+          convergencia: 'Convergencia',
+          bifurcacion: 'Bifurcación',
+          trayectoria: 'Trayectoria',
+          escenario: 'Escenario',
+          implicancia: 'Implicancia',
+          decision: 'Decisión',
+          experimento: 'Experimento',
+          ajuste: 'Aprendizaje y ajuste',
+        },
+        legend: { observation: 'Observación', alert: 'Alerta', decision: 'Decisión' },
+        returnNote: 'El ciclo no se cierra: el ajuste devuelve al campo y abre una nueva observación.',
+      },
     },
   },
 

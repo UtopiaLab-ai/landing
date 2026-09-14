@@ -1,3 +1,5 @@
+import type { LexiconName } from '../brand/glyphs'
+
 /**
  * Forma del contenido del sitio. Cada locale debe implementar `Content`
  * completo, así que TypeScript avisa si una traducción queda a medias.
@@ -200,10 +202,6 @@ export interface CasesContent {
   figureAlt: string
   figureCaption: string
 
-  templateLabel: SectionLabel
-  templateIntro: string
-  templateSteps: readonly { n: string; title: string; text: string }[]
-
   casesLabel: SectionLabel
   contextLabel: string
   problemLabel: string
@@ -240,6 +238,18 @@ export interface CasesContent {
     steps: readonly { n: string; title: string; text: string; marker: string }[]
     markerLabel: string
     close: string
+    /**
+     * La cadena anticipatoria completa, en los once glifos del léxico. Los
+     * nombres van por glifo y no en lista para que no pueda faltar ni
+     * desordenarse ninguno: el orden lo fija `LEXICON_NAMES`.
+     */
+    chain: {
+      label: SectionLabel
+      intro: string
+      stages: Record<LexiconName, string>
+      legend: { observation: string; alert: string; decision: string }
+      returnNote: string
+    }
   }
 }
 

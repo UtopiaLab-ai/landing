@@ -687,6 +687,48 @@ header > * {
   padding: clamp(132px, 17vh, 200px) 0 clamp(48px, 8vh, 104px);
 }
 
+/* Portadilla con la trama «campo de puntos + señal» (dossier, 8a): retícula de
+   puntos y un solo campo con la señal en naranja, cortado por el borde
+   derecho. La retícula se desvanece hacia la izquierda para no pasar por
+   debajo del titular. */
+.hero-trama {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-trama > .wrap {
+  position: relative;
+}
+
+.trama {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(250, 250, 250, 0.3) 1.4px, transparent 1.9px);
+  background-size: 36px 36px;
+  -webkit-mask-image: linear-gradient(to right, transparent 25%, #000 80%);
+  mask-image: linear-gradient(to right, transparent 25%, #000 80%);
+}
+
+.trama-campo {
+  position: absolute;
+  right: -90px;
+  top: 50%;
+  width: clamp(240px, 34vw, 420px);
+  height: auto;
+  transform: translateY(-42%);
+  color: var(--papel);
+}
+
+@media (max-width: 720px) {
+  /* Menos sangrado que en escritorio: a este ancho, con más corte, la señal
+     naranja —lo único que importa del dibujo— quedaba fuera de pantalla. */
+  .trama-campo {
+    right: -70px;
+    opacity: 0.55;
+  }
+}
+
 .kicker {
   font-family: var(--font-mono);
   font-size: clamp(13px, 1.6vw, 16px);
@@ -875,8 +917,11 @@ footer {
    CASOS
    ========================================================================== */
 
+/* Los casos abren el cuerpo de la página, ya sin plantilla entre ellos y el
+   hero: el colchón de arriba es el mismo que usa `.intro` en las otras
+   interiores, para que el primer bloque no quede pegado a la franja negra. */
 .casos {
-  padding: clamp(20px, 4vh, 44px) 0 clamp(10px, 2vh, 20px);
+  padding: clamp(44px, 7vh, 96px) 0 clamp(10px, 2vh, 20px);
   border-bottom: 2px solid var(--ink);
 }
 
@@ -1500,11 +1545,93 @@ footer {
   opacity: 0.55;
 }
 
+/* Glifo del léxico sobre cada etapa, con el punto en el color de su estatuto.
+   El mismo color marca el rótulo «en el esquema», para que punto y palabra se
+   lean como la misma cosa. */
+.etapa .eglyph {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.etapa .emark .crl::before {
+  content: '';
+  display: inline-block;
+  width: 0.62em;
+  height: 0.62em;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  background: var(--tone);
+}
+
 .metodo .mclose {
   margin-top: clamp(28px, 4vh, 46px);
   max-width: 62ch;
   font-size: clamp(15px, 1.6vw, 19px);
   line-height: 1.45;
+}
+
+/* La cadena completa: once glifos en una grilla que se parte sola. `auto-fill`
+   y no once columnas fijas: en móvil baja a tres o cuatro por fila sin una
+   regla aparte. */
+.cadena {
+  margin-top: clamp(40px, 6vh, 72px);
+}
+
+.cadena .cintro {
+  margin-top: clamp(20px, 3vh, 30px);
+  max-width: 62ch;
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.45;
+}
+
+.eslabones {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: clamp(18px, 2.4vh, 28px) 12px;
+  margin-top: clamp(26px, 4vh, 40px);
+}
+
+.eslabon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.eslabon span {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+.cadena-pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px 28px;
+  margin-top: clamp(24px, 3.6vh, 36px);
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.leyenda {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
+.leyenda li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* --- 06 · Qué se gana ------------------------------------------------------ */
@@ -1868,42 +1995,8 @@ footer {
 }
 
 /* ==========================================================================
-   CASOS · plantilla y lección
+   CASOS · la prueba
    ========================================================================== */
-
-/* La plantilla abre el cuerpo de la página, ya sin lead entre ella y el hero:
-   el colchón de arriba es el mismo que usa `.intro` en las otras interiores,
-   para que el primer bloque no quede pegado a la franja negra. */
-.plantilla {
-  padding: clamp(44px, 7vh, 96px) 0 clamp(30px, 5vh, 60px);
-  border-bottom: 2px solid var(--ink);
-}
-
-.plantilla .tintro {
-  margin-top: clamp(24px, 3.5vh, 38px);
-  font-weight: 400;
-  letter-spacing: -0.022em;
-  line-height: 1.3;
-  font-size: clamp(17px, 2vw, 24px);
-  max-width: 40ch;
-}
-
-.plantilla .pasos {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  padding-bottom: 0;
-}
-
-@media (max-width: 860px) {
-  .plantilla .pasos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 520px) {
-  .plantilla .pasos {
-    grid-template-columns: 1fr;
-  }
-}
 
 .caso .probado {
   margin-top: 18px;
@@ -2029,9 +2122,18 @@ footer {
   border-bottom: 2px solid var(--ink);
 }
 
-.vel-glyph {
+/* El cuadro de color de cada velocidad (código de color del dossier): el color
+   es el fondo y el glifo va encima en tinta o papel. Cuadro y no círculo,
+   porque el círculo ya es el campo del glifo. */
+.vel-tile {
   flex: none;
-  margin-top: 2px;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: var(--tone);
+  color: var(--tone-ink);
 }
 
 .vel-name {

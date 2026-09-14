@@ -1,3 +1,6 @@
+import type { CSSProperties } from 'react'
+import { Glyph } from '../brand/Glyph'
+import { LEXICON_NAMES, type LexiconName } from '../brand/glyphs'
 import { Lines } from '../components/Lines'
 import { SectionLabel } from '../components/SectionLabel'
 import { useSite } from '../site-context'
@@ -17,36 +20,58 @@ import { useSite } from '../site-context'
  * veces. Primero el caso, después el método y al final el dibujo que lo
  * resume.
  */
+/**
+ * Código de color del léxico (dossier de marca, «Léxico aplicado»): turquesa
+ * observación, naranja alerta, azul decisión. El trazo queda siempre en tinta y
+ * el color vive solo en el punto de señal; sin color la pieza se sigue leyendo,
+ * porque el tamaño del punto ya dice el estatuto.
+ */
+const TONE = {
+  observation: 'var(--agua)',
+  alert: 'var(--sol)',
+  decision: 'var(--arco)',
+} as const
+
+/**
+ * El glifo y el color de cada etapa del método, por posición. Van acá y no en
+ * `i18n/`: son decisiones de marca y no pueden divergir entre idiomas.
+ */
+const STEP_MARKS: readonly { glyph: LexiconName; tone: string }[] = [
+  { glyph: 'senal', tone: TONE.observation },
+  { glyph: 'bifurcacion', tone: TONE.alert },
+  { glyph: 'decision', tone: TONE.decision },
+]
+
+/**
+ * El color de cada eslabón de la cadena. Los que no aparecen van con el punto
+ * en tinta: etapa sin estatuto de alerta asignado.
+ */
+const CHAIN_TONES: Partial<Record<LexiconName, string>> = {
+  senal: TONE.observation,
+  umbral: TONE.alert,
+  convergencia: TONE.alert,
+  decision: TONE.decision,
+  ajuste: TONE.observation,
+}
+
 export function Cases() {
   const { t } = useSite()
   const c = t.cases
 
   return (
     <>
-      <section className="hero invert">
+      <section className="hero invert hero-trama">
+        {/* Trama «campo de puntos + señal» del dossier (8a). La portadilla es
+            uno de los pocos lugares donde el manual deja usar la trama. */}
+        <div className="trama" aria-hidden="true">
+          <Glyph name="senal" size={360} accent="var(--sol)" className="trama-campo" />
+        </div>
         <div className="wrap">
           <div className="kicker mono">{c.kicker}</div>
           <h1>
             <Lines lines={c.titleLines} />
           </h1>
           <p className="sub">{c.sub}</p>
-        </div>
-      </section>
-
-      {/* PLANTILLA */}
-      <section className="plantilla" id="plantilla">
-        <div className="wrap">
-          <SectionLabel label={c.templateLabel} />
-          <p className="tintro">{c.templateIntro}</p>
-          <div className="pasos">
-            {c.templateSteps.map((step) => (
-              <div className="paso" key={step.n}>
-                <span className="pnum mono">{step.n}</span>
-                <div className="pttl">{step.title}</div>
-                <p className="pdesc">{step.text}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -96,8 +121,13 @@ export function Cases() {
           <SectionLabel label={c.method.label} />
 
           <ol className="etapas">
-            {c.method.steps.map((step) => (
-              <li className="etapa" key={step.n}>
+            {c.method.steps.map((step, i) => (
+              <li
+                className="etapa"
+                key={step.n}
+                style={{ '--tone': STEP_MARKS[i].tone } as CSSProperties}
+              >
+                <Glyph name={STEP_MARKS[i].glyph} size={56} accent="var(--tone)" className="eglyph" />
                 <span className="enum mono">{step.n}</span>
                 <h3 className="ettl">{step.title}</h3>
                 <p className="etxt">{step.text}</p>
@@ -109,6 +139,32 @@ export function Cases() {
           </ol>
 
           <p className="mclose">{c.method.close}</p>
+
+          {/* La cadena completa del léxico: once glifos, uno por operación.
+              Las tres etapas de arriba son tres de sus eslabones. */}
+          <div className="cadena">
+            <SectionLabel label={c.method.chain.label} />
+            <p className="cintro">{c.method.chain.intro}</p>
+            <ol className="eslabones">
+              {LEXICON_NAMES.map((name) => (
+                <li className="eslabon" key={name}>
+                  <Glyph name={name} size={56} accent={CHAIN_TONES[name]} />
+                  <span className="mono">{c.method.chain.stages[name]}</span>
+                </li>
+              ))}
+            </ol>
+            <div className="cadena-pie mono">
+              <ul className="leyenda">
+                {(['observation', 'alert', 'decision'] as const).map((key) => (
+                  <li key={key}>
+                    <Glyph name="senal" size={21} accent={TONE[key]} />
+                    {c.method.chain.legend[key]}
+                  </li>
+                ))}
+              </ul>
+              <span>{c.method.chain.returnNote}</span>
+            </div>
+          </div>
 
           {/* El esquema va a ancho completo y con figcaption porque el dibujo
               no se explica solo, y con carga diferida por estar al final de

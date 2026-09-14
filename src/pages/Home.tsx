@@ -40,6 +40,24 @@ import { useSite } from '../site-context'
 const SPEED_GLYPHS: readonly GlyphName[] = ['anomalia', 'nmu', 'hipotesis']
 
 /**
+ * El color de cada velocidad, por posición igual que el glifo.
+ *
+ * Sale del código de color del dossier de marca: turquesa observación —los
+ * productos que producen análisis leen el entorno—, azul decisión —los que
+ * instalan capacidad dejan al equipo decidiendo solo— y ámbar para el
+ * comprador individual, que corta fuera del eje organizacional. El naranja no
+ * entra: en el sitio está reservado a la acción.
+ *
+ * Un color dominante por pieza: el color es el fondo del cuadro y el glifo va
+ * encima en tinta o papel, según contraste. El glifo nunca se pinta.
+ */
+const SPEED_TONES: readonly { bg: string; ink: string }[] = [
+  { bg: 'var(--agua)', ink: 'var(--tinta)' },
+  { bg: 'var(--arco)', ink: 'var(--papel)' },
+  { bg: 'var(--ambar)', ink: 'var(--tinta)' },
+]
+
+/**
  * Logos de las instituciones citadas en la evidencia, en el orden en que
  * aparecen en el texto. Cada uno enlaza a la misma fuente que su frase.
  *
@@ -146,7 +164,14 @@ export function Home() {
           {c.catalog.speeds.map((speed, i) => (
             <div className="velocidad" key={speed.key}>
               <div className="vel-head">
-                <Glyph name={SPEED_GLYPHS[i]} size={42} className="vel-glyph" />
+                <span
+                  className="vel-tile"
+                  style={
+                    { '--tone': SPEED_TONES[i].bg, '--tone-ink': SPEED_TONES[i].ink } as CSSProperties
+                  }
+                >
+                  <Glyph name={SPEED_GLYPHS[i]} size={42} />
+                </span>
                 <div>
                   <div className="vel-name">{speed.name}</div>
                   <p className="vel-note">{speed.note}</p>

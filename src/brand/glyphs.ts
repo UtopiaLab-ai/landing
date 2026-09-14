@@ -44,12 +44,27 @@ export type ColorName = keyof typeof PALETTE
  * Una primitiva del sistema. El conjunto está cerrado a propósito: el manual
  * define los glifos como «una operación por glifo» sobre un campo circular, y
  * cualquier primitiva extra abre la puerta a dibujar fuera de la marca.
+ *
+ * `weight` escala el trazo base: el léxico analítico dibuja con tres grosores
+ * —perímetro, estructura interna y relación inferida— y los expresa como
+ * fracción del trazo del campo, para que sigan saliendo de `strokeFor`.
+ * `signal` marca el punto que lleva el color: en cada glifo del léxico hay uno
+ * solo, la posición tomada.
  */
 export type Shape =
   | { kind: 'ellipse'; rx: number; ry: number; rotate?: number }
-  | { kind: 'circle'; r: number; cx?: number; cy?: number; solid?: boolean; dash?: string }
-  | { kind: 'line'; x1: number; y1: number; x2: number; y2: number }
-  | { kind: 'path'; d: string }
+  | {
+      kind: 'circle'
+      r: number
+      cx?: number
+      cy?: number
+      solid?: boolean
+      dash?: string
+      weight?: number
+      signal?: boolean
+    }
+  | { kind: 'line'; x1: number; y1: number; x2: number; y2: number; dash?: string; weight?: number }
+  | { kind: 'path'; d: string; weight?: number }
 
 export type GlyphName = 'toro' | 'anomalia' | 'observatorio' | 'nmu' | 'hipotesis'
 
@@ -121,6 +136,185 @@ export const GLYPHS: Record<GlyphName, Glyph> = {
 
 export const GLYPH_NAMES = Object.keys(GLYPHS) as GlyphName[]
 
+/* --- Léxico analítico ----------------------------------------------------- */
+
+/** Grosores del léxico («Gramática»), como fracción del perímetro de 0,42. */
+const INNER = 0.83 // 0,35 · estructura interna
+const RING = 0.71 // 0,30 · anillo interior
+const INFERRED = 0.57 // 0,24 · relación inferida, siempre punteada
+
+/** Punteado de la relación inferida y pulso del campo provisorio. */
+const DOTTED = '1.3 1.5'
+const PULSE = '2 3'
+
+export type LexiconName =
+  | 'senal'
+  | 'cadena'
+  | 'umbral'
+  | 'convergencia'
+  | 'bifurcacion'
+  | 'trayectoria'
+  | 'escenario'
+  | 'implicancia'
+  | 'decision'
+  | 'experimento'
+  | 'ajuste'
+
+/**
+ * Los once glifos del léxico analítico del dossier de marca (agosto 2026).
+ *
+ * No son logo —el logo es el toro—: son el vocabulario con que se dibuja el
+ * método. Cada uno dice qué le pasa al campo. Se declaran en el orden de la
+ * cadena anticipatoria, así que `LEXICON_NAMES` es la cadena misma.
+ *
+ * Quedan fuera de `GLYPHS` a propósito: el kit de imprenta exporta las marcas,
+ * no el vocabulario.
+ */
+export const LEXICON: Record<LexiconName, Glyph> = {
+  senal: {
+    label: 'Señal',
+    use: 'Algo aparece fuera del centro del campo y todavía no tiene nombre.',
+    shapes: [
+      { kind: 'circle', r: FIELD },
+      { kind: 'circle', r: 1.9, cx: 4.6, cy: -6.2, solid: true, signal: true },
+    ],
+  },
+
+  cadena: {
+    label: 'Cadena',
+    use: 'Varias señales que se enlazan y dejan de ser hechos sueltos.',
+    shapes: [
+      { kind: 'circle', r: 4.6, cx: -8.4, weight: INNER },
+      { kind: 'circle', r: 4.6, weight: INNER },
+      { kind: 'circle', r: 4.6, cx: 8.4, weight: INNER },
+      { kind: 'circle', r: 1.3, cx: -8.4, solid: true },
+      { kind: 'circle', r: 1.3, solid: true },
+      { kind: 'circle', r: 1.3, cx: 8.4, solid: true, signal: true },
+      { kind: 'line', x1: -7.1, y1: 0, x2: -1.3, y2: 0, dash: DOTTED, weight: INFERRED },
+      { kind: 'line', x1: 1.3, y1: 0, x2: 7.1, y2: 0, dash: DOTTED, weight: INFERRED },
+    ],
+  },
+
+  umbral: {
+    label: 'Umbral',
+    use: 'La línea que, al cruzarse, cambia el estatuto de lo que se observa.',
+    shapes: [
+      { kind: 'circle', r: FIELD },
+      { kind: 'line', x1: -15.4, y1: 0, x2: 15.4, y2: 0, weight: INNER },
+      { kind: 'circle', r: 1.3, cx: -4.4, cy: -5.6, solid: true },
+      { kind: 'circle', r: 1.3, cx: 1.6, cy: -2.4, solid: true },
+      { kind: 'circle', r: 1.9, cx: 6.4, cy: 4.2, solid: true, signal: true },
+    ],
+  },
+
+  convergencia: {
+    label: 'Convergencia',
+    use: 'Tres campos distintos apuntando al mismo punto: ahí se activa la alerta.',
+    shapes: [
+      { kind: 'circle', r: 4.2, cx: -8.6, cy: -7.4, weight: INNER },
+      { kind: 'circle', r: 4.2, cx: 8.6, cy: -7.4, weight: INNER },
+      { kind: 'circle', r: 3, cy: -11.2, weight: INNER },
+      { kind: 'line', x1: -7.4, y1: -4.2, x2: -1.4, y2: 6.6, dash: DOTTED, weight: INFERRED },
+      { kind: 'line', x1: 7.4, y1: -4.2, x2: 1.4, y2: 6.6, dash: DOTTED, weight: INFERRED },
+      { kind: 'line', x1: 0, y1: -8, x2: 0, y2: 6.2, dash: DOTTED, weight: INFERRED },
+      { kind: 'circle', r: 1.9, cy: 8.4, solid: true, signal: true },
+    ],
+  },
+
+  bifurcacion: {
+    label: 'Bifurcación',
+    use: 'El punto donde el curso se abre y deja de haber un solo futuro.',
+    shapes: [
+      { kind: 'circle', r: FIELD },
+      { kind: 'line', x1: -11.6, y1: 0, x2: -1.6, y2: 0, dash: DOTTED, weight: INFERRED },
+      { kind: 'line', x1: 0, y1: 0, x2: 9.8, y2: -7.2, dash: DOTTED, weight: INFERRED },
+      { kind: 'line', x1: 0, y1: 0, x2: 9.8, y2: 7.2, dash: DOTTED, weight: INFERRED },
+      { kind: 'circle', r: 1.5, solid: true, signal: true },
+      { kind: 'circle', r: 1.3, cx: 10.6, cy: -7.8, solid: true },
+      { kind: 'circle', r: 1.3, cx: 10.6, cy: 7.8, solid: true },
+    ],
+  },
+
+  trayectoria: {
+    label: 'Trayectoria',
+    use: 'El recorrido de una señal que crece: no es un estado, es un movimiento.',
+    shapes: [
+      { kind: 'circle', r: FIELD },
+      { kind: 'line', x1: -9.6, y1: 7.2, x2: 9.4, y2: -6.4, dash: DOTTED, weight: INFERRED },
+      { kind: 'circle', r: 1.3, cx: -9.6, cy: 7.2, solid: true },
+      { kind: 'circle', r: 1.5, cx: -0.1, cy: 0.4, solid: true },
+      { kind: 'circle', r: 1.9, cx: 9.4, cy: -6.4, solid: true, signal: true },
+    ],
+  },
+
+  escenario: {
+    label: 'Escenario',
+    use: 'Uno de los cursos posibles, dibujado como sector del campo, no como pronóstico.',
+    shapes: [
+      { kind: 'circle', r: FIELD },
+      { kind: 'path', d: 'M-11.8 3.8 A12.4 12.4 0 0 1 -3.6 -11.8', weight: INNER },
+      { kind: 'path', d: 'M-8.4 2.7 A8.8 8.8 0 0 1 -2.6 -8.4', weight: INNER },
+      { kind: 'path', d: 'M-4.8 1.5 A5 5 0 0 1 -1.5 -4.8', weight: INNER },
+      { kind: 'circle', r: 1.5, cx: -9.6, cy: -7.8, solid: true, signal: true },
+    ],
+  },
+
+  implicancia: {
+    label: 'Implicancia',
+    use: 'El mundo de segundo orden que produce la decisión: el campo desplazado.',
+    shapes: [
+      { kind: 'circle', r: 9.6, cx: -3.2, cy: -2.4, weight: INNER },
+      { kind: 'circle', r: 9.6, cx: 4.4, cy: 4.2, dash: PULSE, weight: INNER },
+      { kind: 'circle', r: 1.9, cx: 0.4, cy: -7.4, solid: true, signal: true },
+      { kind: 'circle', r: 1.3, cx: 8, cy: -0.8, solid: true },
+    ],
+  },
+
+  decision: {
+    label: 'Decisión',
+    use: 'De todas las salidas abiertas, una queda en trazo pleno: se elige y se sostiene.',
+    shapes: [
+      { kind: 'circle', r: FIELD },
+      { kind: 'line', x1: -12.4, y1: 0, x2: 12.4, y2: 0, weight: INNER },
+      { kind: 'line', x1: 0, y1: 0, x2: 8.6, y2: -8.6, dash: DOTTED, weight: INFERRED },
+      { kind: 'circle', r: 1.9, solid: true, signal: true },
+      { kind: 'circle', r: 1.3, cx: 11.4, cy: -6.9, solid: true },
+    ],
+  },
+
+  experimento: {
+    label: 'Experimento',
+    use: 'Una prueba acotada dentro de un campo provisorio: dos extremos y una apuesta.',
+    shapes: [
+      { kind: 'circle', r: FIELD, dash: PULSE },
+      { kind: 'line', x1: -6.4, y1: 6.4, x2: 6.4, y2: -6.4, weight: INNER },
+      { kind: 'circle', r: 1.5, cx: -6.4, cy: 6.4, solid: true },
+      { kind: 'circle', r: 1.5, cx: 6.4, cy: -6.4, solid: true, signal: true },
+    ],
+  },
+
+  ajuste: {
+    label: 'Aprendizaje y ajuste',
+    use: 'El campo se estrecha —lo que era horizonte ahora es borde— y el punto se mueve.',
+    shapes: [
+      { kind: 'circle', r: FIELD, dash: PULSE },
+      { kind: 'circle', r: 8.8, weight: RING },
+      { kind: 'circle', r: 1.5, cx: 3.3, cy: -4.4, solid: true, signal: true },
+      { kind: 'circle', r: 1.3, cx: -6.2, cy: 6.2, solid: true },
+    ],
+  },
+}
+
+/** La cadena anticipatoria, en orden. */
+export const LEXICON_NAMES = Object.keys(LEXICON) as LexiconName[]
+
+/** Cualquier glifo dibujable: una marca o una palabra del léxico. */
+export type AnyGlyphName = GlyphName | LexiconName
+
+export function glyphOf(name: AnyGlyphName): Glyph {
+  return name in GLYPHS ? GLYPHS[name as GlyphName] : LEXICON[name as LexiconName]
+}
+
 /* --- Trazo ---------------------------------------------------------------- */
 
 /**
@@ -178,7 +372,8 @@ function round(n: number): number {
  * papel y naranja sin duplicarse; el generador de assets fija el color en el
  * `<g>` contenedor.
  */
-export function shapeToSvg(shape: Shape): string {
+export function shapeToSvg(shape: Shape, stroke = 1): string {
+  const sw = 'weight' in shape && shape.weight ? ` stroke-width="${round(stroke * shape.weight)}"` : ''
   switch (shape.kind) {
     case 'ellipse': {
       const rot = shape.rotate ? ` transform="rotate(${shape.rotate})"` : ''
@@ -189,18 +384,20 @@ export function shapeToSvg(shape: Shape): string {
       const cy = shape.cy ? ` cy="${shape.cy}"` : ''
       const solid = shape.solid ? ' fill="currentColor" stroke="none"' : ''
       const dash = shape.dash ? ` stroke-dasharray="${shape.dash}"` : ''
-      return `<circle r="${shape.r}"${cx}${cy}${solid}${dash}/>`
+      return `<circle r="${shape.r}"${cx}${cy}${solid}${dash}${sw}/>`
     }
-    case 'line':
-      return `<line x1="${shape.x1}" y1="${shape.y1}" x2="${shape.x2}" y2="${shape.y2}"/>`
+    case 'line': {
+      const dash = shape.dash ? ` stroke-dasharray="${shape.dash}"` : ''
+      return `<line x1="${shape.x1}" y1="${shape.y1}" x2="${shape.x2}" y2="${shape.y2}"${dash}${sw}/>`
+    }
     case 'path':
-      return `<path d="${shape.d}"/>`
+      return `<path d="${shape.d}"${sw}/>`
   }
 }
 
 /** El interior del `<svg>` de un glifo, ya agrupado con su trazo. */
 export function glyphBody(name: GlyphName, stroke: number): string {
-  const shapes = GLYPHS[name].shapes.map(shapeToSvg).join('')
+  const shapes = GLYPHS[name].shapes.map((shape) => shapeToSvg(shape, stroke)).join('')
   return `<g fill="none" stroke="currentColor" stroke-width="${stroke}">${shapes}</g>`
 }
 

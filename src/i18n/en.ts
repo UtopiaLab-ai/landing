@@ -255,9 +255,9 @@ export const en: Content = {
     },
 
     closing: {
-      h2: 'Bring a decision you cannot postpone',
+      h2: 'Want to see the signals in the noise?',
       body: 'It is not a services pitch. In one hour we work out what information is missing, which possibilities are worth opening, and what your next decision is. If no engagement follows, you keep that anyway.',
-      cta: 'Book the conversation',
+      cta: 'Book an hour',
     },
   },
 
@@ -474,17 +474,6 @@ export const en: Content = {
     figureCaption:
       'The core of the method: where the signal was, when it forked, and how far open the window still was. Every case is this same drawing at work.',
 
-    templateLabel: ['How each case is told', '01 — 05'],
-    templateIntro:
-      'The same template for every case, published or not. Where a field is missing, it is missing because there is no publishable data — it does not get filled in.',
-    templateSteps: [
-      { n: '01', title: 'Context', text: 'Who was deciding, and within what frame.' },
-      { n: '02', title: 'Problem', text: 'What was blocked or at risk.' },
-      { n: '03', title: 'Intervention', text: 'What the Lab did, concretely.' },
-      { n: '04', title: 'Result', text: 'What was installed or delivered.' },
-      { n: '05', title: 'Proof', text: 'Which third party can confirm it.' },
-    ],
-
     casesLabel: ['The case', '01 — 01'],
     contextLabel: 'Context',
     problemLabel: 'Problem',
@@ -538,6 +527,26 @@ export const en: Content = {
       ],
       close:
         'Anticipating is not predicting the scenario: it is deciding while the decision still counts. Past the point of no return, what is left is managing the effect, not choosing it.',
+      chain: {
+        label: ['The full chain', '01 — 11'],
+        intro:
+          'The three stages are three links in a longer chain. Each glyph says what happens to the field: turquoise for what is observed, orange for what crosses into alert and blue for what gets decided.',
+        stages: {
+          senal: 'Signal',
+          cadena: 'Chain',
+          umbral: 'Threshold',
+          convergencia: 'Convergence',
+          bifurcacion: 'Fork',
+          trayectoria: 'Trajectory',
+          escenario: 'Scenario',
+          implicancia: 'Implication',
+          decision: 'Decision',
+          experimento: 'Experiment',
+          ajuste: 'Learning and adjustment',
+        },
+        legend: { observation: 'Observation', alert: 'Alert', decision: 'Decision' },
+        returnNote: 'The cycle does not close: adjustment returns to the field and opens a new observation.',
+      },
     },
   },
 
