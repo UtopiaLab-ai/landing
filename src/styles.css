@@ -2075,6 +2075,22 @@ footer {
   opacity: 0.85;
 }
 
+/* En el catálogo la bajada es una línea corta y el párrafo de método va
+   debajo: el colchón hasta el rótulo lo pone el párrafo, no la bajada. */
+.catalogo .csub {
+  margin-bottom: 0;
+}
+
+.catalogo .cintro {
+  margin-top: clamp(14px, 2vh, 20px);
+  margin-bottom: clamp(30px, 4.5vh, 52px);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: clamp(15px, 1.6vw, 19px);
+  max-width: 62ch;
+  opacity: 0.72;
+}
+
 /* Los rótulos de columna solo existen donde hay tres columnas: en móvil cada
    fila se lee como un bloque y el rótulo estorbaría. */
 .sit-head {

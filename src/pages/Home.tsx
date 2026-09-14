@@ -163,6 +163,7 @@ export function Home() {
         <div className="wrap">
           <h2>{c.catalog.h2}</h2>
           <p className="csub">{c.catalog.sub}</p>
+          <p className="cintro">{c.catalog.intro}</p>
           <SectionLabel label={c.catalog.label} />
 
           {c.catalog.speeds.map((speed, i) => (

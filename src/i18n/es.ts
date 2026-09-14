@@ -85,8 +85,10 @@ export const es: Content = {
     },
 
     catalog: {
-      h2: 'Diez formas de intervención',
-      sub: 'Tenemos metodología propia para problemas de decisión en contextos latinoamericanos de incertidumbre, policrisis y desconfianza institucional. No aplicamos recetas: cada encargo se ajusta al territorio, la organización, los actores y el momento de decisión. Se entra por donde el problema lo pida y se sube solo si sirve.',
+      h2: 'Productos',
+      sub: 'Soluciones y entregables',
+      intro:
+        'Tenemos metodología propia para problemas de decisión en contextos latinoamericanos de incertidumbre, policrisis y desconfianza institucional. No aplicamos recetas: cada encargo se ajusta al territorio, la organización, los actores y el momento de decisión. Se entra por donde el problema lo pida y se sube solo si sirve.',
       label: ['El catálogo', '01 — 10'],
       speeds: [
         {
@@ -286,8 +288,8 @@ export const es: Content = {
         'El catálogo completo: diez productos en cuatro escalones de compromiso, con definición, entregable, duración y la situación que gatilla cada uno.',
     },
     kicker: 'El catálogo',
-    titleLines: ['Diez', 'productos'],
-    sub: 'Lo único que se firma.',
+    titleLines: ['Productos'],
+    sub: 'Soluciones y entregables',
     lead: [
       'Cada uno con su entregable y su duración declarados. ',
       { b: 'Se entra por donde el problema lo pida' },
