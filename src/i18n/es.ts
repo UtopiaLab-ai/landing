@@ -154,36 +154,6 @@ export const es: Content = {
       cta: 'Ver las fichas completas →',
     },
 
-    method: {
-      kicker: 'Cómo trabajamos',
-      h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo',
-      sub: 'Las tres etapas corresponden a un punto preciso del esquema: detectar el cambio, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
-      label: ['El núcleo del método', '01 — 03'],
-      markerLabel: 'En el esquema',
-      steps: [
-        {
-          n: '01',
-          title: 'Situar la señal',
-          text: 'Leemos el territorio, las reglas y los actores para distinguir un cambio relevante del ruido.',
-          marker: 'señal',
-        },
-        {
-          n: '02',
-          title: 'Visualizar la bifurcación',
-          text: 'Hacemos comparables alternativas, tensiones y futuros que el curso habitual todavía no permite ver.',
-          marker: 'bifurcación',
-        },
-        {
-          n: '03',
-          title: 'Decidir en la ventana',
-          text: 'Definimos criterios, responsables, alertas y condiciones para actuar o revisar antes del punto de no retorno.',
-          marker: 'ventana de decisión',
-        },
-      ],
-      close:
-        'Anticipar no es predecir el escenario: es decidir mientras la decisión todavía incide. Pasado el punto de no retorno queda gestionar el efecto, no elegirlo.',
-    },
-
     value: {
       kicker: 'Qué gana tu organización',
       h2: 'Anticipar no es un ejercicio abstracto: mejora la calidad, la velocidad y el efecto de las decisiones',
@@ -211,39 +181,21 @@ export const es: Content = {
 
     cases: {
       h2: 'Dónde se ha ejecutado',
-      sub: 'Procesos abiertos, no monumentos terminados. Cada uno con lo que se puede verificar y lo que todavía no.',
+      sub: 'Un proceso abierto, no un monumento terminado: con lo que se puede verificar y lo que todavía no.',
       cards: [
         {
           n: '01',
           title: 'Ley Lafkenche',
           proof: 'Entregado a la abogacía del Alto Comisionado de DD.HH. de la ONU',
         },
-        {
-          n: '02',
-          title: 'Consejo Municipal de Futuros',
-          proof: 'Diseño entregado, pendiente de constitución',
-        },
-        {
-          n: '03',
-          title: 'Unidad de Prospectiva MINVU',
-          proof: 'Diseño entregado, pendiente de implementación',
-        },
-        {
-          n: '04',
-          title: 'Mesa del Transantiago',
-          proof: 'Posición común entre organizaciones distintas',
-        },
       ],
-      cta: 'Ver los casos completos →',
-      figureAlt:
-        'Esquema del núcleo del método: la señal emerge del ruido, cruza un umbral difuso, se bifurca en un cono de futuros y abre una ventana de decisión que se cierra en el punto de no retorno.',
-      figureCaption:
-        'Los cuatro casos son el mismo esquema en obra: dónde estaba la señal, cuándo se bifurcó y qué tan abierta seguía la ventana.',
+      cta: 'Ver el caso completo →',
     },
 
     team: {
       h2: 'Equipo',
-      sub: 'Un equipo chico: lo ejecutan las mismas personas que lo diseñan. Sin juniors facturados como seniors.',
+      sub:
+        'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: una sinergia poco común, potenciada además por las capacidades que ofrece la IA.',
       label: ['Equipo', '01 — 04'],
       members: [
         {
@@ -258,12 +210,12 @@ export const es: Content = {
         },
         {
           name: 'Ariel López',
-          role: 'Socio',
+          role: 'Miembro del equipo',
           text: 'Ingeniero en transporte y urbanista. Consultor internacional de la CEPAL y el PNUD, asesor del Consejo Nacional de Desarrollo Territorial y perito judicial en tránsito.',
         },
         {
           name: 'Willy Maikowski',
-          role: 'Socio',
+          role: 'Miembro del equipo',
           text: 'Ingeniero de software. Engineering Manager en Buk, antes en el Centro Tecnológico Ucampus de la Universidad de Chile. Construyó con Ariel el monitor en tiempo real de los buses de Santiago.',
         },
       ],
@@ -479,7 +431,7 @@ export const es: Content = {
     meta: {
       title: 'Casos · utopialab.ai',
       description:
-        'Dónde se ha ejecutado el método: Ley Lafkenche, Consejo Municipal de Futuros, Unidad de Prospectiva del MINVU y Mesa del Transantiago. Contexto, problema, intervención, resultado y prueba.',
+        'Dónde se ha ejecutado el método: el caso de la Ley Lafkenche, con contexto, problema, intervención, resultado y prueba, y las tres etapas del núcleo del método.',
     },
     kicker: 'El método en obra',
     titleLines: ['Dónde se ha', 'ejecutado'],
@@ -490,9 +442,14 @@ export const es: Content = {
       ' y qué todavía no.',
     ],
 
+    figureAlt:
+      'Esquema del núcleo del método: la señal emerge del ruido, cruza un umbral difuso, se bifurca en un cono de futuros y abre una ventana de decisión que se cierra en el punto de no retorno.',
+    figureCaption:
+      'El esquema del núcleo: dónde estaba la señal, cuándo se bifurcó y qué tan abierta seguía la ventana. Cada caso es este mismo dibujo en obra.',
+
     templateLabel: ['Cómo se cuenta cada caso', '01 — 05'],
     templateIntro:
-      'La misma plantilla para todos. Donde falta un campo, falta porque no hay dato publicable — no se rellena.',
+      'La misma plantilla para todos los casos, publicados o no. Donde falta un campo, falta porque no hay dato publicable — no se rellena.',
     templateSteps: [
       { n: '01', title: 'Contexto', text: 'Quién decidía y en qué marco.' },
       { n: '02', title: 'Problema', text: 'Qué estaba bloqueado o en riesgo.' },
@@ -501,7 +458,7 @@ export const es: Content = {
       { n: '05', title: 'Prueba', text: 'Qué tercero lo puede confirmar.' },
     ],
 
-    casesLabel: ['Los casos', '01 — 04'],
+    casesLabel: ['El caso', '01 — 01'],
     contextLabel: 'Contexto',
     problemLabel: 'Problema',
     workLabel: 'Intervención',
@@ -523,47 +480,39 @@ export const es: Content = {
         proof:
           'Entregado a la abogacía del Alto Comisionado de Derechos Humanos de las Naciones Unidas.',
       },
-      {
-        n: '02',
-        title: 'Consejo Municipal de Futuros',
-        subtitle: 'Prospectiva en gobierno local',
-        context:
-          'Un gobierno local que decide a veinticinco años con dispositivos que duran un período de alcaldía.',
-        problem:
-          'La capacidad de anticipar se iba con las personas que la portaban. Cada ciclo redescubría el largo plazo y lo volvía a perder.',
-        work: 'Diseño del dispositivo: qué señales mirar, con qué frecuencia revisarlas y quién queda a cargo cuando el equipo cambia.',
-        result:
-          'El diseño quedó entregado, con las reglas de traspaso escritas en el propio instrumento. No está constituido: eso depende de una decisión del municipio que todavía no se toma.',
-        status: 'Diseño entregado · sin constituir',
-      },
-      {
-        n: '03',
-        title: 'Unidad de Prospectiva del MINVU',
-        subtitle: 'Capacidad anticipatoria en el aparato público',
-        context:
-          'El Centro de Estudios Ciudad y Territorio del Ministerio de Vivienda y Urbanismo, entre febrero de 2024 y octubre de 2025.',
-        problem:
-          'El ministerio producía conocimiento sobre políticas urbanas y habitacionales, pero no tenía ninguna unidad encargada de anticipar escenarios de largo plazo.',
-        work: 'Diseño de la primera Unidad de Prospectiva institucional del ministerio: mandato, funciones, dotación y ciclo de trabajo —estudios de escenarios, análisis de tendencias sociotécnicas, territoriales y climáticas, y formación interna en pensamiento de futuros—.',
-        result:
-          'El diseño quedó entregado dentro del Centro de Estudios Ciudad y Territorio, un equipo de 26 profesionales en cinco áreas. La unidad no se implementó: constituirla es una decisión del ministerio que no se ha tomado.',
-        status: 'Diseño entregado · sin implementar',
-      },
-      {
-        n: '04',
-        title: 'Mesa del Transantiago',
-        subtitle: 'Coordinación multiactor',
-        context:
-          'Múltiples organizaciones con señales dispersas sobre el mismo sistema de transporte, desde el Laboratorio de Desarrollo Urbano.',
-        problem:
-          'Organizaciones distintas trabajando el mismo tema sin lograr firmar una posición común.',
-        work: 'Consolidación de las señales dispersas en una sola posición, sostenible por actores con intereses distintos.',
-        result: 'Una posición común entre organizaciones que no comparten mandato.',
-        status: 'Documentación en curso',
-      },
     ],
 
     note: 'Hay encargos en curso que todavía no se pueden publicar: los casos con cliente vivo se documentan cuando el cliente lo autoriza, no antes.',
+
+    method: {
+      kicker: 'Cómo trabajamos',
+      h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo',
+      sub: 'Las tres etapas corresponden a un punto preciso del esquema: detectar el cambio, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
+      label: ['El núcleo del método', '01 — 03'],
+      markerLabel: 'En el esquema',
+      steps: [
+        {
+          n: '01',
+          title: 'Situar la señal',
+          text: 'Leemos el territorio, las reglas y los actores para distinguir un cambio relevante del ruido.',
+          marker: 'señal',
+        },
+        {
+          n: '02',
+          title: 'Visualizar la bifurcación',
+          text: 'Hacemos comparables alternativas, tensiones y futuros que el curso habitual todavía no permite ver.',
+          marker: 'bifurcación',
+        },
+        {
+          n: '03',
+          title: 'Decidir en la ventana',
+          text: 'Definimos criterios, responsables, alertas y condiciones para actuar o revisar antes del punto de no retorno.',
+          marker: 'ventana de decisión',
+        },
+      ],
+      close:
+        'Anticipar no es predecir el escenario: es decidir mientras la decisión todavía incide. Pasado el punto de no retorno queda gestionar el efecto, no elegirlo.',
+    },
   },
 
   team: {
@@ -576,9 +525,9 @@ export const es: Content = {
     titleLines: ['Las mismas', 'personas'],
     sub: 'Quien diseña el encargo es quien lo ejecuta.',
     lead: [
-      'Un equipo chico y sin pirámide: ',
-      { b: 'no hay juniors facturados como seniors' },
-      ' ni un socio que aparece solo en la reunión de venta.',
+      'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: ',
+      { b: 'una sinergia poco común' },
+      ', potenciada además por las capacidades que ofrece la IA.',
     ],
 
     membersLabel: ['El equipo', '01 — 04'],
@@ -616,7 +565,7 @@ export const es: Content = {
       {
         n: '03',
         name: 'Ariel López López',
-        role: 'Socio',
+        role: 'Miembro del equipo',
         text: 'Ingeniero en transporte y urbanista. Trabaja la movilidad como lo que es —quién puede llegar a dónde, en cuánto tiempo y a qué costo— y no como un problema de infraestructura que se resuelve construyendo. Esa lectura es la que aporta a los encargos territoriales: un sistema de transporte revela la estructura de oportunidades de una ciudad antes que cualquier indicador agregado.',
         credentials: [
           'Consultor internacional de la CEPAL y el PNUD',
@@ -633,7 +582,7 @@ export const es: Content = {
       {
         n: '04',
         name: 'Willy Maikowski Correa',
-        role: 'Socio',
+        role: 'Miembro del equipo',
         text: 'Ingeniero de software, con la trayectoria puesta en sistemas que operan todos los días y no en demostraciones. Engineering Manager en Buk y antes en el Centro Tecnológico Ucampus de la Universidad de Chile, donde el software de gestión académica lo usan miles de personas a diario. Con Ariel construyó el monitor en tiempo real de los buses de Santiago sobre los datos GPS de Red Movilidad: exactamente el problema del Observatorio —convertir un flujo crudo en algo que alguien pueda mirar y decidir—, resuelto con datos públicos y sin encargo de nadie.',
         credentials: [
           'Engineering Manager en Buk',

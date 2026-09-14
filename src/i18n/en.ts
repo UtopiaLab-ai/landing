@@ -153,36 +153,6 @@ export const en: Content = {
       cta: 'See the full product sheets →',
     },
 
-    method: {
-      kicker: 'How we work',
-      h2: 'We read the signal, open up possibilities and decide in time',
-      sub: 'The three stages correspond to a precise point on the diagram: detect the change, recognise the fork, and act inside the window where the decision can still alter the outcome.',
-      label: ['The core of the method', '01 — 03'],
-      markerLabel: 'On the diagram',
-      steps: [
-        {
-          n: '01',
-          title: 'Locate the signal',
-          text: 'We read the territory, the rules and the actors to tell a relevant change apart from noise.',
-          marker: 'signal',
-        },
-        {
-          n: '02',
-          title: 'See the fork',
-          text: 'We make comparable the alternatives, tensions and futures that business as usual does not yet let anyone see.',
-          marker: 'fork',
-        },
-        {
-          n: '03',
-          title: 'Decide inside the window',
-          text: 'We set criteria, owners, alerts and conditions to act or revisit before the point of no return.',
-          marker: 'decision window',
-        },
-      ],
-      close:
-        'Anticipating is not predicting the scenario: it is deciding while the decision still counts. Past the point of no return, what is left is managing the effect, not choosing it.',
-    },
-
     value: {
       kicker: 'What your organisation gains',
       h2: 'Anticipation is not an abstract exercise: it improves the quality, speed and effect of decisions',
@@ -210,39 +180,21 @@ export const en: Content = {
 
     cases: {
       h2: 'Where it has been run',
-      sub: 'Open processes, not finished monuments. Each one with what can be verified — and what cannot yet.',
+      sub: 'An open process, not a finished monument: with what can be verified — and what cannot yet.',
       cards: [
         {
           n: '01',
           title: 'Lafkenche Law',
           proof: 'Delivered to the advocacy of the UN High Commissioner for Human Rights',
         },
-        {
-          n: '02',
-          title: 'Municipal Futures Council',
-          proof: 'Design delivered, not yet constituted',
-        },
-        {
-          n: '03',
-          title: 'MINVU Foresight Unit',
-          proof: 'Design delivered, not yet implemented',
-        },
-        {
-          n: '04',
-          title: 'Transantiago Roundtable',
-          proof: 'A common position across separate organisations',
-        },
       ],
-      cta: 'See the full cases →',
-      figureAlt:
-        'Diagram of the core of the method: the signal emerges from noise, crosses a fuzzy threshold, forks into a cone of futures and opens a decision window that closes at the point of no return.',
-      figureCaption:
-        'The four cases are the same diagram at work: where the signal was, when it forked, and how far open the window still was.',
+      cta: 'See the full case →',
     },
 
     team: {
       h2: 'Team',
-      sub: 'A small team: the people who design the engagement are the ones who execute it. No juniors billed as seniors.',
+      sub:
+        'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: an uncommon synergy, and one further amplified by what AI now makes possible.',
       label: ['Team', '01 — 04'],
       members: [
         {
@@ -257,12 +209,12 @@ export const en: Content = {
         },
         {
           name: 'Ariel López',
-          role: 'Partner',
+          role: 'Team member',
           text: 'Transport engineer and urban planner. International consultant to ECLAC and UNDP, adviser to Chile’s National Council for Territorial Development, and court-appointed traffic expert.',
         },
         {
           name: 'Willy Maikowski',
-          role: 'Partner',
+          role: 'Team member',
           text: 'Software engineer. Engineering Manager at Buk, previously at Universidad de Chile’s Ucampus Technology Centre. Built the real-time monitor of Santiago’s buses with Ariel.',
         },
       ],
@@ -478,16 +430,21 @@ export const en: Content = {
     meta: {
       title: 'Cases · utopialab.ai',
       description:
-        'Where the method has been run: Lafkenche Law, Municipal Futures Council, MINVU Foresight Unit and the Transantiago Roundtable. Context, problem, intervention, result and proof.',
+        'Where the method has been run: the Lafkenche Law case, with context, problem, intervention, result and proof, and the three stages of the core of the method.',
     },
     kicker: 'The method at work',
     titleLines: ['Where it has', 'been run'],
     sub: 'Open processes, not finished monuments.',
     lead: ['Every case is told the same way, without exceptions: ', { b: 'what can be verified' }, ' and what cannot yet.'],
 
+    figureAlt:
+      'Diagram of the core of the method: the signal emerges from noise, crosses a fuzzy threshold, forks into a cone of futures and opens a decision window that closes at the point of no return.',
+    figureCaption:
+      'The core of the method: where the signal was, when it forked, and how far open the window still was. Every case is this same drawing at work.',
+
     templateLabel: ['How each case is told', '01 — 05'],
     templateIntro:
-      'The same template for all of them. Where a field is missing, it is missing because there is no publishable data — it does not get filled in.',
+      'The same template for every case, published or not. Where a field is missing, it is missing because there is no publishable data — it does not get filled in.',
     templateSteps: [
       { n: '01', title: 'Context', text: 'Who was deciding, and within what frame.' },
       { n: '02', title: 'Problem', text: 'What was blocked or at risk.' },
@@ -496,7 +453,7 @@ export const en: Content = {
       { n: '05', title: 'Proof', text: 'Which third party can confirm it.' },
     ],
 
-    casesLabel: ['The cases', '01 — 04'],
+    casesLabel: ['The case', '01 — 01'],
     contextLabel: 'Context',
     problemLabel: 'Problem',
     workLabel: 'Intervention',
@@ -517,47 +474,39 @@ export const en: Content = {
         proof:
           'Delivered to the advocacy team of the UN High Commissioner for Human Rights.',
       },
-      {
-        n: '02',
-        title: 'Municipal Futures Council',
-        subtitle: 'Foresight in local government',
-        context:
-          'A local government deciding on a twenty-five-year horizon with instruments that last one mayoral term.',
-        problem:
-          'The capability to anticipate left with the people who carried it. Each cycle rediscovered the long term and lost it again.',
-        work: 'Design of the instrument: which signals to watch, how often to review them, and who takes over when the team changes.',
-        result:
-          'The design was delivered, with the handover rules written into the instrument itself. It is not constituted: that depends on a decision the municipality has yet to take.',
-        status: 'Design delivered · not constituted',
-      },
-      {
-        n: '03',
-        title: 'MINVU Foresight Unit',
-        subtitle: 'Anticipatory capability inside the state',
-        context:
-          'The Centre for City and Territory Studies at the Ministry of Housing and Urbanism, between February 2024 and October 2025.',
-        problem:
-          'The ministry produced knowledge on urban and housing policy, but had no unit responsible for anticipating long-term scenarios.',
-        work: 'Design of the ministry’s first institutional Foresight Unit: mandate, functions, staffing and working cycle — scenario studies, analysis of sociotechnical, territorial and climate trends, and internal training in futures thinking.',
-        result:
-          'The design was delivered inside the Centre for City and Territory Studies, a team of 26 professionals across five areas. The unit was not implemented: constituting it is a ministry decision that has not been taken.',
-        status: 'Design delivered · not implemented',
-      },
-      {
-        n: '04',
-        title: 'Transantiago Roundtable',
-        subtitle: 'Multi-actor coordination',
-        context:
-          'Multiple organisations holding scattered signals about the same transport system, from the Urban Development Laboratory.',
-        problem:
-          'Separate organisations working the same issue without managing to sign a common position.',
-        work: 'Consolidation of the scattered signals into a single position, sustainable by actors with different interests.',
-        result: 'A common position across organisations that do not share a mandate.',
-        status: 'Documentation in progress',
-      },
     ],
 
     note: 'There are live engagements that cannot be published yet: cases with an active client are documented when the client authorises it, not before.',
+
+    method: {
+      kicker: 'How we work',
+      h2: 'We read the signal, open up possibilities and decide in time',
+      sub: 'The three stages correspond to a precise point on the diagram: detect the change, recognise the fork, and act inside the window where the decision can still alter the outcome.',
+      label: ['The core of the method', '01 — 03'],
+      markerLabel: 'On the diagram',
+      steps: [
+        {
+          n: '01',
+          title: 'Locate the signal',
+          text: 'We read the territory, the rules and the actors to tell a relevant change apart from noise.',
+          marker: 'signal',
+        },
+        {
+          n: '02',
+          title: 'See the fork',
+          text: 'We make comparable the alternatives, tensions and futures that business as usual does not yet let anyone see.',
+          marker: 'fork',
+        },
+        {
+          n: '03',
+          title: 'Decide inside the window',
+          text: 'We set criteria, owners, alerts and conditions to act or revisit before the point of no return.',
+          marker: 'decision window',
+        },
+      ],
+      close:
+        'Anticipating is not predicting the scenario: it is deciding while the decision still counts. Past the point of no return, what is left is managing the effect, not choosing it.',
+    },
   },
 
   team: {
@@ -570,9 +519,9 @@ export const en: Content = {
     titleLines: ['The same', 'people'],
     sub: 'Whoever designs the engagement is the one who executes it.',
     lead: [
-      'A small team with no pyramid: ',
-      { b: 'no juniors billed as seniors' },
-      ', and no partner who appears only at the sales meeting.',
+      'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: ',
+      { b: 'an uncommon synergy' },
+      ', and one further amplified by what AI now makes possible.',
     ],
 
     membersLabel: ['The team', '01 — 04'],
@@ -610,7 +559,7 @@ export const en: Content = {
       {
         n: '03',
         name: 'Ariel López López',
-        role: 'Partner',
+        role: 'Team member',
         text: 'Transport engineer and urban planner. He treats mobility as what it is — who can reach where, in how long and at what cost — rather than as an infrastructure problem solved by building. That reading is what he brings to territorial engagements: a transport system reveals a city’s structure of opportunity before any aggregate indicator does.',
         credentials: [
           'International consultant to ECLAC and UNDP',
@@ -627,7 +576,7 @@ export const en: Content = {
       {
         n: '04',
         name: 'Willy Maikowski Correa',
-        role: 'Partner',
+        role: 'Team member',
         text: 'Software engineer, with his track record in systems that run every day rather than in demonstrations. Engineering Manager at Buk and previously at Universidad de Chile’s Ucampus Technology Centre, where thousands of people use the academic management software daily. With Ariel he built the real-time monitor of Santiago’s buses on Red Movilidad’s GPS feed: precisely the Observatory’s problem — turning a raw stream into something a person can look at and decide on — solved with public data and on nobody’s commission.',
         credentials: [
           'Engineering Manager at Buk',

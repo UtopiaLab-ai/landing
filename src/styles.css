@@ -1274,6 +1274,60 @@ footer {
   transform: translateX(6px);
 }
 
+/* Con un solo caso publicado, la tarjeta ocupa el ancho completo en vez de un
+   tercio: un arco solo y angosto al borde izquierdo lee como una columna que
+   se quedó sin las otras dos. A ancho completo el arco se vuelve un pórtico —
+   el radio vertical no depende del ancho, así que la curva se mantiene— y el
+   contenido se reparte en dos columnas para no dejar media tarjeta vacía.
+
+   El título va abajo a la izquierda y la prueba a la derecha, ambos alineados
+   al pie: la prueba es lo que sostiene al título, y pegados al mismo borde se
+   leen como una sola línea. */
+.tarjetas.una {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tarjetas.una .tarjeta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+  grid-template-areas:
+    'num   num'
+    'ttl   proof'
+    'ttl   arrow';
+  column-gap: clamp(28px, 5vw, 80px);
+  row-gap: 14px;
+  align-content: end;
+}
+
+.tarjetas.una .tarjeta .tnum {
+  grid-area: num;
+}
+
+.tarjetas.una .tarjeta .tttl {
+  grid-area: ttl;
+  align-self: end;
+  margin-top: 0;
+  font-size: clamp(28px, 4.6vw, 56px);
+}
+
+/* Prueba y flecha van pegadas al borde derecho: con el título contra el
+   izquierdo, el arco queda sostenido por sus dos extremos en vez de tener un
+   hueco al medio. */
+.tarjetas.una .tarjeta .tproof {
+  grid-area: proof;
+  align-self: end;
+  justify-self: end;
+  margin-top: 0;
+  max-width: 34ch;
+  text-align: right;
+  font-size: clamp(13px, 1.35vw, 15px);
+}
+
+.tarjetas.una .tarjeta .tarrow {
+  grid-area: arrow;
+  justify-self: end;
+}
+
 @media (max-width: 860px) {
   .tarjetas {
     grid-template-columns: 1fr;
@@ -1284,6 +1338,23 @@ footer {
   .tarjeta {
     --arco: 96px;
     min-height: 0;
+  }
+
+  /* Dos columnas dentro de una tarjeta que ya es del ancho de la pantalla
+     dejan el título partido en palabras sueltas. */
+  .tarjetas.una .tarjeta {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'num'
+      'ttl'
+      'proof'
+      'arrow';
+  }
+
+  .tarjetas.una .tarjeta .tproof,
+  .tarjetas.una .tarjeta .tarrow {
+    justify-self: start;
+    text-align: left;
   }
 }
 

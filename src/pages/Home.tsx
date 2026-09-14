@@ -9,17 +9,17 @@ import { CATALOG_ANCHOR, pathFor } from '../routes'
 import { useSite } from '../site-context'
 
 /**
- * Home en ocho bloques: hero, situación reconocible, catálogo, cómo
- * trabajamos, qué se gana, casos, equipo y cierre.
+ * Home en siete bloques: hero, situación reconocible, catálogo, qué se gana,
+ * casos, equipo y cierre.
  *
  * El orden no es narrativo sino comercial: las situaciones van antes que el
  * catálogo porque nadie compra un producto que no sabe a qué problema suyo
  * corresponde, y las credenciales quedaron para la página de Equipo, donde se
  * pueden dar con la trayectoria completa en vez de como una franja de logos.
  *
- * El método y lo que se gana van después del catálogo y no antes: primero se
- * ve qué se compra, después cómo se hace y qué deja. El esquema del núcleo
- * cierra los casos, que son ese mismo esquema en obra.
+ * El método completo —las tres etapas y el esquema del núcleo— vive en
+ * /casos: el dibujo y el caso son la misma cosa vista dos veces, y contarlos
+ * separados obligaba a explicar el esquema en dos páginas.
  */
 
 /**
@@ -123,32 +123,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 04 · CÓMO TRABAJAMOS · las tres etapas del núcleo */}
-      <section className="metodo" id="metodo">
-        <div className="wrap">
-          <div className="kicker mono">{c.method.kicker}</div>
-          <h2>{c.method.h2}</h2>
-          <p className="msub">{c.method.sub}</p>
-          <SectionLabel label={c.method.label} />
-
-          <ol className="etapas">
-            {c.method.steps.map((step) => (
-              <li className="etapa" key={step.n}>
-                <span className="enum mono">{step.n}</span>
-                <h3 className="ettl">{step.title}</h3>
-                <p className="etxt">{step.text}</p>
-                <p className="emark mono">
-                  <span className="crl">{c.method.markerLabel}</span> {step.marker}
-                </p>
-              </li>
-            ))}
-          </ol>
-
-          <p className="mclose">{c.method.close}</p>
-        </div>
-      </section>
-
-      {/* 05 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
+      {/* 04 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
       <section className="valor" id="valor">
         <div className="wrap">
           <div className="kicker mono">{c.value.kicker}</div>
@@ -175,12 +150,16 @@ export function Home() {
         </div>
       </section>
 
-      {/* 06 · CASOS */}
+      {/* 05 · CASOS */}
       <section className="casos-home" id="casos">
         <div className="wrap">
           <h2>{c.cases.h2}</h2>
           <p className="csub">{c.cases.sub}</p>
-          <div className="tarjetas">
+          {/* Con un caso publicado la grilla de tres columnas dejaría la
+              tarjeta ocupando un tercio del ancho y dos huecos al lado. La
+              clase lo declara acá y no en el CSS porque depende del contenido,
+              que cambia cuando se publica el siguiente caso. */}
+          <div className={c.cases.cards.length === 1 ? 'tarjetas una' : 'tarjetas'}>
             {c.cases.cards.map((card) => (
               <Link className="tarjeta" key={card.n} to={casesPath}>
                 <span className="tnum mono">{card.n}</span>
@@ -193,25 +172,10 @@ export function Home() {
           <Link className="puente-link mono" to={casesPath}>
             {c.cases.cta}
           </Link>
-
-          {/* El esquema del núcleo cierra los casos: son el mismo diagrama en
-              obra. Va a ancho completo y con figcaption porque el dibujo no se
-              explica solo, y con loading diferido por estar bajo el pliegue. */}
-          <figure className="esquema">
-            <img
-              src="/image/nucleo-metodo.svg"
-              alt={c.cases.figureAlt}
-              width={1640}
-              height={980}
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>{c.cases.figureCaption}</figcaption>
-          </figure>
         </div>
       </section>
 
-      {/* 07 · EQUIPO */}
+      {/* 06 · EQUIPO */}
       <section className="equipo" id="equipo">
         <div className="wrap">
           <h2>{c.team.h2}</h2>
@@ -232,7 +196,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 08 · CIERRE */}
+      {/* 07 · CIERRE */}
       <section className="cierre">
         <div className="wrap">
           <h2>{c.closing.h2}</h2>

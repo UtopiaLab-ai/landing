@@ -33,9 +33,9 @@ export interface Common {
 }
 
 /* --- Home ------------------------------------------------------------------
-   Ocho bloques, en el orden del buyer journey: hero (trigger), prueba,
-   situación reconocible, catálogo, cómo trabajamos, qué se gana, casos,
-   equipo y cierre. */
+   Siete bloques, en el orden del buyer journey: hero (trigger), situación
+   reconocible, catálogo, qué se gana, casos, equipo y cierre. El método se
+   cuenta entero en /casos, junto al caso que lo prueba. */
 
 export interface HomeContent {
   meta: Meta
@@ -79,20 +79,6 @@ export interface HomeContent {
     cta: string
   }
 
-  /**
-   * El núcleo del método, en tres etapas que nombran puntos del esquema: la
-   * señal, la bifurcación y la ventana en que la decisión todavía incide.
-   */
-  method: {
-    kicker: string
-    h2: string
-    sub: string
-    label: SectionLabel
-    steps: readonly { n: string; title: string; text: string; marker: string }[]
-    markerLabel: string
-    close: string
-  }
-
   /** Qué gana la organización, con la evidencia que lo respalda y sus límites. */
   value: {
     kicker: string
@@ -108,9 +94,6 @@ export interface HomeContent {
     sub: string
     cards: readonly { n: string; title: string; proof: string }[]
     cta: string
-    /** El esquema del método cierra los casos. */
-    figureAlt: string
-    figureCaption: string
   }
 
   team: {
@@ -189,7 +172,11 @@ export interface ProductsContent {
 /* --- Casos -----------------------------------------------------------------
    Anatomía del case study del TCBF §9, recortada a los cinco campos que se
    pueden sostener con evidencia: contexto, problema, intervención, resultado
-   y prueba. Los campos opcionales faltan donde todavía no hay dato. */
+   y prueba. Los campos opcionales faltan donde todavía no hay dato.
+
+   El esquema del núcleo y las tres etapas del método viven acá y no en la
+   home: el dibujo y el caso son la misma cosa vista dos veces, y separarlos
+   obligaba a explicar el esquema dos veces. */
 
 export interface CasesContent {
   meta: Meta
@@ -197,6 +184,10 @@ export interface CasesContent {
   titleLines: readonly string[]
   sub: string
   lead: RichText
+
+  /** El esquema del núcleo, entre la descripción y la plantilla. */
+  figureAlt: string
+  figureCaption: string
 
   templateLabel: SectionLabel
   templateIntro: string
@@ -224,6 +215,21 @@ export interface CasesContent {
   }[]
 
   note: string
+
+  /**
+   * El núcleo del método, en tres etapas que nombran puntos del esquema: la
+   * señal, la bifurcación y la ventana en que la decisión todavía incide.
+   * Cierra la página: primero el caso, después el método que lo produjo.
+   */
+  method: {
+    kicker: string
+    h2: string
+    sub: string
+    label: SectionLabel
+    steps: readonly { n: string; title: string; text: string; marker: string }[]
+    markerLabel: string
+    close: string
+  }
 }
 
 /* --- Equipo ----------------------------------------------------------------
