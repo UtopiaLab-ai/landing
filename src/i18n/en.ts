@@ -34,7 +34,7 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Strategic foresight',
-      titleLines: ['Deciding', 'while the future', 'is still', 'open'],
+      titleLines: ['The future', 'is not automated:', 'it is decided'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
     },
@@ -42,48 +42,23 @@ export const en: Content = {
     situations: {
       h2: 'Do you recognise any of these sentences?',
       sub: 'We don’t sell a method. We sell getting out of a situation you can already describe.',
-      label: ['Eight situations', '01 — 08'],
+      label: ['Three situations', '01 — 03'],
       heads: ['Your situation', 'The problem', 'What we propose'],
       rows: [
         {
-          situation: '“We have to decide, but we don’t know which possibilities to consider.”',
-          problem: 'The opening question is framed too narrowly and the alternatives stay the same ones.',
-          proposal: 'Reframe the decision, explore possible futures and widen the alternatives before choosing.',
+          situation: '“We are adopting AI, or entering a change of cycle, and we don’t know what will happen to how we work.”',
+          problem: 'Technology advances faster than the organisation’s capacity to decide what to transform, what to protect and who answers for each change.',
+          proposal: 'Turn the change into a path with priorities, safeguards and owners, and leave the team able to revisit it without us.',
         },
         {
-          situation: '“The problem is so complex we don’t know where to start.”',
-          problem: 'Too many variables, actors and simultaneous changes are in play; everything looks important and no one can tell which decision to settle first.',
-          proposal: 'Bound the problem, map the system, identify dependencies and build a first decision that lets the work move.',
+          situation: '“Nobody watches the environment systematically and we always react late.”',
+          problem: 'The information exists, but it arrives once it is already news: too late to take a position, and without telling which signal matters.',
+          proposal: 'Watch the perimeter that matters and deliver what is relevant before the moment of decision, with sources and a level of confidence.',
         },
         {
-          situation: '“Everything interesting gets ruled out as unfeasible.”',
-          problem: 'The limit is stated as a verdict rather than as a condition that could be changed.',
-          proposal: 'Identify dependencies, owners and enabling conditions to open real options.',
-        },
-        {
-          situation: '“Each area sees a part, but nobody manages to see the whole.”',
-          problem: 'Diagnoses, interests and data stay fragmented; the connections between decisions only become visible once blockages or contradictions appear.',
-          proposal: 'Integrate perspectives, make the interdependencies visible and build a shared picture that lets action be coordinated.',
-        },
-        {
-          situation: '“We can see a change coming, but not where it pays to act.”',
-          problem: 'Every trend looks equally important and the relevant opportunities go unrecognised.',
-          proposal: 'Assess relevance, potential and conditions for action, to focus effort where it can create value.',
-        },
-        {
-          situation: '“We have a strategy, but we don’t know when or how to revisit it.”',
-          problem: 'The plan stays fixed while the conditions that gave it sense keep changing.',
-          proposal: 'Translate the vision into sequences, priorities, thresholds and adjustment decisions.',
-        },
-        {
-          situation: '“AI could transform our work, but we don’t know how to bring it in without losing what matters.”',
-          problem: 'Technical capability advances faster than the organisation’s capacity to decide what to transform, what to protect and which responsibilities to redefine.',
-          proposal: 'Turn the technological potential into a transformation path with priorities, criteria, safeguards, owners and review.',
-        },
-        {
-          situation: '“The work ends and we go back to depending on one or two people.”',
-          problem: 'The capability to anticipate and decide does not stay inside the organisation.',
-          proposal: 'Leave language, tools, routines and responsibilities the team can sustain.',
+          situation: '“We know our market is going to change, but not in which direction or where the competition will come from.”',
+          problem: 'Attention goes to today’s competitors and existing demand, while the change arrives from outside the sector.',
+          proposal: 'Read weak signals and outside disruptions to identify the emerging niche and the window to enter before anyone else.',
         },
       ],
       close:

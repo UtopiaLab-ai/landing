@@ -34,7 +34,7 @@ export const es: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Prospectiva estratégica',
-      titleLines: ['Decidir', 'cuando el futuro', 'todavía', 'está abierto'],
+      titleLines: ['El futuro', 'no se automatiza:', 'se decide'],
       sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tienes pendiente.',
@@ -43,48 +43,23 @@ export const es: Content = {
     situations: {
       h2: '¿Te reconoces en alguna de estas frases?',
       sub: 'No vendemos método. Vendemos salir de una situación que ya sabes describir.',
-      label: ['Ocho situaciones', '01 — 08'],
+      label: ['Tres situaciones', '01 — 03'],
       heads: ['Tu situación', 'El problema', 'Lo que proponemos'],
       rows: [
         {
-          situation: '«Tenemos que decidir, pero no sabemos qué posibilidades considerar.»',
-          problem: 'La pregunta inicial está demasiado cerrada y las alternativas siguen siendo las mismas.',
-          proposal: 'Reformular la decisión, explorar futuros posibles y ampliar las alternativas antes de elegir.',
+          situation: '«Adoptamos IA o entramos en un cambio de ciclo y no sabemos qué pasará con nuestra forma de trabajar.»',
+          problem: 'La tecnología avanza más rápido que la capacidad de la organización para decidir qué transformar, qué resguardar y quién responde por cada cambio.',
+          proposal: 'Convertir el cambio en una trayectoria con prioridades, resguardos y responsables, y dejar al equipo capaz de revisarla sin nosotros.',
         },
         {
-          situation: '«El problema es tan complejo que no sabemos por dónde empezar.»',
-          problem: 'Intervienen demasiadas variables, actores y cambios simultáneos; todo parece importante y no se logra identificar qué decisión ordenar primero.',
-          proposal: 'Delimitar el problema, visualizar el sistema, identificar dependencias y construir una primera decisión que permita avanzar.',
+          situation: '«Nadie mira el entorno de forma sistemática y siempre reaccionamos tarde.»',
+          problem: 'La información existe, pero llega cuando ya es noticia: tarde para posicionarse y sin distinguir qué señal importa.',
+          proposal: 'Vigilar el perímetro que importa y entregar lo relevante antes del momento de decidir, con fuentes y nivel de confianza.',
         },
         {
-          situation: '«Todo lo interesante nos lo descartan como no viable.»',
-          problem: 'El límite se formula como un veredicto y no como una condición que podría transformarse.',
-          proposal: 'Identificar dependencias, responsables y condiciones habilitantes para abrir opciones reales.',
-        },
-        {
-          situation: '«Cada área ve una parte, pero nadie logra ver el conjunto.»',
-          problem: 'Diagnósticos, intereses y datos quedan fragmentados; las conexiones entre decisiones no se hacen visibles hasta que aparecen bloqueos o contradicciones.',
-          proposal: 'Integrar perspectivas, hacer visibles las interdependencias y construir una visión compartida que permita coordinar la acción.',
-        },
-        {
-          situation: '«Vemos que viene un cambio, pero no dónde conviene actuar.»',
-          problem: 'Todas las tendencias parecen igualmente importantes y no se reconocen oportunidades pertinentes.',
-          proposal: 'Evaluar relevancia, potencial y condiciones de acción para enfocar el esfuerzo donde puede generar valor.',
-        },
-        {
-          situation: '«Tenemos una estrategia, pero no sabemos cuándo ni cómo revisarla.»',
-          problem: 'El plan queda fijo mientras cambian las condiciones que le dieron sentido.',
-          proposal: 'Traducir la visión en secuencias, prioridades, umbrales y decisiones de ajuste.',
-        },
-        {
-          situation: '«La IA puede transformar nuestro trabajo, pero no sabemos cómo incorporarla sin perder lo que importa.»',
-          problem: 'La capacidad técnica avanza más rápido que la capacidad de la organización para decidir qué transformar, qué resguardar y qué responsabilidades redefinir.',
-          proposal: 'Convertir el potencial tecnológico en una trayectoria de transformación con prioridades, criterios, resguardos, responsables y revisión.',
-        },
-        {
-          situation: '«El trabajo termina y volvemos a depender de una o dos personas.»',
-          problem: 'La capacidad para anticipar y decidir no queda instalada en la organización.',
-          proposal: 'Dejar lenguaje, herramientas, rutinas y responsabilidades que el equipo pueda sostener.',
+          situation: '«Sabemos que nuestro mercado va a cambiar, pero no hacia dónde ni por dónde nos va a llegar la competencia.»',
+          problem: 'Se mira a los competidores de hoy y a la demanda que ya existe, mientras el cambio llega desde fuera del sector.',
+          proposal: 'Leer señales débiles y disrupciones externas para identificar el nicho emergente y la ventana para entrar antes que el resto.',
         },
       ],
       close:

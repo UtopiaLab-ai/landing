@@ -57,7 +57,8 @@ export interface HomeContent {
   }
 
   /**
-   * Las ocho situaciones: el cliente se reconoce en la cita, y las otras dos
+   * Las tres situaciones —las mismas citas que gatillan tres fichas del
+   * catálogo—: el cliente se reconoce en la cita, y las otras dos
    * columnas separan qué traba la decisión de qué se propone hacer. La cita va
    * primero porque nadie compra un producto que no sabe a qué problema suyo
    * corresponde.
