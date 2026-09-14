@@ -22,7 +22,7 @@ export const es: Content = {
     meta: {
       title: 'utopialab.ai · Prospectiva estratégica para decidir bajo incertidumbre',
       description:
-        'Prospectiva estratégica aplicada para empresas y organismos públicos con exposición regulatoria y territorial. Ocho productos, desde un brief en 48 horas hasta capacidad instalada. Santiago de Chile.',
+        'Prospectiva estratégica aplicada para empresas y organismos públicos con exposición regulatoria y territorial. Diez productos, desde un brief en 48 horas hasta capacidad instalada y acceso a la Máquina. Santiago de Chile.',
     },
 
     hero: {
@@ -85,9 +85,9 @@ export const es: Content = {
     },
 
     catalog: {
-      h2: 'Ocho formas de intervención',
+      h2: 'Diez formas de intervención',
       sub: 'Tenemos metodología propia para problemas de decisión en contextos latinoamericanos de incertidumbre, policrisis y desconfianza institucional. No aplicamos recetas: cada encargo se ajusta al territorio, la organización, los actores y el momento de decisión. Se entra por donde el problema lo pida y se sube solo si sirve.',
-      label: ['El catálogo', '01 — 08'],
+      label: ['El catálogo', '01 — 10'],
       speeds: [
         {
           key: 'caja',
@@ -101,7 +101,7 @@ export const es: Content = {
             },
             {
               name: 'Observatorio de Señales',
-              text: 'Suscripción mensual que convierte el ruido del entorno en señales con interpretación.',
+              text: 'Vigila el perímetro que defines y entrega una minuta de una plana y un dashboard antes del momento de decidir.',
               duration: 'Suscripción',
             },
             {
@@ -147,6 +147,23 @@ export const es: Content = {
               name: 'Arquitectura de Trayectoria',
               text: 'Prospectiva sobre el horizonte propio de un ejecutivo o profesional senior.',
               duration: '3 – 6 semanas',
+            },
+          ],
+        },
+        {
+          key: 'maquina',
+          name: 'Acceso a la Máquina',
+          note: 'La memoria y la vigilancia del Lab operando dentro de tu organización. Están en prototipo: se abren por piloto.',
+          products: [
+            {
+              name: 'Asistente de Futuros',
+              text: 'Chatbot con las decisiones, la información y el contexto de tu organización, para crear escenarios y proyectar.',
+              duration: 'Acceso continuo',
+            },
+            {
+              name: 'Bot de noticias',
+              text: 'Cada integrante define su perímetro y recibe lo que aparece en él, sin tener que ir a buscarlo.',
+              duration: 'Suscripción',
             },
           ],
         },
@@ -266,10 +283,10 @@ export const es: Content = {
     meta: {
       title: 'Productos · utopialab.ai',
       description:
-        'El catálogo completo: ocho productos en cuatro escalones de compromiso, con definición, entregable, duración y la situación que gatilla cada uno.',
+        'El catálogo completo: diez productos en cuatro escalones de compromiso, con definición, entregable, duración y la situación que gatilla cada uno.',
     },
     kicker: 'El catálogo',
-    titleLines: ['Ocho', 'productos'],
+    titleLines: ['Diez', 'productos'],
     sub: 'Lo único que se firma.',
     lead: [
       'Cada uno con su entregable y su duración declarados. ',
@@ -299,11 +316,11 @@ export const es: Content = {
       {
         n: '04',
         name: 'Recurrente',
-        text: 'Acceso continuo al observatorio y a la memoria de decisiones.',
+        text: 'Acceso continuo a la Máquina: el observatorio, el bot de noticias y un asistente con la memoria de decisiones de la organización.',
       },
     ],
 
-    productsLabel: ['Las fichas', '01 — 08'],
+    productsLabel: ['Las fichas', '01 — 10'],
     definitionLabel: 'Qué es',
     triggerLabel: 'Situación que lo gatilla',
     deliverableLabel: 'Entregable',
@@ -329,10 +346,10 @@ export const es: Content = {
           {
             n: '02',
             name: 'Observatorio de Señales',
-            def: 'Suscripción mensual que convierte el ruido del entorno en señales críticas con lectura estratégica, calibrada por sector.',
-            text: 'La mayoría de las organizaciones se entera de los cambios de su entorno cuando ya son noticia — es decir, cuando ya es tarde para posicionarse. El Observatorio entrega cada mes las señales que importan para ese cliente específico, con interpretación y no solo con titulares: qué está cambiando, por qué le importa a su decisión y qué conviene vigilar. Es la relación de menor compromiso que instala presencia continua.',
+            def: 'Vigilancia sostenida sobre el perímetro de una discusión que le importa a la organización —tramitación, prensa, actores, contraparte—, con una minuta de una plana y un dashboard entregados antes del momento de decidir.',
+            text: 'La mayoría de las organizaciones no tiene un problema de análisis: tiene un problema de llegar a tiempo. El Observatorio vigila un perímetro definido por el cliente, no un barrido general, y antes de cada momento de decisión entrega qué cambió, qué actor se movió, qué ventana se abre o se cierra y qué tan sólida es la evidencia. La forma importa: una minuta de una plana, escrita, con fuentes y nivel de confianza declarado, que se puede leer entre reuniones y llevar a una mesa; y un dashboard para seguir el perímetro entre una minuta y la siguiente.',
             trigger: '«Nadie mira el entorno de forma sistemática y siempre reaccionamos tarde.»',
-            deliverable: 'Radar mensual + interpretación + alertas fuera de ciclo',
+            deliverable: 'Minuta de una plana + dashboard + alertas fuera de ciclo',
             duration: 'Suscripción mensual',
             step: 'Continuo',
           },
@@ -416,15 +433,42 @@ export const es: Content = {
           },
         ],
       },
+      {
+        key: 'maquina',
+        name: 'Acceso a la Máquina',
+        note: 'La cuarta velocidad: la Máquina Utópica operando dentro de la organización, con su memoria y su vigilancia. Están en prototipo y se abren por piloto.',
+        products: [
+          {
+            n: '09',
+            name: 'Asistente de Futuros',
+            def: 'Chatbot con las decisiones, la información y el contexto de la organización incorporados, para consultar lo decidido, crear escenarios y proyectar sus efectos.',
+            text: 'Lo que el equipo aprendió al decidir suele irse con las personas. El Asistente guarda qué se decidió, con qué información y bajo qué supuesto, y avisa cuando ese supuesto deja de serlo. Sobre esa memoria se le puede preguntar qué se sabía en su momento, pedirle escenarios alternativos o proyectar qué cambia si se mueve una variable. Se consulta desde Telegram y corre con modelo abierto, en una instancia propia de la organización: sus deliberaciones no viven en el servidor del Lab ni en el de una empresa de IA, y si el encargo termina, la instancia y la memoria se quedan con ella. La IA propone; el equipo compromete.',
+            trigger: '«Cada vez que alguien se va, perdemos por qué decidimos lo que decidimos.»',
+            deliverable: 'Instancia propia + memoria de decisiones + escenarios a pedido',
+            duration: 'Acceso continuo',
+            step: 'Recurrente',
+          },
+          {
+            n: '10',
+            name: 'Bot de noticias',
+            def: 'Bot que entrega a cada integrante del equipo lo que aparece en el perímetro que definió, sin que tenga que ir a buscarlo.',
+            text: 'Hasta cinco personas definen sus propios términos de búsqueda —prensa, tramitación, actores, contraparte— y reciben lo que aparece en su perímetro apenas aparece. No reemplaza la minuta del Observatorio: es la capa diaria, la que evita enterarse por la prensa. Lo que el bot detecta alimenta la minuta y la memoria del Asistente.',
+            trigger: '«Cada uno se entera de lo suyo por su lado, y casi siempre tarde.»',
+            deliverable: 'Bot con perímetro por persona, hasta cinco integrantes',
+            duration: 'Suscripción mensual',
+            step: 'Recurrente',
+          },
+        ],
+      },
     ],
 
     horizon: {
-      label: ['Lo que todavía no existe', 'Condición de honestidad'],
-      tag: 'No disponible',
+      label: ['Estado de la Máquina', 'Condición de honestidad'],
+      tag: 'En piloto',
       name: 'Acceso a la Máquina',
-      text: 'Acceso recurrente al software, la memoria de decisiones versionada y el observatorio permanente. Es el horizonte de la escalera y está en prototipo. Mientras no funcione de forma validable se nombra como horizonte del acuerdo, nunca como producto disponible: prometerlo sería vender lo que todavía no existe.',
+      text: 'El Asistente de Futuros y el Bot de noticias corren sobre la Máquina Utópica, que está en prototipo. Se abren por piloto, con un número acotado de organizaciones y con alcance y límites por escrito. Lo decimos así porque venderlos como un servicio maduro sería prometer lo que todavía se está validando.',
       stateLabel: 'Estado',
-      state: 'Prototipo · no comercializable',
+      state: 'Prototipo · acceso por piloto',
     },
 
     contracting: {

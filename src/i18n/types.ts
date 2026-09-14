@@ -70,7 +70,7 @@ export interface HomeContent {
   }
 
   /**
-   * El catálogo en la home: los ocho productos agrupados por velocidad, con
+   * El catálogo en la home: los diez productos agrupados por velocidad, con
    * definición de una línea y duración. Las fichas completas van en /productos.
    */
   catalog: {
@@ -121,7 +121,7 @@ export interface HomeContent {
 }
 
 /* --- Productos -------------------------------------------------------------
-   El catálogo cerrado: escalera de compromiso, ocho productos vendibles con
+   El catálogo cerrado: escalera de compromiso, diez productos vendibles con
    ficha completa, la Máquina como horizonte y cómo se contrata. */
 
 export interface ProductsContent {
@@ -159,7 +159,8 @@ export interface ProductsContent {
     }[]
   }[]
 
-  /** No es producto: se nombra como horizonte del acuerdo. */
+  /** El estado declarado de la Máquina, sobre la que corren los productos de
+      acceso: en piloto, no como servicio maduro. */
   horizon: {
     label: SectionLabel
     tag: string
