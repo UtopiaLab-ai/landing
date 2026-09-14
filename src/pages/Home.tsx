@@ -186,6 +186,16 @@ export function Home() {
                 <div className="qname">{m.name}</div>
                 <div className="qrole mono">{m.role}</div>
                 <p className="qdesc">{m.text}</p>
+                {m.profile && (
+                  <a
+                    className="perfil mono"
+                    href={m.profile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn ↗
+                  </a>
+                )}
               </div>
             ))}
           </div>

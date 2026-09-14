@@ -99,7 +99,13 @@ export interface HomeContent {
     h2: string
     sub: string
     label: SectionLabel
-    members: readonly { name: string; role: string; text: string }[]
+    members: readonly {
+      name: string
+      role: string
+      text: string
+      /** Perfil público. Ausente donde la persona no publica uno. */
+      profile?: string
+    }[]
     cta: string
   }
 

@@ -201,21 +201,25 @@ export const es: Content = {
           name: 'Isabel Serra',
           role: 'Dirección de producto',
           text: 'Urbanista. Dirigió el Centro de Estudios Ciudad y Territorio del MINVU y fue académica e investigadora de la Universidad Diego Portales durante diez años. Autora del Sistema Utopía.',
+          profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
         },
         {
           name: 'Genaro Cuadros',
           role: 'Dirección de proyectos',
           text: 'Arquitecto y urbanista. Director de la Secretaría de Planificación de Recoleta; consultor de CEPAL–ONU y del BID en desarrollo urbano y territorial.',
+          profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
         },
         {
           name: 'Ariel López',
           role: 'Miembro del equipo',
           text: 'Ingeniero en transporte y urbanista. Consultor internacional de la CEPAL y el PNUD, asesor del Consejo Nacional de Desarrollo Territorial y perito judicial en tránsito.',
+          profile: 'https://www.linkedin.com/in/arielopez',
         },
         {
           name: 'Willy Maikowski',
           role: 'Miembro del equipo',
           text: 'Ingeniero de software. Engineering Manager en Buk, antes en el Centro Tecnológico Ucampus de la Universidad de Chile. Construyó con Ariel el monitor en tiempo real de los buses de Santiago.',
+          profile: 'https://www.linkedin.com/in/willymaikowski',
         },
       ],
       cta: 'Ver las credenciales completas →',
@@ -516,8 +520,8 @@ export const es: Content = {
         'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía) y Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID). Credenciales verificables.',
     },
     kicker: 'Equipo',
-    titleLines: ['Las mismas', 'personas'],
-    sub: 'Quien diseña el encargo es quien lo ejecuta.',
+    titleLines: ['Experiencia'],
+    sub: 'Incidencia, toma de decisiones, innovación y tecnología.',
     lead: [
       'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: ',
       { b: 'una sinergia poco común' },
@@ -540,6 +544,7 @@ export const es: Content = {
           'Magíster en Gestión y Políticas Públicas, Universidad de Chile — Premio Eugenio Lahera',
           'Arquitecta, Pontificia Universidad Católica de Chile',
         ],
+        profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
       },
       {
         n: '02',
@@ -555,6 +560,7 @@ export const es: Content = {
           'Coordinador de Barrios Críticos, programa Quiero Mi Barrio, MINVU (2005–2008)',
           'Máster en Ciencias Aplicadas mención Urbanismo y Desarrollo Territorial, UCLouvain — con distinción',
         ],
+        profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
       },
       {
         n: '03',

@@ -1378,6 +1378,13 @@ footer {
   margin-top: clamp(30px, 4.5vh, 52px);
 }
 
+/* El enlace a las credenciales cierra la grilla, no la última ficha: sin
+   margen queda pegado al LinkedIn de la persona de la columna izquierda y se
+   lee como un segundo enlace suyo. */
+.equipo > .wrap > .puente-link {
+  margin-top: clamp(30px, 4.5vh, 52px);
+}
+
 .personas {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1417,7 +1424,8 @@ footer {
   }
 }
 
-.tramo-body .perfil {
+.tramo-body .perfil,
+.persona .perfil {
   display: inline-block;
   margin-top: 14px;
   font-size: 0.78rem;
@@ -1431,7 +1439,9 @@ footer {
 }
 
 .tramo-body .perfil:hover,
-.tramo-body .perfil:focus-visible {
+.tramo-body .perfil:focus-visible,
+.persona .perfil:hover,
+.persona .perfil:focus-visible {
   opacity: 1;
 }
 

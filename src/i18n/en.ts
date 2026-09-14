@@ -200,21 +200,25 @@ export const en: Content = {
           name: 'Isabel Serra',
           role: 'Product lead',
           text: 'Urbanist. Led MINVU’s Centre for City and Territory Studies, and was an academic and researcher at Universidad Diego Portales for ten years. Author of the Utopía System.',
+          profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
         },
         {
           name: 'Genaro Cuadros',
           role: 'Project lead',
           text: 'Architect and urban planner. Head of Recoleta’s Planning Secretariat; consultant to ECLAC–UN and the IDB on urban and territorial development.',
+          profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
         },
         {
           name: 'Ariel López',
           role: 'Team member',
           text: 'Transport engineer and urban planner. International consultant to ECLAC and UNDP, adviser to Chile’s National Council for Territorial Development, and court-appointed traffic expert.',
+          profile: 'https://www.linkedin.com/in/arielopez',
         },
         {
           name: 'Willy Maikowski',
           role: 'Team member',
           text: 'Software engineer. Engineering Manager at Buk, previously at Universidad de Chile’s Ucampus Technology Centre. Built the real-time monitor of Santiago’s buses with Ariel.',
+          profile: 'https://www.linkedin.com/in/willymaikowski',
         },
       ],
       cta: 'See the full credentials →',
@@ -514,8 +518,8 @@ export const en: Content = {
         'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System) and Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB). Verifiable credentials.',
     },
     kicker: 'Team',
-    titleLines: ['The same', 'people'],
-    sub: 'Whoever designs the engagement is the one who executes it.',
+    titleLines: ['Experience'],
+    sub: 'Advocacy, decision-making, innovation and technology.',
     lead: [
       'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: ',
       { b: 'an uncommon synergy' },
@@ -538,6 +542,7 @@ export const en: Content = {
           'MA in Public Management and Policy, Universidad de Chile — Eugenio Lahera Prize',
           'Architect, Pontificia Universidad Católica de Chile',
         ],
+        profile: 'https://www.linkedin.com/in/isabel-serra-1574509/',
       },
       {
         n: '02',
@@ -553,6 +558,7 @@ export const en: Content = {
           'Coordinator of Critical Neighbourhoods, Quiero Mi Barrio programme, MINVU (2005–2008)',
           'MSc in Applied Sciences, Urbanism and Territorial Development, UCLouvain — with distinction',
         ],
+        profile: 'https://www.linkedin.com/in/genaro-cuadros-ib%C3%A1%C3%B1ez-46b02842/',
       },
       {
         n: '03',
