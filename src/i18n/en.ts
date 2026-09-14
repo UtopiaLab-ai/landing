@@ -173,8 +173,38 @@ export const en: Content = {
         },
       ],
       evidence: {
-        text: 'In their sample, firms with high future preparedness recorded 33% higher profitability and 200% higher growth; McKinsey associates fast, high-quality decisions with better returns. ECLAC warns that the lack of a long-term perspective limits opportunities and risk containment in Latin America and the Caribbean, and the OECD links foresight to more resilient decisions. These are associations, not promises: the outcome depends on the quality of the decision and on its execution.',
-        sources: 'Rohrbeck & Kum (2018) · McKinsey (2019) · ECLAC (2016) · OECD (2023)',
+        text: [
+          'In ',
+          { a: 'Rohrbeck and Kum’s', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ' longitudinal study, firms with high future preparedness recorded 33% higher profitability and 200% higher market-capitalisation growth than the average; ',
+          {
+            a: 'McKinsey',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
+          },
+          ' associates fast, high-quality decisions with better returns. ',
+          {
+            a: 'ECLAC',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
+          },
+          ' finds that governments in Latin America and the Caribbean have been reluctant to adopt long-term perspectives, and that anticipating risks and opportunities requires that horizon; ',
+          { a: 'the OECD', href: 'https://doi.org/10.1787/1d78c791-en' },
+          ' links foresight to more resilient policies. These are associations, not promises: the outcome depends on the quality of the decision and on its execution.',
+        ],
+        sources: [
+          { a: 'Rohrbeck & Kum (2018)', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ' · ',
+          {
+            a: 'McKinsey (2019)',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
+          },
+          ' · ',
+          {
+            a: 'ECLAC (2016)',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
+          },
+          ' · ',
+          { a: 'OECD (2023)', href: 'https://doi.org/10.1787/1d78c791-en' },
+        ],
       },
     },
 

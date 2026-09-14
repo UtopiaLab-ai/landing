@@ -3,8 +3,13 @@
  * completo, así que TypeScript avisa si una traducción queda a medias.
  */
 
-/** Fragmento de texto enriquecido: string plano o `{ b }` para <b>. */
-export type Frag = string | { b: string }
+/**
+ * Fragmento de texto enriquecido: string plano, `{ b }` para <b> o `{ a, href }`
+ * para un enlace externo. El enlace va dentro del texto y no en un campo
+ * aparte porque lo que se enlaza es la frase que hace la afirmación, no una
+ * lista de fuentes al pie.
+ */
+export type Frag = string | { b: string } | { a: string; href: string }
 export type RichText = readonly Frag[]
 
 export interface Meta {
@@ -86,7 +91,8 @@ export interface HomeContent {
     sub: string
     label: SectionLabel
     items: readonly { title: string; text: string }[]
-    evidence: { text: string; sources: string }
+    /** Cada afirmación enlaza a su fuente primaria, en el texto y al pie. */
+    evidence: { text: RichText; sources: RichText }
   }
 
   cases: {

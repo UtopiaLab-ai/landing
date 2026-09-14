@@ -174,8 +174,38 @@ export const es: Content = {
         },
       ],
       evidence: {
-        text: 'En su muestra, las empresas con alta preparación de futuro registraron 33% más rentabilidad y 200% más crecimiento; McKinsey asocia decisiones rápidas y de alta calidad con mejores retornos. La CEPAL advierte que la falta de perspectiva de largo plazo limita las oportunidades y la contención de riesgos en América Latina y el Caribe, y la OCDE vincula la prospectiva con decisiones más resilientes. Son asociaciones, no promesas: el resultado depende de la calidad de la decisión y de su ejecución.',
-        sources: 'Rohrbeck & Kum (2018) · McKinsey (2019) · CEPAL (2016) · OCDE (2023)',
+        text: [
+          'En el estudio longitudinal de ',
+          { a: 'Rohrbeck y Kum', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ', las empresas con alta preparación de futuro registraron 33% más rentabilidad y 200% más crecimiento de capitalización bursátil que el promedio; ',
+          {
+            a: 'McKinsey',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
+          },
+          ' asocia decisiones rápidas y de alta calidad con mejores retornos. ',
+          {
+            a: 'La CEPAL',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
+          },
+          ' constata que los gobiernos de América Latina y el Caribe han sido poco proclives a incorporar perspectivas de largo plazo, y que anticipar riesgos y oportunidades exige ese horizonte; ',
+          { a: 'la OCDE', href: 'https://doi.org/10.1787/1d78c791-en' },
+          ' vincula la prospectiva con políticas más resilientes. Son asociaciones, no promesas: el resultado depende de la calidad de la decisión y de su ejecución.',
+        ],
+        sources: [
+          { a: 'Rohrbeck & Kum (2018)', href: 'https://doi.org/10.1016/j.techfore.2017.12.013' },
+          ' · ',
+          {
+            a: 'McKinsey (2019)',
+            href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
+          },
+          ' · ',
+          {
+            a: 'CEPAL (2016)',
+            href: 'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos',
+          },
+          ' · ',
+          { a: 'OCDE (2023)', href: 'https://doi.org/10.1787/1d78c791-en' },
+        ],
       },
     },
 

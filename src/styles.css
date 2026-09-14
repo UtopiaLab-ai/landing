@@ -1548,6 +1548,93 @@ footer {
   opacity: 0.55;
 }
 
+/* La evidencia con sus fuentes a la derecha: el texto hace la afirmación y
+   los logos dicen, antes de leerla, de quién es. Una línea vertical los
+   separa para que no lean como una franja de clientes. */
+.caja-fuentes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+/* Los enlaces van subrayados y no por color: el sitio es blanco y negro, y
+   un azul en medio de la caja pesaría más que la cifra que sostiene. */
+.caja-fuentes a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* La línea de fuentes no hereda el ancho de lectura del párrafo: `ch` en una
+   mono chica da una columna tan angosta que corta la última cita. */
+.caja-fuentes .fuentes {
+  max-width: none;
+}
+
+.caja-fuentes .fuentes a {
+  text-underline-offset: 2px;
+}
+
+.caja-fuentes a:hover,
+.caja-fuentes a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+.logos-fuentes {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 clamp(24px, 4vw, 64px);
+  border-left: 1px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* En gris hasta el hover: en color compiten con el párrafo, y la marca de un
+   tercero no debe verse más fuerte que lo que se afirma con ella. */
+.logos-fuentes img {
+  display: block;
+  height: var(--h);
+  width: auto;
+  max-width: 150px;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition:
+    filter 0.18s,
+    opacity 0.18s;
+}
+
+.logos-fuentes a:hover img,
+.logos-fuentes a:focus-visible img {
+  filter: none;
+  opacity: 1;
+}
+
+@media (max-width: 860px) {
+  .caja-fuentes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* En una columna los logos pasan abajo, en fila, con la línea arriba. Se
+     achican para que los tres entren en una sola fila a ancho de teléfono. */
+  .logos-fuentes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px 22px;
+    padding: 22px 0 0;
+    border-left: none;
+    border-top: 1px solid var(--ink);
+  }
+
+  .logos-fuentes img {
+    height: calc(var(--h) * 0.76);
+  }
+}
+
 /* --- El esquema del núcleo, cerrando los casos ----------------------------- */
 
 .esquema {

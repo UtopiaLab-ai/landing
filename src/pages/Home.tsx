@@ -1,11 +1,14 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { Glyph } from '../brand/Glyph'
 import type { GlyphName } from '../brand/glyphs'
 import { BookButton } from '../components/BookButton'
 import { HeroSequence } from '../components/HeroSequence'
 import { Lines } from '../components/Lines'
+import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
 import { CATALOG_ANCHOR, pathFor } from '../routes'
+import type { Locale } from '../i18n'
 import { useSite } from '../site-context'
 
 /**
@@ -35,6 +38,53 @@ import { useSite } from '../site-context'
  * catálogo organizacional.
  */
 const SPEED_GLYPHS: readonly GlyphName[] = ['anomalia', 'nmu', 'hipotesis']
+
+/**
+ * Logos de las instituciones citadas en la evidencia, en el orden en que
+ * aparecen en el texto. Cada uno enlaza a la misma fuente que su frase.
+ *
+ * Van acá y no en `i18n/` por la misma razón que los glifos: qué logo se
+ * muestra es una decisión de marca. Lo único que cambia por idioma es la
+ * versión de la CEPAL, que publica su logo en español y en inglés (ECLAC).
+ * Rohrbeck y Kum no tienen logo: son autores de un artículo académico, no una
+ * institución.
+ *
+ * `w` y `h` son las proporciones del viewBox de cada SVG, para reservar el
+ * espacio antes de que cargue la imagen.
+ */
+const SOURCE_LOGOS: Record<
+  Locale,
+  readonly { name: string; src: string; href: string; w: number; h: number; height: number }[]
+> = (() => {
+  const mckinsey = {
+    src: '/image/fuentes/mckinsey.svg',
+    href: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/decision-making-in-the-age-of-urgency',
+    w: 38.883,
+    h: 12,
+    height: 34,
+  }
+  const cepalHref =
+    'https://www.cepal.org/es/publicaciones/40623-planificacion-prospectiva-la-construccion-futuro-america-latina-caribe-textos'
+  const ocde = {
+    src: '/image/fuentes/ocde.svg',
+    href: 'https://doi.org/10.1787/1d78c791-en',
+    w: 629,
+    h: 199,
+    height: 30,
+  }
+  return {
+    es: [
+      { name: 'McKinsey & Company', ...mckinsey },
+      { name: 'CEPAL', src: '/image/fuentes/cepal.svg', href: cepalHref, w: 442.5, h: 542, height: 72 },
+      { name: 'OCDE', ...ocde },
+    ],
+    en: [
+      { name: 'McKinsey & Company', ...mckinsey },
+      { name: 'ECLAC', src: '/image/fuentes/eclac.svg', href: cepalHref, w: 362, h: 473.3, height: 72 },
+      { name: 'OECD', ...ocde },
+    ],
+  }
+})()
 
 export function Home() {
   const { locale, t } = useSite()
@@ -143,9 +193,34 @@ export function Home() {
           {/* La evidencia va con su límite pegado —«son asociaciones, no
               promesas»— y las fuentes citadas. Sin eso, las cifras leen como
               una promesa de resultado que el Lab no puede firmar. */}
-          <div className="caja">
-            <p>{c.value.evidence.text}</p>
-            <p className="fuentes mono">{c.value.evidence.sources}</p>
+          <div className="caja caja-fuentes">
+            <div>
+              <p>
+                <Rich text={c.value.evidence.text} />
+              </p>
+              <p className="fuentes mono">
+                <Rich text={c.value.evidence.sources} />
+              </p>
+            </div>
+            <ul className="logos-fuentes">
+              {SOURCE_LOGOS[locale].map((logo) => (
+                <li key={logo.name}>
+                  <a href={logo.href} target="_blank" rel="noopener noreferrer">
+                    {/* La altura va como variable y no fija en CSS: cada logo
+                        tiene la suya, y en móvil se escalan todas juntas. */}
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      width={Math.round((logo.height * logo.w) / logo.h)}
+                      height={logo.height}
+                      style={{ '--h': `${logo.height}px` } as CSSProperties}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
