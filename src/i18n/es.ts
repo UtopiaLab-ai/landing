@@ -66,6 +66,36 @@ export const es: Content = {
         'En la reunión trabajamos una sola de estas filas: la que acabas de describir con tus palabras.',
     },
 
+    difference: {
+      kicker: 'Qué hacemos distinto',
+      h2: 'Del ruido a la decisión',
+      sub: 'No producimos más información: convertimos la que ya existe en decisiones a tiempo.',
+      label: ['El núcleo del método', '01 — 04'],
+      steps: [
+        {
+          n: '01',
+          title: 'Situar la señal',
+          text: 'Separamos lo que está cambiando de lo que es solo ruido.',
+        },
+        {
+          n: '02',
+          title: 'Fijar el umbral',
+          text: 'Acordamos de antemano qué tendría que pasar para revisar una decisión, y activamos la alerta cuando se cruza.',
+        },
+        {
+          n: '03',
+          title: 'Visualizar la bifurcación',
+          text: 'Abrimos las alternativas que el curso habitual todavía no deja ver.',
+        },
+        {
+          n: '04',
+          title: 'Decidir en la ventana',
+          text: 'Actuamos mientras la decisión todavía puede cambiar el resultado.',
+        },
+      ],
+      close: 'La IA nos ayuda a leer más y más rápido. La decisión sigue siendo de tu equipo.',
+    },
+
     catalog: {
       h2: 'Productos',
       sub: 'Soluciones y entregables',
@@ -532,8 +562,8 @@ export const es: Content = {
     method: {
       kicker: 'Cómo trabajamos',
       h2: 'Leemos la señal, abrimos posibilidades y decidimos a tiempo',
-      sub: 'Las tres etapas corresponden a un punto preciso del esquema: detectar el cambio, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
-      label: ['El núcleo del método', '01 — 03'],
+      sub: 'Las cuatro etapas corresponden a un punto preciso del esquema: detectar el cambio, fijar el umbral que obliga a revisar, reconocer la bifurcación y actuar dentro de la ventana en que la decisión todavía puede modificar el resultado.',
+      label: ['El núcleo del método', '01 — 04'],
       markerLabel: 'En el esquema',
       steps: [
         {
@@ -544,12 +574,18 @@ export const es: Content = {
         },
         {
           n: '02',
+          title: 'Fijar el umbral',
+          text: 'Acordamos de antemano qué tendría que pasar para revisar una decisión, y convertimos esa condición en una alerta que avisa cuando se cruza.',
+          marker: 'umbral difuso',
+        },
+        {
+          n: '03',
           title: 'Visualizar la bifurcación',
           text: 'Hacemos comparables alternativas, tensiones y futuros que el curso habitual todavía no permite ver.',
           marker: 'bifurcación',
         },
         {
-          n: '03',
+          n: '04',
           title: 'Decidir en la ventana',
           text: 'Definimos criterios, responsables, alertas y condiciones para actuar o revisar antes del punto de no retorno.',
           marker: 'ventana de decisión',
@@ -560,7 +596,7 @@ export const es: Content = {
       chain: {
         label: ['La cadena completa', '01 — 11'],
         intro:
-          'Las tres etapas son tres eslabones de una cadena más larga. Cada glifo dice qué le pasa al campo: en turquesa lo que se observa, en naranja lo que cruza a alerta y en azul lo que se decide.',
+          'Las cuatro etapas son cuatro eslabones de una cadena más larga. Cada glifo dice qué le pasa al campo: en turquesa lo que se observa, en naranja lo que cruza a alerta y en azul lo que se decide.',
         stages: {
           senal: 'Señal',
           cadena: 'Cadena',

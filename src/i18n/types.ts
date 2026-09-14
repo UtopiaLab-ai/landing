@@ -73,6 +73,20 @@ export interface HomeContent {
   }
 
   /**
+   * Qué hacemos distinto: las mismas cuatro etapas del núcleo que desarrolla
+   * /casos, dichas en una línea cada una. Los títulos tienen que coincidir con
+   * `cases.method.steps`: el sitio nombra el método de una sola manera.
+   */
+  difference: {
+    kicker: string
+    h2: string
+    sub: string
+    label: SectionLabel
+    steps: readonly { n: string; title: string; text: string }[]
+    close: string
+  }
+
+  /**
    * El catálogo en la home: los diez productos agrupados por velocidad, con
    * definición de una línea y duración. Las fichas completas van en /productos.
    */

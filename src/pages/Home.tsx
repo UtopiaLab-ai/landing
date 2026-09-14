@@ -5,6 +5,7 @@ import type { GlyphName } from '../brand/glyphs'
 import { BookButton } from '../components/BookButton'
 import { HeroSequence } from '../components/HeroSequence'
 import { Lines } from '../components/Lines'
+import { MethodSteps } from '../components/MethodSteps'
 import { Rich } from '../components/Rich'
 import { SectionLabel } from '../components/SectionLabel'
 import { CATALOG_ANCHOR, pathFor } from '../routes'
@@ -12,8 +13,8 @@ import type { Locale } from '../i18n'
 import { useSite } from '../site-context'
 
 /**
- * Home en siete bloques: hero, situación reconocible, catálogo, qué se gana,
- * casos, equipo y cierre.
+ * Home en ocho bloques: hero, situación reconocible, qué hacemos distinto,
+ * catálogo, qué se gana, casos, equipo y cierre.
  *
  * El orden no es narrativo sino comercial: las situaciones van antes que el
  * catálogo porque nadie compra un producto que no sabe a qué problema suyo
@@ -158,7 +159,19 @@ export function Home() {
         </div>
       </section>
 
-      {/* 03 · EL CATÁLOGO */}
+      {/* 03 · QUÉ HACEMOS DISTINTO · el núcleo en una línea por etapa */}
+      <section className="metodo diferencia" id="diferencia">
+        <div className="wrap">
+          <div className="kicker mono">{c.difference.kicker}</div>
+          <h2>{c.difference.h2}</h2>
+          <p className="msub">{c.difference.sub}</p>
+          <SectionLabel label={c.difference.label} />
+          <MethodSteps steps={c.difference.steps} />
+          <p className="mclose">{c.difference.close}</p>
+        </div>
+      </section>
+
+      {/* 04 · EL CATÁLOGO */}
       <section className="catalogo invert" id={CATALOG_ANCHOR[locale]}>
         <div className="wrap">
           <h2>{c.catalog.h2}</h2>
@@ -202,7 +215,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 04 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
+      {/* 05 · QUÉ SE GANA · con la evidencia y sus límites declarados */}
       <section className="valor" id="valor">
         <div className="wrap">
           <div className="kicker mono">{c.value.kicker}</div>
@@ -254,7 +267,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 05 · CASOS */}
+      {/* 06 · CASOS */}
       <section className="casos-home" id="casos">
         <div className="wrap">
           <h2>{c.cases.h2}</h2>
@@ -278,7 +291,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 06 · EQUIPO */}
+      {/* 07 · EQUIPO */}
       <section className="equipo" id="equipo">
         <div className="wrap">
           <h2>{c.team.h2}</h2>
@@ -309,7 +322,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 07 · CIERRE */}
+      {/* 08 · CIERRE */}
       <section className="cierre">
         <div className="wrap">
           <h2>{c.closing.h2}</h2>

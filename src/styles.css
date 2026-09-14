@@ -1598,10 +1598,10 @@ footer {
   opacity: 1;
 }
 
-/* --- 05 · Cómo trabajamos -------------------------------------------------
-   Las tres etapas del núcleo. Cada una nombra un punto del esquema que cierra
-   los casos, y ese vínculo va explícito en `.emark`: sin él las etapas leen
-   como una lista de fases de consultora. */
+/* --- Cómo trabajamos · Qué hacemos distinto --------------------------------
+   Las cuatro etapas del núcleo, compartidas por la home y /casos. En /casos
+   cada una nombra un punto del esquema, y ese vínculo va explícito en
+   `.emark`: sin él las etapas leen como una lista de fases de consultora. */
 
 .metodo {
   padding: clamp(52px, 9vh, 112px) 0 clamp(46px, 8vh, 96px);
@@ -1618,8 +1618,16 @@ footer {
   margin: clamp(30px, 4.5vh, 52px) 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(20px, 2.6vw, 40px);
+}
+
+/* Cuatro columnas bajo este ancho dejan los títulos partidos palabra por
+   palabra: dos por fila antes de pasar a una sola columna en móvil. */
+@media (max-width: 1100px) {
+  .etapas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .etapa {

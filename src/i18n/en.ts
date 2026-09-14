@@ -65,6 +65,36 @@ export const en: Content = {
         'In the meeting we work through a single one of these rows: the one you have just described in your own words.',
     },
 
+    difference: {
+      kicker: 'What we do differently',
+      h2: 'From noise to decision',
+      sub: 'We do not produce more information: we turn what already exists into timely decisions.',
+      label: ['The core of the method', '01 — 04'],
+      steps: [
+        {
+          n: '01',
+          title: 'Locate the signal',
+          text: 'We separate what is changing from what is only noise.',
+        },
+        {
+          n: '02',
+          title: 'Set the threshold',
+          text: 'We agree in advance what would have to happen to revisit a decision, and raise the alert when it is crossed.',
+        },
+        {
+          n: '03',
+          title: 'See the fork',
+          text: 'We open up the alternatives that business as usual does not yet let anyone see.',
+        },
+        {
+          n: '04',
+          title: 'Decide inside the window',
+          text: 'We act while the decision can still change the outcome.',
+        },
+      ],
+      close: 'AI helps us read more, and faster. The decision stays with your team.',
+    },
+
     catalog: {
       h2: 'Products',
       sub: 'Solutions and deliverables',
@@ -530,8 +560,8 @@ export const en: Content = {
     method: {
       kicker: 'How we work',
       h2: 'We read the signal, open up possibilities and decide in time',
-      sub: 'The three stages correspond to a precise point on the diagram: detect the change, recognise the fork, and act inside the window where the decision can still alter the outcome.',
-      label: ['The core of the method', '01 — 03'],
+      sub: 'The four stages correspond to a precise point on the diagram: detect the change, set the threshold that forces a review, recognise the fork, and act inside the window where the decision can still alter the outcome.',
+      label: ['The core of the method', '01 — 04'],
       markerLabel: 'On the diagram',
       steps: [
         {
@@ -542,12 +572,18 @@ export const en: Content = {
         },
         {
           n: '02',
+          title: 'Set the threshold',
+          text: 'We agree in advance what would have to happen to revisit a decision, and turn that condition into an alert that fires when it is crossed.',
+          marker: 'fuzzy threshold',
+        },
+        {
+          n: '03',
           title: 'See the fork',
           text: 'We make comparable the alternatives, tensions and futures that business as usual does not yet let anyone see.',
           marker: 'fork',
         },
         {
-          n: '03',
+          n: '04',
           title: 'Decide inside the window',
           text: 'We set criteria, owners, alerts and conditions to act or revisit before the point of no return.',
           marker: 'decision window',
@@ -558,7 +594,7 @@ export const en: Content = {
       chain: {
         label: ['The full chain', '01 — 11'],
         intro:
-          'The three stages are three links in a longer chain. Each glyph says what happens to the field: turquoise for what is observed, orange for what crosses into alert and blue for what gets decided.',
+          'The four stages are four links in a longer chain. Each glyph says what happens to the field: turquoise for what is observed, orange for what crosses into alert and blue for what gets decided.',
         stages: {
           senal: 'Signal',
           cadena: 'Chain',
