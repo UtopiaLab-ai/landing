@@ -687,10 +687,10 @@ header > * {
   padding: clamp(132px, 17vh, 200px) 0 clamp(48px, 8vh, 104px);
 }
 
-/* Portadilla con la trama «campo de puntos + señal» (dossier, 8a): retícula de
-   puntos y un solo campo con la señal en naranja, cortado por el borde
-   derecho. La retícula se desvanece hacia la izquierda para no pasar por
-   debajo del titular. */
+/* Portadillas interiores con fondo dibujado (componente `Trama`): una
+   composición por página, desvanecida hacia la izquierda para no pasar por
+   debajo del titular. Casos lleva la retícula de puntos con la señal (dossier,
+   8a); Productos, la escalera de campos (M3); Equipo, la constelación (8f). */
 .hero-trama {
   position: relative;
   overflow: hidden;
@@ -704,8 +704,6 @@ header > * {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgba(250, 250, 250, 0.3) 1.4px, transparent 1.9px);
-  background-size: 36px 36px;
   -webkit-mask-image: linear-gradient(to right, transparent 25%, #000 80%);
   mask-image: linear-gradient(to right, transparent 25%, #000 80%);
 }
@@ -726,6 +724,48 @@ header > * {
   .trama-campo {
     right: -70px;
     opacity: 0.55;
+  }
+}
+
+.trama-senal {
+  background-image: radial-gradient(circle, rgba(250, 250, 250, 0.3) 1.4px, transparent 1.9px);
+  background-size: 36px 36px;
+}
+
+/* Las composiciones sangran por la derecha: el `viewBox` corta el último campo
+   y el SVG va pegado al borde, así que el corte coincide con el de la página. */
+.trama-dibujo {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: clamp(360px, 62vw, 860px);
+  height: auto;
+  transform: translateY(-50%);
+  color: var(--papel);
+}
+
+/* La escalera se apoya en el piso de la portadilla, no flota al centro. */
+.trama-escalera .trama-dibujo {
+  top: auto;
+  bottom: 0;
+  transform: none;
+}
+
+/* La constelación es más alta que ancha la portadilla: centrada, sus campos de
+   arriba quedaban debajo de la barra flotante. Se ancla abajo y un poco más
+   chica para que el mapa empiece por debajo de la barra. */
+.trama-constelacion .trama-dibujo {
+  top: auto;
+  bottom: -40px;
+  width: clamp(340px, 54vw, 760px);
+  transform: none;
+}
+
+@media (max-width: 720px) {
+  .trama-dibujo {
+    width: 150vw;
+    right: -30vw;
+    opacity: 0.5;
   }
 }
 

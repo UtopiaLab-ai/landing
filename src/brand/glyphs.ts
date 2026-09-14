@@ -139,13 +139,13 @@ export const GLYPH_NAMES = Object.keys(GLYPHS) as GlyphName[]
 /* --- Léxico analítico ----------------------------------------------------- */
 
 /** Grosores del léxico («Gramática»), como fracción del perímetro de 0,42. */
-const INNER = 0.83 // 0,35 · estructura interna
-const RING = 0.71 // 0,30 · anillo interior
-const INFERRED = 0.57 // 0,24 · relación inferida, siempre punteada
+export const INNER = 0.83 // 0,35 · estructura interna
+export const RING = 0.71 // 0,30 · anillo interior
+export const INFERRED = 0.57 // 0,24 · relación inferida, siempre punteada
 
 /** Punteado de la relación inferida y pulso del campo provisorio. */
-const DOTTED = '1.3 1.5'
-const PULSE = '2 3'
+export const DOTTED = '1.3 1.5'
+export const PULSE = '2 3'
 
 export type LexiconName =
   | 'senal'

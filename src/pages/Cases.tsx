@@ -3,6 +3,7 @@ import { Glyph } from '../brand/Glyph'
 import { LEXICON_NAMES, type LexiconName } from '../brand/glyphs'
 import { Lines } from '../components/Lines'
 import { SectionLabel } from '../components/SectionLabel'
+import { Trama } from '../components/Trama'
 import { useSite } from '../site-context'
 
 /**
@@ -61,11 +62,7 @@ export function Cases() {
   return (
     <>
       <section className="hero invert hero-trama">
-        {/* Trama «campo de puntos + señal» del dossier (8a). La portadilla es
-            uno de los pocos lugares donde el manual deja usar la trama. */}
-        <div className="trama" aria-hidden="true">
-          <Glyph name="senal" size={360} accent="var(--sol)" className="trama-campo" />
-        </div>
+        <Trama variant="senal" />
         <div className="wrap">
           <div className="kicker mono">{c.kicker}</div>
           <h1>
