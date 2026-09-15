@@ -251,7 +251,7 @@ export const es: Content = {
         {
           n: '01',
           title: 'Ley Lafkenche',
-          proof: 'Entregado a la abogacía del Alto Comisionado de DD.HH. de la ONU',
+          proof: 'Entregado y funcionando',
         },
       ],
       cta: 'Ver el caso completo →',
@@ -596,8 +596,7 @@ export const es: Content = {
         work: 'Análisis sistémico del conflicto: entramado normativo, mapa de actores y las trayectorias que cada alternativa abría o cerraba.',
         result:
           'Un producto analítico entregado y utilizado en el trámite real, no un informe archivado.',
-        proof:
-          'Entregado a la abogacía del Alto Comisionado de Derechos Humanos de las Naciones Unidas.',
+        proof: 'Entregado y funcionando',
       },
     ],
 

@@ -264,9 +264,9 @@ function round(n: number): number {
 const PLATE_SCALE = BOX / (2 * FIELD + 2 * CLEARANCE)
 
 /**
- * Cuánto de la placa ocupa el glifo en un icono. El resguardo del manual deja
- * el toro en dos tercios, y a 16 px eso son 10 px donde las tres órbitas se
- * funden: en pestaña e icono de app el glifo necesita casi todo el cuadro.
+ * Cuánto de la placa ocupa el toro en el icono de app y el avatar. El
+ * resguardo del manual lo deja en dos tercios y ahí las órbitas se leen
+ * chicas: el glifo necesita casi todo el cuadro.
  */
 const ICON_SCALE = 0.88
 
@@ -450,19 +450,20 @@ function buildLockups(mark: Wordmark): number {
 /**
  * Los iconos que consume `index.html`.
  *
- * Todos con el toro, el mismo glifo de la barra y del pie. El manual reservaba
- * la anomalía para pestaña y avatar; desde el 2026-09-15 el sitio usa una sola
- * marca en todas partes, y el toro gana cuadro (ICON_SCALE) para aguantar
- * 16 px.
+ * La pestaña lleva la anomalía: a 16 px las tres órbitas del toro se funden en
+ * una mancha, y la anomalía es la única de las dos marcas que aguanta ese
+ * tamaño. El icono de app, el avatar y la vista previa del enlace llevan el
+ * toro, el mismo glifo de la barra y del pie (desde el 2026-09-15).
  */
 function buildSiteIcons(mark: Wordmark): number {
+  const favicon = (px: number): string => plateSvg('anomalia', PALETTE.papel, PALETTE.tinta, px, px)
   const icon = (px: number): string => plateSvg('toro', SITE_PAPEL, SITE_TINTA, px, px, ICON_SCALE)
 
   // El .ico lleva las tres resoluciones que pide el manual en un solo archivo.
   const icoSizes = [16, 32, 48]
   const temps = icoSizes.map((px) => {
     const out = join(PUBLIC_DIR, `.favicon-${px}.png`)
-    render(icon(px), out, 'png', px)
+    render(favicon(px), out, 'png', px)
     return out
   })
 
@@ -530,9 +531,9 @@ todo el dibujo hereda de ahí.
 ## Reglas que no se negocian
 
 - **Resguardo:** medio radio (6,2 en la caja de 32) libre en los cuatro lados.
-- **Tamaño mínimo:** 16 px de alto. Bajo 32 px, la anomalía — salvo los iconos del
-  sitio (favicon, apple-touch-icon, avatar), que desde el 2026-09-15 llevan el toro
-  para ser el mismo logo de la barra, el pie y la vista previa del enlace.
+- **Tamaño mínimo:** 16 px de alto. Bajo 32 px, siempre la anomalía (el favicon la
+  lleva). El icono de app y el avatar llevan el toro desde el 2026-09-15, para ser
+  el mismo logo de la barra, el pie y la vista previa del enlace.
 - **Trazo:** no se elige a ojo. Sale de \`strokeFor(px)\`: 224 px → 0,30 · 72 px → 0,45 ·
   42 px → 0,70 · 16 px → 2,40.
 - **Nunca:** engrosar el trazo fuera de la tabla, deformar la caja, usar más de un
