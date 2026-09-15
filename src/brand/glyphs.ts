@@ -86,7 +86,7 @@ export interface Glyph {
 export const GLYPHS: Record<GlyphName, Glyph> = {
   toro: {
     label: 'Toro · marca matriz',
-    use: 'El logo: barra, pie, favicon, avatar y vista previa del enlace. Firma en aperturas y portadas.',
+    use: 'El logo: barra, pie, icono de app, avatar y vista previa del enlace. Firma en aperturas y portadas.',
     shapes: [
       { kind: 'ellipse', rx: FIELD, ry: 1.8, rotate: -52 },
       { kind: 'ellipse', rx: FIELD, ry: 5.2 },
@@ -96,7 +96,7 @@ export const GLYPHS: Record<GlyphName, Glyph> = {
 
   anomalia: {
     label: 'Anomalía · marca de uso',
-    use: 'Sello, botones e íconos de uso dentro de las páginas, bajo 32 px.',
+    use: 'Favicon, sello, botones e íconos de uso dentro de las páginas, bajo 32 px.',
     shapes: [
       { kind: 'circle', r: FIELD },
       { kind: 'circle', r: 1.9, cx: 4.6, cy: -6.2, solid: true },
