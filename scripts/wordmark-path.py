@@ -10,7 +10,12 @@ Helvetica que se puede redistribuir; Helvetica es de licencia propietaria y no
 se puede empaquetar. Arial —el otro sustituto habitual— comparte métricas pero
 no las formas: su R, su t y su a son visiblemente distintas.
 
-    python3 scripts/wordmark-path.py "Utopía Lab" 13 -0.028
+    python3 scripts/wordmark-path.py "utopialab" 13.6 -0.028 bold
+    python3 scripts/wordmark-path.py "ai" 13.6 -0.028 regular
+
+El peso es opcional (negrita por defecto): el wordmark lleva el nombre en
+negrita y el dominio un peso menos, así que el generador pide cada parte por
+separado.
 
 Imprime JSON: {"d", "width", "capHeight", "top", "bottom"} en unidades del
 tamaño pedido, con la baseline en y = 0 y el eje Y de SVG (crece hacia abajo).
@@ -26,24 +31,27 @@ from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
 # En orden de preferencia: el clon de Helvetica primero, el de Arial como red.
-FONT_CANDIDATES = ("Nimbus Sans:bold", "Liberation Sans:bold", "DejaVu Sans:bold")
+FONT_FAMILIES = ("Nimbus Sans", "Liberation Sans", "DejaVu Sans")
+
+WEIGHTS = ("bold", "regular")
 
 
-def find_font() -> str:
-    """Ruta al primer archivo de tipografía disponible de la lista."""
-    for spec in FONT_CANDIDATES:
+def find_font(weight: str) -> str:
+    """Ruta al primer archivo de tipografía disponible de la lista, en ese peso."""
+    for family in FONT_FAMILIES:
         path = subprocess.run(
-            ["fc-match", "-f", "%{file}", spec],
+            ["fc-match", "-f", "%{file}", f"{family}:{weight}"],
             capture_output=True,
             text=True,
             check=False,
         ).stdout.strip()
         # fc-match siempre responde algo: hay que confirmar que dio con la
-        # familia pedida y no con el sustituto por defecto del sistema.
-        family = spec.split(":")[0].replace(" ", "")
-        if path and family.lower() in path.replace("-", "").lower():
+        # familia y el peso pedidos, y no con el sustituto por defecto.
+        name = path.replace("-", "").lower()
+        is_bold = "bold" in name
+        if path and family.replace(" ", "").lower() in name and is_bold == (weight == "bold"):
             return path
-    raise SystemExit(f"Ninguna tipografía disponible de: {', '.join(FONT_CANDIDATES)}")
+    raise SystemExit(f"Ninguna tipografía {weight} disponible de: {', '.join(FONT_FAMILIES)}")
 
 
 def kerning(font: TTFont) -> dict[tuple[str, str], int]:
@@ -56,8 +64,8 @@ def kerning(font: TTFont) -> dict[tuple[str, str], int]:
     return pairs
 
 
-def wordmark(text: str, size: float, tracking_em: float) -> dict[str, object]:
-    font = TTFont(find_font())
+def wordmark(text: str, size: float, tracking_em: float, weight: str) -> dict[str, object]:
+    font = TTFont(find_font(weight))
     upem = font["head"].unitsPerEm
     cmap = font.getBestCmap()
     glyphs = font.getGlyphSet()
@@ -104,4 +112,7 @@ def wordmark(text: str, size: float, tracking_em: float) -> dict[str, object]:
 
 
 if __name__ == "__main__":
-    print(json.dumps(wordmark(sys.argv[1], float(sys.argv[2]), float(sys.argv[3]))))
+    weight = sys.argv[4] if len(sys.argv) > 4 else "bold"
+    if weight not in WEIGHTS:
+        raise SystemExit(f"Peso desconocido {weight!r}: usar {' o '.join(WEIGHTS)}")
+    print(json.dumps(wordmark(sys.argv[1], float(sys.argv[2]), float(sys.argv[3]), weight)))
