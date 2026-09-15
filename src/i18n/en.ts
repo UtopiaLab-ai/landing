@@ -250,7 +250,7 @@ export const en: Content = {
         {
           n: '01',
           title: 'Lafkenche Law',
-          proof: 'Delivered to the advocacy of the UN High Commissioner for Human Rights',
+          proof: 'Delivered and working',
         },
       ],
       cta: 'See the full case →',
@@ -594,8 +594,7 @@ export const en: Content = {
           'Each actor read the conflict through their own legal and territorial frame. There was no analysis of the whole system that would let them discuss the same object.',
         work: 'Systemic analysis of the conflict: the regulatory, institutional and discursive fabric, the actor map, and the trajectories each alternative opened or closed.',
         result: 'An analytical product delivered and used in the real process, not an archived report.',
-        proof:
-          'Delivered to the advocacy team of the UN High Commissioner for Human Rights.',
+        proof: 'Delivered and working',
       },
     ],
 
