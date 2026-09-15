@@ -48,14 +48,19 @@ export function Team() {
               </div>
               <div className="tramo-body">
                 <p className="rdesc">{m.text}</p>
-                <div className="cred">
-                  <div className="cred-label mono">{c.credentialsLabel}</div>
-                  <ul className="cred-list">
-                    {m.credentials.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                </div>
+                {/* Sin credenciales verificadas no se dibuja el bloque: un rótulo
+                    «Trayectoria» vacío lee como falta, y rellenarlo sería
+                    publicar lo que no se puede comprobar. */}
+                {m.credentials.length > 0 && (
+                  <div className="cred">
+                    <div className="cred-label mono">{c.credentialsLabel}</div>
+                    <ul className="cred-list">
+                      {m.credentials.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 {/* Perfil público, solo donde la persona publica uno. No es
                     una credencial: va fuera de la lista, que son hechos
                     verificables y no enlaces. */}

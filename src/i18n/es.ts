@@ -261,7 +261,7 @@ export const es: Content = {
       h2: 'Equipo',
       sub:
         'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: una sinergia poco común, potenciada además por las capacidades que ofrece la IA.',
-      label: ['Equipo', '01 — 04'],
+      label: ['Equipo', '01 — 05'],
       members: [
         {
           name: 'Isabel Serra',
@@ -286,6 +286,12 @@ export const es: Content = {
           role: 'Miembro del equipo',
           text: 'Ingeniero de software. Engineering Manager en Buk, antes en el Centro Tecnológico Ucampus de la Universidad de Chile. Construyó con Ariel el monitor en tiempo real de los buses de Santiago.',
           profile: 'https://www.linkedin.com/in/willymaikowski',
+        },
+        {
+          name: 'Dolores Reyes Guarda',
+          role: 'Miembro del equipo',
+          text: 'Arquitecta, con experiencia en asesoría de políticas públicas de vivienda, urbanismo y obras públicas.',
+          profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
         },
       ],
       cta: 'Ver las credenciales completas →',
@@ -658,7 +664,7 @@ export const es: Content = {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD) y Willy Maikowski (Buk). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD), Willy Maikowski (Buk) y Dolores Reyes Guarda (arquitecta, políticas de vivienda y urbanismo). Credenciales verificables.',
     },
     kicker: 'Equipo',
     titleLines: ['Experiencia'],
@@ -669,7 +675,7 @@ export const es: Content = {
       ', potenciada además por las capacidades que ofrece la IA.',
     ],
 
-    membersLabel: ['El equipo', '01 — 04'],
+    membersLabel: ['El equipo', '01 — 05'],
     credentialsLabel: 'Trayectoria',
     members: [
       {
@@ -732,6 +738,14 @@ export const es: Content = {
           'Profesor guía de memorias en Ingeniería Civil en Computación, FCFM — Universidad de Chile',
         ],
         profile: 'https://www.linkedin.com/in/willymaikowski',
+      },
+      {
+        n: '05',
+        name: 'Dolores Reyes Guarda',
+        role: 'Miembro del equipo',
+        text: 'Arquitecta, con experiencia en asesoría de políticas públicas de vivienda, urbanismo y obras públicas.',
+        credentials: [],
+        profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
       },
     ],
 

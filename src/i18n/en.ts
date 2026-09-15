@@ -260,7 +260,7 @@ export const en: Content = {
       h2: 'Team',
       sub:
         'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: an uncommon synergy, and one further amplified by what AI now makes possible.',
-      label: ['Team', '01 — 04'],
+      label: ['Team', '01 — 05'],
       members: [
         {
           name: 'Isabel Serra',
@@ -285,6 +285,12 @@ export const en: Content = {
           role: 'Team member',
           text: 'Software engineer. Engineering Manager at Buk, previously at Universidad de Chile’s Ucampus Technology Centre. Built the real-time monitor of Santiago’s buses with Ariel.',
           profile: 'https://www.linkedin.com/in/willymaikowski',
+        },
+        {
+          name: 'Dolores Reyes Guarda',
+          role: 'Team member',
+          text: 'Architect, with experience advising on public policy for housing, urban planning and public works.',
+          profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
         },
       ],
       cta: 'See the full credentials →',
@@ -656,7 +662,7 @@ export const en: Content = {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP) and Willy Maikowski (Buk). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP), Willy Maikowski (Buk) and Dolores Reyes Guarda (architect, housing and urban policy). Verifiable credentials.',
     },
     kicker: 'Team',
     titleLines: ['Experience'],
@@ -667,7 +673,7 @@ export const en: Content = {
       ', and one further amplified by what AI now makes possible.',
     ],
 
-    membersLabel: ['The team', '01 — 04'],
+    membersLabel: ['The team', '01 — 05'],
     credentialsLabel: 'Track record',
     members: [
       {
@@ -730,6 +736,14 @@ export const en: Content = {
           'Thesis supervisor in Computer Science Engineering, FCFM — Universidad de Chile',
         ],
         profile: 'https://www.linkedin.com/in/willymaikowski',
+      },
+      {
+        n: '05',
+        name: 'Dolores Reyes Guarda',
+        role: 'Team member',
+        text: 'Architect, with experience advising on public policy for housing, urban planning and public works.',
+        credentials: [],
+        profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
       },
     ],
 
