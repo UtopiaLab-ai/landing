@@ -289,7 +289,7 @@ export const en: Content = {
         {
           name: 'Dolores Reyes Guarda',
           role: 'Team member',
-          text: 'Architect, with experience advising on public policy for housing, urban planning and public works.',
+          text: 'Architect. Public policy analyst and adviser at the Presidential Cabinet (2022–2026); previously at the municipalities of Ñuñoa and Las Condes.',
           profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
         },
       ],
@@ -662,7 +662,7 @@ export const en: Content = {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP), Willy Maikowski (Buk) and Dolores Reyes Guarda (architect, housing and urban policy). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP), Willy Maikowski (Buk) and Dolores Reyes Guarda (Presidential Cabinet, municipalities of Ñuñoa and Las Condes). Verifiable credentials.',
     },
     kicker: 'Team',
     titleLines: ['Experience'],
@@ -741,8 +741,12 @@ export const en: Content = {
         n: '05',
         name: 'Dolores Reyes Guarda',
         role: 'Team member',
-        text: 'Architect, with experience advising on public policy for housing, urban planning and public works.',
-        credentials: [],
+        text: 'Architect with experience in housing, urban and public works policy, from both central government and municipal management: policy analyst and adviser at the Presidential Cabinet and, before that, architect at the municipalities of Ñuñoa and Las Condes.',
+        credentials: [
+          'Policy analyst and adviser, Public Policy and Follow-up team of the Presidential Cabinet, Office of the President of Chile (2022–2026)',
+          'Architect, Urban Advisory Office of the Planning Secretariat (SECPLA), Municipality of Ñuñoa (2021–2022)',
+          'Architect, Urban Development Department, Municipality of Las Condes (2017–2021)',
+        ],
         profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
       },
     ],

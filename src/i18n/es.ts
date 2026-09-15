@@ -290,7 +290,7 @@ export const es: Content = {
         {
           name: 'Dolores Reyes Guarda',
           role: 'Miembro del equipo',
-          text: 'Arquitecta, con experiencia en asesoría de políticas públicas de vivienda, urbanismo y obras públicas.',
+          text: 'Arquitecta. Analista asesora de políticas públicas en el Gabinete Presidencial (2022–2026); antes, en las municipalidades de Ñuñoa y Las Condes.',
           profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
         },
       ],
@@ -664,7 +664,7 @@ export const es: Content = {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD), Willy Maikowski (Buk) y Dolores Reyes Guarda (arquitecta, políticas de vivienda y urbanismo). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD), Willy Maikowski (Buk) y Dolores Reyes Guarda (Gabinete Presidencial, municipalidades de Ñuñoa y Las Condes). Credenciales verificables.',
     },
     kicker: 'Equipo',
     titleLines: ['Experiencia'],
@@ -743,8 +743,12 @@ export const es: Content = {
         n: '05',
         name: 'Dolores Reyes Guarda',
         role: 'Miembro del equipo',
-        text: 'Arquitecta, con experiencia en asesoría de políticas públicas de vivienda, urbanismo y obras públicas.',
-        credentials: [],
+        text: 'Arquitecta con experiencia en políticas públicas de vivienda, urbanismo y obras públicas, tanto desde el gobierno central como desde la gestión municipal: analista asesora en el Gabinete Presidencial y, antes, arquitecta en las municipalidades de Ñuñoa y Las Condes.',
+        credentials: [
+          'Analista asesora, equipo de Políticas Públicas y Seguimiento del Gabinete Presidencial, Presidencia de la República (2022–2026)',
+          'Arquitecta, Asesoría Urbana de la SECPLA, Municipalidad de Ñuñoa (2021–2022)',
+          'Arquitecta, Departamento de Urbanización, Municipalidad de Las Condes (2017–2021)',
+        ],
         profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
       },
     ],
