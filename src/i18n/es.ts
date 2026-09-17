@@ -261,7 +261,7 @@ export const es: Content = {
       h2: 'Equipo',
       sub:
         'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: una sinergia poco común, potenciada además por las capacidades que ofrece la IA.',
-      label: ['Equipo', '01 — 05'],
+      label: ['Equipo', '01 — 06'],
       members: [
         {
           name: 'Isabel Serra',
@@ -292,6 +292,12 @@ export const es: Content = {
           role: 'Miembro del equipo',
           text: 'Arquitecta. Analista asesora de políticas públicas en el Gabinete Presidencial (2022–2026); antes, en las municipalidades de Ñuñoa y Las Condes.',
           profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
+        },
+        {
+          name: 'Pablo Levine Mardones',
+          role: 'Miembro del equipo',
+          text: 'Arquitecto y urbanista. Máster en Diseño Urbano de la ETH Zúrich, donde integra la Cátedra de Arquitectura y Diseño Urbano. En Chile ganó y construyó concursos públicos, entre ellos la pasarela que une los parques Araucano y Juan Pablo II.',
+          profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
         },
       ],
       cta: 'Ver las credenciales completas →',
@@ -663,7 +669,7 @@ export const es: Content = {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD), Willy Maikowski (Buk) y Dolores Reyes Guarda (Gabinete Presidencial, municipalidades de Ñuñoa y Las Condes). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD), Willy Maikowski (Buk), Dolores Reyes Guarda (Gabinete Presidencial, municipalidades de Ñuñoa y Las Condes) y Pablo Levine Mardones (ETH Zúrich, obra pública en Chile). Credenciales verificables.',
     },
     kicker: 'Equipo',
     titleLines: ['Experiencia'],
@@ -674,7 +680,7 @@ export const es: Content = {
       ', potenciada además por las capacidades que ofrece la IA.',
     ],
 
-    membersLabel: ['El equipo', '01 — 05'],
+    membersLabel: ['El equipo', '01 — 06'],
     credentialsLabel: 'Trayectoria',
     members: [
       {
@@ -749,6 +755,21 @@ export const es: Content = {
           'Arquitecta, Departamento de Urbanización, Municipalidad de Las Condes (2017–2021)',
         ],
         profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
+      },
+      {
+        n: '06',
+        name: 'Pablo Levine Mardones',
+        role: 'Miembro del equipo',
+        text: 'Arquitecto y urbanista formado entre Santiago y Zúrich. Su obra construida son piezas públicas que resuelven una fractura del territorio antes que un programa: una pasarela que cose dos parques partidos por una autopista, un complejo fronterizo, un edificio de escuela. Esa lectura de la infraestructura —qué conecta, para quién y a costa de qué— es la que aporta a los encargos urbanos del Lab.',
+        credentials: [
+          'Cátedra de Arquitectura y Diseño Urbano (Prof. Hubert Klumpner), ETH Zúrich',
+          'Primer lugar y obra construida: concurso Pasarela Parque Araucano–Parque Juan Pablo II, Municipalidad de Las Condes (2010), con Juan Francisco Garcés y Juan Ignacio Muñoz',
+          'Arquitecto asociado, Edificio Escuela de Arquitectura, Pontificia Universidad Católica de Chile (2015–2016)',
+          'Complejo fronterizo Los Libertadores, Chile–Argentina',
+          'Máster en Diseño Urbano (MAS UD), ETH Zúrich (2018)',
+          'Arquitecto, Pontificia Universidad Católica de Chile',
+        ],
+        profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
       },
     ],
 

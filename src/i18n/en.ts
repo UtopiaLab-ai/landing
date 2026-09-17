@@ -260,7 +260,7 @@ export const en: Content = {
       h2: 'Team',
       sub:
         'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: an uncommon synergy, and one further amplified by what AI now makes possible.',
-      label: ['Team', '01 — 05'],
+      label: ['Team', '01 — 06'],
       members: [
         {
           name: 'Isabel Serra',
@@ -291,6 +291,12 @@ export const en: Content = {
           role: 'Team member',
           text: 'Architect. Public policy analyst and adviser at the Presidential Cabinet (2022–2026); previously at the municipalities of Ñuñoa and Las Condes.',
           profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
+        },
+        {
+          name: 'Pablo Levine Mardones',
+          role: 'Team member',
+          text: 'Architect and urban designer. Master in Urban Design from ETH Zürich, where he is part of the Chair of Architecture and Urban Design. In Chile he won and built public competitions, among them the footbridge linking Araucano and Juan Pablo II parks.',
+          profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
         },
       ],
       cta: 'See the full credentials →',
@@ -661,7 +667,7 @@ export const en: Content = {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP), Willy Maikowski (Buk) and Dolores Reyes Guarda (Presidential Cabinet, municipalities of Ñuñoa and Las Condes). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP), Willy Maikowski (Buk), Dolores Reyes Guarda (Presidential Cabinet, municipalities of Ñuñoa and Las Condes) and Pablo Levine Mardones (ETH Zürich, public works in Chile). Verifiable credentials.',
     },
     kicker: 'Team',
     titleLines: ['Experience'],
@@ -672,7 +678,7 @@ export const en: Content = {
       ', and one further amplified by what AI now makes possible.',
     ],
 
-    membersLabel: ['The team', '01 — 05'],
+    membersLabel: ['The team', '01 — 06'],
     credentialsLabel: 'Track record',
     members: [
       {
@@ -747,6 +753,21 @@ export const en: Content = {
           'Architect, Urban Development Department, Municipality of Las Condes (2017–2021)',
         ],
         profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
+      },
+      {
+        n: '06',
+        name: 'Pablo Levine Mardones',
+        role: 'Team member',
+        text: 'Architect and urban designer trained between Santiago and Zürich. His built work is public pieces that resolve a fracture in the territory before they resolve a brief: a footbridge stitching together two parks split by a motorway, a border complex, a school building. That reading of infrastructure — what it connects, for whom and at what cost — is what he brings to the Lab’s urban engagements.',
+        credentials: [
+          'Chair of Architecture and Urban Design (Prof. Hubert Klumpner), ETH Zürich',
+          'First prize and built work: Araucano–Juan Pablo II parks footbridge competition, Municipality of Las Condes (2010), with Juan Francisco Garcés and Juan Ignacio Muñoz',
+          'Associate architect, School of Architecture Building, Pontificia Universidad Católica de Chile (2015–2016)',
+          'Los Libertadores border complex, Chile–Argentina',
+          'Master of Advanced Studies in Urban Design (MAS UD), ETH Zürich (2018)',
+          'Architect, Pontificia Universidad Católica de Chile',
+        ],
+        profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
       },
     ],
 
