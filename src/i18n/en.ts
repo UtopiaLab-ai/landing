@@ -287,13 +287,13 @@ export const en: Content = {
           profile: 'https://www.linkedin.com/in/willymaikowski',
         },
         {
-          name: 'Dolores Reyes Guarda',
+          name: 'Dolores Reyes',
           role: 'Team member',
           text: 'Architect. Public policy analyst and adviser at the Presidential Cabinet (2022–2026); previously at the municipalities of Ñuñoa and Las Condes.',
           profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
         },
         {
-          name: 'Pablo Levine Mardones',
+          name: 'Pablo Levine',
           role: 'Team member',
           text: 'Architect and urban designer. Master in Urban Design from ETH Zürich, where he is part of the Chair of Architecture and Urban Design. In Chile he won and built public competitions, among them the footbridge linking Araucano and Juan Pablo II parks.',
           profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',

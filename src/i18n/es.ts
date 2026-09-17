@@ -288,13 +288,13 @@ export const es: Content = {
           profile: 'https://www.linkedin.com/in/willymaikowski',
         },
         {
-          name: 'Dolores Reyes Guarda',
+          name: 'Dolores Reyes',
           role: 'Miembro del equipo',
           text: 'Arquitecta. Analista asesora de políticas públicas en el Gabinete Presidencial (2022–2026); antes, en las municipalidades de Ñuñoa y Las Condes.',
           profile: 'https://www.linkedin.com/in/dolores-reyes-guarda-46513049',
         },
         {
-          name: 'Pablo Levine Mardones',
+          name: 'Pablo Levine',
           role: 'Miembro del equipo',
           text: 'Arquitecto y urbanista. Máster en Diseño Urbano de la ETH Zúrich, donde integra la Cátedra de Arquitectura y Diseño Urbano. En Chile ganó y construyó concursos públicos, entre ellos la pasarela que une los parques Araucano y Juan Pablo II.',
           profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
