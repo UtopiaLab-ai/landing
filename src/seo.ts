@@ -24,6 +24,7 @@ const ALTERNATE_NAMES = ['UtopiaLab', 'Utopia Lab']
 /** Temas que el equipo acredita en /equipo. No se agregan temas sin respaldo. */
 const KNOWS_ABOUT: Record<Locale, string[]> = {
   es: [
+    'Inteligencia anticipatoria',
     'Prospectiva estratégica',
     'Análisis de escenarios',
     'Vigilancia de señales',
@@ -33,6 +34,7 @@ const KNOWS_ABOUT: Record<Locale, string[]> = {
     'Gobernanza humano–IA',
   ],
   en: [
+    'Anticipatory intelligence',
     'Strategic foresight',
     'Scenario analysis',
     'Signal monitoring',
