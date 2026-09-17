@@ -20,7 +20,7 @@ export const es: Content = {
     },
     switchLang: 'Cambiar idioma',
     about:
-      'utopialab.ai es un laboratorio de prospectiva estratégica con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
+      'utopialab.ai es un laboratorio de inteligencia anticipatoria con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
     notFound: {
       title: 'Página no encontrada',
       text: 'Esta dirección no existe o cambió de lugar.',
@@ -34,13 +34,13 @@ export const es: Content = {
 
   home: {
     meta: {
-      title: 'utopialab.ai · Prospectiva estratégica para decidir bajo incertidumbre',
+      title: 'utopialab.ai · Inteligencia anticipatoria para decidir bajo incertidumbre',
       description:
-        'Prospectiva estratégica aplicada para empresas y organismos públicos con exposición regulatoria y territorial. Diez productos, desde un brief en 48 horas hasta capacidad instalada y acceso a la Máquina. Santiago de Chile.',
+        'Inteligencia anticipatoria aplicada para empresas y organismos públicos con exposición regulatoria y territorial. Diez productos, desde un brief en 48 horas hasta capacidad instalada y acceso a la Máquina. Santiago de Chile.',
     },
 
     hero: {
-      kicker: 'utopialab.ai · Prospectiva estratégica',
+      kicker: 'utopialab.ai · Inteligencia anticipatoria',
       titleLines: ['El futuro', 'no se automatiza:', 'se decide'],
       sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
       microcopy:
@@ -164,7 +164,7 @@ export const es: Content = {
           products: [
             {
               name: 'Arquitectura de Trayectoria',
-              text: 'Prospectiva sobre el horizonte propio de un ejecutivo o profesional senior.',
+              text: 'Inteligencia anticipatoria sobre el horizonte propio de un ejecutivo o profesional senior.',
               duration: '3 – 6 semanas',
             },
           ],
@@ -388,7 +388,7 @@ export const es: Content = {
           {
             n: '03',
             name: 'Estudio de Futuros',
-            def: 'Proceso de prospectiva organizacional, sectorial o territorial que produce escenarios, condiciones de factibilidad y una decisión trazable.',
+            def: 'Proceso de anticipación organizacional, sectorial o territorial que produce escenarios, condiciones de factibilidad y una decisión trazable.',
             text: 'Para un desafío concreto de largo plazo, hace pasar el objeto de análisis por escenarios múltiples, convierte cada «no es viable» en condiciones con responsables, y deja la decisión registrada —qué se sabía, qué se supuso, cuándo hay que revisarla— de modo que el equipo pueda reconstruirla meses después. En su versión territorial responde qué va a pasar en un territorio en los próximos diez años: uso de suelo, riesgo regulatorio, conflictos latentes.',
             trigger:
               '«Todo lo interesante nos lo descartan como no viable» · «Nadie recuerda por qué decidimos aquello ni cuándo revisarlo.»',
@@ -455,7 +455,7 @@ export const es: Content = {
           {
             n: '08',
             name: 'Arquitectura de Trayectoria',
-            def: 'Prospectiva estratégica para una persona —ejecutivo, directivo, profesional senior— sobre su propio horizonte.',
+            def: 'Inteligencia anticipatoria para una persona —ejecutivo, directivo, profesional senior— sobre su propio horizonte.',
             text: 'El mismo método aplicado a una trayectoria individual en vez de una organización: lee el entorno sectorial de la persona, construye escenarios de su trayectoria y mapea las capacidades que cada uno exige. Dónde está hoy, qué le exige cada camino posible y qué tendría que construir para tomarlo.',
             trigger:
               'Profesional senior en un punto de inflexión de carrera que necesita leer su entorno a diez años.',
@@ -541,11 +541,11 @@ export const es: Content = {
       items: [
         {
           q: '¿Qué es utopialab.ai?',
-          a: 'Un laboratorio de prospectiva estratégica con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
+          a: 'Un laboratorio de inteligencia anticipatoria con base en Santiago de Chile. Ayuda a empresas, organismos públicos y personas a leer su entorno, detectar lo decisivo y tomar decisiones a tiempo bajo incertidumbre.',
         },
         {
-          q: '¿Qué es la prospectiva estratégica?',
-          a: 'Es leer el entorno con método para anticipar cambios y decidir a tiempo. No consiste en predecir un escenario: consiste en situar la señal, fijar el umbral que obliga a revisar una decisión, visualizar las alternativas y actuar mientras la decisión todavía puede cambiar el resultado.',
+          q: '¿Qué es la inteligencia anticipatoria?',
+          a: 'Es leer el entorno con método para anticipar cambios y decidir a tiempo —lo que también se conoce como prospectiva estratégica—. No consiste en predecir un escenario: consiste en situar la señal, fijar el umbral que obliga a revisar una decisión, visualizar las alternativas y actuar mientras la decisión todavía puede cambiar el resultado.',
         },
         {
           q: '¿En qué se diferencia de una consultoría tradicional?',

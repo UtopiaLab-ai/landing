@@ -20,7 +20,7 @@ export const en: Content = {
     },
     switchLang: 'Switch language',
     about:
-      'utopialab.ai is a strategic foresight lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
+      'utopialab.ai is an anticipatory intelligence lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
     notFound: {
       title: 'Page not found',
       text: 'This address does not exist or has moved.',
@@ -34,13 +34,13 @@ export const en: Content = {
 
   home: {
     meta: {
-      title: 'utopialab.ai · Strategic foresight for deciding under uncertainty',
+      title: 'utopialab.ai · Anticipatory intelligence for deciding under uncertainty',
       description:
-        'Applied strategic foresight for companies and public bodies exposed to regulatory and territorial change. Ten products, from a 48-hour brief to installed capability and access to the Machine. Santiago, Chile.',
+        'Applied anticipatory intelligence for companies and public bodies exposed to regulatory and territorial change. Ten products, from a 48-hour brief to installed capability and access to the Machine. Santiago, Chile.',
     },
 
     hero: {
-      kicker: 'utopialab.ai · Strategic foresight',
+      kicker: 'utopialab.ai · Anticipatory intelligence',
       titleLines: ['The future', 'is not automated:', 'it is decided'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
@@ -163,7 +163,7 @@ export const en: Content = {
           products: [
             {
               name: 'Trajectory Architecture',
-              text: 'Foresight on the personal horizon of an executive or senior professional.',
+              text: 'Anticipatory intelligence on the personal horizon of an executive or senior professional.',
               duration: '3 – 6 weeks',
             },
           ],
@@ -387,7 +387,7 @@ export const en: Content = {
           {
             n: '03',
             name: 'Futures Study',
-            def: 'An organisational, sectoral or territorial foresight process that produces scenarios, feasibility conditions and a traceable decision.',
+            def: 'An organisational, sectoral or territorial anticipation process that produces scenarios, feasibility conditions and a traceable decision.',
             text: 'For a concrete long-term challenge, it runs the object of analysis through multiple scenarios, turns every “not feasible” into conditions with named owners, and leaves the decision recorded — what was known, what was assumed, when it must be reviewed — so the team can reconstruct it months later. In its territorial version it answers what will happen in a territory over the next ten years: land use, regulatory risk, latent conflicts.',
             trigger:
               '“Everything interesting gets ruled out as unfeasible” · “Nobody remembers why we decided that, or when to review it.”',
@@ -454,7 +454,7 @@ export const en: Content = {
           {
             n: '08',
             name: 'Trajectory Architecture',
-            def: 'Strategic foresight for one person — an executive, a director, a senior professional — on their own horizon.',
+            def: 'Anticipatory intelligence for one person — an executive, a director, a senior professional — on their own horizon.',
             text: 'The same method applied to an individual trajectory rather than an organisation: it reads the person’s sectoral environment, builds scenarios of their trajectory and maps the capabilities each one demands. Where they are today, what each possible path asks of them, and what they would have to build to take it.',
             trigger:
               'A senior professional at a turning point who needs to read their environment ten years out.',
@@ -540,11 +540,11 @@ export const en: Content = {
       items: [
         {
           q: 'What is utopialab.ai?',
-          a: 'A strategic foresight lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
+          a: 'An anticipatory intelligence lab based in Santiago, Chile. It helps companies, public bodies and individuals read their environment, detect what is decisive and make timely decisions under uncertainty.',
         },
         {
-          q: 'What is strategic foresight?',
-          a: 'Reading the environment with method in order to anticipate change and decide in time. It is not about predicting a scenario: it is about locating the signal, setting the threshold that forces a decision to be revisited, seeing the alternatives, and acting while the decision can still change the outcome.',
+          q: 'What is anticipatory intelligence?',
+          a: 'Reading the environment with method in order to anticipate change and decide in time — what is also known as strategic foresight. It is not about predicting a scenario: it is about locating the signal, setting the threshold that forces a decision to be revisited, seeing the alternatives, and acting while the decision can still change the outcome.',
         },
         {
           q: 'How is this different from traditional consulting?',
