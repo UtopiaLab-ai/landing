@@ -6,7 +6,7 @@
  * porque el vertical público compra por licitación y necesita un canal
  * escrito: sin correo no hay por dónde mandar bases ni consultas formales.
  */
-export const BOOKING_URL = 'https://cal.com/princesodan/ulab-consulting'
+export const BOOKING_URL = 'https://cal.com/isabel-serra-suv8lh/utopialab.ai'
 
 /** Marca y dominio canónico, tal como aparecen en el pie de página. */
 export const BRAND = 'utopialab'
