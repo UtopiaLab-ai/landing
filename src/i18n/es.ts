@@ -261,7 +261,7 @@ export const es: Content = {
       h2: 'Equipo',
       sub:
         'Equipo multidisciplinario, con amplia experiencia técnica, en asesoría de alto nivel, incidencia y tecnología: una sinergia poco común, potenciada además por las capacidades que ofrece la IA.',
-      label: ['Equipo', '01 — 06'],
+      label: ['Equipo', '01 — 07'],
       members: [
         {
           name: 'Isabel Serra',
@@ -298,6 +298,11 @@ export const es: Content = {
           role: 'Miembro del equipo',
           text: 'Arquitecto y urbanista. Máster en Diseño Urbano de la ETH Zúrich, donde integra la Cátedra de Arquitectura y Diseño Urbano. En Chile ganó y construyó concursos públicos, entre ellos la pasarela que une los parques Araucano y Juan Pablo II.',
           profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
+        },
+        {
+          name: 'Ignacio Figueroa',
+          role: 'Miembro del equipo',
+          text: 'Abogado. Socio de JAF Abogados, senior en litigación, ESG y derecho e inteligencia artificial; director de sociedades anónimas abiertas y cerradas. Magíster en Derecho de la Empresa, Pontificia Universidad Católica de Chile.',
         },
       ],
       cta: 'Ver las credenciales completas →',
@@ -669,7 +674,7 @@ export const es: Content = {
     meta: {
       title: 'Equipo · utopialab.ai',
       description:
-        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD), Willy Maikowski (Buk), Dolores Reyes Guarda (Gabinete Presidencial, municipalidades de Ñuñoa y Las Condes) y Pablo Levine Mardones (ETH Zúrich, obra pública en Chile). Credenciales verificables.',
+        'Quién ejecuta los encargos: Isabel Serra (Centro de Estudios Ciudad y Territorio del MINVU, Sistema Utopía), Genaro Cuadros (SECPLA Recoleta, CEPAL–ONU, BID), Ariel López (CEPAL, PNUD), Willy Maikowski (Buk), Dolores Reyes Guarda (Gabinete Presidencial, municipalidades de Ñuñoa y Las Condes), Pablo Levine Mardones (ETH Zúrich, obra pública en Chile) y José Ignacio Figueroa Elgueta (JAF Abogados, derecho e IA). Credenciales verificables.',
     },
     kicker: 'Equipo',
     titleLines: ['Experiencia'],
@@ -680,7 +685,7 @@ export const es: Content = {
       ', potenciada además por las capacidades que ofrece la IA.',
     ],
 
-    membersLabel: ['El equipo', '01 — 06'],
+    membersLabel: ['El equipo', '01 — 07'],
     credentialsLabel: 'Trayectoria',
     members: [
       {
@@ -770,6 +775,23 @@ export const es: Content = {
           'Arquitecto, Pontificia Universidad Católica de Chile',
         ],
         profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
+      },
+      {
+        n: '07',
+        name: 'José Ignacio Figueroa Elgueta',
+        role: 'Miembro del equipo',
+        text: 'Abogado y socio de JAF Abogados, senior en litigación, derecho del arte, ESG y derecho e inteligencia artificial. Combina la práctica litigiosa con el gobierno corporativo: es director de sociedades anónimas abiertas y cerradas. Aporta a los encargos del Lab la lectura jurídica de las decisiones y del uso de la IA.',
+        credentials: [
+          'Socio, JAF Abogados',
+          'Director de sociedades anónimas abiertas y cerradas',
+          'Consejero de la Corporación de Adelanto de Farellones',
+          'Magíster en Derecho de la Empresa, Pontificia Universidad Católica de Chile (2017)',
+          'Economía y Finanzas para Abogados, FEN — Universidad de Chile (2005)',
+          'Diplomados en Reforma Procesal Penal, Universidad de Chile (2003) y Universidad Diego Portales (2004)',
+          'Diploma en Business Studies, London School of Economics and Political Science (2000)',
+          'Posgrado en Derecho Mercantil, Universidad de Salamanca (1998)',
+          'Abogado, Universidad de la República (1998)',
+        ],
       },
     ],
 

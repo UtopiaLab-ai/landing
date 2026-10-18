@@ -260,7 +260,7 @@ export const en: Content = {
       h2: 'Team',
       sub:
         'A multidisciplinary team with deep technical experience, in high-level advisory work, advocacy and technology: an uncommon synergy, and one further amplified by what AI now makes possible.',
-      label: ['Team', '01 — 06'],
+      label: ['Team', '01 — 07'],
       members: [
         {
           name: 'Isabel Serra',
@@ -297,6 +297,11 @@ export const en: Content = {
           role: 'Team member',
           text: 'Architect and urban designer. Master in Urban Design from ETH Zürich, where he is part of the Chair of Architecture and Urban Design. In Chile he won and built public competitions, among them the footbridge linking Araucano and Juan Pablo II parks.',
           profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
+        },
+        {
+          name: 'Ignacio Figueroa',
+          role: 'Team member',
+          text: 'Lawyer. Partner at JAF Abogados, senior in litigation, ESG, and law and artificial intelligence; director of public and private corporations. Master in Business Law, Pontificia Universidad Católica de Chile.',
         },
       ],
       cta: 'See the full credentials →',
@@ -667,7 +672,7 @@ export const en: Content = {
     meta: {
       title: 'Team · utopialab.ai',
       description:
-        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP), Willy Maikowski (Buk), Dolores Reyes Guarda (Presidential Cabinet, municipalities of Ñuñoa and Las Condes) and Pablo Levine Mardones (ETH Zürich, public works in Chile). Verifiable credentials.',
+        'Who runs the engagements: Isabel Serra (MINVU Centre for City and Territory Studies, Utopía System), Genaro Cuadros (Recoleta Planning Secretariat, ECLAC–UN, IDB), Ariel López (ECLAC, UNDP), Willy Maikowski (Buk), Dolores Reyes Guarda (Presidential Cabinet, municipalities of Ñuñoa and Las Condes), Pablo Levine Mardones (ETH Zürich, public works in Chile) and José Ignacio Figueroa Elgueta (JAF Abogados, law and AI). Verifiable credentials.',
     },
     kicker: 'Team',
     titleLines: ['Experience'],
@@ -678,7 +683,7 @@ export const en: Content = {
       ', and one further amplified by what AI now makes possible.',
     ],
 
-    membersLabel: ['The team', '01 — 06'],
+    membersLabel: ['The team', '01 — 07'],
     credentialsLabel: 'Track record',
     members: [
       {
@@ -768,6 +773,23 @@ export const en: Content = {
           'Architect, Pontificia Universidad Católica de Chile',
         ],
         profile: 'https://www.linkedin.com/in/pablo-levine-mardones-03802b117/',
+      },
+      {
+        n: '07',
+        name: 'José Ignacio Figueroa Elgueta',
+        role: 'Team member',
+        text: 'Lawyer and partner at JAF Abogados, senior in litigation, art law, ESG, and law and artificial intelligence. He combines litigation practice with corporate governance as a director of public and private corporations. He brings to the Lab’s engagements a legal reading of decisions and of the use of AI.',
+        credentials: [
+          'Partner, JAF Abogados',
+          'Director of public and private corporations',
+          'Board member, Corporación de Adelanto de Farellones',
+          'Master in Business Law, Pontificia Universidad Católica de Chile (2017)',
+          'Economics and Finance for Lawyers, FEN — Universidad de Chile (2005)',
+          'Diplomas in Criminal Procedure Reform, Universidad de Chile (2003) and Universidad Diego Portales (2004)',
+          'Diploma in Business Studies, London School of Economics and Political Science (2000)',
+          'Postgraduate programme in Commercial Law, Universidad de Salamanca (1998)',
+          'Law degree, Universidad de la República (1998)',
+        ],
       },
     ],
 
