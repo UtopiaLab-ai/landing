@@ -597,7 +597,7 @@ header > * {
 
 /* La columna del titular se declara contenedor para que el cuerpo del `h1` se
    mida contra ELLA y no contra el viewport. El titular tiene cuatro versos y
-   el más largo —«a la anticipación»— es el que manda: con `vw` había una
+   el más largo —«anticipatoria»— es el que manda: con `vw` había una
    franja (~860-1000px) donde la columna ya se había angostado contra la
    imagen pero el cuerpo todavía no, y el verso se partía en dos.
 

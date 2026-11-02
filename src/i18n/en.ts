@@ -40,9 +40,9 @@ export const en: Content = {
     },
 
     hero: {
-      kicker: 'utopialab.ai · Anticipatory intelligence',
-      titleLines: ['The future', 'is not automated:', 'it is decided'],
-      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
+      kicker: 'utopialab.ai · Santiago, Chile',
+      titleLines: ['Anticipatory', 'intelligence', 'for deciding', 'in time'],
+      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. We read that environment with method and tell you when a decision already taken needs revisiting, before the change makes the news. Anticipating is not predicting: the future is not automated, it is decided.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
     },
 
