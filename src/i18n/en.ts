@@ -41,7 +41,7 @@ export const en: Content = {
 
     hero: {
       kicker: 'utopialab.ai · Santiago, Chile',
-      titleLines: ['Anticipatory', 'intelligence', 'for deciding', 'in time'],
+      titleLines: ['Anticipatory', 'intelligence', 'to decide', 'in time'],
       sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. We read that environment with method and tell you when a decision already taken needs revisiting, before the change makes the news. Anticipating is not predicting: the future is not automated, it is decided.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
     },
