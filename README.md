@@ -26,7 +26,8 @@ Todo lo configurable vive en [`src/config.ts`](src/config.ts):
 
 | Constante        | Para qué                                                        |
 | ---------------- | --------------------------------------------------------------- |
-| `BOOKING_URL`    | Destino de todos los CTA (Cal.com)                                |
+| `BOOKING_URL`    | Destino de todos los CTA "Contáctanos" (Cal.com)               |
+| `WHATSAPP_NUMBER`| WhatsApp de Ignacio, destino del botón flotante (`wa.me`)       |
 | `BRAND`          | El nombre del wordmark, sin dominio                               |
 | `BRAND_TLD`      | El dominio del wordmark, separado por el punto de señal           |
 | `SITE_DOMAIN`    | Dominio canónico que aparece en el pie                            |

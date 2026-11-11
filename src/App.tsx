@@ -3,6 +3,7 @@ import type { ComponentType } from 'react'
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { WhatsAppButton } from './components/WhatsAppButton'
 import type { Locale } from './i18n'
 import { CONTENT, DEFAULT_LOCALE } from './i18n'
 import { Cases } from './pages/Cases'
@@ -54,6 +55,7 @@ function SiteFrame({ locale, page }: { locale: Locale; page: PageKey }) {
         <Header />
         <Page />
         <Footer />
+        <WhatsAppButton />
       </div>
     </SiteContext.Provider>
   )

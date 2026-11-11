@@ -9,8 +9,12 @@ export const en: Content = {
       cases: 'Cases',
       team: 'Team',
     },
-    book: 'Book a diagnostic hour',
-    bookShort: 'Book',
+    book: 'Contact us',
+    bookShort: 'Contact',
+    whatsapp: {
+      label: 'Talk to a human',
+      message: 'Hi, I found you on utopialab.ai and would like more information.',
+    },
     atalaya: {
       label: 'Explore Atalaya',
       productNote:
@@ -40,9 +44,9 @@ export const en: Content = {
     },
 
     hero: {
-      kicker: 'utopialab.ai · Anticipatory intelligence',
-      titleLines: ['The future', 'is not automated:', 'it is decided'],
-      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. The problem is not a lack of information: it is that nobody is tasked with reading that environment with method, or with saying when it forces a decision already taken to be revisited. That is what we install, from a brief in 48 hours to the capability running inside your own team.',
+      kicker: 'utopialab.ai · Santiago, Chile',
+      titleLines: ['Anticipatory', 'intelligence', 'to decide', 'in time'],
+      sub: 'We work with companies and public bodies whose regulatory and territorial environment moves faster than their decisions. We read that environment with method and tell you when a decision already taken needs revisiting, before the change makes the news. Anticipating is not predicting: the future is not automated, it is decided.',
       microcopy: 'No cost, no prior quote. One hour on a decision you already have pending.',
     },
 
@@ -310,7 +314,7 @@ export const en: Content = {
     closing: {
       h2: 'Want to see the signals in the noise?',
       body: 'It is not a services pitch. In one hour we work out what information is missing, which possibilities are worth opening, and what your next decision is. If no engagement follows, you keep that anyway.',
-      cta: 'Book an hour',
+      cta: 'Contact us',
     },
   },
 

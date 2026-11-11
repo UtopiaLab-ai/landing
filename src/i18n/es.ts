@@ -9,8 +9,12 @@ export const es: Content = {
       cases: 'Casos',
       team: 'Equipo',
     },
-    book: 'Agendar una hora de diagnóstico',
-    bookShort: 'Agendar',
+    book: 'Contáctanos',
+    bookShort: 'Contacto',
+    whatsapp: {
+      label: 'Conversa con un humano',
+      message: 'Hola, vengo de utopialab.ai y quiero más información.',
+    },
     atalaya: {
       label: 'Explorar Atalaya',
       productNote:
@@ -40,9 +44,9 @@ export const es: Content = {
     },
 
     hero: {
-      kicker: 'utopialab.ai · Inteligencia anticipatoria',
-      titleLines: ['El futuro', 'no se automatiza:', 'se decide'],
-      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. El problema no es falta de información: es que nadie tiene el encargo de mirar ese entorno con método y decir cuándo obliga a revisar una decisión ya tomada. Eso es lo que instalamos, desde un brief en 48 horas hasta la capacidad operando en tu equipo.',
+      kicker: 'utopialab.ai · Santiago de Chile',
+      titleLines: ['Inteligencia', 'anticipatoria', 'para decidir', 'a tiempo'],
+      sub: 'Trabajamos con empresas y organismos públicos cuyo entorno regulatorio y territorial cambia más rápido que sus decisiones. Leemos ese entorno con método y te decimos cuándo una decisión ya tomada tiene que revisarse, antes de que el cambio sea noticia. Anticipar no es predecir: el futuro no se automatiza, se decide.',
       microcopy:
         'Sin costo y sin cotización previa. Una hora sobre una decisión que ya tienes pendiente.',
     },
@@ -311,7 +315,7 @@ export const es: Content = {
     closing: {
       h2: '¿Quieres ver las señales en el ruido?',
       body: 'No es una presentación de servicios. En una hora identificamos qué información falta, qué posibilidades conviene abrir y cuál es tu próxima decisión. Si después de eso no hay encargo, igual te llevas eso.',
-      cta: 'Agenda una hora',
+      cta: 'Contáctanos',
     },
   },
 
