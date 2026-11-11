@@ -5,7 +5,7 @@ import { useSite } from '../site-context'
  * Botón flotante de WhatsApp, presente en todas las páginas. Es el segundo
  * canal de contacto junto a "Contáctanos": para quien prefiere escribir antes
  * que agendar. En escritorio va grande, centrado en el borde derecho; en mobile
- * baja a la esquina y queda solo el ícono, para no tapar el contenido.
+ * (bajo 980px) baja a la esquina y queda solo el logo.
  */
 export function WhatsAppButton() {
   const { t } = useSite()

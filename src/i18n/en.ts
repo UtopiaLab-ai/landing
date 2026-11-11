@@ -12,7 +12,7 @@ export const en: Content = {
     book: 'Contact us',
     bookShort: 'Contact',
     whatsapp: {
-      label: 'Message us on WhatsApp',
+      label: 'Talk to a human',
       message: 'Hi, I found you on utopialab.ai and would like more information.',
     },
     atalaya: {
