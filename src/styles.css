@@ -294,7 +294,7 @@ header > * {
   display: none;
 }
 
-/* --- CTA "Agendar una hora de diagnóstico" --------------------------------
+/* --- CTA "Contáctanos" --------------------------------
    Píldora con insignia de flecha. El naranja lleva texto en tinta: con texto
    claro el contraste cae a 2,8:1. */
 
@@ -2630,4 +2630,90 @@ footer {
   font-size: clamp(16px, 1.9vw, 22px);
   line-height: 1.4;
   opacity: 0.8;
+}
+
+/* --- Botón flotante de WhatsApp ----------------------------------------------
+   Verde WhatsApp para que se reconozca de lejos. El texto va en tinta y no en
+   blanco: el blanco sobre #25d366 cae a ~2:1 de contraste. El ícono sí va en
+   blanco, como el logo original; es decorativo (aria-hidden) y no se lee.
+   Escritorio: grande, centrado en el borde derecho. Mobile: círculo de tamaño
+   normal en la esquina, sin texto, para no tapar el contenido. */
+
+.wa-float {
+  --wa: #25d366;
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 26px 14px 16px;
+  border-radius: var(--r-pill);
+  background: var(--wa);
+  color: var(--tinta);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.22);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.wa-float:hover {
+  transform: translateY(-50%) scale(1.04);
+  box-shadow: 0 14px 36px rgb(0 0 0 / 0.28);
+}
+
+.wa-float:focus-visible {
+  outline: 3px solid var(--tinta);
+  outline-offset: 3px;
+}
+
+.wa-icon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .wa-float {
+    top: auto;
+    right: 16px;
+    /* Por encima de la barra de navegación inferior (fija bajo 980px). */
+    bottom: calc(80px + env(safe-area-inset-bottom));
+    transform: none;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .wa-float:hover {
+    transform: scale(1.04);
+  }
+
+  .wa-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .wa-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-float {
+    transition: none;
+  }
 }

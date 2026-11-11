@@ -32,6 +32,8 @@ export interface Common {
   }
   book: string
   bookShort: string
+  /** El botón flotante de WhatsApp: texto visible y mensaje que queda escrito en el chat. */
+  whatsapp: { label: string; message: string }
     /** El tablero demo de Atalaya: el botón y la línea que lo presenta en cada página. */
     atalaya: { label: string; productNote: string; caseNote: string }
   switchLang: string

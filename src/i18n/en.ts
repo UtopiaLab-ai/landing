@@ -9,8 +9,12 @@ export const en: Content = {
       cases: 'Cases',
       team: 'Team',
     },
-    book: 'Book a diagnostic hour',
-    bookShort: 'Book',
+    book: 'Contact us',
+    bookShort: 'Contact',
+    whatsapp: {
+      label: 'Message us on WhatsApp',
+      message: 'Hi, I found you on utopialab.ai and would like more information.',
+    },
     atalaya: {
       label: 'Explore Atalaya',
       productNote:
@@ -310,7 +314,7 @@ export const en: Content = {
     closing: {
       h2: 'Want to see the signals in the noise?',
       body: 'It is not a services pitch. In one hour we work out what information is missing, which possibilities are worth opening, and what your next decision is. If no engagement follows, you keep that anyway.',
-      cta: 'Book an hour',
+      cta: 'Contact us',
     },
   },
 

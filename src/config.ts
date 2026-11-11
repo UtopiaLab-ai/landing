@@ -2,7 +2,7 @@
  * Configuración del sitio / Site configuration.
  *
  * BOOKING_URL es el destino de conversión principal: todos los CTA
- * ("Agendar una hora de diagnóstico") apuntan aquí. CONTACT_EMAIL existe
+ * ("Contáctanos") apuntan aquí. CONTACT_EMAIL existe
  * porque el vertical público compra por licitación y necesita un canal
  * escrito: sin correo no hay por dónde mandar bases ni consultas formales.
  */
@@ -24,6 +24,13 @@ export const SITE_DOMAIN = 'utopialab.ai'
  */
 export const SITE_URL = 'https://www.utopialab.ai'
 export const CONTACT_EMAIL = 'hola@utopialab.ai'
+
+/**
+ * WhatsApp de Ignacio, en formato internacional sin `+` ni espacios: es lo que
+ * pide `wa.me`. Es el segundo canal de contacto, para quien prefiere escribir
+ * antes que agendar.
+ */
+export const WHATSAPP_NUMBER = '56992181528'
 
 export const COPYRIGHT_YEAR = 2026
 

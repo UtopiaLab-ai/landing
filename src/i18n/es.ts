@@ -9,8 +9,12 @@ export const es: Content = {
       cases: 'Casos',
       team: 'Equipo',
     },
-    book: 'Agendar una hora de diagnóstico',
-    bookShort: 'Agendar',
+    book: 'Contáctanos',
+    bookShort: 'Contacto',
+    whatsapp: {
+      label: 'Escríbenos por WhatsApp',
+      message: 'Hola, vengo de utopialab.ai y quiero más información.',
+    },
     atalaya: {
       label: 'Explorar Atalaya',
       productNote:
@@ -311,7 +315,7 @@ export const es: Content = {
     closing: {
       h2: '¿Quieres ver las señales en el ruido?',
       body: 'No es una presentación de servicios. En una hora identificamos qué información falta, qué posibilidades conviene abrir y cuál es tu próxima decisión. Si después de eso no hay encargo, igual te llevas eso.',
-      cta: 'Agenda una hora',
+      cta: 'Contáctanos',
     },
   },
 

@@ -1,4 +1,4 @@
-import { BOOKING_URL, CONTACT_EMAIL, SITE_DOMAIN, SITE_URL } from './config'
+import { BOOKING_URL, CONTACT_EMAIL, SITE_DOMAIN, SITE_URL, WHATSAPP_NUMBER } from './config'
 import { CONTENT, LOCALES } from './i18n'
 import type { Locale } from './i18n'
 import { ALL_ROUTES, PAGE_KEYS, pathFor } from './routes'
@@ -96,7 +96,7 @@ function organization(locale: Locale, page: PageKey) {
       '@type': 'ContactPoint',
       email: CONTACT_EMAIL,
       url: BOOKING_URL,
-      contactType: locale === 'es' ? 'Agendar una hora de diagnóstico' : 'Book a diagnostic hour',
+      contactType: locale === 'es' ? 'Contáctanos' : 'Contact us',
       availableLanguage: ['es', 'en'],
     },
     member: t.team.members.map((m) => ({ '@id': `${SITE_URL}/#${slug(m.name)}` })),
@@ -280,7 +280,8 @@ export function llmsTxt(): string {
     '## Contacto / Contact',
     '',
     `- Correo / Email: ${CONTACT_EMAIL}`,
-    `- Agendar una hora de diagnóstico / Book a diagnostic hour: ${BOOKING_URL}`,
+    `- Contáctanos / Contact us: ${BOOKING_URL}`,
+    `- WhatsApp: https://wa.me/${WHATSAPP_NUMBER}`,
     '- Ubicación / Location: Santiago de Chile',
     '',
     '## Optional',
