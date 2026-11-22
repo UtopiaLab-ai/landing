@@ -1,0 +1,29 @@
+# Pide la revisión de Willy en cada PR nuevo, para que todos le aparezcan juntos en
+# https://github.com/pulls/review-requested. Reemplaza a CODEOWNERS, que en el plan gratuito
+# de GitHub no funciona en repos privados. El mismo archivo va en todos los repos de UtopiaLab-ai.
+name: Pide revisión
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+permissions:
+  pull-requests: write
+
+env:
+  REVISOR: LagarSpA
+
+jobs:
+  pedir:
+    # No a sí mismo (GitHub lo rechaza) ni en borradores: se pide al marcarlo listo.
+    if: github.event.pull_request.draft == false && github.event.pull_request.user.login != 'LagarSpA'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Pedir revisión
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pulls/$PR/requested_reviewers" \
+            -f "reviewers[]=$REVISOR" --silent
